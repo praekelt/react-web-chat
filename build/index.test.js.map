@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/index.test.js"],"names":["test","expect","toBe"],"mappings":";;AAAA;;;;;;AAEAA,KAAK,kBAAL,EAAyB,YAAM;AAC3BC,WAAO,iBAAP,EAAqBC,IAArB,CAA0B,aAA1B;AACH,CAFD","file":"index.test.js","sourcesContent":["import chatModule from '.';\n\ntest('says hello world', () => {\n    expect(chatModule()).toBe('hello world');\n});\n"]}

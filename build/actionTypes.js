@@ -1,0 +1,14 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+// @ts-check
+var ADD_MESSAGE = exports.ADD_MESSAGE = 'ADD_MESSAGE',
+
+// Connection
+CONNECTION_ESTABLISHED = exports.CONNECTION_ESTABLISHED = 'CONNECTION_ESTABLISHED',
+    CONNECTION_ATTEMPTED = exports.CONNECTION_ATTEMPTED = 'CONNECTION_ATTEMPTED',
+    CONNECTION_DROPPED = exports.CONNECTION_DROPPED = 'CONNECTION_DROPPED',
+    CONNECTION_LISTENING = exports.CONNECTION_LISTENING = 'CONNECTION_LISTENING';
+//# sourceMappingURL=actionTypes.js.map
