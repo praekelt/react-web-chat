@@ -1,0 +1,40 @@
+{
+  "name": "react-web-chat",
+  "version": "1.0.0",
+  "description": "A react-based instant messaging interface.",
+  "main": "build/index.js",
+  "scripts": {
+    "dev": "watch 'npm run build' src",
+    "build": "babel src -d build",
+    "test": "jest",
+    "test:watch": "npm run test -- --watch",
+    "prepublish": "npm run build",
+    "release": "np"
+  },
+  "babel": {
+    "presets": [
+      "latest"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/praekelt/react-web-chat.git"
+  },
+  "keywords": [
+    "react",
+    "chat"
+  ],
+  "author": "Peter Ringelmann",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/praekelt/react-web-chat/issues"
+  },
+  "homepage": "https://github.com/praekelt/react-web-chat#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-latest": "^6.24.1",
+    "jest": "^21.2.1",
+    "np": "^2.16.0",
+    "watch": "^1.0.2"
+  }
+}
