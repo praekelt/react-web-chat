@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 // @ts-check
-var ADD_MESSAGE = exports.ADD_MESSAGE = 'ADD_MESSAGE',
+var MESSAGE_ADD = exports.MESSAGE_ADD = 'MESSAGE_ADD',
 
 // Connection
 CONNECTION_ESTABLISHED = exports.CONNECTION_ESTABLISHED = 'CONNECTION_ESTABLISHED',

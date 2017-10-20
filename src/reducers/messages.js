@@ -1,5 +1,5 @@
 // @ts-check
-import { ADD_MESSAGE } from '../actionTypes';
+import { MESSAGE_ADD } from '../actionTypes';
 
 const initialState = {
     messages: [
@@ -19,8 +19,8 @@ const initialState = {
 
 export default (state = initialState, action) => {
     switch (action.type) {
-        case ADD_MESSAGE:
-            return { ...state, messages: [...state.messages, action.message] };
+        case MESSAGE_ADD:
+            return { ...state, messages: [...state.messages, action.payload] };
         default:
             return state;
     }

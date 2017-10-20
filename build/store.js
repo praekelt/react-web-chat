@@ -8,8 +8,14 @@ var _redux = require('redux');
 
 var _index = require('./reducers/index');
 
-// @ts-check
-var middlewares = [];
+var _eventEmitter = require('./middleware/eventEmitter');
+
+var _eventEmitter2 = _interopRequireDefault(_eventEmitter);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var middlewares = [_eventEmitter2.default]; // @ts-check
+
 
 var middleware = _redux.applyMiddleware.apply(undefined, middlewares);
 

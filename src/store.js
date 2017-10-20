@@ -3,7 +3,9 @@ import { createStore, applyMiddleware, compose } from 'redux';
 
 import { reducers } from './reducers/index';
 
-let middlewares = [];
+import eventEmitterMiddleware from './middleware/eventEmitter';
+
+let middlewares = [eventEmitterMiddleware];
 
 let middleware = applyMiddleware(...middlewares);
 

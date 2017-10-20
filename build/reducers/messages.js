@@ -28,8 +28,8 @@ exports.default = function () {
     var action = arguments[1];
 
     switch (action.type) {
-        case _actionTypes.ADD_MESSAGE:
-            return _extends({}, state, { messages: [].concat(_toConsumableArray(state.messages), [action.message]) });
+        case _actionTypes.MESSAGE_ADD:
+            return _extends({}, state, { messages: [].concat(_toConsumableArray(state.messages), [action.payload]) });
         default:
             return state;
     }
