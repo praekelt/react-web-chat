@@ -12,6 +12,6 @@ var _filters = require('./filters');
  * @param {Array} messages 
  */
 var getLatestRemote = exports.getLatestRemote = function getLatestRemote(messages) {
-  return messages.filter(_filters.remoteMessage)[messages.length - 1];
+  return messages.filter(_filters.remoteMessage).pop();
 }; // @ts-check
 //# sourceMappingURL=helpers.js.map

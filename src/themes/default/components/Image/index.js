@@ -1,16 +1,25 @@
 // @ts-check
 import React from 'react';
 import PropTypes from 'prop-types';
-import { compose, setPropTypes } from 'recompose';
+import { compose, setPropTypes, lifecycle } from 'recompose';
 
 const enhance = compose(
     setPropTypes({
         url: PropTypes.string.isRequired,
         text: PropTypes.string
+    }),
+    lifecycle({
+        componentDidMount: function(props) {
+            let myImage = new Image(100, 200);
+            myImage.src = this.props.url;
+            myImage.addEventListener('load', () => {
+                console.log('LOADED!');
+            });
+        }
     })
 );
 
-export const Image = ({ url, text }) => {
+export const ImageComponent = ({ url, text }) => {
     return (
         <div>
             <img src={url} />
@@ -19,4 +28,4 @@ export const Image = ({ url, text }) => {
     );
 };
 
-export default enhance(Image);
+export default enhance(ImageComponent);

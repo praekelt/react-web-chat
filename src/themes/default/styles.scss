@@ -1,0 +1,27 @@
+$color-grey: #233434;
+$color-primary: #b4d455;
+$color-secondary: #c0ffee;
+
+$font-small: rem(16);
+$font-medium: rem(22);
+$font-large: rem(30);
+
+.ChatContainer {
+    $block: &;
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    &-content {
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        overflow-y: scroll;
+    }
+}
+
+@import './components/Message/_message.scss';
+@import './components/Input/_input.scss';
+

@@ -24,9 +24,9 @@ const enhance = compose(
 
 export const ChatContainer = ({ theme, connection }) => {
     return (
-        <div>
+        <div className="ChatContainer">
             <MessageList {...theme} />
-            <InputArea>
+            <InputArea InputComponent={theme.InputComponent}>
                 <h1>FOO</h1>
             </InputArea>
         </div>

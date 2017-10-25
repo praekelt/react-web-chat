@@ -5,6 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 // @ts-check
 var MESSAGE_ADD = exports.MESSAGE_ADD = 'MESSAGE_ADD',
+    MESSAGE_SEND = exports.MESSAGE_SEND = 'MESSAGE_SEND',
+    MESSAGE_RECEIVE = exports.MESSAGE_RECEIVE = 'MESSAGE_RECEIVE',
 
 // Connection
 CONNECTION_ESTABLISHED = exports.CONNECTION_ESTABLISHED = 'CONNECTION_ESTABLISHED',

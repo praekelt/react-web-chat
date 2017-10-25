@@ -1,25 +1,36 @@
 // @ts-check
-import {
-    MESSAGE_ADD,
-    CONNECTION_ESTABLISHED,
-    CONNECTION_ATTEMPTED,
-    CONNECTION_DROPPED,
-    CONNECTION_LISTENING
-} from '../actionTypes';
+import { MESSAGE_ADD, MESSAGE_SEND } from '../actionTypes';
+
+import * as connectionActions from '../actions/connection';
+import * as messageActions from '../actions/messages';
 
 const networkManager = {
     init({ store, client, url }) {
+        this.dispatch = store.dispatch;
+        this.client = client;
+        this.dispatch(connectionActions.attempted());
         client.init(url).then(_ => {
-            store.dispatch({ type: CONNECTION_ESTABLISHED });
+            this.bindActionEvents();
+            this.dispatch(connectionActions.established());
         });
         store.subscribe(() => {
             if (store.getState().connection.established && !store.getState().connection.listening) {
-                client.onmessage(res => {
-                    store.dispatch({ type: MESSAGE_ADD, payload: JSON.parse(res.data) });
-                });
-                store.dispatch({ type: CONNECTION_LISTENING });
+                client.onmessage(this.messageReceiveHandler.bind(this));
+                store.dispatch(connectionActions.listening());
             }
         });
+    },
+
+    messageReceiveHandler({ data }) {
+        this.dispatch(messageActions.messageReceive(JSON.parse(data)));
+    },
+
+    messageSendHandler({ detail: { payload } }) {
+        this.client.send(JSON.stringify(payload));
+    },
+
+    bindActionEvents() {
+        window.addEventListener(`rwc-${MESSAGE_SEND}`, this.messageSendHandler.bind(this));
     }
 };
 

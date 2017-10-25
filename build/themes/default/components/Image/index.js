@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.Image = undefined;
+exports.ImageComponent = undefined;
 
 var _react = require('react');
 
@@ -20,8 +20,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var enhance = (0, _recompose.compose)((0, _recompose.setPropTypes)({
     url: _propTypes2.default.string.isRequired,
     text: _propTypes2.default.string
+}), (0, _recompose.lifecycle)({
+    componentDidMount: function componentDidMount(props) {
+        var myImage = new Image(100, 200);
+        myImage.src = this.props.url;
+        myImage.addEventListener('load', function () {
+            console.log('LOADED!');
+        });
+    }
 })); // @ts-check
-var Image = exports.Image = function Image(_ref) {
+var ImageComponent = exports.ImageComponent = function ImageComponent(_ref) {
     var url = _ref.url,
         text = _ref.text;
 
@@ -37,5 +45,5 @@ var Image = exports.Image = function Image(_ref) {
     );
 };
 
-exports.default = enhance(Image);
+exports.default = enhance(ImageComponent);
 //# sourceMappingURL=index.js.map

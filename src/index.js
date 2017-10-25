@@ -18,11 +18,11 @@ import networkManager from './utils/network';
  * @param {Object} params.theme - Custom theme
  * @param {Object} params.client - Which client to use for network communication
  */
-export const ReactWebChatComponent = ({ theme, client = feersumClient }) => {
+export const ReactWebChatComponent = ({ theme, client = feersumClient, url }) => {
     networkManager.init({
         store,
         client,
-        url: 'http://localhost:8080/echo'
+        url
     });
     return (
         <Provider store={store}>
@@ -39,13 +39,23 @@ export const ReactWebChatComponent = ({ theme, client = feersumClient }) => {
  * @param {Object} params.elemt - A target element to render to
  */
 class ReactWebChat {
-    constructor({ theme, client, element } = { theme: defaultTheme, client, element }) {
+    constructor(
+        { theme, client, element, url } = {
+            theme: defaultTheme,
+            client,
+            element,
+            url: 'http://localhost:8080/'
+        }
+    ) {
         this.eventHandlers = { message: [], connection: [] };
         if (element && element.nodeName) {
             this.element = element;
             this.client = client;
             this.bindEventsToActions();
-            ReactDOM.render(<ReactWebChatComponent theme={theme} client={client} />, element);
+            ReactDOM.render(
+                <ReactWebChatComponent theme={theme} client={client} url={url} />,
+                element
+            );
         } else {
             console.error(
                 'React Web Chat: expected element passed to constructor to be a DOM node. Recieved instead: ',

@@ -2,31 +2,47 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { compose, setPropTypes } from 'recompose';
+
+import { easeInOutQuad } from '../../utils/animation';
 
 const mapStateToProps = ({ messages }) => {
     return { messages: messages.messages };
 };
 
-const enhance = compose(
-    setPropTypes({
-        messages: PropTypes.object,
-        MessageComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
-        ImageComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func])
-    }),
-    connect(mapStateToProps)
-);
+class MessageList extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            offset: 0
+        };
+    }
 
-export const MessageList = ({ messages, MessageComponent, ImageComponent }) => {
-    return (
-        <ul>
-            {messages.map((message, i) => (
-                <li key={i}>
-                    <MessageComponent {...message} ImageComponent={ImageComponent} />
-                </li>
-            ))}
-        </ul>
-    );
+    componentDidUpdate() {
+        let targetOffset = [...this._ref.children].reduce(
+            (acc, curr) => acc + curr.offsetHeight,
+            0
+        );
+        this._ref.scrollTop = targetOffset;
+    }
+
+    render() {
+        let { messages, ImageComponent, MessageComponent } = this.props;
+        return (
+            <ul className="ChatContainer-content" ref={ref => (this._ref = ref)}>
+                {messages.map((message, i) => (
+                    <li key={i}>
+                        <MessageComponent {...message} ImageComponent={ImageComponent} />
+                    </li>
+                ))}
+            </ul>
+        );
+    }
+}
+
+MessageList.PropTypes = {
+    messages: PropTypes.object,
+    MessageComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+    ImageComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func])
 };
 
-export default enhance(MessageList);
+export default connect(mapStateToProps)(MessageList);

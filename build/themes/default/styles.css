@@ -1,0 +1,36 @@
+.ChatContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.ChatContainer-content {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow-y: scroll;
+}
+
+.Message {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.Message--container {
+  margin-left: auto;
+  text-align: right;
+}
+
+.Message--container.is-remote {
+  margin-left: 0;
+  margin-right: auto;
+  text-align: left;
+}
+
+.Input {
+  position: absolute;
+  bottom: 0;
+}

@@ -48,11 +48,11 @@ var ChatContainer = exports.ChatContainer = function ChatContainer(_ref2) {
 
     return _react2.default.createElement(
         'div',
-        null,
+        { className: 'ChatContainer' },
         _react2.default.createElement(_MessageList2.default, theme),
         _react2.default.createElement(
             _InputArea2.default,
-            null,
+            { InputComponent: theme.InputComponent },
             _react2.default.createElement(
                 'h1',
                 null,

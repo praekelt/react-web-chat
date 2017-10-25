@@ -59,12 +59,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 var ReactWebChatComponent = exports.ReactWebChatComponent = function ReactWebChatComponent(_ref) {
     var theme = _ref.theme,
         _ref$client = _ref.client,
-        client = _ref$client === undefined ? _rwcFeersumClient2.default : _ref$client;
+        client = _ref$client === undefined ? _rwcFeersumClient2.default : _ref$client,
+        url = _ref.url;
 
     _network2.default.init({
         store: _store2.default,
         client: client,
-        url: 'http://localhost:8080/echo'
+        url: url
     });
     return _react2.default.createElement(
         _reactRedux.Provider,
@@ -83,10 +84,16 @@ var ReactWebChatComponent = exports.ReactWebChatComponent = function ReactWebCha
 
 var ReactWebChat = function () {
     function ReactWebChat() {
-        var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { theme: _default2.default, client: client, element: element },
+        var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
+            theme: _default2.default,
+            client: client,
+            element: element,
+            url: 'http://localhost:8080/'
+        },
             theme = _ref2.theme,
             client = _ref2.client,
-            element = _ref2.element;
+            element = _ref2.element,
+            url = _ref2.url;
 
         _classCallCheck(this, ReactWebChat);
 
@@ -95,7 +102,7 @@ var ReactWebChat = function () {
             this.element = element;
             this.client = client;
             this.bindEventsToActions();
-            _reactDom2.default.render(_react2.default.createElement(ReactWebChatComponent, { theme: theme, client: client }), element);
+            _reactDom2.default.render(_react2.default.createElement(ReactWebChatComponent, { theme: theme, client: client, url: url }), element);
         } else {
             console.error('React Web Chat: expected element passed to constructor to be a DOM node. Recieved instead: ', element);
         }
