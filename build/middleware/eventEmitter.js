@@ -20,3 +20,4 @@ var eventEmitterMiddleware = function eventEmitterMiddleware(store) {
 };
 
 exports.default = eventEmitterMiddleware;
+//# sourceMappingURL=eventEmitter.js.map

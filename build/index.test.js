@@ -9,3 +9,4 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 test('says hello world', function () {
     expect((0, _2.default)()).toBe('hello world');
 });
+//# sourceMappingURL=index.test.js.map

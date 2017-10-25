@@ -127,3 +127,4 @@ var ReactWebChat = function () {
 }();
 
 exports.default = ReactWebChat;
+//# sourceMappingURL=index.js.map

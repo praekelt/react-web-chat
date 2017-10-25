@@ -30,3 +30,4 @@ var listening = exports.listening = function listening(message) {
         type: _actionTypes.CONNECTION_LISTENING
     };
 };
+//# sourceMappingURL=connection.js.map

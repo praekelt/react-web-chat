@@ -61,3 +61,4 @@ var InputArea = exports.InputArea = function InputArea(_ref2) {
 };
 
 exports.default = enhance(InputArea);
+//# sourceMappingURL=index.js.map
