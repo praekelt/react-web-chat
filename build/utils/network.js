@@ -53,4 +53,3 @@ var networkManager = {
     }
 }; // @ts-check
 exports.default = networkManager;
-//# sourceMappingURL=network.js.map

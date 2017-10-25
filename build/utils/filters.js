@@ -12,4 +12,3 @@ Object.defineProperty(exports, "__esModule", {
 var remoteMessage = exports.remoteMessage = function remoteMessage(message) {
   return message.origin === 'remote';
 };
-//# sourceMappingURL=filters.js.map

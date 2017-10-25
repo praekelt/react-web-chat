@@ -21,4 +21,3 @@ var reducers = exports.reducers = (0, _redux.combineReducers)({
     messages: _messages2.default,
     connection: _connection2.default
 }); // @ts-check
-//# sourceMappingURL=index.js.map

@@ -28,4 +28,3 @@ if (window.devToolsExtension) {
 }
 
 exports.default = (0, _redux.createStore)(_index.reducers, middleware);
-//# sourceMappingURL=store.js.map

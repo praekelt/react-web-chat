@@ -28,4 +28,3 @@ exports.default = {
     InputComponent: _Input2.default,
     MessageComponent: _Message2.default
 };
-//# sourceMappingURL=index.js.map

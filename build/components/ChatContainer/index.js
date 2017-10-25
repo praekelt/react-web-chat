@@ -63,4 +63,3 @@ var ChatContainer = exports.ChatContainer = function ChatContainer(_ref2) {
 };
 
 exports.default = enhance(ChatContainer);
-//# sourceMappingURL=index.js.map

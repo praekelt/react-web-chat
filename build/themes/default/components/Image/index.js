@@ -46,4 +46,3 @@ var ImageComponent = exports.ImageComponent = function ImageComponent(_ref) {
 };
 
 exports.default = enhance(ImageComponent);
-//# sourceMappingURL=index.js.map

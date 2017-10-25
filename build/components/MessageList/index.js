@@ -95,4 +95,3 @@ MessageList.PropTypes = {
 };
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(MessageList);
-//# sourceMappingURL=index.js.map

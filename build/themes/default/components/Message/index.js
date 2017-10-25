@@ -60,4 +60,3 @@ var Message = exports.Message = function Message(_ref2) {
 };
 
 exports.default = enhance(Message);
-//# sourceMappingURL=index.js.map

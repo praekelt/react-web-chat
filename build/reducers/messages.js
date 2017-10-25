@@ -34,4 +34,3 @@ exports.default = function () {
             return state;
     }
 };
-//# sourceMappingURL=messages.js.map
