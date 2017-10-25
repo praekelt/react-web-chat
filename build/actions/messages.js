@@ -42,4 +42,3 @@ function messageSend(_ref) {
         dispatch(messageAdd(message));
     };
 }
-//# sourceMappingURL=messages.js.map
