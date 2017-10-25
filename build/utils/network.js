@@ -38,13 +38,11 @@ var networkManager = {
             }
         });
     },
-    messageReceiveHandler: function messageReceiveHandler(_ref2) {
-        var data = _ref2.data;
-
-        this.dispatch(messageActions.messageReceive(JSON.parse(data)));
+    messageReceiveHandler: function messageReceiveHandler(message) {
+        this.dispatch(messageActions.messageReceive(message));
     },
-    messageSendHandler: function messageSendHandler(_ref3) {
-        var payload = _ref3.detail.payload;
+    messageSendHandler: function messageSendHandler(_ref2) {
+        var payload = _ref2.detail.payload;
 
         this.client.send(JSON.stringify(payload));
     },

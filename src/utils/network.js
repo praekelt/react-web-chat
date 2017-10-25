@@ -21,8 +21,8 @@ const networkManager = {
         });
     },
 
-    messageReceiveHandler({ data }) {
-        this.dispatch(messageActions.messageReceive(JSON.parse(data)));
+    messageReceiveHandler(message) {
+        this.dispatch(messageActions.messageReceive(message));
     },
 
     messageSendHandler({ detail: { payload } }) {

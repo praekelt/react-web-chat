@@ -18,6 +18,7 @@ class MessageList extends React.Component {
     }
 
     componentDidUpdate() {
+        console.log('CHILDREN');
         let targetOffset = [...this._ref.children].reduce(
             (acc, curr) => acc + curr.offsetHeight,
             0

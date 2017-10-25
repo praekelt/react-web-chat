@@ -54,6 +54,7 @@ var MessageList = function (_React$Component) {
     _createClass(MessageList, [{
         key: 'componentDidUpdate',
         value: function componentDidUpdate() {
+            console.log('CHILDREN');
             var targetOffset = [].concat(_toConsumableArray(this._ref.children)).reduce(function (acc, curr) {
                 return acc + curr.offsetHeight;
             }, 0);
