@@ -1,6 +1,6 @@
 {
     "name": "react-web-chat",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "description": "A react-based instant messaging interface.",
     "main": "build/index.js",
     "scripts": {
