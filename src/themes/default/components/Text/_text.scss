@@ -1,0 +1,65 @@
+.Text {
+    //FIXME: this is necessary because this module can be namespaced. find cleaner solution
+    $blockName: "Text";
+    display: inline-block;
+    padding: $message-padding;
+    border-radius: $message-border-radius;
+    background-color: $grey-light;
+    white-space: pre-line;
+
+    @extend %messageSpacing;
+
+    &:first-child {
+        border-bottom-left-radius: $message-border-radius-small;
+    }
+
+    &:last-child {
+        border-top-left-radius: $message-border-radius-small;
+    }
+
+    &:only-child {
+        border-bottom-left-radius: $message-border-radius-small;
+        border-top-left-radius: $message-border-radius;
+    }
+
+    &--transparent {
+        background-color: transparent;
+        color: $white;
+    }
+
+    &-h1 {
+        font-size: rem(32);
+    }
+
+    &-h2 {
+        font-size: rem(26);
+    }
+
+    &-h3 {
+        font-size: rem(18);
+    }
+
+    &-small {
+        font-size: rem(14);
+        opacity: .8;
+    }
+
+    &.is-local {
+        background-color: $blue;
+        color: $white;
+
+        &:first-child {
+            border-bottom-right-radius: $message-border-radius-small;
+            border-bottom-left-radius: $message-border-radius;
+        }
+
+        &:last-child {
+            border-top-right-radius: $message-border-radius-small;
+        }
+
+        &:only-child {
+            border-bottom-right-radius: $message-border-radius-small;
+            border-top-right-radius: $message-border-radius;
+        }
+    }
+}

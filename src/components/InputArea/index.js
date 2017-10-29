@@ -9,7 +9,8 @@ import * as messageActions from '../../actions/messages';
 import { getLatestRemote } from '../../utils/helpers';
 
 const mapStateToProps = ({ messages }) => ({
-    latestMessageResponseType: getLatestRemote(messages.messages).responseType
+    latestMessageResponseType:
+        messages.messages.length && getLatestRemote(messages.messages).responseType
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -31,7 +32,7 @@ const enhance = compose(
 
 export const InputArea = ({ InputComponent, submitHandler }) => {
     return (
-        <div>
+        <div className="ChatContainer-input">
             <InputComponent submitHandler={submitHandler} />
         </div>
     );

@@ -2,19 +2,7 @@
 import { MESSAGE_ADD } from '../actionTypes';
 
 const initialState = {
-    messages: [
-        {
-            text: 'Hi there!',
-            responseType: 'text',
-            origin: 'remote',
-            images: [
-                {
-                    url: 'http://loremflickr.com/320/240',
-                    text: 'This is an image'
-                }
-            ]
-        }
-    ]
+    messages: []
 };
 
 export default (state = initialState, action) => {

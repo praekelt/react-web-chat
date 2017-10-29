@@ -1,4 +1,58 @@
 .Input {
-    position: absolute;
-    bottom: 0;
+    &-input {
+        flex-grow: 1;
+        //height: 100%;
+        border: 0 none;
+        outline: 0 none;
+        background-color: transparent;
+        color: $blue;
+        font-size: rem(20);
+
+        &::placeholder {
+            transition: {
+                property: color;
+                timing-function: $ease-out;
+                duration: $duration;
+            }
+            color: $blue;
+        }
+
+        &:focus::placeholder {
+            transition-timing-function: $ease-in;
+            color: $blue;
+        }
+    }
+
+    &-send {
+        //height: 100%;
+        margin-left: $rhythm * 2;
+        padding: $rhythm * 2;
+        border: {
+            width: 0;
+            style: none;
+            radius: $rhythm;
+        }
+        outline: 0 none;
+        background-color: transparent;
+        color: $blue;
+        font-size: rem(20);
+        line-height: 1;
+        transition: {
+            property: background-color;
+            timing-function: $ease-out;
+            duration: $duration;
+        }
+        cursor: pointer;
+
+        &:hover,
+        &:focus {
+            transition-timing-function: $ease-in;
+            color: $blue;
+        }
+
+        &:disabled {
+            color: $blue;
+        }
+    }
+
 }

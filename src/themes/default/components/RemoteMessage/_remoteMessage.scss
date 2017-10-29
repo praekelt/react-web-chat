@@ -1,0 +1,36 @@
+.RemoteMessage {
+    display: flex;
+    overflow: hidden;
+    flex: 0 0 100%;
+
+    margin-right: auto;
+    text-align: left;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    ul,
+    ol {
+        line-height: 1.25;
+        margin: {
+            top: $message-padding / 2;
+            bottom: $message-padding / 2;
+        }
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    > * {
+        flex-grow: 1;
+    }
+}

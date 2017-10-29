@@ -12,7 +12,12 @@ const enhance = compose(
 
 export const Input = ({ submitHandler, value, setValue }) => (
     <div className="Input">
-        <input type="text" value={value} onChange={({ target: { value } }) => setValue(value)} />
+        <input
+            className="Input-input"
+            type="text"
+            value={value}
+            onChange={({ target: { value } }) => setValue(value)}
+        />
         <button onClick={() => submitHandler(value)}>SUBMIT</button>
     </div>
 );

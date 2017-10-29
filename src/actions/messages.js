@@ -17,7 +17,7 @@ export function messageReceive(message) {
 
 export function messageSend({ text }) {
     let message = {
-        text: text,
+        pages: [{ text: text, buttons: [] }],
         responseType: 'text',
         origin: 'local'
     };

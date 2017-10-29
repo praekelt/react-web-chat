@@ -16,7 +16,8 @@ const enhance = compose(
         theme: PropTypes.shape({
             ImageComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
             InputComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
-            MessageComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func])
+            MessageComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+            TextComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func])
         })
     }),
     connect(mapStateToProps)
@@ -25,10 +26,8 @@ const enhance = compose(
 export const ChatContainer = ({ theme, connection }) => {
     return (
         <div className="ChatContainer">
-            <MessageList {...theme} />
-            <InputArea InputComponent={theme.InputComponent}>
-                <h1>FOO</h1>
-            </InputArea>
+            <MessageList theme={theme} />
+            <InputArea InputComponent={theme.InputComponent} />
         </div>
     );
 };

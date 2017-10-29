@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../src/utils/animation.js"],"names":["easeInOutQuad","t"],"mappings":";;;;;AAAO,IAAMA,wCAAgB,SAAhBA,aAAgB;AAAA,SAAMC,IAAI,GAAJ,GAAU,IAAIA,CAAJ,GAAQA,CAAlB,GAAsB,CAAC,CAAD,GAAK,CAAC,IAAI,IAAIA,CAAT,IAAcA,CAA/C;AAAA,CAAtB","file":"animation.js","sourcesContent":["export const easeInOutQuad = t => (t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t);\n"]}

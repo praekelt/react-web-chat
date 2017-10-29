@@ -1,0 +1,51 @@
+.Button {
+    $block: &;
+    display: block;
+    text-align: center;
+    border: 0;
+    text-decoration: none;
+    cursor: pointer;
+    transition: {
+        property: color, background-color, box-shadow;
+        duration: $duration;
+        timing-function: $ease-out;
+    }
+
+    &--clear {
+        padding: 1rem 0;
+        background-color: transparent;
+        color: $blue;
+
+        &:hover,
+        &:focus {
+            color: $blue;
+            text-decoration: underline;
+        }
+
+        &:active {
+            color: $blue;
+        }
+    }
+
+    &--solid {
+        padding: 1rem 1rem;
+        background-color: $blue;
+        color: $white;
+        box-shadow: -1px 1px 4px 0 rgba(0, 0, 0, .25);
+
+        &:hover,
+        &:focus {
+            background-color: $blue;
+            box-shadow: -2px 4px 4px 0 rgba(0, 0, 0, .25);
+        }
+
+        &:active {
+            background-color: $blue;
+            box-shadow: -1px 1px 4px 0 rgba(0, 0, 0, .25);
+        }
+    }
+
+    &:nth-child(2) {
+        margin-left: 1rem;
+    }
+}
