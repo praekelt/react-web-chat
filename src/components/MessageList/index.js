@@ -5,14 +5,22 @@ import PropTypes from 'prop-types';
 
 import AvatarContainer from '../AvatarContainer';
 import MessageContainer from '../MessageContainer';
-
 import Message from '../Message';
+
+import * as messageActions from '../../actions/messages';
 
 import smoothScrollTo from '../../utils/smooth-scroll-to';
 
-const mapStateToProps = ({ messages }) => {
-    return { messages: messages.messages };
-};
+const mapStateToProps = ({ messages }) => ({
+    messages: messages.messages,
+    messageQueue: messages.messageQueue
+});
+
+const mapDispatchToProps = (dispatch, ownProps) => ({
+    delayedMessageAdd: message => {
+        dispatch(messageActions.delayedMessageAdd(message));
+    }
+});
 
 class MessageList extends React.Component {
     constructor(props) {
@@ -28,10 +36,14 @@ class MessageList extends React.Component {
             container: this._ref,
             duration: 20
         });
+
+        let { messageQueue, delayedMessageAdd } = this.props;
+
+        messageQueue.length && delayedMessageAdd(messageQueue[messageQueue.length - 1]);
     }
 
     render() {
-        let { theme, messages } = this.props;
+        let { theme, messages, messageQueue } = this.props;
         return (
             <ul className="ChatContainer-content" ref={ref => (this._ref = ref)}>
                 <div className="MessagesList">
@@ -47,7 +59,7 @@ class MessageList extends React.Component {
                             {message.origin === 'remote' && (
                                 <AvatarContainer AvatarComponent={theme.AvatarComponent} />
                             )}
-                            <MessageContainer isLocal={message.origin === 'local'}>
+                            <MessageContainer {...message}>
                                 {message.pages.map((page, i) => (
                                     <Message
                                         key={i}
@@ -57,6 +69,24 @@ class MessageList extends React.Component {
                                     />
                                 ))}
                             </MessageContainer>
+                            {message.buttons && (
+                                <MessageContainer {...message}>
+                                    {message.buttons.map((button, i) => (
+                                        <theme.ButtonComponent key={i} text={button.text} />
+                                    ))}
+                                </MessageContainer>
+                            )}
+                            {messageQueue.length && i === messages.length - 1
+                                ? [
+                                      <AvatarContainer
+                                          key="avatar"
+                                          AvatarComponent={theme.AvatarComponent}
+                                      />,
+                                      <MessageContainer {...message}>
+                                          <theme.TypingIndicatorComponent />
+                                      </MessageContainer>
+                                  ]
+                                : null}
                         </li>
                     ))}
                 </div>
@@ -75,4 +105,4 @@ MessageList.PropTypes = {
     })
 };
 
-export default connect(mapStateToProps)(MessageList);
+export default connect(mapStateToProps, mapDispatchToProps)(MessageList);

@@ -9,6 +9,10 @@ const enhance = compose(
     })
 );
 
-const Button = ({ text }) => <button className="Button Button--solid">{text}</button>;
+const Button = ({ text, onClick }) => (
+    <button className="Button Button--solid" onClick={onClick}>
+        {text}
+    </button>
+);
 
 export default enhance(Button);

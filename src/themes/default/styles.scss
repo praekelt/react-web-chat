@@ -47,7 +47,7 @@ $message-spacing-thick: 1.25em;
 $message-spacing-thin: 5px;
 
 %chatWidth {
-    width: 94%;
+    width: 100%;
     max-width: 100%;
     margin: {
         left: auto;
@@ -77,7 +77,7 @@ $ease-out: ease-out;
 $duration: 200ms;
 
 // GRID:
-$rhythm: 1 / 67 * 100vw;
+$rhythm: 1 / 67 * 420px;
 
 // GLOBALS
 .AvatarStatus {
@@ -106,6 +106,8 @@ $rhythm: 1 / 67 * 100vw;
     background-color: $background;
 
     &-content {
+        margin: 0;
+        padding: 0 $rhythm * 2;
         list-style: none;
         display: flex;
         flex-direction: column-reverse;
@@ -120,8 +122,10 @@ $rhythm: 1 / 67 * 100vw;
 
     &-input {
         @extend %chatWidth;
+        position: relative;
+        display: flex;
         width: 100%;
-        height: auto;
+        height: 10%;
         background-color: transparent;
     }
 }
@@ -132,7 +136,6 @@ $rhythm: 1 / 67 * 100vw;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    padding: 0 1rem;
     margin: {
         top: $message-spacing-thick;
         bottom: $message-spacing-thick;
@@ -163,9 +166,11 @@ $rhythm: 1 / 67 * 100vw;
     }
 }
 
-@import './components/Button/_button.scss';
-@import './components/Text/_text.scss';
+@import './_animations.scss';
+
 @import './components/Avatar/_avatar.scss';
-@import './components/LocalMessage/_localMessage.scss';
-@import './components/RemoteMessage/_remoteMessage.scss';
+@import './components/Button/_button.scss';
 @import './components/Input/_input.scss';
+@import './components/Menu/_menu.scss';
+@import './components/Text/_text.scss';
+@import './components/TypingIndicator/_typing-indicator.scss';

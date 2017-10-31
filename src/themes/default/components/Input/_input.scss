@@ -1,11 +1,16 @@
 .Input {
+    background-color: $white;
+    height: 100%;
+    width: 100%;
+    display: flex;
     &-input {
         flex-grow: 1;
-        //height: 100%;
+        padding: $rhythm * 2;
+        height: 100%;
         border: 0 none;
         outline: 0 none;
         background-color: transparent;
-        color: $blue;
+        color: $grey-dark;
         font-size: rem(20);
 
         &::placeholder {
@@ -14,18 +19,18 @@
                 timing-function: $ease-out;
                 duration: $duration;
             }
-            color: $blue;
+            color: $grey;
         }
 
         &:focus::placeholder {
             transition-timing-function: $ease-in;
-            color: $blue;
+            color: $grey-dark;
         }
     }
 
     &-send {
         //height: 100%;
-        margin-left: $rhythm * 2;
+        height: 100%;
         padding: $rhythm * 2;
         border: {
             width: 0;
@@ -34,7 +39,7 @@
         }
         outline: 0 none;
         background-color: transparent;
-        color: $blue;
+        color: $grey-dark;
         font-size: rem(20);
         line-height: 1;
         transition: {
@@ -47,11 +52,11 @@
         &:hover,
         &:focus {
             transition-timing-function: $ease-in;
-            color: $blue;
+            color: $grey-dark;
         }
 
         &:disabled {
-            color: $blue;
+            color: $grey-light;
         }
     }
 

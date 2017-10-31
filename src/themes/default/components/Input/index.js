@@ -3,6 +3,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { compose, setPropTypes, withState } from 'recompose';
 
+import Button from '../Button';
+
 const enhance = compose(
     setPropTypes({
         submitHandler: PropTypes.func
@@ -18,7 +20,9 @@ export const Input = ({ submitHandler, value, setValue }) => (
             value={value}
             onChange={({ target: { value } }) => setValue(value)}
         />
-        <button onClick={() => submitHandler(value)}>SUBMIT</button>
+        <button className="Input-send" onClick={() => submitHandler(value)}>
+            SEND
+        </button>
     </div>
 );
 

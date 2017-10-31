@@ -5,13 +5,15 @@ import PropTypes from 'prop-types';
 import { compose, setPropTypes } from 'recompose';
 
 import * as messageActions from '../../actions/messages';
-
 import { getLatestRemote } from '../../utils/helpers';
 
-const mapStateToProps = ({ messages }) => ({
-    latestMessageResponseType:
-        messages.messages.length && getLatestRemote(messages.messages).responseType
-});
+const mapStateToProps = ({ messages }) => {
+    let latestMessage = getLatestRemote(messages.messages);
+    return {
+        buttonStyle: latestMessage && latestMessage.buttonStyle,
+        buttons: latestMessage && latestMessage.buttons
+    };
+};
 
 const mapDispatchToProps = dispatch => ({
     submitHandler: text => {
@@ -30,9 +32,16 @@ const enhance = compose(
     connect(mapStateToProps, mapDispatchToProps)
 );
 
-export const InputArea = ({ InputComponent, submitHandler }) => {
+export const InputArea = ({
+    InputComponent,
+    submitHandler,
+    buttonStyle,
+    MenuComponent,
+    buttons
+}) => {
     return (
         <div className="ChatContainer-input">
+            {buttonStyle === 'radio' && <MenuComponent items={buttons} />}
             <InputComponent submitHandler={submitHandler} />
         </div>
     );

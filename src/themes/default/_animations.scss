@@ -1,0 +1,17 @@
+.MessageAnimation-enter {
+    opacity: 0.01;
+  }
+  
+  .MessageAnimation-enter.MessageAnimation-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+  }
+  
+  .MessageAnimation-exit {
+    opacity: 1;
+  }
+  
+  .MessageAnimation-exit.MessageAnimation-exit-active {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
+  }

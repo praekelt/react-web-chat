@@ -1,0 +1,35 @@
+@keyframes blink {
+    50% {
+        opacity: 1;
+    }
+}
+
+.TypingIndicator {
+    display: block;
+    padding: $message-padding;
+    border-radius: $message-border-radius-large;
+    background-color: $white;
+
+    &-dot {
+        display: block;
+        width: 10px;
+        height: 10px;
+        margin: 0 2px;
+        float: left;
+        border-radius: 50%;
+        background-color: $grey-dark;
+        opacity: .4;
+
+        &:nth-of-type(1) {
+            animation: 1s blink infinite .333s;
+        }
+
+        &:nth-of-type(2) {
+            animation: 1s blink infinite .666s;
+        }
+
+        &:nth-of-type(3) {
+            animation: 1s blink infinite .999s;
+        }
+    }
+}

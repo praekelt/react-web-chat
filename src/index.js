@@ -41,9 +41,9 @@ class ReactWebChat {
     constructor(
         { theme, client, element, url } = {
             theme: defaultTheme,
-            client,
+            client: feersumClient,
             element,
-            url: 'http://localhost:8080/'
+            url: 'http://localhost:8080/echo'
         }
     ) {
         this.eventHandlers = { message: [], connection: [] };

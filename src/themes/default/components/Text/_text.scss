@@ -4,17 +4,20 @@
     display: inline-block;
     padding: $message-padding;
     border-radius: $message-border-radius;
-    background-color: $grey-light;
+    border-bottom-left-radius: $message-border-radius-small;
+    border-top-left-radius: $message-border-radius-small;
+    background-color: $white;
     white-space: pre-line;
+    font-family: $helvetica;
 
     @extend %messageSpacing;
 
-    &:first-child {
-        border-bottom-left-radius: $message-border-radius-small;
+    &:first-of-type {
+        border-top-left-radius: $message-border-radius;
     }
 
-    &:last-child {
-        border-top-left-radius: $message-border-radius-small;
+    &:last-of-type {
+        border-bottom-left-radius: $message-border-radius;
     }
 
     &:only-child {
@@ -45,7 +48,7 @@
     }
 
     &.is-local {
-        background-color: $blue;
+        background-color: $grey-dark;
         color: $white;
 
         &:first-child {

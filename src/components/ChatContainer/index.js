@@ -27,7 +27,7 @@ export const ChatContainer = ({ theme, connection }) => {
     return (
         <div className="ChatContainer">
             <MessageList theme={theme} />
-            <InputArea InputComponent={theme.InputComponent} />
+            <InputArea {...theme} />
         </div>
     );
 };

@@ -4,7 +4,12 @@
     "description": "react-web-chat React component",
     "main": "lib/index.js",
     "module": "es/index.js",
-    "files": ["css", "es", "lib", "umd"],
+    "files": [
+        "css",
+        "es",
+        "lib",
+        "umd"
+    ],
     "scripts": {
         "build": "nwb build-react-component",
         "clean": "nwb clean-module && nwb clean-demo",
@@ -14,6 +19,7 @@
         "test:watch": "nwb test-react --server"
     },
     "dependencies": {
+        "react-transition-group": "^2.2.1",
         "redux-thunk": "^2.2.0"
     },
     "peerDependencies": {
@@ -33,5 +39,7 @@
     "homepage": "",
     "license": "MIT",
     "repository": "",
-    "keywords": ["react-component"]
+    "keywords": [
+        "react-component"
+    ]
 }

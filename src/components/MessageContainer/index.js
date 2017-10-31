@@ -77,9 +77,11 @@ import React from 'react';
 //     layouts[layout](pages, isUser)
 // )}
 
-const MessageContainer = ({ userId, type, children, layout, isLocal, pages, ...rest }) => {
+const MessageContainer = ({ userId, type, children, layout, origin, pages, ...rest }) => {
     let hasSelectedInput = rest.selectedInput !== undefined && rest.selectedInput !== null;
-    return <div className={`MessageContainer ${isLocal ? 'is-local' : ''}`}>{children}</div>;
+    return (
+        <div className={`MessageContainer ${origin === 'local' ? 'is-local' : ''}`}>{children}</div>
+    );
 };
 
 export default MessageContainer;
