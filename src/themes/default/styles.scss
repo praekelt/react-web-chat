@@ -136,33 +136,138 @@ $rhythm: 1 / 67 * 420px;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
+
     margin: {
         top: $message-spacing-thick;
         bottom: $message-spacing-thick;
     }
 
-    // &-avatar {
-    //     @include span(first .75);
-    //     height: span(.75);
-    //     margin-bottom: (span(.75) / -2);
-    //     z-index: 1;
-    // }
+    &.is-local {
+        align-items: flex-end;
+    }
+}
 
-    &-messages {
-        width: 86%;
+.CarouselContainer {
+    @extend %chatWidth; 
+    $blockName: &;
+    align-items: flex-start;
+    width: 100%;
 
-        // @include breakpoint($bp-phablet) {
-        //     width: 70%;
-        // }
+    margin: {
+        top: $message-spacing-thick;
+        bottom: $message-spacing-thick;
     }
 
     &-item {
-        @extend %messageSpacing;
-        overflow: hidden;
+        display: inline-block;
     }
 
-    &.is-local {
-        align-items: flex-end;
+    .Text {
+        border-radius: 0;
+        width: 100%;
+    }
+
+    .ButtonContainer {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 0;
+        white-space: normal;
+        overflow-y: visible;
+        height: auto;
+    }
+
+    .Button {
+        display: block;
+        background-color: $white;
+        border: 0;
+        border-radius: $message-border-radius-small;
+        width: 100%;
+        margin: {
+            bottom: $message-spacing-thin;
+        }
+
+        &:last-of-type {
+            border-bottom-left-radius: $message-border-radius;
+        }
+    }
+
+    .slick-slider {
+        position: relative;
+        .slick-prev {
+            position: absolute;
+            border: 0;
+            left: $message-spacing-thick * -1;
+            width: $message-spacing-thick;
+            top: 0;
+            height: 100%;
+            background-color: $grey-light;
+            color: $white;
+            transition: .2s ease;
+            z-index: 1;
+            outline: none;
+            border-top-right-radius: $message-border-radius-small;
+            border-bottom-right-radius: $message-border-radius-small;
+            cursor: pointer;
+            &:hover {
+                width: 2rem;
+                background-color: $grey-dark;
+            }
+        }
+        .slick-next {
+            @extend .slick-prev;
+            right: $message-spacing-thick * -1;
+            left: auto;
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+            border-top-left-radius: $message-border-radius-small;
+            border-bottom-left-radius: $message-border-radius-small;
+        }
+        .slick-dots {
+            list-style: none;
+            padding-left: 0;
+            margin: 0 auto;
+            text-align: center;
+            li {
+                display: inline-block;
+                button {
+                    background-color: $grey-light;
+                    border: 0;
+                    color: $grey-light;
+                    outline: none;
+                    transition: .2s ease;
+                    cursor: pointer;
+                    border-radius: .5rem;
+                    width: 1rem;
+                    height: 1rem;
+                    margin: $message-spacing-thin;
+                }
+
+                &.slick-active {
+                    button {
+                        background-color: $grey-dark;
+                        color: $grey-dark;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ButtonContainer {
+    height: 2.2rem;
+    width: 109%;
+    margin-top: $rhythm * 2;
+    margin-left: $rhythm * -2;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    
+    &::-webkit-scrollbar { 
+        display: none; 
+    }
+
+    .Button {
+        display: inline-block;
     }
 }
 

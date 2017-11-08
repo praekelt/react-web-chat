@@ -1,86 +1,41 @@
 import React from 'react';
+import Slider from 'react-slick';
 
-// import AvatarStatus from './AvatarStatus';
-// import ContentType from './ContentType';
-// import Carousel from './Carousel';
-// import ChatCarousel from './ChatCarousel';
-// import List from './List';
-// import Message from './Message';
+const layoutClasses = {
+    plain: 'MessageContainer',
+    list: 'ListContainer',
+    carousel: 'CarouselContainer'
+};
 
-// This should be fetched from API/Passed down from config.
-// const botId = 0;
-
-// const PlainMessage = (pages, isUser) => {
-//     return (
-//         <div className="MessageBurst-messages">
-//             {pages.map((page, i) => (
-//                 <div key={page.key || i} className="MessageBurst-item">
-//                     <Message>
-//                         <ContentType {...page} isUser={isUser} />
-//                     </Message>
-//                 </div>
-//             ))}
-//         </div>
-//     );
-// };
-
-// const AnswerMessage = ({ pages, isUser = true }) => {
-//     return (
-//         <div className="MessageBurst-messages">
-//             {pages.map((page, i) => (
-//                 <div key={page.key || i} className="MessageBurst-item">
-//                     <Message>
-//                         <ContentType {...page} isUser={isUser} />
-//                     </Message>
-//                 </div>
-//             ))}
-//         </div>
-//     );
-// };
-
-// const ListMessage = pages => (
-//     <div className="MessageBurst-messages">
-//         {/* this had a key previously pete? is it an issue that it doesnt now? */}
-//         <div className="MessageBurst-item">
-//             <Message>
-//                 <List items={pages} />
-//             </Message>
-//         </div>
-//     </div>
-// );
-
-// const CarouselMessage = pages => {
-//     // return pages[0].buttons
-//     //     ? <ChatCarousel pages={pages}/>
-//     //     : <Carousel pages={pages}/>
-//     //
-//     return <ChatCarousel pages={pages} />;
-// };
-
-// const layouts = {
-//     plain: PlainMessage,
-//     list: ListMessage,
-//     carousel: CarouselMessage
-// };
-
-// {hasSelectedInput ? (
-//     <AnswerMessage
-//         {...{
-//             pages: [
-//                 {
-//                     text: pages[0].buttons[rest.selectedInput].text
-//                 }
-//             ]
-//         }}
-//     />
-// ) : (
-//     layouts[layout](pages, isUser)
-// )}
+const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    nextArrow: <button className="slick-next" />,
+    prevArrow: <button className="slick-next" />
+};
 
 const MessageContainer = ({ userId, type, children, layout, origin, pages, ...rest }) => {
     let hasSelectedInput = rest.selectedInput !== undefined && rest.selectedInput !== null;
+
     return (
-        <div className={`MessageContainer ${origin === 'local' ? 'is-local' : ''}`}>{children}</div>
+        <div
+            className={`${layoutClasses[layout] || 'MessageContainer'} ${origin === 'local'
+                ? 'is-local'
+                : ''}`}
+        >
+            {layout === 'carousel' ? (
+                <Slider {...sliderSettings}>
+                    {React.Children.map(children, child => (
+                        <div className="CarouselContainer-item">{child}</div>
+                    ))}
+                </Slider>
+            ) : (
+                children
+            )}
+        </div>
     );
 };
 

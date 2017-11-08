@@ -32,6 +32,9 @@ window.addEventListener('scroll', scrollHandler);
  */
 function smoothScrollTo({ to, container = window, duration = 20, data }) {
     return new Promise(resolve => {
+        if (!to) {
+            resolve();
+        }
         if (!animating) {
             animating = true;
             setScrollInterruptFlag(false);

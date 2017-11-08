@@ -18,7 +18,7 @@ const enhance = compose(
     )
 );
 
-export const Menu = ({ open, toggleState, items }) => (
+export const Menu = ({ open, toggleState, items, submitHandler }) => (
     <div className={`Menu ${open ? 'is-open' : ''}`}>
         {items && (
             <ul className="Menu-items">
@@ -27,6 +27,7 @@ export const Menu = ({ open, toggleState, items }) => (
                         className="Menu-item"
                         key={i}
                         onClick={() => {
+                            submitHandler(item.text);
                             toggleState();
                         }}
                     >

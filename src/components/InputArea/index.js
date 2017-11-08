@@ -41,7 +41,9 @@ export const InputArea = ({
 }) => {
     return (
         <div className="ChatContainer-input">
-            {buttonStyle === 'radio' && <MenuComponent items={buttons} />}
+            {buttonStyle === 'radio' && (
+                <MenuComponent items={buttons} submitHandler={submitHandler} />
+            )}
             <InputComponent submitHandler={submitHandler} />
         </div>
     );

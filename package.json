@@ -19,6 +19,7 @@
         "test:watch": "nwb test-react --server"
     },
     "dependencies": {
+        "react-slick": "^0.15.4",
         "react-transition-group": "^2.2.1",
         "redux-thunk": "^2.2.0"
     },

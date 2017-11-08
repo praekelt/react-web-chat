@@ -10,6 +10,7 @@ import Message from '../Message';
 import * as messageActions from '../../actions/messages';
 
 import smoothScrollTo from '../../utils/smooth-scroll-to';
+import Avatar from '../../../es/themes/default/components/Avatar/index';
 
 const mapStateToProps = ({ messages }) => ({
     messages: messages.messages,
@@ -19,6 +20,9 @@ const mapStateToProps = ({ messages }) => ({
 const mapDispatchToProps = (dispatch, ownProps) => ({
     delayedMessageAdd: message => {
         dispatch(messageActions.delayedMessageAdd(message));
+    },
+    submitHandler: text => {
+        dispatch(messageActions.messageSend({ text }));
     }
 });
 
@@ -43,7 +47,7 @@ class MessageList extends React.Component {
     }
 
     render() {
-        let { theme, messages, messageQueue } = this.props;
+        let { theme, messages, messageQueue, submitHandler } = this.props;
         return (
             <ul className="ChatContainer-content" ref={ref => (this._ref = ref)}>
                 <div className="MessagesList">
@@ -59,30 +63,36 @@ class MessageList extends React.Component {
                             {message.origin === 'remote' && (
                                 <AvatarContainer AvatarComponent={theme.AvatarComponent} />
                             )}
-                            <MessageContainer {...message}>
+                            <MessageContainer key="text" {...message}>
                                 {message.pages.map((page, i) => (
                                     <Message
                                         key={i}
                                         page={page}
                                         isLocal={message.origin === 'local'}
                                         {...theme}
+                                        submitHandler={submitHandler}
                                     />
                                 ))}
                             </MessageContainer>
-                            {message.buttons && (
-                                <MessageContainer {...message}>
-                                    {message.buttons.map((button, i) => (
-                                        <theme.ButtonComponent key={i} text={button.text} />
-                                    ))}
-                                </MessageContainer>
-                            )}
+                            {message.buttons &&
+                                message.buttonStyle === 'default' && (
+                                    <MessageContainer key="buttons" {...message}>
+                                        {message.buttons.map((button, i) => (
+                                            <theme.ButtonComponent
+                                                key={i}
+                                                text={button.text}
+                                                onClick={() => submitHandler(button.text)}
+                                            />
+                                        ))}
+                                    </MessageContainer>
+                                )}
                             {messageQueue.length && i === messages.length - 1
                                 ? [
                                       <AvatarContainer
                                           key="avatar"
                                           AvatarComponent={theme.AvatarComponent}
                                       />,
-                                      <MessageContainer {...message}>
+                                      <MessageContainer key="typing">
                                           <theme.TypingIndicatorComponent />
                                       </MessageContainer>
                                   ]
