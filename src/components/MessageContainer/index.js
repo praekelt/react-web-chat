@@ -7,6 +7,7 @@ const layoutClasses = {
     carousel: 'CarouselContainer'
 };
 
+// TODO: Test browser resizing
 const sliderSettings = {
     dots: true,
     infinite: true,

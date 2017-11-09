@@ -40,9 +40,9 @@ $helvetica: Helvetica, 'Montserrat', sans-serif;
 
 // SPACING
 $message-border-radius: 1.5em;
-$message-border-radius-large: .625em;
+$message-border-radius-large: 0.625em;
 $message-border-radius-small: $message-border-radius / 4;
-$message-padding: .75em;
+$message-padding: 0.75em;
 $message-spacing-thick: 1.25em;
 $message-spacing-thin: 5px;
 
@@ -99,7 +99,6 @@ $rhythm: 1 / 67 * 420px;
     }
 }
 
-
 .ChatContainer {
     height: 100%;
     overflow-y: hidden;
@@ -134,7 +133,7 @@ $rhythm: 1 / 67 * 420px;
 }
 
 .MessageContainer {
-    @extend %chatWidth; 
+    @extend %chatWidth;
     $blockName: &;
     display: flex;
     align-items: flex-start;
@@ -154,7 +153,7 @@ $rhythm: 1 / 67 * 420px;
 }
 
 .CarouselContainer {
-    @extend %chatWidth; 
+    @extend %chatWidth;
     $blockName: &;
     align-items: flex-start;
     width: 100%;
@@ -212,9 +211,11 @@ $rhythm: 1 / 67 * 420px;
             top: 0;
             height: 100%;
             background-color: $grey-light;
+
             color: $white;
-            transition: .2s ease;
+            transition: 0.2s ease;
             z-index: 1;
+
             outline: none;
             border-top-right-radius: $message-border-radius-small;
             border-bottom-right-radius: $message-border-radius-small;
@@ -245,9 +246,9 @@ $rhythm: 1 / 67 * 420px;
                     border: 0;
                     color: $grey-light;
                     outline: none;
-                    transition: .2s ease;
+                    transition: 0.2s ease;
                     cursor: pointer;
-                    border-radius: .5rem;
+                    border-radius: 0.5rem;
                     width: 1rem;
                     height: 1rem;
                     margin: $message-spacing-thin;
@@ -269,12 +270,13 @@ $rhythm: 1 / 67 * 420px;
     width: 109%;
     margin-top: $rhythm * 2;
     margin-left: $rhythm * -2;
+    margin-bottom: $rhythm * 2;
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
-    
-    &::-webkit-scrollbar { 
-        display: none; 
+
+    &::-webkit-scrollbar {
+        display: none;
     }
 
     .Button {

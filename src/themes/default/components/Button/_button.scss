@@ -5,6 +5,7 @@
     text-decoration: none;
     font-family: $helvetica;
     cursor: pointer;
+    margin-left: $message-spacing-thin;
     transition: {
         property: color, background-color, box-shadow;
         duration: $duration;
@@ -28,7 +29,7 @@
     }
 
     &--solid {
-        padding: .5rem .5rem;
+        padding: 0.5rem 0.5rem;
         background-color: $background;
         color: $grey-dark;
         border-color: $grey-dark;
