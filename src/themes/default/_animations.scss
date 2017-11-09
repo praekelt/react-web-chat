@@ -1,17 +1,31 @@
-.MessageAnimation-enter {
+.fade-enter {
     opacity: 0.01;
-  }
-  
-  .MessageAnimation-enter.MessageAnimation-enter-active {
+}
+
+.fade-enter.fade-enter-active {
     opacity: 1;
-    transition: opacity 500ms ease-in;
-  }
-  
-  .MessageAnimation-exit {
+    transition: 300ms ease-in;
+}
+
+.fade-exit {
     opacity: 1;
-  }
-  
-  .MessageAnimation-exit.MessageAnimation-exit-active {
+}
+
+.fade-exit.fade-exit-active {
     opacity: 0.01;
-    transition: opacity 300ms ease-in;
-  }
+}
+
+.fade-appear {
+    transform: rotateY(90deg) rotateZ(20deg);
+    transform-origin: 0% 0%;
+}
+
+.fade-appear.is-local {
+    transform: rotateY(90deg) rotateZ(-20deg);
+    transform-origin: 100% 0%;
+}
+
+.fade-appear.fade-appear-active {
+    transform: rotateY(0deg) rotateZ(0deg);
+    transition: 350ms ease;
+}
