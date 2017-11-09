@@ -37,12 +37,16 @@ export const InputArea = ({
     submitHandler,
     buttonStyle,
     MenuComponent,
+    CheckboxMenuComponent,
     buttons
 }) => {
     return (
         <div className="ChatContainer-input">
             {buttonStyle === 'radio' && (
                 <MenuComponent items={buttons} submitHandler={submitHandler} />
+            )}
+            {buttonStyle === 'checkbox' && (
+                <CheckboxMenuComponent items={buttons} submitHandler={submitHandler} />
             )}
             <InputComponent submitHandler={submitHandler} />
         </div>

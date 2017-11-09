@@ -9,8 +9,8 @@ import Message from '../Message';
 
 import * as messageActions from '../../actions/messages';
 
-import smoothScrollTo from '../../utils/smooth-scroll-to';
 import Avatar from '../../../es/themes/default/components/Avatar/index';
+import networkManager from '../../../es/utils/network';
 
 const mapStateToProps = ({ messages }) => ({
     messages: messages.messages,
@@ -35,11 +35,9 @@ class MessageList extends React.Component {
     }
 
     componentDidUpdate() {
-        smoothScrollTo({
-            to: this._last,
-            container: this._ref,
-            duration: 20
-        });
+        this._last &&
+            this._last.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'end' });
+        //this._ref.scrollTop += 10;
 
         let { messageQueue, delayedMessageAdd } = this.props;
 

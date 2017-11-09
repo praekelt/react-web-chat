@@ -1,0 +1,35 @@
+.Image {
+    width: 100%;
+    border-radius: $message-border-radius;
+    overflow: hidden;
+    background-color: $white;
+    margin: $message-spacing-thin 0;
+    &-image {
+        display: block;
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        object-position: center;
+    }
+
+    &-text {
+        padding: $message-padding;
+        font-family: $helvetica;
+        margin: 0;
+    }
+    &-loader {
+        background-color: $grey-light;
+        position: relative;
+    }
+
+    &-loaderIcon {
+        display: block;
+        width: 4rem;
+        height: 4rem;
+        position: absolute;
+        top: 36%;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+}

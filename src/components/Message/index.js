@@ -29,7 +29,7 @@ export const Message = ({
         <TextComponent key="text" isLocal={isLocal}>
             {page.text}
         </TextComponent>,
-        page.image_url && <ImageComponent key="image" url={page.image_url} />,
+        page.image && <ImageComponent key="image" {...page.image} />,
         page.buttons.length > 0 && (
             <ButtonContainer key="buttons">
                 {page.buttons.map((button, i) => (

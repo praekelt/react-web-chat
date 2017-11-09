@@ -83,3 +83,60 @@
         }
     }
 }
+
+.CheckboxMenu {
+    $block: &;
+    &-submitButton {
+        display: none;
+        position: absolute;
+        width: 83%;
+        background-color: $grey-dark;
+        color: $white;
+        border: 0;
+        right: 0;
+        height: 100%;
+        cursor: pointer;
+    }
+
+    &-item {
+        width: 100%;
+        text-align: left;
+    }
+
+    &-checkbox {
+        width: 0;
+        height: 0;
+
+        &:checked {
+            & ~ #{$block}-label:before {
+                background-color: $grey-dark;
+            }
+        }
+    }
+
+    &-label {
+        margin-left: $message-spacing-thick * 2;
+        position: relative;
+
+        &:before {
+            position: absolute;
+            content: '';
+            width: $rhythm * 3;
+            left: $message-spacing-thick * -2;
+            height: $rhythm * 3;
+            background-color: $grey-light;
+            transition: .2s ease;
+            border-radius: $rhythm * 1.5;
+            border: 2px solid $white;
+        }
+    }
+
+    &.is-open {
+
+        #{$block} {
+            &-submitButton {
+                display: block;
+            }
+        }
+    }
+}

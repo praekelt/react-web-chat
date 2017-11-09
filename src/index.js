@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import store from './store';
 
 import { Provider } from 'react-redux';
+import 'smoothscroll-polyfill';
 
 import ChatContainer from './components/ChatContainer';
 import defaultTheme from './themes/default';
