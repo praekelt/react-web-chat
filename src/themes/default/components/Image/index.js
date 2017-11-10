@@ -5,6 +5,7 @@ import { compose, setPropTypes, lifecycle } from 'recompose';
 import { withState } from 'recompose';
 
 import infinityIcon from '../../icons/Infinity.svg';
+import { Fade } from '../Animation/index';
 
 const enhance = compose(
     setPropTypes({
@@ -27,16 +28,20 @@ const enhance = compose(
 
 export const ImageComponent = ({ url, text, loaded, height = 200 }) => {
     return (
-        <div className="Image">
-            {loaded ? (
-                <img className="Image-image" src={url} />
-            ) : (
-                <div className="Image-loader" style={{ height }}>
-                    <img className="Image-loaderIcon" src={infinityIcon} />
-                </div>
-            )}
-            {text && <p className="Image-text">{text}</p>}
-        </div>
+        <Fade in={true} appear={true}>
+            <div className="Image">
+                {loaded ? (
+                    <img className="Image-image" src={url} />
+                ) : (
+                    <div className="Image-loader" style={{ height }}>
+                        <img className="Image-loaderIcon" src={infinityIcon} />
+                    </div>
+                )}
+                {text && (
+                    <p className="Image-text Text" dangerouslySetInnerHTML={{ __html: text }} />
+                )}
+            </div>
+        </Fade>
     );
 };
 

@@ -18,12 +18,11 @@ const networkManager = {
         client
             .init(url)
             .then(_ => {
-                console.log('CONNECTED!');
                 this.bindActionEvents();
                 this.dispatch(connectionActions.established());
             })
             .catch(error => {
-                console.log('ERROR', error);
+                console.error('react-web-chat connection error: ', error);
                 this.connectionRetry();
             });
         this.subscribe();
@@ -44,13 +43,12 @@ const networkManager = {
                 this.client
                     .init(this.url)
                     .then(_ => {
-                        console.log('SUCCESS!');
                         this.bindActionEvents();
                         this.dispatch(connectionActions.established());
                         this.subscribe();
                     })
                     .catch(error => {
-                        console.error('COULD NOT CONNECT', error);
+                        console.error('react-web-chat connection error: ', error);
                         this.connectionRetry();
                     }),
             500

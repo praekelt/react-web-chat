@@ -10,7 +10,7 @@ import { getLatestRemote } from '../../utils/helpers';
 const mapStateToProps = ({ messages }) => {
     let latestMessage = getLatestRemote(messages.messages);
     return {
-        buttonStyle: latestMessage && latestMessage.buttonStyle,
+        inputExpected: latestMessage && latestMessage.input_expected,
         buttons: latestMessage && latestMessage.buttons
     };
 };
@@ -35,17 +35,17 @@ const enhance = compose(
 export const InputArea = ({
     InputComponent,
     submitHandler,
-    buttonStyle,
+    inputExpected,
     MenuComponent,
     CheckboxMenuComponent,
     buttons
 }) => {
     return (
         <div className="ChatContainer-input">
-            {buttonStyle === 'radio' && (
+            {inputExpected === 'radio' && (
                 <MenuComponent items={buttons} submitHandler={submitHandler} />
             )}
-            {buttonStyle === 'checkbox' && (
+            {inputExpected === 'checkbox' && (
                 <CheckboxMenuComponent items={buttons} submitHandler={submitHandler} />
             )}
             <InputComponent submitHandler={submitHandler} />

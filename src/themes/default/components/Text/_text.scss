@@ -1,6 +1,6 @@
 .Text {
     //FIXME: this is necessary because this module can be namespaced. find cleaner solution
-    $blockName: "Text";
+    $blockName: 'Text';
     display: inline-block;
     padding: $message-padding;
     border-radius: $message-border-radius;
@@ -30,21 +30,21 @@
         color: $white;
     }
 
-    &-h1 {
+    & h1 {
         font-size: rem(32);
     }
 
-    &-h2 {
+    & h2 {
         font-size: rem(26);
     }
 
-    &-h3 {
+    & h3 {
         font-size: rem(18);
     }
 
     &-small {
         font-size: rem(14);
-        opacity: .8;
+        opacity: 0.8;
     }
 
     &.is-local {
