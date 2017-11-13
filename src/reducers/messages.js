@@ -1,12 +1,13 @@
 // @ts-check
-/** @module connectionReducers */
 import { MESSAGE_ADD, MESSAGE_QUEUE } from '../actionTypes';
 
 const initialState = {
     messages: [],
     messageQueue: []
 };
-
+/**
+ * @ignore
+ */
 export default (state = initialState, action) => {
     switch (action.type) {
         case MESSAGE_ADD:

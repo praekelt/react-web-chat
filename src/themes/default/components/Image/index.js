@@ -26,6 +26,15 @@ const enhance = compose(
     })
 );
 
+/**
+ * An image
+ * @param {Object} param
+ * @param {string} param.url - image url
+ * @param {number} param.width - width of the image in pixels
+ * @param {number} param.height - height of the image in pixels
+ * @return {Object} React component
+ */
+
 export const ImageComponent = ({ url, text, loaded, height = 200 }) => {
     return (
         <Fade in={true} appear={true}>

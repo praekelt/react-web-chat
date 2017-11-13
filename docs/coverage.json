@@ -1,23 +1,17 @@
 {
-  "coverage": "13.04%",
-  "expectCount": 69,
-  "actualCount": 9,
+  "coverage": "42.64%",
+  "expectCount": 68,
+  "actualCount": 29,
   "files": {
     "src/actionTypes.js": {
       "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        2
-      ]
+      "actualCount": 1,
+      "undocumentLines": []
     },
     "src/actions/connection.js": {
       "expectCount": 4,
-      "actualCount": 1,
-      "undocumentLines": [
-        16,
-        20,
-        24
-      ]
+      "actualCount": 4,
+      "undocumentLines": []
     },
     "src/actions/messages.js": {
       "expectCount": 4,
@@ -92,44 +86,35 @@
       ]
     },
     "src/index.js": {
-      "expectCount": 7,
-      "actualCount": 2,
+      "expectCount": 6,
+      "actualCount": 4,
       "undocumentLines": [
-        42,
-        50,
-        52,
-        53,
-        67
+        40,
+        70
       ]
     },
     "src/middleware/eventEmitter.js": {
       "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        2
-      ]
+      "actualCount": 1,
+      "undocumentLines": []
     },
     "src/reducers/connection.js": {
       "expectCount": 2,
-      "actualCount": 0,
+      "actualCount": 1,
       "undocumentLines": [
-        9,
-        16
+        9
       ]
     },
     "src/reducers/index.js": {
       "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        7
-      ]
+      "actualCount": 1,
+      "undocumentLines": []
     },
     "src/reducers/messages.js": {
       "expectCount": 2,
-      "actualCount": 0,
+      "actualCount": 1,
       "undocumentLines": [
-        5,
-        10
+        4
       ]
     },
     "src/store.js": {
@@ -149,61 +134,51 @@
     },
     "src/themes/default/components/Avatar/index.js": {
       "expectCount": 3,
-      "actualCount": 0,
+      "actualCount": 2,
       "undocumentLines": [
-        12,
-        28,
-        3
+        42
       ]
     },
     "src/themes/default/components/Button/index.js": {
       "expectCount": 2,
-      "actualCount": 0,
+      "actualCount": 1,
       "undocumentLines": [
-        6,
-        12
+        6
       ]
     },
     "src/themes/default/components/Image/index.js": {
       "expectCount": 2,
-      "actualCount": 0,
+      "actualCount": 1,
       "undocumentLines": [
-        10,
-        29
+        10
       ]
     },
     "src/themes/default/components/Input/index.js": {
       "expectCount": 2,
-      "actualCount": 0,
+      "actualCount": 1,
       "undocumentLines": [
-        8,
-        15
+        8
       ]
     },
     "src/themes/default/components/Menu/index.js": {
       "expectCount": 3,
-      "actualCount": 0,
+      "actualCount": 2,
       "undocumentLines": [
-        8,
-        32,
-        58
+        8
       ]
     },
     "src/themes/default/components/Text/index.js": {
       "expectCount": 3,
-      "actualCount": 0,
+      "actualCount": 1,
       "undocumentLines": [
         9,
-        14,
-        21
+        14
       ]
     },
     "src/themes/default/components/TypingIndicator/index.js": {
       "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        3
-      ]
+      "actualCount": 1,
+      "undocumentLines": []
     },
     "src/utils/filters.js": {
       "expectCount": 1,
@@ -217,10 +192,8 @@
     },
     "src/utils/network.js": {
       "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        7
-      ]
+      "actualCount": 1,
+      "undocumentLines": []
     }
   }
 }

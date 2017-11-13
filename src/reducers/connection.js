@@ -13,6 +13,9 @@ const initialState = {
     listening: false
 };
 
+/**
+ * @ignore
+ */
 export default (state = initialState, action) => {
     switch (action.type) {
         case CONNECTION_ESTABLISHED:

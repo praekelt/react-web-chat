@@ -17,7 +17,7 @@
     * [Listening](#listening)
     * [As a react component](#dispatching)
 * [Custom themes](#custom-themes)
-* [Custom network clients](#custom-clients)
+* [Custom network clients](#custom-network-clients)
 
 Installation
 ============
@@ -71,14 +71,15 @@ const reactWebChat = new ReactWebChat({
 **NOTE: `react` and `react-dom` are peer dependencies so make sure they are loaded too**
 
 ```html
-<head>
-    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/react-web-chat@1.1.2/umd/react-web-chat.js">
-</head>
 <html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+        <script src="https://unpkg.com/react-web-chat@1.1.2/umd/react-web-chat.js"/>>
+    </head>
+<body>  
     <div id="my-chat-element"> 
-</html>
+</body>  
 <script>
     var myChatElement = document.getElementByID('my-chat-element'); 
 
@@ -87,6 +88,7 @@ const reactWebChat = new ReactWebChat({
         element: reactWebChat
     });
 </script>
+</html>
 ```
 
 ## As a react component
@@ -106,7 +108,7 @@ import { ReactWebChatComponent } from 'react-web-chat'
 
 const MyComponent = props => 
     <div>
-        <ReactWebChatComponent url="http://localhost:8080">
+        <ReactWebChatComponent url="http://localhost:8080"/>
     </div>
 
 ```
@@ -172,8 +174,8 @@ Any components not specified in the custom theme object will use the default the
 
 The following components can be overridden:
 
-- AvatarComponent
-- ButtonComponent
+- [AvatarComponent](https://praekelt.github.io/react-web-chat/function/index.html#static-function-Avatar)
+- [ButtonComponent](https://praekelt.github.io/react-web-chat/function/index.html#static-function-Button)
 - CheckboxMenuComponent
 - ImageComponent
 - InputComponent
@@ -181,7 +183,7 @@ The following components can be overridden:
 - TextComponent
 - TypingIndicatorComponent
 
-Please see the [API documentation](docs/index.html) for a detailed 
+Please consult the [API documentation](https://praekelt.github.io/react-web-chat/) as a guide to help you develop custom components for your themes.
 
 ### Example
 
@@ -203,13 +205,51 @@ const MyComponent = props =>
                 ButtonComponent: Button,
                 InputComponent: Input
             }}
-        >
+        />
     </div>
 
 ```
 
 Custom network clients
 ============
+
+`react-web-chat` supports custom network clients to manage network communication with your server.
+
+Network clients have the following responsibilities:
+- determine which protocol/standard to use (WS, socket.io, HTTP, XHR, Fetch, etc.)
+- translate messages to a format the server understands
+
+Currently the only available client is [`rwc-feersum-client`](https://github.com/praekelt/rwc-feersum-client). 
+
+It's also the default client used by `react-web-chat` which happens to make use the feersum message schema.
+Further reading:
+- [Feersum Engine](https://www.feersum.io/)
+- [Feersum 0.9 Schema](http://dev.feersum.io/static/help/transports/feersum09.html#transports-feersum09-send-schema)
+
+In future there will hopefully be several clients to support a wider range of IM back-ends.
+
+## Writing your own network client
+Writing a custom network client is easy :) All you need is an object with the following methods:
+
+```js
+const feersumClient = {
+    init(url) {
+        // Connect to server, then bind "onmessage" and "onclose" methods.
+    },
+
+    send(message) {
+        // Translate message from feersum schema, then send to server. 
+    },
+
+    onmessage(fn) {
+        // Translate message to feersum schema, then execute callback function with message as parameter.
+    },
+
+    onclose(fn) {
+        // Execute callback when the connection is closed.
+    }
+};
+```
 
 [build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
 [build]: https://travis-ci.org/user/repo

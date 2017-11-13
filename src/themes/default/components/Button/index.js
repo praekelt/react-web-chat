@@ -5,11 +5,19 @@ import { compose, setPropTypes } from 'recompose';
 
 const enhance = compose(
     setPropTypes({
-        text: PropTypes.string
+        text: PropTypes.string,
+        onClick: PropTypes.func
     })
 );
 
-const Button = ({ text, onClick }) => (
+/**
+ * A simple button component
+ * @param {Object} param
+ * @param {number} param.text - text to be rendered inside button.
+ * @param {function(e: Object)} param.onClick - click handler function
+ * @return {Object} React component
+ */
+export const Button = ({ text, onClick }) => (
     <button className="Button Button--solid" onClick={onClick}>
         {text}
     </button>

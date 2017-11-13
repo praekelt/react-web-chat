@@ -16,7 +16,9 @@ import networkManager from './utils/network';
  * The main react component for React Web Chat
  * @param {Object} params - An object containing configuration parameters
  * @param {Object} params.theme - Custom theme
+ * @param {Object} params.url - Chat server url to post messages to
  * @param {Object} params.client - Which client to use for network communication
+ * @return {Object} React component
  */
 export const ReactWebChatComponent = ({ theme, client = feersumClient, url }) => {
     networkManager.init({
@@ -32,11 +34,7 @@ export const ReactWebChatComponent = ({ theme, client = feersumClient, url }) =>
 };
 
 /**
- * The wrapping constructor module which exposes an interace
- * @param {Object} params - An object containing configuration parameters
- * @param {Object} params.theme - Custom theme
- * @param {Object} params.client - Which client to use for network communication
- * @param {Object} params.elemt - A target element to render to
+ * The wrapping constructor module which renders {@link ReactWebChatComponent} to the target element
  */
 class ReactWebChat {
     constructor(
@@ -47,9 +45,14 @@ class ReactWebChat {
             url: 'http://localhost:8080/echo'
         }
     ) {
-        this.eventHandlers = { message: [], connection: [] };
         if (element && element.nodeName) {
+            /**
+             * @type {Element}
+             */
             this.element = element;
+            /**
+             * @type {Object}
+             */
             this.client = client;
             this.bindEventsToActions();
             ReactDOM.render(

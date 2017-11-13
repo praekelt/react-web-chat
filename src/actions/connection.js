@@ -7,20 +7,32 @@ import {
 
 /**
  * Sets connection to established
- * @param {object} message 
+ * @return {{type: CONNECTION_ESTABLISHED}} redux action type returned
  */
-export const established = message => ({
+export const established = _ => ({
     type: CONNECTION_ESTABLISHED
 });
 
-export const attempted = message => ({
+/**
+ * Sets connection to attempted
+ * @return {{type: CONNECTION_ATTEMPTED}} redux action type returned
+ */
+export const attempted = _ => ({
     type: CONNECTION_ATTEMPTED
 });
 
-export const dropped = message => ({
+/**
+ * Sets connection to offline
+ * @return {{type: CONNECTION_DROPPED}} redux action type returned
+ */
+export const dropped = _ => ({
     type: CONNECTION_DROPPED
 });
 
-export const listening = message => ({
+/**
+ * Sets connection to listening
+ * @return {{type: CONNECTION_LISTENING}} redux action type returned
+ */
+export const listening = _ => ({
     type: CONNECTION_LISTENING
 });

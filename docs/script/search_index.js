@@ -12,6 +12,12 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "react-web-chat/src/themes/default/components/button/index.js~button",
+    "function/index.html#static-function-Button",
+    "<span>Button</span> <span class=\"search-result-import-path\">react-web-chat/src/themes/default/components/Button/index.js</span>",
+    "function"
+  ],
+  [
     "react-web-chat/src/components/buttoncontainer/index.js~buttoncontainer",
     "function/index.html#static-function-ButtonContainer",
     "<span>ButtonContainer</span> <span class=\"search-result-import-path\">react-web-chat/src/components/ButtonContainer/index.js</span>",
@@ -54,12 +60,6 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
-    "react-web-chat/src/actiontypes.js~message_add",
-    "variable/index.html#static-variable-MESSAGE_ADD",
-    "<span>MESSAGE_ADD</span> <span class=\"search-result-import-path\">react-web-chat/src/actionTypes.js</span>",
-    "variable"
-  ],
-  [
     "react-web-chat/src/themes/default/components/menu/index.js~menu",
     "function/index.html#static-function-Menu",
     "<span>Menu</span> <span class=\"search-result-import-path\">react-web-chat/src/themes/default/components/Menu/index.js</span>",
@@ -99,12 +99,6 @@ window.esdocSearchIndex = [
     "react-web-chat/src/actions/connection.js~attempted",
     "function/index.html#static-function-attempted",
     "<span>attempted</span> <span class=\"search-result-import-path\">react-web-chat/src/actions/connection.js</span>",
-    "function"
-  ],
-  [
-    "react-web-chat/src/reducers/connection.js~connection",
-    "function/index.html#static-function-connection",
-    "<span>connection</span> <span class=\"search-result-import-path\">react-web-chat/src/reducers/connection.js</span>",
     "function"
   ],
   [
@@ -162,21 +156,9 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
-    "react-web-chat/src/reducers/messages.js~messages",
-    "function/index.html#static-function-messages",
-    "<span>messages</span> <span class=\"search-result-import-path\">react-web-chat/src/reducers/messages.js</span>",
-    "function"
-  ],
-  [
     "react-web-chat/src/utils/network.js~networkmanager",
     "variable/index.html#static-variable-networkManager",
     "<span>networkManager</span> <span class=\"search-result-import-path\">react-web-chat/src/utils/network.js</span>",
-    "variable"
-  ],
-  [
-    "react-web-chat/src/reducers/index.js~reducers",
-    "variable/index.html#static-variable-reducers",
-    "<span>reducers</span> <span class=\"search-result-import-path\">react-web-chat/src/reducers/index.js</span>",
     "variable"
   ],
   [
@@ -555,12 +537,6 @@ window.esdocSearchIndex = [
     "src/index.js~reactwebchat#element",
     "class/src/index.js~ReactWebChat.html#instance-member-element",
     "src/index.js~ReactWebChat#element",
-    "member"
-  ],
-  [
-    "src/index.js~reactwebchat#eventhandlers",
-    "class/src/index.js~ReactWebChat.html#instance-member-eventHandlers",
-    "src/index.js~ReactWebChat#eventHandlers",
     "member"
   ],
   [

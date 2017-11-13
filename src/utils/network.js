@@ -4,6 +4,14 @@ import { MESSAGE_ADD, MESSAGE_SEND } from '../actionTypes';
 import * as connectionActions from '../actions/connection';
 import * as messageActions from '../actions/messages';
 
+/**
+ * Network manager that handles message sending and receiving.
+ * @type {Object}
+ * @property {function()} networkManager.init Initilises network client and binds events
+ * @property {function()} networkManager.messageReceiveHandler Dispatches redux action when message is received from client
+ * @property {function()} networkManager.connectionCloseHandler Dispatches redux action when connection is dropped. Also retries connection.
+ * @property {function()} networkManager.connectionRetry Recursively retries network connection
+ */
 const networkManager = {
     init({ store, client, url }) {
         this.url = url;

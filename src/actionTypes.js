@@ -1,4 +1,7 @@
 // @ts-check
+/**
+ * @ignore
+ */
 export const MESSAGE_ADD = 'MESSAGE_ADD',
     MESSAGE_SEND = 'MESSAGE_SEND',
     MESSAGE_RECEIVE = 'MESSAGE_RECEIVE',

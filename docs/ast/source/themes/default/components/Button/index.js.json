@@ -1,28 +1,28 @@
 {
   "type": "File",
   "start": 0,
-  "end": 382,
+  "end": 658,
   "loc": {
     "start": {
       "line": 1,
       "column": 0
     },
     "end": {
-      "line": 19,
+      "line": 27,
       "column": 0
     }
   },
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 382,
+    "end": 658,
     "loc": {
       "start": {
         "line": 1,
         "column": 0
       },
       "end": {
-        "line": 19,
+        "line": 27,
         "column": 0
       }
     },
@@ -324,14 +324,14 @@
       {
         "type": "VariableDeclaration",
         "start": 127,
-        "end": 211,
+        "end": 244,
         "loc": {
           "start": {
             "line": 6,
             "column": 0
           },
           "end": {
-            "line": 10,
+            "line": 11,
             "column": 2
           }
         },
@@ -339,14 +339,14 @@
           {
             "type": "VariableDeclarator",
             "start": 133,
-            "end": 210,
+            "end": 243,
             "loc": {
               "start": {
                 "line": 6,
                 "column": 6
               },
               "end": {
-                "line": 10,
+                "line": 11,
                 "column": 1
               }
             },
@@ -370,14 +370,14 @@
             "init": {
               "type": "CallExpression",
               "start": 143,
-              "end": 210,
+              "end": 243,
               "loc": {
                 "start": {
                   "line": 6,
                   "column": 16
                 },
                 "end": {
-                  "line": 10,
+                  "line": 11,
                   "column": 1
                 }
               },
@@ -402,14 +402,14 @@
                 {
                   "type": "CallExpression",
                   "start": 156,
-                  "end": 208,
+                  "end": 241,
                   "loc": {
                     "start": {
                       "line": 7,
                       "column": 4
                     },
                     "end": {
-                      "line": 9,
+                      "line": 10,
                       "column": 6
                     }
                   },
@@ -434,14 +434,14 @@
                     {
                       "type": "ObjectExpression",
                       "start": 169,
-                      "end": 207,
+                      "end": 240,
                       "loc": {
                         "start": {
                           "line": 7,
                           "column": 17
                         },
                         "end": {
-                          "line": 9,
+                          "line": 10,
                           "column": 5
                         }
                       },
@@ -530,6 +530,91 @@
                             },
                             "computed": false
                           }
+                        },
+                        {
+                          "type": "ObjectProperty",
+                          "start": 211,
+                          "end": 234,
+                          "loc": {
+                            "start": {
+                              "line": 9,
+                              "column": 8
+                            },
+                            "end": {
+                              "line": 9,
+                              "column": 31
+                            }
+                          },
+                          "method": false,
+                          "shorthand": false,
+                          "computed": false,
+                          "key": {
+                            "type": "Identifier",
+                            "start": 211,
+                            "end": 218,
+                            "loc": {
+                              "start": {
+                                "line": 9,
+                                "column": 8
+                              },
+                              "end": {
+                                "line": 9,
+                                "column": 15
+                              },
+                              "identifierName": "onClick"
+                            },
+                            "name": "onClick"
+                          },
+                          "value": {
+                            "type": "MemberExpression",
+                            "start": 220,
+                            "end": 234,
+                            "loc": {
+                              "start": {
+                                "line": 9,
+                                "column": 17
+                              },
+                              "end": {
+                                "line": 9,
+                                "column": 31
+                              }
+                            },
+                            "object": {
+                              "type": "Identifier",
+                              "start": 220,
+                              "end": 229,
+                              "loc": {
+                                "start": {
+                                  "line": 9,
+                                  "column": 17
+                                },
+                                "end": {
+                                  "line": 9,
+                                  "column": 26
+                                },
+                                "identifierName": "PropTypes"
+                              },
+                              "name": "PropTypes"
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "start": 230,
+                              "end": 234,
+                              "loc": {
+                                "start": {
+                                  "line": 9,
+                                  "column": 27
+                                },
+                                "end": {
+                                  "line": 9,
+                                  "column": 31
+                                },
+                                "identifierName": "func"
+                              },
+                              "name": "func"
+                            },
+                            "computed": false
+                          }
                         }
                       ]
                     }
@@ -539,524 +624,599 @@
             }
           }
         ],
-        "kind": "const"
+        "kind": "const",
+        "trailingComments": [
+          {
+            "type": "CommentBlock",
+            "value": "*\n * A simple button component\n * @param {Object} param\n * @param {number} param.text - text to be rendered inside button.\n * @param {function(e: Object)} param.onClick - click handler function\n * @return {Object} React component\n ",
+            "start": 246,
+            "end": 481,
+            "loc": {
+              "start": {
+                "line": 13,
+                "column": 0
+              },
+              "end": {
+                "line": 19,
+                "column": 3
+              }
+            }
+          }
+        ]
       },
       {
-        "type": "VariableDeclaration",
-        "start": 213,
-        "end": 348,
+        "type": "ExportNamedDeclaration",
+        "start": 482,
+        "end": 624,
         "loc": {
           "start": {
-            "line": 12,
+            "line": 20,
             "column": 0
           },
           "end": {
-            "line": 16,
+            "line": 24,
             "column": 2
           }
         },
-        "declarations": [
-          {
-            "type": "VariableDeclarator",
-            "start": 219,
-            "end": 347,
-            "loc": {
-              "start": {
-                "line": 12,
-                "column": 6
-              },
-              "end": {
-                "line": 16,
-                "column": 1
-              }
+        "specifiers": [],
+        "source": null,
+        "declaration": {
+          "type": "VariableDeclaration",
+          "start": 489,
+          "end": 624,
+          "loc": {
+            "start": {
+              "line": 20,
+              "column": 7
             },
-            "id": {
-              "type": "Identifier",
-              "start": 219,
-              "end": 225,
+            "end": {
+              "line": 24,
+              "column": 2
+            }
+          },
+          "declarations": [
+            {
+              "type": "VariableDeclarator",
+              "start": 495,
+              "end": 623,
               "loc": {
                 "start": {
-                  "line": 12,
-                  "column": 6
+                  "line": 20,
+                  "column": 13
                 },
                 "end": {
-                  "line": 12,
-                  "column": 12
-                },
-                "identifierName": "Button"
-              },
-              "name": "Button"
-            },
-            "init": {
-              "type": "ArrowFunctionExpression",
-              "start": 228,
-              "end": 347,
-              "loc": {
-                "start": {
-                  "line": 12,
-                  "column": 15
-                },
-                "end": {
-                  "line": 16,
+                  "line": 24,
                   "column": 1
                 }
               },
               "id": {
                 "type": "Identifier",
-                "start": 219,
-                "end": 225,
+                "start": 495,
+                "end": 501,
                 "loc": {
                   "start": {
-                    "line": 12,
-                    "column": 6
+                    "line": 20,
+                    "column": 13
                   },
                   "end": {
-                    "line": 12,
-                    "column": 12
+                    "line": 20,
+                    "column": 19
                   },
                   "identifierName": "Button"
                 },
-                "name": "Button"
+                "name": "Button",
+                "leadingComments": null
               },
-              "generator": false,
-              "expression": true,
-              "async": false,
-              "params": [
-                {
-                  "type": "ObjectPattern",
-                  "start": 229,
-                  "end": 246,
-                  "loc": {
-                    "start": {
-                      "line": 12,
-                      "column": 16
-                    },
-                    "end": {
-                      "line": 12,
-                      "column": 33
-                    }
-                  },
-                  "properties": [
-                    {
-                      "type": "ObjectProperty",
-                      "start": 231,
-                      "end": 235,
-                      "loc": {
-                        "start": {
-                          "line": 12,
-                          "column": 18
-                        },
-                        "end": {
-                          "line": 12,
-                          "column": 22
-                        }
-                      },
-                      "method": false,
-                      "shorthand": true,
-                      "computed": false,
-                      "key": {
-                        "type": "Identifier",
-                        "start": 231,
-                        "end": 235,
-                        "loc": {
-                          "start": {
-                            "line": 12,
-                            "column": 18
-                          },
-                          "end": {
-                            "line": 12,
-                            "column": 22
-                          },
-                          "identifierName": "text"
-                        },
-                        "name": "text"
-                      },
-                      "value": {
-                        "type": "Identifier",
-                        "start": 231,
-                        "end": 235,
-                        "loc": {
-                          "start": {
-                            "line": 12,
-                            "column": 18
-                          },
-                          "end": {
-                            "line": 12,
-                            "column": 22
-                          },
-                          "identifierName": "text"
-                        },
-                        "name": "text"
-                      },
-                      "extra": {
-                        "shorthand": true
-                      }
-                    },
-                    {
-                      "type": "ObjectProperty",
-                      "start": 237,
-                      "end": 244,
-                      "loc": {
-                        "start": {
-                          "line": 12,
-                          "column": 24
-                        },
-                        "end": {
-                          "line": 12,
-                          "column": 31
-                        }
-                      },
-                      "method": false,
-                      "shorthand": true,
-                      "computed": false,
-                      "key": {
-                        "type": "Identifier",
-                        "start": 237,
-                        "end": 244,
-                        "loc": {
-                          "start": {
-                            "line": 12,
-                            "column": 24
-                          },
-                          "end": {
-                            "line": 12,
-                            "column": 31
-                          },
-                          "identifierName": "onClick"
-                        },
-                        "name": "onClick"
-                      },
-                      "value": {
-                        "type": "Identifier",
-                        "start": 237,
-                        "end": 244,
-                        "loc": {
-                          "start": {
-                            "line": 12,
-                            "column": 24
-                          },
-                          "end": {
-                            "line": 12,
-                            "column": 31
-                          },
-                          "identifierName": "onClick"
-                        },
-                        "name": "onClick"
-                      },
-                      "extra": {
-                        "shorthand": true
-                      }
-                    }
-                  ]
-                }
-              ],
-              "body": {
-                "type": "JSXElement",
-                "start": 257,
-                "end": 345,
+              "init": {
+                "type": "ArrowFunctionExpression",
+                "start": 504,
+                "end": 623,
                 "loc": {
                   "start": {
-                    "line": 13,
-                    "column": 4
+                    "line": 20,
+                    "column": 22
                   },
                   "end": {
-                    "line": 15,
-                    "column": 13
+                    "line": 24,
+                    "column": 1
                   }
                 },
-                "openingElement": {
-                  "type": "JSXOpeningElement",
-                  "start": 257,
-                  "end": 316,
+                "id": {
+                  "type": "Identifier",
+                  "start": 495,
+                  "end": 501,
                   "loc": {
                     "start": {
-                      "line": 13,
-                      "column": 4
+                      "line": 20,
+                      "column": 13
                     },
                     "end": {
-                      "line": 13,
-                      "column": 63
-                    }
+                      "line": 20,
+                      "column": 19
+                    },
+                    "identifierName": "Button"
                   },
-                  "attributes": [
-                    {
-                      "type": "JSXAttribute",
-                      "start": 265,
-                      "end": 297,
-                      "loc": {
-                        "start": {
-                          "line": 13,
-                          "column": 12
-                        },
-                        "end": {
-                          "line": 13,
-                          "column": 44
-                        }
+                  "name": "Button",
+                  "leadingComments": null
+                },
+                "generator": false,
+                "expression": true,
+                "async": false,
+                "params": [
+                  {
+                    "type": "ObjectPattern",
+                    "start": 505,
+                    "end": 522,
+                    "loc": {
+                      "start": {
+                        "line": 20,
+                        "column": 23
                       },
-                      "name": {
-                        "type": "JSXIdentifier",
-                        "start": 265,
-                        "end": 274,
-                        "loc": {
-                          "start": {
-                            "line": 13,
-                            "column": 12
-                          },
-                          "end": {
-                            "line": 13,
-                            "column": 21
-                          }
-                        },
-                        "name": "className"
-                      },
-                      "value": {
-                        "type": "StringLiteral",
-                        "start": 275,
-                        "end": 297,
-                        "loc": {
-                          "start": {
-                            "line": 13,
-                            "column": 22
-                          },
-                          "end": {
-                            "line": 13,
-                            "column": 44
-                          }
-                        },
-                        "extra": null,
-                        "value": "Button Button--solid"
+                      "end": {
+                        "line": 20,
+                        "column": 40
                       }
                     },
-                    {
-                      "type": "JSXAttribute",
-                      "start": 298,
-                      "end": 315,
-                      "loc": {
-                        "start": {
-                          "line": 13,
-                          "column": 45
-                        },
-                        "end": {
-                          "line": 13,
-                          "column": 62
-                        }
-                      },
-                      "name": {
-                        "type": "JSXIdentifier",
-                        "start": 298,
-                        "end": 305,
+                    "properties": [
+                      {
+                        "type": "ObjectProperty",
+                        "start": 507,
+                        "end": 511,
                         "loc": {
                           "start": {
-                            "line": 13,
-                            "column": 45
+                            "line": 20,
+                            "column": 25
                           },
                           "end": {
-                            "line": 13,
-                            "column": 52
+                            "line": 20,
+                            "column": 29
                           }
                         },
-                        "name": "onClick"
-                      },
-                      "value": {
-                        "type": "JSXExpressionContainer",
-                        "start": 306,
-                        "end": 315,
-                        "loc": {
-                          "start": {
-                            "line": 13,
-                            "column": 53
-                          },
-                          "end": {
-                            "line": 13,
-                            "column": 62
-                          }
-                        },
-                        "expression": {
+                        "method": false,
+                        "shorthand": true,
+                        "computed": false,
+                        "key": {
                           "type": "Identifier",
-                          "start": 307,
-                          "end": 314,
+                          "start": 507,
+                          "end": 511,
                           "loc": {
                             "start": {
-                              "line": 13,
-                              "column": 54
+                              "line": 20,
+                              "column": 25
                             },
                             "end": {
-                              "line": 13,
-                              "column": 61
+                              "line": 20,
+                              "column": 29
+                            },
+                            "identifierName": "text"
+                          },
+                          "name": "text"
+                        },
+                        "value": {
+                          "type": "Identifier",
+                          "start": 507,
+                          "end": 511,
+                          "loc": {
+                            "start": {
+                              "line": 20,
+                              "column": 25
+                            },
+                            "end": {
+                              "line": 20,
+                              "column": 29
+                            },
+                            "identifierName": "text"
+                          },
+                          "name": "text"
+                        },
+                        "extra": {
+                          "shorthand": true
+                        }
+                      },
+                      {
+                        "type": "ObjectProperty",
+                        "start": 513,
+                        "end": 520,
+                        "loc": {
+                          "start": {
+                            "line": 20,
+                            "column": 31
+                          },
+                          "end": {
+                            "line": 20,
+                            "column": 38
+                          }
+                        },
+                        "method": false,
+                        "shorthand": true,
+                        "computed": false,
+                        "key": {
+                          "type": "Identifier",
+                          "start": 513,
+                          "end": 520,
+                          "loc": {
+                            "start": {
+                              "line": 20,
+                              "column": 31
+                            },
+                            "end": {
+                              "line": 20,
+                              "column": 38
                             },
                             "identifierName": "onClick"
                           },
                           "name": "onClick"
+                        },
+                        "value": {
+                          "type": "Identifier",
+                          "start": 513,
+                          "end": 520,
+                          "loc": {
+                            "start": {
+                              "line": 20,
+                              "column": 31
+                            },
+                            "end": {
+                              "line": 20,
+                              "column": 38
+                            },
+                            "identifierName": "onClick"
+                          },
+                          "name": "onClick"
+                        },
+                        "extra": {
+                          "shorthand": true
                         }
                       }
-                    }
-                  ],
-                  "name": {
-                    "type": "JSXIdentifier",
-                    "start": 258,
-                    "end": 264,
-                    "loc": {
-                      "start": {
-                        "line": 13,
-                        "column": 5
-                      },
-                      "end": {
-                        "line": 13,
-                        "column": 11
-                      }
-                    },
-                    "name": "button"
-                  },
-                  "selfClosing": false
-                },
-                "closingElement": {
-                  "type": "JSXClosingElement",
-                  "start": 336,
-                  "end": 345,
+                    ]
+                  }
+                ],
+                "body": {
+                  "type": "JSXElement",
+                  "start": 533,
+                  "end": 621,
                   "loc": {
                     "start": {
-                      "line": 15,
+                      "line": 21,
                       "column": 4
                     },
                     "end": {
-                      "line": 15,
+                      "line": 23,
                       "column": 13
                     }
                   },
-                  "name": {
-                    "type": "JSXIdentifier",
-                    "start": 338,
-                    "end": 344,
+                  "openingElement": {
+                    "type": "JSXOpeningElement",
+                    "start": 533,
+                    "end": 592,
                     "loc": {
                       "start": {
-                        "line": 15,
-                        "column": 6
+                        "line": 21,
+                        "column": 4
                       },
                       "end": {
-                        "line": 15,
-                        "column": 12
-                      }
-                    },
-                    "name": "button"
-                  }
-                },
-                "children": [
-                  {
-                    "type": "JSXText",
-                    "start": 316,
-                    "end": 325,
-                    "loc": {
-                      "start": {
-                        "line": 13,
+                        "line": 21,
                         "column": 63
-                      },
-                      "end": {
-                        "line": 14,
-                        "column": 8
                       }
                     },
-                    "extra": null,
-                    "value": "\n        "
-                  },
-                  {
-                    "type": "JSXExpressionContainer",
-                    "start": 325,
-                    "end": 331,
-                    "loc": {
-                      "start": {
-                        "line": 14,
-                        "column": 8
+                    "attributes": [
+                      {
+                        "type": "JSXAttribute",
+                        "start": 541,
+                        "end": 573,
+                        "loc": {
+                          "start": {
+                            "line": 21,
+                            "column": 12
+                          },
+                          "end": {
+                            "line": 21,
+                            "column": 44
+                          }
+                        },
+                        "name": {
+                          "type": "JSXIdentifier",
+                          "start": 541,
+                          "end": 550,
+                          "loc": {
+                            "start": {
+                              "line": 21,
+                              "column": 12
+                            },
+                            "end": {
+                              "line": 21,
+                              "column": 21
+                            }
+                          },
+                          "name": "className"
+                        },
+                        "value": {
+                          "type": "StringLiteral",
+                          "start": 551,
+                          "end": 573,
+                          "loc": {
+                            "start": {
+                              "line": 21,
+                              "column": 22
+                            },
+                            "end": {
+                              "line": 21,
+                              "column": 44
+                            }
+                          },
+                          "extra": null,
+                          "value": "Button Button--solid"
+                        }
                       },
-                      "end": {
-                        "line": 14,
-                        "column": 14
+                      {
+                        "type": "JSXAttribute",
+                        "start": 574,
+                        "end": 591,
+                        "loc": {
+                          "start": {
+                            "line": 21,
+                            "column": 45
+                          },
+                          "end": {
+                            "line": 21,
+                            "column": 62
+                          }
+                        },
+                        "name": {
+                          "type": "JSXIdentifier",
+                          "start": 574,
+                          "end": 581,
+                          "loc": {
+                            "start": {
+                              "line": 21,
+                              "column": 45
+                            },
+                            "end": {
+                              "line": 21,
+                              "column": 52
+                            }
+                          },
+                          "name": "onClick"
+                        },
+                        "value": {
+                          "type": "JSXExpressionContainer",
+                          "start": 582,
+                          "end": 591,
+                          "loc": {
+                            "start": {
+                              "line": 21,
+                              "column": 53
+                            },
+                            "end": {
+                              "line": 21,
+                              "column": 62
+                            }
+                          },
+                          "expression": {
+                            "type": "Identifier",
+                            "start": 583,
+                            "end": 590,
+                            "loc": {
+                              "start": {
+                                "line": 21,
+                                "column": 54
+                              },
+                              "end": {
+                                "line": 21,
+                                "column": 61
+                              },
+                              "identifierName": "onClick"
+                            },
+                            "name": "onClick"
+                          }
+                        }
                       }
-                    },
-                    "expression": {
-                      "type": "Identifier",
-                      "start": 326,
-                      "end": 330,
+                    ],
+                    "name": {
+                      "type": "JSXIdentifier",
+                      "start": 534,
+                      "end": 540,
                       "loc": {
                         "start": {
-                          "line": 14,
-                          "column": 9
+                          "line": 21,
+                          "column": 5
                         },
                         "end": {
-                          "line": 14,
-                          "column": 13
-                        },
-                        "identifierName": "text"
+                          "line": 21,
+                          "column": 11
+                        }
                       },
-                      "name": "text"
-                    }
+                      "name": "button"
+                    },
+                    "selfClosing": false
                   },
-                  {
-                    "type": "JSXText",
-                    "start": 331,
-                    "end": 336,
+                  "closingElement": {
+                    "type": "JSXClosingElement",
+                    "start": 612,
+                    "end": 621,
                     "loc": {
                       "start": {
-                        "line": 14,
-                        "column": 14
+                        "line": 23,
+                        "column": 4
                       },
                       "end": {
-                        "line": 15,
-                        "column": 4
+                        "line": 23,
+                        "column": 13
                       }
                     },
-                    "extra": null,
-                    "value": "\n    "
+                    "name": {
+                      "type": "JSXIdentifier",
+                      "start": 614,
+                      "end": 620,
+                      "loc": {
+                        "start": {
+                          "line": 23,
+                          "column": 6
+                        },
+                        "end": {
+                          "line": 23,
+                          "column": 12
+                        }
+                      },
+                      "name": "button"
+                    }
+                  },
+                  "children": [
+                    {
+                      "type": "JSXText",
+                      "start": 592,
+                      "end": 601,
+                      "loc": {
+                        "start": {
+                          "line": 21,
+                          "column": 63
+                        },
+                        "end": {
+                          "line": 22,
+                          "column": 8
+                        }
+                      },
+                      "extra": null,
+                      "value": "\n        "
+                    },
+                    {
+                      "type": "JSXExpressionContainer",
+                      "start": 601,
+                      "end": 607,
+                      "loc": {
+                        "start": {
+                          "line": 22,
+                          "column": 8
+                        },
+                        "end": {
+                          "line": 22,
+                          "column": 14
+                        }
+                      },
+                      "expression": {
+                        "type": "Identifier",
+                        "start": 602,
+                        "end": 606,
+                        "loc": {
+                          "start": {
+                            "line": 22,
+                            "column": 9
+                          },
+                          "end": {
+                            "line": 22,
+                            "column": 13
+                          },
+                          "identifierName": "text"
+                        },
+                        "name": "text"
+                      }
+                    },
+                    {
+                      "type": "JSXText",
+                      "start": 607,
+                      "end": 612,
+                      "loc": {
+                        "start": {
+                          "line": 22,
+                          "column": 14
+                        },
+                        "end": {
+                          "line": 23,
+                          "column": 4
+                        }
+                      },
+                      "extra": null,
+                      "value": "\n    "
+                    }
+                  ],
+                  "extra": {
+                    "parenthesized": true,
+                    "parenStart": 527
                   }
-                ],
-                "extra": {
-                  "parenthesized": true,
-                  "parenStart": 251
+                }
+              },
+              "leadingComments": null
+            }
+          ],
+          "kind": "const",
+          "leadingComments": [
+            {
+              "type": "CommentBlock",
+              "value": "*\n * A simple button component\n * @param {Object} param\n * @param {number} param.text - text to be rendered inside button.\n * @param {function(e: Object)} param.onClick - click handler function\n * @return {Object} React component\n ",
+              "start": 246,
+              "end": 481,
+              "loc": {
+                "start": {
+                  "line": 13,
+                  "column": 0
+                },
+                "end": {
+                  "line": 19,
+                  "column": 3
                 }
               }
             }
+          ],
+          "trailingComments": []
+        },
+        "leadingComments": [
+          {
+            "type": "CommentBlock",
+            "value": "*\n * A simple button component\n * @param {Object} param\n * @param {number} param.text - text to be rendered inside button.\n * @param {function(e: Object)} param.onClick - click handler function\n * @return {Object} React component\n ",
+            "start": 246,
+            "end": 481,
+            "loc": {
+              "start": {
+                "line": 13,
+                "column": 0
+              },
+              "end": {
+                "line": 19,
+                "column": 3
+              }
+            }
           }
-        ],
-        "kind": "const"
+        ]
       },
       {
         "type": "ExportDefaultDeclaration",
-        "start": 350,
-        "end": 381,
+        "start": 626,
+        "end": 657,
         "loc": {
           "start": {
-            "line": 18,
+            "line": 26,
             "column": 0
           },
           "end": {
-            "line": 18,
+            "line": 26,
             "column": 31
           }
         },
         "declaration": {
           "type": "CallExpression",
-          "start": 365,
-          "end": 380,
+          "start": 641,
+          "end": 656,
           "loc": {
             "start": {
-              "line": 18,
+              "line": 26,
               "column": 15
             },
             "end": {
-              "line": 18,
+              "line": 26,
               "column": 30
             }
           },
           "callee": {
             "type": "Identifier",
-            "start": 365,
-            "end": 372,
+            "start": 641,
+            "end": 648,
             "loc": {
               "start": {
-                "line": 18,
+                "line": 26,
                 "column": 15
               },
               "end": {
-                "line": 18,
+                "line": 26,
                 "column": 22
               },
               "identifierName": "enhance"
@@ -1066,15 +1226,15 @@
           "arguments": [
             {
               "type": "Identifier",
-              "start": 373,
-              "end": 379,
+              "start": 649,
+              "end": 655,
               "loc": {
                 "start": {
-                  "line": 18,
+                  "line": 26,
                   "column": 23
                 },
                 "end": {
-                  "line": 18,
+                  "line": 26,
                   "column": 29
                 },
                 "identifierName": "Button"
@@ -1103,6 +1263,22 @@
         "end": {
           "line": 1,
           "column": 11
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n * A simple button component\n * @param {Object} param\n * @param {number} param.text - text to be rendered inside button.\n * @param {function(e: Object)} param.onClick - click handler function\n * @return {Object} React component\n ",
+      "start": 246,
+      "end": 481,
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 0
+        },
+        "end": {
+          "line": 19,
+          "column": 3
         }
       }
     }
@@ -1965,6 +2141,162 @@
     },
     {
       "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 201,
+      "end": 202,
+      "loc": {
+        "start": {
+          "line": 8,
+          "column": 30
+        },
+        "end": {
+          "line": 8,
+          "column": 31
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "onClick",
+      "start": 211,
+      "end": 218,
+      "loc": {
+        "start": {
+          "line": 9,
+          "column": 8
+        },
+        "end": {
+          "line": 9,
+          "column": 15
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ":",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 218,
+      "end": 219,
+      "loc": {
+        "start": {
+          "line": 9,
+          "column": 15
+        },
+        "end": {
+          "line": 9,
+          "column": 16
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "PropTypes",
+      "start": 220,
+      "end": 229,
+      "loc": {
+        "start": {
+          "line": 9,
+          "column": 17
+        },
+        "end": {
+          "line": 9,
+          "column": 26
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ".",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 229,
+      "end": 230,
+      "loc": {
+        "start": {
+          "line": 9,
+          "column": 26
+        },
+        "end": {
+          "line": 9,
+          "column": 27
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "func",
+      "start": 230,
+      "end": 234,
+      "loc": {
+        "start": {
+          "line": 9,
+          "column": 27
+        },
+        "end": {
+          "line": 9,
+          "column": 31
+        }
+      }
+    },
+    {
+      "type": {
         "label": "}",
         "beforeExpr": false,
         "startsExpr": false,
@@ -1975,15 +2307,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 206,
-      "end": 207,
+      "start": 239,
+      "end": 240,
       "loc": {
         "start": {
-          "line": 9,
+          "line": 10,
           "column": 4
         },
         "end": {
-          "line": 9,
+          "line": 10,
           "column": 5
         }
       }
@@ -2000,15 +2332,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 207,
-      "end": 208,
+      "start": 240,
+      "end": 241,
       "loc": {
         "start": {
-          "line": 9,
+          "line": 10,
           "column": 5
         },
         "end": {
-          "line": 9,
+          "line": 10,
           "column": 6
         }
       }
@@ -2025,15 +2357,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 209,
-      "end": 210,
+      "start": 242,
+      "end": 243,
       "loc": {
         "start": {
-          "line": 10,
+          "line": 11,
           "column": 0
         },
         "end": {
-          "line": 10,
+          "line": 11,
           "column": 1
         }
       }
@@ -2051,16 +2383,60 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 210,
-      "end": 211,
+      "start": 243,
+      "end": 244,
       "loc": {
         "start": {
-          "line": 10,
+          "line": 11,
           "column": 1
         },
         "end": {
-          "line": 10,
+          "line": 11,
           "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n * A simple button component\n * @param {Object} param\n * @param {number} param.text - text to be rendered inside button.\n * @param {function(e: Object)} param.onClick - click handler function\n * @return {Object} React component\n ",
+      "start": 246,
+      "end": 481,
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 0
+        },
+        "end": {
+          "line": 19,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "export",
+        "keyword": "export",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "export",
+      "start": 482,
+      "end": 488,
+      "loc": {
+        "start": {
+          "line": 20,
+          "column": 0
+        },
+        "end": {
+          "line": 20,
+          "column": 6
         }
       }
     },
@@ -2079,16 +2455,16 @@
         "updateContext": null
       },
       "value": "const",
-      "start": 213,
-      "end": 218,
+      "start": 489,
+      "end": 494,
       "loc": {
         "start": {
-          "line": 12,
-          "column": 0
+          "line": 20,
+          "column": 7
         },
         "end": {
-          "line": 12,
-          "column": 5
+          "line": 20,
+          "column": 12
         }
       }
     },
@@ -2105,16 +2481,16 @@
         "binop": null
       },
       "value": "Button",
-      "start": 219,
-      "end": 225,
+      "start": 495,
+      "end": 501,
       "loc": {
         "start": {
-          "line": 12,
-          "column": 6
+          "line": 20,
+          "column": 13
         },
         "end": {
-          "line": 12,
-          "column": 12
+          "line": 20,
+          "column": 19
         }
       }
     },
@@ -2132,16 +2508,16 @@
         "updateContext": null
       },
       "value": "=",
-      "start": 226,
-      "end": 227,
+      "start": 502,
+      "end": 503,
       "loc": {
         "start": {
-          "line": 12,
-          "column": 13
+          "line": 20,
+          "column": 20
         },
         "end": {
-          "line": 12,
-          "column": 14
+          "line": 20,
+          "column": 21
         }
       }
     },
@@ -2157,16 +2533,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 228,
-      "end": 229,
+      "start": 504,
+      "end": 505,
       "loc": {
         "start": {
-          "line": 12,
-          "column": 15
+          "line": 20,
+          "column": 22
         },
         "end": {
-          "line": 12,
-          "column": 16
+          "line": 20,
+          "column": 23
         }
       }
     },
@@ -2182,16 +2558,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 229,
-      "end": 230,
+      "start": 505,
+      "end": 506,
       "loc": {
         "start": {
-          "line": 12,
-          "column": 16
+          "line": 20,
+          "column": 23
         },
         "end": {
-          "line": 12,
-          "column": 17
+          "line": 20,
+          "column": 24
         }
       }
     },
@@ -2208,16 +2584,16 @@
         "binop": null
       },
       "value": "text",
-      "start": 231,
-      "end": 235,
+      "start": 507,
+      "end": 511,
       "loc": {
         "start": {
-          "line": 12,
-          "column": 18
+          "line": 20,
+          "column": 25
         },
         "end": {
-          "line": 12,
-          "column": 22
+          "line": 20,
+          "column": 29
         }
       }
     },
@@ -2234,16 +2610,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 235,
-      "end": 236,
+      "start": 511,
+      "end": 512,
       "loc": {
         "start": {
-          "line": 12,
-          "column": 22
+          "line": 20,
+          "column": 29
         },
         "end": {
-          "line": 12,
-          "column": 23
+          "line": 20,
+          "column": 30
         }
       }
     },
@@ -2260,16 +2636,16 @@
         "binop": null
       },
       "value": "onClick",
-      "start": 237,
-      "end": 244,
+      "start": 513,
+      "end": 520,
       "loc": {
         "start": {
-          "line": 12,
-          "column": 24
+          "line": 20,
+          "column": 31
         },
         "end": {
-          "line": 12,
-          "column": 31
+          "line": 20,
+          "column": 38
         }
       }
     },
@@ -2285,16 +2661,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 245,
-      "end": 246,
+      "start": 521,
+      "end": 522,
       "loc": {
         "start": {
-          "line": 12,
-          "column": 32
+          "line": 20,
+          "column": 39
         },
         "end": {
-          "line": 12,
-          "column": 33
+          "line": 20,
+          "column": 40
         }
       }
     },
@@ -2310,16 +2686,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 246,
-      "end": 247,
+      "start": 522,
+      "end": 523,
       "loc": {
         "start": {
-          "line": 12,
-          "column": 33
+          "line": 20,
+          "column": 40
         },
         "end": {
-          "line": 12,
-          "column": 34
+          "line": 20,
+          "column": 41
         }
       }
     },
@@ -2336,16 +2712,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 248,
-      "end": 250,
+      "start": 524,
+      "end": 526,
       "loc": {
         "start": {
-          "line": 12,
-          "column": 35
+          "line": 20,
+          "column": 42
         },
         "end": {
-          "line": 12,
-          "column": 37
+          "line": 20,
+          "column": 44
         }
       }
     },
@@ -2361,16 +2737,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 251,
-      "end": 252,
+      "start": 527,
+      "end": 528,
       "loc": {
         "start": {
-          "line": 12,
-          "column": 38
+          "line": 20,
+          "column": 45
         },
         "end": {
-          "line": 12,
-          "column": 39
+          "line": 20,
+          "column": 46
         }
       }
     },
@@ -2386,15 +2762,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 257,
-      "end": 258,
+      "start": 533,
+      "end": 534,
       "loc": {
         "start": {
-          "line": 13,
+          "line": 21,
           "column": 4
         },
         "end": {
-          "line": 13,
+          "line": 21,
           "column": 5
         }
       }
@@ -2413,15 +2789,15 @@
         "updateContext": null
       },
       "value": "button",
-      "start": 258,
-      "end": 264,
+      "start": 534,
+      "end": 540,
       "loc": {
         "start": {
-          "line": 13,
+          "line": 21,
           "column": 5
         },
         "end": {
-          "line": 13,
+          "line": 21,
           "column": 11
         }
       }
@@ -2440,15 +2816,15 @@
         "updateContext": null
       },
       "value": "className",
-      "start": 265,
-      "end": 274,
+      "start": 541,
+      "end": 550,
       "loc": {
         "start": {
-          "line": 13,
+          "line": 21,
           "column": 12
         },
         "end": {
-          "line": 13,
+          "line": 21,
           "column": 21
         }
       }
@@ -2467,15 +2843,15 @@
         "updateContext": null
       },
       "value": "=",
-      "start": 274,
-      "end": 275,
+      "start": 550,
+      "end": 551,
       "loc": {
         "start": {
-          "line": 13,
+          "line": 21,
           "column": 21
         },
         "end": {
-          "line": 13,
+          "line": 21,
           "column": 22
         }
       }
@@ -2494,15 +2870,15 @@
         "updateContext": null
       },
       "value": "Button Button--solid",
-      "start": 275,
-      "end": 297,
+      "start": 551,
+      "end": 573,
       "loc": {
         "start": {
-          "line": 13,
+          "line": 21,
           "column": 22
         },
         "end": {
-          "line": 13,
+          "line": 21,
           "column": 44
         }
       }
@@ -2521,15 +2897,15 @@
         "updateContext": null
       },
       "value": "onClick",
-      "start": 298,
-      "end": 305,
+      "start": 574,
+      "end": 581,
       "loc": {
         "start": {
-          "line": 13,
+          "line": 21,
           "column": 45
         },
         "end": {
-          "line": 13,
+          "line": 21,
           "column": 52
         }
       }
@@ -2548,15 +2924,15 @@
         "updateContext": null
       },
       "value": "=",
-      "start": 305,
-      "end": 306,
+      "start": 581,
+      "end": 582,
       "loc": {
         "start": {
-          "line": 13,
+          "line": 21,
           "column": 52
         },
         "end": {
-          "line": 13,
+          "line": 21,
           "column": 53
         }
       }
@@ -2573,15 +2949,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 306,
-      "end": 307,
+      "start": 582,
+      "end": 583,
       "loc": {
         "start": {
-          "line": 13,
+          "line": 21,
           "column": 53
         },
         "end": {
-          "line": 13,
+          "line": 21,
           "column": 54
         }
       }
@@ -2599,15 +2975,15 @@
         "binop": null
       },
       "value": "onClick",
-      "start": 307,
-      "end": 314,
+      "start": 583,
+      "end": 590,
       "loc": {
         "start": {
-          "line": 13,
+          "line": 21,
           "column": 54
         },
         "end": {
-          "line": 13,
+          "line": 21,
           "column": 61
         }
       }
@@ -2624,15 +3000,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 314,
-      "end": 315,
+      "start": 590,
+      "end": 591,
       "loc": {
         "start": {
-          "line": 13,
+          "line": 21,
           "column": 61
         },
         "end": {
-          "line": 13,
+          "line": 21,
           "column": 62
         }
       }
@@ -2649,15 +3025,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 315,
-      "end": 316,
+      "start": 591,
+      "end": 592,
       "loc": {
         "start": {
-          "line": 13,
+          "line": 21,
           "column": 62
         },
         "end": {
-          "line": 13,
+          "line": 21,
           "column": 63
         }
       }
@@ -2676,15 +3052,15 @@
         "updateContext": null
       },
       "value": "\n        ",
-      "start": 316,
-      "end": 325,
+      "start": 592,
+      "end": 601,
       "loc": {
         "start": {
-          "line": 13,
+          "line": 21,
           "column": 63
         },
         "end": {
-          "line": 14,
+          "line": 22,
           "column": 8
         }
       }
@@ -2701,15 +3077,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 325,
-      "end": 326,
+      "start": 601,
+      "end": 602,
       "loc": {
         "start": {
-          "line": 14,
+          "line": 22,
           "column": 8
         },
         "end": {
-          "line": 14,
+          "line": 22,
           "column": 9
         }
       }
@@ -2727,15 +3103,15 @@
         "binop": null
       },
       "value": "text",
-      "start": 326,
-      "end": 330,
+      "start": 602,
+      "end": 606,
       "loc": {
         "start": {
-          "line": 14,
+          "line": 22,
           "column": 9
         },
         "end": {
-          "line": 14,
+          "line": 22,
           "column": 13
         }
       }
@@ -2752,15 +3128,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 330,
-      "end": 331,
+      "start": 606,
+      "end": 607,
       "loc": {
         "start": {
-          "line": 14,
+          "line": 22,
           "column": 13
         },
         "end": {
-          "line": 14,
+          "line": 22,
           "column": 14
         }
       }
@@ -2779,15 +3155,15 @@
         "updateContext": null
       },
       "value": "\n    ",
-      "start": 331,
-      "end": 336,
+      "start": 607,
+      "end": 612,
       "loc": {
         "start": {
-          "line": 14,
+          "line": 22,
           "column": 14
         },
         "end": {
-          "line": 15,
+          "line": 23,
           "column": 4
         }
       }
@@ -2804,15 +3180,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 336,
-      "end": 337,
+      "start": 612,
+      "end": 613,
       "loc": {
         "start": {
-          "line": 15,
+          "line": 23,
           "column": 4
         },
         "end": {
-          "line": 15,
+          "line": 23,
           "column": 5
         }
       }
@@ -2831,15 +3207,15 @@
         "updateContext": null
       },
       "value": "/",
-      "start": 337,
-      "end": 338,
+      "start": 613,
+      "end": 614,
       "loc": {
         "start": {
-          "line": 15,
+          "line": 23,
           "column": 5
         },
         "end": {
-          "line": 15,
+          "line": 23,
           "column": 6
         }
       }
@@ -2858,15 +3234,15 @@
         "updateContext": null
       },
       "value": "button",
-      "start": 338,
-      "end": 344,
+      "start": 614,
+      "end": 620,
       "loc": {
         "start": {
-          "line": 15,
+          "line": 23,
           "column": 6
         },
         "end": {
-          "line": 15,
+          "line": 23,
           "column": 12
         }
       }
@@ -2883,15 +3259,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 344,
-      "end": 345,
+      "start": 620,
+      "end": 621,
       "loc": {
         "start": {
-          "line": 15,
+          "line": 23,
           "column": 12
         },
         "end": {
-          "line": 15,
+          "line": 23,
           "column": 13
         }
       }
@@ -2908,15 +3284,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 346,
-      "end": 347,
+      "start": 622,
+      "end": 623,
       "loc": {
         "start": {
-          "line": 16,
+          "line": 24,
           "column": 0
         },
         "end": {
-          "line": 16,
+          "line": 24,
           "column": 1
         }
       }
@@ -2934,15 +3310,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 347,
-      "end": 348,
+      "start": 623,
+      "end": 624,
       "loc": {
         "start": {
-          "line": 16,
+          "line": 24,
           "column": 1
         },
         "end": {
-          "line": 16,
+          "line": 24,
           "column": 2
         }
       }
@@ -2962,15 +3338,15 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 350,
-      "end": 356,
+      "start": 626,
+      "end": 632,
       "loc": {
         "start": {
-          "line": 18,
+          "line": 26,
           "column": 0
         },
         "end": {
-          "line": 18,
+          "line": 26,
           "column": 6
         }
       }
@@ -2990,15 +3366,15 @@
         "updateContext": null
       },
       "value": "default",
-      "start": 357,
-      "end": 364,
+      "start": 633,
+      "end": 640,
       "loc": {
         "start": {
-          "line": 18,
+          "line": 26,
           "column": 7
         },
         "end": {
-          "line": 18,
+          "line": 26,
           "column": 14
         }
       }
@@ -3016,15 +3392,15 @@
         "binop": null
       },
       "value": "enhance",
-      "start": 365,
-      "end": 372,
+      "start": 641,
+      "end": 648,
       "loc": {
         "start": {
-          "line": 18,
+          "line": 26,
           "column": 15
         },
         "end": {
-          "line": 18,
+          "line": 26,
           "column": 22
         }
       }
@@ -3041,15 +3417,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 372,
-      "end": 373,
+      "start": 648,
+      "end": 649,
       "loc": {
         "start": {
-          "line": 18,
+          "line": 26,
           "column": 22
         },
         "end": {
-          "line": 18,
+          "line": 26,
           "column": 23
         }
       }
@@ -3067,15 +3443,15 @@
         "binop": null
       },
       "value": "Button",
-      "start": 373,
-      "end": 379,
+      "start": 649,
+      "end": 655,
       "loc": {
         "start": {
-          "line": 18,
+          "line": 26,
           "column": 23
         },
         "end": {
-          "line": 18,
+          "line": 26,
           "column": 29
         }
       }
@@ -3092,15 +3468,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 379,
-      "end": 380,
+      "start": 655,
+      "end": 656,
       "loc": {
         "start": {
-          "line": 18,
+          "line": 26,
           "column": 29
         },
         "end": {
-          "line": 18,
+          "line": 26,
           "column": 30
         }
       }
@@ -3118,15 +3494,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 380,
-      "end": 381,
+      "start": 656,
+      "end": 657,
       "loc": {
         "start": {
-          "line": 18,
+          "line": 26,
           "column": 30
         },
         "end": {
-          "line": 18,
+          "line": 26,
           "column": 31
         }
       }
@@ -3144,15 +3520,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 382,
-      "end": 382,
+      "start": 658,
+      "end": 658,
       "loc": {
         "start": {
-          "line": 19,
+          "line": 27,
           "column": 0
         },
         "end": {
-          "line": 19,
+          "line": 27,
           "column": 0
         }
       }

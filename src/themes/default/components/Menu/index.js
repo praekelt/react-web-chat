@@ -29,6 +29,13 @@ const enhance = compose(
     )
 );
 
+/**
+ * A menu listing several items. (single choice)
+ * @param {Object} param
+ * @param {Array<Object>} param.items - The menu items to be displayed
+ * @param {function(text: string)} param.submitHandler - submit handler function. This will send a message to the server using data supplied as parameter
+ * @return {Object} React component
+ */
 export const Menu = ({ open, toggleState, items, submitHandler }) => (
     <div className={`Menu ${open ? 'is-open' : ''}`}>
         {items && (
@@ -55,6 +62,13 @@ export const Menu = ({ open, toggleState, items, submitHandler }) => (
     </div>
 );
 
+/**
+ * A menu listing several checkbox items. (multiple choice)
+ * @param {Object} param
+ * @param {Array<Object>} param.items - The menu items to be displayed
+ * @param {function(items: Array<string>)} param.submitHandler - submit handler function. This will send a message to the server using data supplied as parameter
+ * @return {Object} React component
+ */
 export const CheckboxMenu = enhance(
     ({ open, toggleState, items, submitHandler, toggleItem, selectedItems }) => (
         <div className={`Menu CheckboxMenu ${open ? 'is-open' : ''}`}>

@@ -18,6 +18,13 @@ const enhance = compose(
     })
 );
 
+/**
+ * A simple text component for use inside messages.
+ * @param {Object} param
+ * @param {string} param.title - the text message's title.
+ * @param {string} param.children - markdown-generated html to render.  
+ * @return {Object} React component
+ */
 const Text = ({ title, children, isLocal }) => (
     <Fade in={true} appear={true}>
         <div

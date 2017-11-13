@@ -12,6 +12,13 @@ const enhance = compose(
     withState('value', 'setValue', '')
 );
 
+/**
+ * A simple text Input component.
+ * @param {Object} param
+ * @param {string|number} param.value - the input's value.
+ * @param {function(text: string)} param.submitHandler - submit handler function. This will send a message to the server using data supplied as parameter
+ * @return {Object} React component
+ */
 export const Input = ({ submitHandler, value, setValue }) => (
     <div className="Input">
         <input

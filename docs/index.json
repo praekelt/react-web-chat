@@ -567,7 +567,7 @@
     "__docId__": 48,
     "kind": "file",
     "name": "src/actionTypes.js",
-    "content": "// @ts-check\nexport const MESSAGE_ADD = 'MESSAGE_ADD',\n    MESSAGE_SEND = 'MESSAGE_SEND',\n    MESSAGE_RECEIVE = 'MESSAGE_RECEIVE',\n    MESSAGE_QUEUE = 'MESSAGE_QUEUE',\n    // Connection\n    CONNECTION_ESTABLISHED = 'CONNECTION_ESTABLISHED',\n    CONNECTION_ATTEMPTED = 'CONNECTION_ATTEMPTED',\n    CONNECTION_DROPPED = 'CONNECTION_DROPPED',\n    CONNECTION_LISTENING = 'CONNECTION_LISTENING';\n",
+    "content": "// @ts-check\n/**\n * @ignore\n */\nexport const MESSAGE_ADD = 'MESSAGE_ADD',\n    MESSAGE_SEND = 'MESSAGE_SEND',\n    MESSAGE_RECEIVE = 'MESSAGE_RECEIVE',\n    MESSAGE_QUEUE = 'MESSAGE_QUEUE',\n    // Connection\n    CONNECTION_ESTABLISHED = 'CONNECTION_ESTABLISHED',\n    CONNECTION_ATTEMPTED = 'CONNECTION_ATTEMPTED',\n    CONNECTION_DROPPED = 'CONNECTION_DROPPED',\n    CONNECTION_LISTENING = 'CONNECTION_LISTENING';\n",
     "static": true,
     "longname": "/home/peter/praekelt/react-web-chat/src/actionTypes.js",
     "access": "public",
@@ -585,9 +585,9 @@
     "export": true,
     "importPath": "react-web-chat/src/actionTypes.js",
     "importStyle": "{MESSAGE_ADD}",
-    "description": null,
-    "lineNumber": 2,
-    "undocument": true,
+    "description": "",
+    "lineNumber": 5,
+    "ignore": true,
     "type": {
       "types": [
         "string"
@@ -598,7 +598,7 @@
     "__docId__": 50,
     "kind": "file",
     "name": "src/actions/connection.js",
-    "content": "import {\n    CONNECTION_ESTABLISHED,\n    CONNECTION_ATTEMPTED,\n    CONNECTION_DROPPED,\n    CONNECTION_LISTENING\n} from '../actionTypes';\n\n/**\n * Sets connection to established\n * @param {object} message \n */\nexport const established = message => ({\n    type: CONNECTION_ESTABLISHED\n});\n\nexport const attempted = message => ({\n    type: CONNECTION_ATTEMPTED\n});\n\nexport const dropped = message => ({\n    type: CONNECTION_DROPPED\n});\n\nexport const listening = message => ({\n    type: CONNECTION_LISTENING\n});\n",
+    "content": "import {\n    CONNECTION_ESTABLISHED,\n    CONNECTION_ATTEMPTED,\n    CONNECTION_DROPPED,\n    CONNECTION_LISTENING\n} from '../actionTypes';\n\n/**\n * Sets connection to established\n * @return {{type: CONNECTION_ESTABLISHED}} redux action type returned\n */\nexport const established = _ => ({\n    type: CONNECTION_ESTABLISHED\n});\n\n/**\n * Sets connection to attempted\n * @return {{type: CONNECTION_ATTEMPTED}} redux action type returned\n */\nexport const attempted = _ => ({\n    type: CONNECTION_ATTEMPTED\n});\n\n/**\n * Sets connection to offline\n * @return {{type: CONNECTION_DROPPED}} redux action type returned\n */\nexport const dropped = _ => ({\n    type: CONNECTION_DROPPED\n});\n\n/**\n * Sets connection to listening\n * @return {{type: CONNECTION_LISTENING}} redux action type returned\n */\nexport const listening = _ => ({\n    type: CONNECTION_LISTENING\n});\n",
     "static": true,
     "longname": "/home/peter/praekelt/react-web-chat/src/actions/connection.js",
     "access": "public",
@@ -620,19 +620,22 @@
     "importStyle": "{established}",
     "description": "Sets connection to established",
     "lineNumber": 12,
+    "return": {
+      "nullable": null,
+      "types": [
+        "{type: CONNECTION_ESTABLISHED}"
+      ],
+      "spread": false,
+      "description": "redux action type returned"
+    },
     "params": [
       {
-        "nullable": null,
+        "name": "_",
         "types": [
-          "object"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "message",
-        "description": ""
+          "*"
+        ]
       }
-    ],
-    "return": null
+    ]
   },
   {
     "__docId__": 52,
@@ -647,18 +650,24 @@
     "export": true,
     "importPath": "react-web-chat/src/actions/connection.js",
     "importStyle": "{attempted}",
-    "description": null,
-    "lineNumber": 16,
-    "undocument": true,
+    "description": "Sets connection to attempted",
+    "lineNumber": 20,
+    "return": {
+      "nullable": null,
+      "types": [
+        "{type: CONNECTION_ATTEMPTED}"
+      ],
+      "spread": false,
+      "description": "redux action type returned"
+    },
     "params": [
       {
-        "name": "message",
+        "name": "_",
         "types": [
           "*"
         ]
       }
-    ],
-    "return": null
+    ]
   },
   {
     "__docId__": 53,
@@ -673,18 +682,24 @@
     "export": true,
     "importPath": "react-web-chat/src/actions/connection.js",
     "importStyle": "{dropped}",
-    "description": null,
-    "lineNumber": 20,
-    "undocument": true,
+    "description": "Sets connection to offline",
+    "lineNumber": 28,
+    "return": {
+      "nullable": null,
+      "types": [
+        "{type: CONNECTION_DROPPED}"
+      ],
+      "spread": false,
+      "description": "redux action type returned"
+    },
     "params": [
       {
-        "name": "message",
+        "name": "_",
         "types": [
           "*"
         ]
       }
-    ],
-    "return": null
+    ]
   },
   {
     "__docId__": 54,
@@ -699,24 +714,30 @@
     "export": true,
     "importPath": "react-web-chat/src/actions/connection.js",
     "importStyle": "{listening}",
-    "description": null,
-    "lineNumber": 24,
-    "undocument": true,
+    "description": "Sets connection to listening",
+    "lineNumber": 36,
+    "return": {
+      "nullable": null,
+      "types": [
+        "{type: CONNECTION_LISTENING}"
+      ],
+      "spread": false,
+      "description": "redux action type returned"
+    },
     "params": [
       {
-        "name": "message",
+        "name": "_",
         "types": [
           "*"
         ]
       }
-    ],
-    "return": null
+    ]
   },
   {
     "__docId__": 55,
     "kind": "file",
     "name": "src/actions/messages.js",
-    "content": "import { MESSAGE_ADD, MESSAGE_SEND, MESSAGE_RECEIVE, MESSAGE_QUEUE } from '../actionTypes';\n\n/**\n * Adds a message to the store.\n * @param {object} message \n */\nexport const messageAdd = message => ({\n    type: MESSAGE_ADD,\n    payload: message\n});\n\n/**\n * Async action creator.\n * Adds a new message after a delay of 1200 milliseconds. This is designed to simulate the \"typing...\" state of a chat user.\n * @todo Make timeout duration a configurable setting.\n * @param {object} message \n */\nexport function delayedMessageAdd(message) {\n    return dispatch => {\n        setTimeout(() => dispatch(messageAdd(message)), 1200);\n    };\n}\n\n/**\n * Dispatched when a message is received from the server. The message will get added to a dispatch queue.\n * @param {object} message \n */\nexport function messageReceive(message) {\n    return dispatch => {\n        dispatch({\n            type: MESSAGE_QUEUE,\n            payload: message\n        });\n        dispatch({\n            type: MESSAGE_RECEIVE,\n            payload: message\n        });\n    };\n}\n\n/**\n * Dispatched when a message is received from the server. The message will get added to a dispatch queue.\n * @param {object} message \n */\nexport function messageSend({ text }) {\n    let message = {\n        pages: [{ text: text, buttons: [] }],\n        responseType: 'text',\n        origin: 'local'\n    };\n    return dispatch => {\n        dispatch({\n            type: MESSAGE_SEND,\n            payload: message\n        });\n        dispatch(messageAdd(message));\n    };\n}\n",
+    "content": "import { MESSAGE_ADD, MESSAGE_SEND, MESSAGE_RECEIVE, MESSAGE_QUEUE } from '../actionTypes';\n\n/**\n * Action creator: Adds a message to the store.\n * @type Redux action creator\n * @param {object} message \n * @return {{type: MESSAGE_ADD}} redux action type returned\n */\nexport const messageAdd = message => ({\n    type: MESSAGE_ADD,\n    payload: message\n});\n\n/**\n * Async action creator:\n * Adds a new message after a delay of 1200 milliseconds. This is designed to simulate the \"typing...\" state of a chat user.\n * @todo Make timeout duration a configurable setting.\n * @param {object} message \n * @return {function()} dispatches {@link messageAdd} after 1200ms\n */\nexport function delayedMessageAdd(message) {\n    return dispatch => {\n        setTimeout(() => dispatch(messageAdd(message)), 1200);\n    };\n}\n\n/**\n * Async action creator:\n * Dispatched when a message is received from the server. The message will get added to a dispatch queue.\n * @param {object} message \n * @return {function()}\n */\nexport function messageReceive(message) {\n    return dispatch => {\n        dispatch({\n            type: MESSAGE_QUEUE,\n            payload: message\n        });\n        dispatch({\n            type: MESSAGE_RECEIVE,\n            payload: message\n        });\n    };\n}\n\n/**\n * Async action creator:\n * Dispatched when a message is received from the server. The message will get added to a dispatch queue.\n * @param {object} message \n * @return {function()} dispatches {@link messageAdd} action creator and `MESSAGE_SEND` action type\n */\nexport function messageSend({ text }) {\n    let message = {\n        pages: [{ text: text, buttons: [] }],\n        responseType: 'text',\n        origin: 'local'\n    };\n    return dispatch => {\n        dispatch({\n            type: MESSAGE_SEND,\n            payload: message\n        });\n        dispatch(messageAdd(message));\n    };\n}\n",
     "static": true,
     "longname": "/home/peter/praekelt/react-web-chat/src/actions/messages.js",
     "access": "public",
@@ -736,8 +757,8 @@
     "export": true,
     "importPath": "react-web-chat/src/actions/messages.js",
     "importStyle": "{messageAdd}",
-    "description": "Adds a message to the store.",
-    "lineNumber": 7,
+    "description": "Action creator: Adds a message to the store.",
+    "lineNumber": 9,
     "params": [
       {
         "nullable": null,
@@ -750,7 +771,22 @@
         "description": ""
       }
     ],
-    "return": null
+    "return": {
+      "nullable": null,
+      "types": [
+        "{type: MESSAGE_ADD}"
+      ],
+      "spread": false,
+      "description": "redux action type returned"
+    },
+    "type": {
+      "nullable": null,
+      "types": [
+        "*"
+      ],
+      "spread": false,
+      "description": null
+    }
   },
   {
     "__docId__": 57,
@@ -765,8 +801,8 @@
     "export": true,
     "importPath": "react-web-chat/src/actions/messages.js",
     "importStyle": "{delayedMessageAdd}",
-    "description": "Async action creator.\nAdds a new message after a delay of 1200 milliseconds. This is designed to simulate the \"typing...\" state of a chat user.",
-    "lineNumber": 18,
+    "description": "Async action creator:\nAdds a new message after a delay of 1200 milliseconds. This is designed to simulate the \"typing...\" state of a chat user.",
+    "lineNumber": 21,
     "todo": [
       "Make timeout duration a configurable setting."
     ],
@@ -783,9 +819,12 @@
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "function()"
+      ],
+      "spread": false,
+      "description": "dispatches {@link messageAdd} after 1200ms"
     }
   },
   {
@@ -801,8 +840,8 @@
     "export": true,
     "importPath": "react-web-chat/src/actions/messages.js",
     "importStyle": "{messageReceive}",
-    "description": "Dispatched when a message is received from the server. The message will get added to a dispatch queue.",
-    "lineNumber": 28,
+    "description": "Async action creator:\nDispatched when a message is received from the server. The message will get added to a dispatch queue.",
+    "lineNumber": 33,
     "params": [
       {
         "nullable": null,
@@ -816,9 +855,12 @@
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "function()"
+      ],
+      "spread": false,
+      "description": ""
     }
   },
   {
@@ -834,8 +876,8 @@
     "export": true,
     "importPath": "react-web-chat/src/actions/messages.js",
     "importStyle": "{messageSend}",
-    "description": "Dispatched when a message is received from the server. The message will get added to a dispatch queue.",
-    "lineNumber": 45,
+    "description": "Async action creator:\nDispatched when a message is received from the server. The message will get added to a dispatch queue.",
+    "lineNumber": 52,
     "params": [
       {
         "nullable": null,
@@ -849,9 +891,12 @@
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "function()"
+      ],
+      "spread": false,
+      "description": "dispatches {@link messageAdd} action creator and `MESSAGE_SEND` action type"
     }
   },
   {
@@ -1604,7 +1649,7 @@
     "__docId__": 93,
     "kind": "file",
     "name": "src/index.js",
-    "content": "import React, { Component } from 'react';\nimport ReactDOM from 'react-dom';\nimport store from './store';\n\nimport { Provider } from 'react-redux';\nimport 'smoothscroll-polyfill';\n\nimport ChatContainer from './components/ChatContainer';\nimport defaultTheme from './themes/default';\n\nimport * as actionTypes from './actionTypes';\nimport feersumClient from 'rwc-feersum-client';\nimport networkManager from './utils/network';\n\n/**\n * The main react component for React Web Chat\n * @param {Object} params - An object containing configuration parameters\n * @param {Object} params.theme - Custom theme\n * @param {Object} params.client - Which client to use for network communication\n */\nexport const ReactWebChatComponent = ({ theme, client = feersumClient, url }) => {\n    networkManager.init({\n        store,\n        client,\n        url\n    });\n    return (\n        <Provider store={store}>\n            <ChatContainer theme={{ ...defaultTheme, ...theme }} />\n        </Provider>\n    );\n};\n\n/**\n * The wrapping constructor module which exposes an interace\n * @param {Object} params - An object containing configuration parameters\n * @param {Object} params.theme - Custom theme\n * @param {Object} params.client - Which client to use for network communication\n * @param {Object} params.elemt - A target element to render to\n */\nclass ReactWebChat {\n    constructor(\n        { theme, client, element, url } = {\n            theme: defaultTheme,\n            client: feersumClient,\n            element,\n            url: 'http://localhost:8080/echo'\n        }\n    ) {\n        this.eventHandlers = { message: [], connection: [] };\n        if (element && element.nodeName) {\n            this.element = element;\n            this.client = client;\n            this.bindEventsToActions();\n            ReactDOM.render(\n                <ReactWebChatComponent theme={theme} client={client} url={url} />,\n                element\n            );\n        } else {\n            console.error(\n                'React Web Chat: expected element passed to constructor to be a DOM node. Recieved instead: ',\n                element\n            );\n        }\n    }\n\n    bindEventsToActions() {\n        Object.values(actionTypes).map(type =>\n            window.addEventListener(`rwc-dispatch-${type}`, ({ detail: { payload } }) =>\n                store.dispatch({\n                    type,\n                    payload\n                })\n            )\n        );\n    }\n}\n\nexport default ReactWebChat;\n",
+    "content": "import React, { Component } from 'react';\nimport ReactDOM from 'react-dom';\nimport store from './store';\n\nimport { Provider } from 'react-redux';\nimport 'smoothscroll-polyfill';\n\nimport ChatContainer from './components/ChatContainer';\nimport defaultTheme from './themes/default';\n\nimport * as actionTypes from './actionTypes';\nimport feersumClient from 'rwc-feersum-client';\nimport networkManager from './utils/network';\n\n/**\n * The main react component for React Web Chat\n * @param {Object} params - An object containing configuration parameters\n * @param {Object} params.theme - Custom theme\n * @param {Object} params.url - Chat server url to post messages to\n * @param {Object} params.client - Which client to use for network communication\n * @return {Object} React component\n */\nexport const ReactWebChatComponent = ({ theme, client = feersumClient, url }) => {\n    networkManager.init({\n        store,\n        client,\n        url\n    });\n    return (\n        <Provider store={store}>\n            <ChatContainer theme={{ ...defaultTheme, ...theme }} />\n        </Provider>\n    );\n};\n\n/**\n * The wrapping constructor module which renders {@link ReactWebChatComponent} to the target element\n */\nclass ReactWebChat {\n    constructor(\n        { theme, client, element, url } = {\n            theme: defaultTheme,\n            client: feersumClient,\n            element,\n            url: 'http://localhost:8080/echo'\n        }\n    ) {\n        if (element && element.nodeName) {\n            /**\n             * @type {Element}\n             */\n            this.element = element;\n            /**\n             * @type {Object}\n             */\n            this.client = client;\n            this.bindEventsToActions();\n            ReactDOM.render(\n                <ReactWebChatComponent theme={theme} client={client} url={url} />,\n                element\n            );\n        } else {\n            console.error(\n                'React Web Chat: expected element passed to constructor to be a DOM node. Recieved instead: ',\n                element\n            );\n        }\n    }\n\n    bindEventsToActions() {\n        Object.values(actionTypes).map(type =>\n            window.addEventListener(`rwc-dispatch-${type}`, ({ detail: { payload } }) =>\n                store.dispatch({\n                    type,\n                    payload\n                })\n            )\n        );\n    }\n}\n\nexport default ReactWebChat;\n",
     "static": true,
     "longname": "/home/peter/praekelt/react-web-chat/src/index.js",
     "access": "public",
@@ -1625,7 +1670,7 @@
     "importPath": "react-web-chat/src/index.js",
     "importStyle": "{ReactWebChatComponent}",
     "description": "The main react component for React Web Chat",
-    "lineNumber": 21,
+    "lineNumber": 23,
     "params": [
       {
         "nullable": null,
@@ -1646,6 +1691,16 @@
         "optional": false,
         "name": "params.theme",
         "description": "Custom theme"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "params.url",
+        "description": "Chat server url to post messages to"
       },
       {
         "nullable": null,
@@ -1659,9 +1714,12 @@
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Object"
+      ],
+      "spread": false,
+      "description": "React component"
     }
   },
   {
@@ -1675,50 +1733,8 @@
     "export": true,
     "importPath": "react-web-chat/src/index.js",
     "importStyle": "ReactWebChat",
-    "description": "The wrapping constructor module which exposes an interace",
-    "lineNumber": 41,
-    "params": [
-      {
-        "nullable": null,
-        "types": [
-          "Object"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "params",
-        "description": "An object containing configuration parameters"
-      },
-      {
-        "nullable": null,
-        "types": [
-          "Object"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "params.theme",
-        "description": "Custom theme"
-      },
-      {
-        "nullable": null,
-        "types": [
-          "Object"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "params.client",
-        "description": "Which client to use for network communication"
-      },
-      {
-        "nullable": null,
-        "types": [
-          "Object"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "params.elemt",
-        "description": "A target element to render to"
-      }
-    ],
+    "description": "The wrapping constructor module which renders {@link ReactWebChatComponent} to the target element",
+    "lineNumber": 39,
     "interface": false
   },
   {
@@ -1732,62 +1748,49 @@
     "longname": "src/index.js~ReactWebChat#constructor",
     "access": "public",
     "description": null,
-    "lineNumber": 42,
+    "lineNumber": 40,
     "undocument": true
   },
   {
     "__docId__": 97,
-    "kind": "member",
-    "name": "eventHandlers",
-    "memberof": "src/index.js~ReactWebChat",
-    "static": false,
-    "longname": "src/index.js~ReactWebChat#eventHandlers",
-    "access": "public",
-    "description": null,
-    "lineNumber": 50,
-    "undocument": true,
-    "type": {
-      "types": [
-        "{\"message\": *, \"connection\": *}"
-      ]
-    }
-  },
-  {
-    "__docId__": 98,
     "kind": "member",
     "name": "element",
     "memberof": "src/index.js~ReactWebChat",
     "static": false,
     "longname": "src/index.js~ReactWebChat#element",
     "access": "public",
-    "description": null,
+    "description": "",
     "lineNumber": 52,
-    "undocument": true,
     "type": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Element"
+      ],
+      "spread": false,
+      "description": null
     }
   },
   {
-    "__docId__": 99,
+    "__docId__": 98,
     "kind": "member",
     "name": "client",
     "memberof": "src/index.js~ReactWebChat",
     "static": false,
     "longname": "src/index.js~ReactWebChat#client",
     "access": "public",
-    "description": null,
-    "lineNumber": 53,
-    "undocument": true,
+    "description": "",
+    "lineNumber": 56,
     "type": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Object"
+      ],
+      "spread": false,
+      "description": null
     }
   },
   {
-    "__docId__": 100,
+    "__docId__": 99,
     "kind": "method",
     "name": "bindEventsToActions",
     "memberof": "src/index.js~ReactWebChat",
@@ -1797,16 +1800,16 @@
     "longname": "src/index.js~ReactWebChat#bindEventsToActions",
     "access": "public",
     "description": null,
-    "lineNumber": 67,
+    "lineNumber": 70,
     "undocument": true,
     "params": [],
     "return": null
   },
   {
-    "__docId__": 101,
+    "__docId__": 100,
     "kind": "file",
     "name": "src/middleware/eventEmitter.js",
-    "content": "// @ts-check\nconst eventEmitterMiddleware = store => next => action => {\n    const event = new CustomEvent(`rwc-${action.type}`, {\n        detail: {\n            payload: action.payload\n        }\n    });\n\n    window.dispatchEvent(event);\n    return next(action);\n};\n\nexport default eventEmitterMiddleware;\n",
+    "content": "// @ts-check\n/**\n * Automatically dispatches custom events whenever a redux action is dispatched.\n * @param {Object} store - a redux store instance\n */\nconst eventEmitterMiddleware = store => next => action => {\n    const event = new CustomEvent(`rwc-${action.type}`, {\n        detail: {\n            payload: action.payload\n        }\n    });\n\n    window.dispatchEvent(event);\n    return next(action);\n};\n\nexport default eventEmitterMiddleware;\n",
     "static": true,
     "longname": "/home/peter/praekelt/react-web-chat/src/middleware/eventEmitter.js",
     "access": "public",
@@ -1814,7 +1817,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 102,
+    "__docId__": 101,
     "kind": "function",
     "name": "eventEmitterMiddleware",
     "memberof": "src/middleware/eventEmitter.js",
@@ -1826,24 +1829,27 @@
     "export": true,
     "importPath": "react-web-chat/src/middleware/eventEmitter.js",
     "importStyle": "eventEmitterMiddleware",
-    "description": null,
-    "lineNumber": 2,
-    "undocument": true,
+    "description": "Automatically dispatches custom events whenever a redux action is dispatched.",
+    "lineNumber": 6,
     "params": [
       {
-        "name": "store",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "store",
+        "description": "a redux store instance"
       }
     ],
     "return": null
   },
   {
-    "__docId__": 103,
+    "__docId__": 102,
     "kind": "file",
     "name": "src/reducers/connection.js",
-    "content": "// @ts-check\nimport {\n    CONNECTION_ESTABLISHED,\n    CONNECTION_ATTEMPTED,\n    CONNECTION_DROPPED,\n    CONNECTION_LISTENING\n} from '../actionTypes';\n\nconst initialState = {\n    established: false,\n    connecting: false,\n    offline: true,\n    listening: false\n};\n\nexport default (state = initialState, action) => {\n    switch (action.type) {\n        case CONNECTION_ESTABLISHED:\n            return { ...state, established: true, connecting: false, offline: false };\n        case CONNECTION_ATTEMPTED:\n            return { ...state, connecting: true, offline: true };\n        case CONNECTION_DROPPED:\n            return {\n                ...state,\n                established: false,\n                connecting: false,\n                offline: true,\n                listening: false\n            };\n        case CONNECTION_LISTENING:\n            return {\n                ...state,\n                listening: true\n            };\n        default:\n            return state;\n    }\n};\n",
+    "content": "// @ts-check\nimport {\n    CONNECTION_ESTABLISHED,\n    CONNECTION_ATTEMPTED,\n    CONNECTION_DROPPED,\n    CONNECTION_LISTENING\n} from '../actionTypes';\n\nconst initialState = {\n    established: false,\n    connecting: false,\n    offline: true,\n    listening: false\n};\n\n/**\n * @ignore\n */\nexport default (state = initialState, action) => {\n    switch (action.type) {\n        case CONNECTION_ESTABLISHED:\n            return { ...state, established: true, connecting: false, offline: false };\n        case CONNECTION_ATTEMPTED:\n            return { ...state, connecting: true, offline: true };\n        case CONNECTION_DROPPED:\n            return {\n                ...state,\n                established: false,\n                connecting: false,\n                offline: true,\n                listening: false\n            };\n        case CONNECTION_LISTENING:\n            return {\n                ...state,\n                listening: true\n            };\n        default:\n            return state;\n    }\n};\n",
     "static": true,
     "longname": "/home/peter/praekelt/react-web-chat/src/reducers/connection.js",
     "access": "public",
@@ -1851,7 +1857,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 104,
+    "__docId__": 103,
     "kind": "variable",
     "name": "initialState",
     "memberof": "src/reducers/connection.js",
@@ -1872,7 +1878,7 @@
     "ignore": true
   },
   {
-    "__docId__": 105,
+    "__docId__": 104,
     "kind": "function",
     "name": "connection",
     "memberof": "src/reducers/connection.js",
@@ -1884,9 +1890,9 @@
     "export": true,
     "importPath": "react-web-chat/src/reducers/connection.js",
     "importStyle": "connection",
-    "description": null,
-    "lineNumber": 16,
-    "undocument": true,
+    "description": "",
+    "lineNumber": 19,
+    "ignore": true,
     "params": [
       {
         "name": "state",
@@ -1911,10 +1917,10 @@
     }
   },
   {
-    "__docId__": 106,
+    "__docId__": 105,
     "kind": "file",
     "name": "src/reducers/index.js",
-    "content": "// @ts-check\nimport { combineReducers } from 'redux';\n\nimport messages from './messages';\nimport connection from './connection';\n\nexport const reducers = combineReducers({\n    messages,\n    connection\n});\n",
+    "content": "// @ts-check\nimport { combineReducers } from 'redux';\n\nimport messages from './messages';\nimport connection from './connection';\n\n/**\n * @ignore\n */\nexport const reducers = combineReducers({\n    messages,\n    connection\n});\n",
     "static": true,
     "longname": "/home/peter/praekelt/react-web-chat/src/reducers/index.js",
     "access": "public",
@@ -1922,7 +1928,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 107,
+    "__docId__": 106,
     "kind": "variable",
     "name": "reducers",
     "memberof": "src/reducers/index.js",
@@ -1932,9 +1938,9 @@
     "export": true,
     "importPath": "react-web-chat/src/reducers/index.js",
     "importStyle": "{reducers}",
-    "description": null,
-    "lineNumber": 7,
-    "undocument": true,
+    "description": "",
+    "lineNumber": 10,
+    "ignore": true,
     "type": {
       "types": [
         "*"
@@ -1942,10 +1948,10 @@
     }
   },
   {
-    "__docId__": 108,
+    "__docId__": 107,
     "kind": "file",
     "name": "src/reducers/messages.js",
-    "content": "// @ts-check\n/** @module connectionReducers */\nimport { MESSAGE_ADD, MESSAGE_QUEUE } from '../actionTypes';\n\nconst initialState = {\n    messages: [],\n    messageQueue: []\n};\n\nexport default (state = initialState, action) => {\n    switch (action.type) {\n        case MESSAGE_ADD:\n            return {\n                ...state,\n                messages: [...state.messages, action.payload],\n                messageQueue: state.messageQueue.filter(message => message !== action.payload)\n            };\n        case MESSAGE_QUEUE:\n            return { ...state, messageQueue: [...state.messageQueue, action.payload] };\n        default:\n            return state;\n    }\n};\n",
+    "content": "// @ts-check\nimport { MESSAGE_ADD, MESSAGE_QUEUE } from '../actionTypes';\n\nconst initialState = {\n    messages: [],\n    messageQueue: []\n};\n/**\n * @ignore\n */\nexport default (state = initialState, action) => {\n    switch (action.type) {\n        case MESSAGE_ADD:\n            return {\n                ...state,\n                messages: [...state.messages, action.payload],\n                messageQueue: state.messageQueue.filter(message => message !== action.payload)\n            };\n        case MESSAGE_QUEUE:\n            return { ...state, messageQueue: [...state.messageQueue, action.payload] };\n        default:\n            return state;\n    }\n};\n",
     "static": true,
     "longname": "/home/peter/praekelt/react-web-chat/src/reducers/messages.js",
     "access": "public",
@@ -1953,7 +1959,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 109,
+    "__docId__": 108,
     "kind": "variable",
     "name": "initialState",
     "memberof": "src/reducers/messages.js",
@@ -1964,7 +1970,7 @@
     "importPath": "react-web-chat/src/reducers/messages.js",
     "importStyle": null,
     "description": null,
-    "lineNumber": 5,
+    "lineNumber": 4,
     "undocument": true,
     "type": {
       "types": [
@@ -1974,7 +1980,7 @@
     "ignore": true
   },
   {
-    "__docId__": 110,
+    "__docId__": 109,
     "kind": "function",
     "name": "messages",
     "memberof": "src/reducers/messages.js",
@@ -1986,9 +1992,9 @@
     "export": true,
     "importPath": "react-web-chat/src/reducers/messages.js",
     "importStyle": "messages",
-    "description": null,
-    "lineNumber": 10,
-    "undocument": true,
+    "description": "",
+    "lineNumber": 11,
+    "ignore": true,
     "params": [
       {
         "name": "state",
@@ -2013,7 +2019,7 @@
     }
   },
   {
-    "__docId__": 111,
+    "__docId__": 110,
     "kind": "file",
     "name": "src/store.js",
     "content": "// @ts-check\nimport { createStore, applyMiddleware, compose } from 'redux';\nimport thunk from 'redux-thunk';\n\nimport { reducers } from './reducers/index';\nimport eventEmitterMiddleware from './middleware/eventEmitter';\n\nlet middlewares = [eventEmitterMiddleware, thunk];\n\nlet middleware = applyMiddleware(...middlewares);\n\nif (window.devToolsExtension) {\n    middleware = compose(middleware, window.devToolsExtension());\n}\n\nexport default createStore(reducers, middleware);\n",
@@ -2024,7 +2030,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 112,
+    "__docId__": 111,
     "kind": "variable",
     "name": "middlewares",
     "memberof": "src/store.js",
@@ -2045,7 +2051,7 @@
     "ignore": true
   },
   {
-    "__docId__": 113,
+    "__docId__": 112,
     "kind": "variable",
     "name": "middleware",
     "memberof": "src/store.js",
@@ -2066,7 +2072,7 @@
     "ignore": true
   },
   {
-    "__docId__": 114,
+    "__docId__": 113,
     "kind": "file",
     "name": "src/themes/default/components/Animation/index.js",
     "content": "//@ts-check\nimport React from 'react';\nimport { CSSTransition } from 'react-transition-group';\n\nexport const Fade = ({ children, ...props }) => (\n    <CSSTransition {...props} timeout={350} classNames=\"fade\">\n        {children}\n    </CSSTransition>\n);\n",
@@ -2077,7 +2083,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 115,
+    "__docId__": 114,
     "kind": "function",
     "name": "Fade",
     "memberof": "src/themes/default/components/Animation/index.js",
@@ -2108,10 +2114,10 @@
     "return": null
   },
   {
-    "__docId__": 116,
+    "__docId__": 115,
     "kind": "file",
     "name": "src/themes/default/components/Avatar/index.js",
-    "content": "import React from 'react';\n\nconst Avatar = props => (\n    <div className=\"AvatarStatus\">\n        <div className=\"AvatarStatus-avatar\">\n            <img className=\"Avatar\" src={props.avatar} />\n        </div>\n        <div className=\"AvatarStatus-status\">{switchIndicator(props)}</div>\n    </div>\n);\n\nconst switchIndicator = ({ connecting, established, offline, avatar, typing }) => {\n    if (typing) {\n        return <StatusIndicator status=\"typing\" />;\n    } else {\n        if (established) {\n            return <StatusIndicator status=\"online\" />;\n        }\n        if (connecting) {\n            return <StatusIndicator status=\"thinking\" />;\n        }\n        if (offline) {\n            return <StatusIndicator status=\"offline\" />;\n        }\n    }\n};\n\nconst StatusIndicator = ({ status }) => (\n    <div\n        className={`StatusIndicator\n            ${status ? `StatusIndicator--${status}` : ''}\n        `}\n    />\n);\n\nexport default Avatar;\n",
+    "content": "import React from 'react';\n\n/**\n * Renders the chat bot's avatar along with a status indicator. \n * @param {Object} props\n * @param {string} props.avatar - A url to an image to use as the avatar.\n * @param {boolean} props.connecting - A state variable indicating that the chat app is busy attempting a connection to the server.\n * @param {boolean} props.established - A state variable indicating that the chat server is online and the handshake was successful.\n * @param {boolean} props.offline - A state variable indicating that the chat server is offline.\n * @param {boolean} props.typing - A state variable indicating that the chat app is currently simulating \"typing...\"\n * @return {Object} React component\n */\nconst Avatar = props => (\n    <div className=\"AvatarStatus\">\n        <div className=\"AvatarStatus-avatar\">\n            <img className=\"Avatar\" src={props.avatar} />\n        </div>\n        <div className=\"AvatarStatus-status\">{switchIndicator(props)}</div>\n    </div>\n);\n\n/**\n * Toggles different indicator states based on connection state variable\n * @todo refactor this to use a map\n */\nconst switchIndicator = ({ connecting, established, offline, avatar, typing }) => {\n    if (typing) {\n        return <StatusIndicator status=\"typing\" />;\n    } else {\n        if (established) {\n            return <StatusIndicator status=\"online\" />;\n        }\n        if (connecting) {\n            return <StatusIndicator status=\"thinking\" />;\n        }\n        if (offline) {\n            return <StatusIndicator status=\"offline\" />;\n        }\n    }\n};\n\nconst StatusIndicator = ({ status }) => (\n    <div\n        className={`StatusIndicator\n            ${status ? `StatusIndicator--${status}` : ''}\n        `}\n    />\n);\n\nexport default Avatar;\n",
     "static": true,
     "longname": "/home/peter/praekelt/react-web-chat/src/themes/default/components/Avatar/index.js",
     "access": "public",
@@ -2119,7 +2125,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 117,
+    "__docId__": 116,
     "kind": "function",
     "name": "switchIndicator",
     "memberof": "src/themes/default/components/Avatar/index.js",
@@ -2131,9 +2137,11 @@
     "export": false,
     "importPath": "react-web-chat/src/themes/default/components/Avatar/index.js",
     "importStyle": null,
-    "description": null,
-    "lineNumber": 12,
-    "undocument": true,
+    "description": "Toggles different indicator states based on connection state variable",
+    "lineNumber": 26,
+    "todo": [
+      "refactor this to use a map"
+    ],
     "params": [
       {
         "name": "objectPattern",
@@ -2158,7 +2166,7 @@
     "ignore": true
   },
   {
-    "__docId__": 118,
+    "__docId__": 117,
     "kind": "function",
     "name": "StatusIndicator",
     "memberof": "src/themes/default/components/Avatar/index.js",
@@ -2171,7 +2179,7 @@
     "importPath": "react-web-chat/src/themes/default/components/Avatar/index.js",
     "importStyle": null,
     "description": null,
-    "lineNumber": 28,
+    "lineNumber": 42,
     "undocument": true,
     "params": [
       {
@@ -2189,7 +2197,7 @@
     "ignore": true
   },
   {
-    "__docId__": 119,
+    "__docId__": 118,
     "kind": "function",
     "name": "Avatar",
     "memberof": "src/themes/default/components/Avatar/index.js",
@@ -2201,24 +2209,84 @@
     "export": true,
     "importPath": "react-web-chat/src/themes/default/components/Avatar/index.js",
     "importStyle": "Avatar",
-    "description": null,
-    "lineNumber": 3,
-    "undocument": true,
+    "description": "Renders the chat bot's avatar along with a status indicator. ",
+    "lineNumber": 13,
     "params": [
       {
-        "name": "props",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props.avatar",
+        "description": "A url to an image to use as the avatar."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props.connecting",
+        "description": "A state variable indicating that the chat app is busy attempting a connection to the server."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props.established",
+        "description": "A state variable indicating that the chat server is online and the handshake was successful."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props.offline",
+        "description": "A state variable indicating that the chat server is offline."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props.typing",
+        "description": "A state variable indicating that the chat app is currently simulating \"typing...\""
       }
     ],
-    "return": null
+    "return": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": "React component"
+    }
   },
   {
-    "__docId__": 120,
+    "__docId__": 119,
     "kind": "file",
     "name": "src/themes/default/components/Button/index.js",
-    "content": "//@ts-check\nimport React from 'react';\nimport PropTypes from 'prop-types';\nimport { compose, setPropTypes } from 'recompose';\n\nconst enhance = compose(\n    setPropTypes({\n        text: PropTypes.string\n    })\n);\n\nconst Button = ({ text, onClick }) => (\n    <button className=\"Button Button--solid\" onClick={onClick}>\n        {text}\n    </button>\n);\n\nexport default enhance(Button);\n",
+    "content": "//@ts-check\nimport React from 'react';\nimport PropTypes from 'prop-types';\nimport { compose, setPropTypes } from 'recompose';\n\nconst enhance = compose(\n    setPropTypes({\n        text: PropTypes.string,\n        onClick: PropTypes.func\n    })\n);\n\n/**\n * A simple button component\n * @param {Object} param\n * @param {number} param.text - text to be rendered inside button.\n * @param {function(e: Object)} param.onClick - click handler function\n * @return {Object} React component\n */\nexport const Button = ({ text, onClick }) => (\n    <button className=\"Button Button--solid\" onClick={onClick}>\n        {text}\n    </button>\n);\n\nexport default enhance(Button);\n",
     "static": true,
     "longname": "/home/peter/praekelt/react-web-chat/src/themes/default/components/Button/index.js",
     "access": "public",
@@ -2226,7 +2294,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 121,
+    "__docId__": 120,
     "kind": "variable",
     "name": "enhance",
     "memberof": "src/themes/default/components/Button/index.js",
@@ -2247,7 +2315,7 @@
     "ignore": true
   },
   {
-    "__docId__": 122,
+    "__docId__": 121,
     "kind": "function",
     "name": "Button",
     "memberof": "src/themes/default/components/Button/index.js",
@@ -2256,33 +2324,57 @@
     "static": true,
     "longname": "src/themes/default/components/Button/index.js~Button",
     "access": "public",
-    "export": false,
+    "export": true,
     "importPath": "react-web-chat/src/themes/default/components/Button/index.js",
-    "importStyle": null,
-    "description": null,
-    "lineNumber": 12,
-    "undocument": true,
+    "importStyle": "{Button}",
+    "description": "A simple button component",
+    "lineNumber": 20,
     "params": [
       {
-        "name": "objectPattern",
+        "nullable": null,
         "types": [
-          "{\"text\": *, \"onClick\": *}"
+          "Object"
         ],
-        "defaultRaw": {
-          "text": null,
-          "onClick": null
-        },
-        "defaultValue": "{\"text\":null,\"onClick\":null}"
+        "spread": false,
+        "optional": false,
+        "name": "param",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "param.text",
+        "description": "text to be rendered inside button."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function(e: Object)"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "param.onClick",
+        "description": "click handler function"
       }
     ],
-    "return": null,
-    "ignore": true
+    "return": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": "React component"
+    }
   },
   {
-    "__docId__": 123,
+    "__docId__": 122,
     "kind": "file",
     "name": "src/themes/default/components/Image/index.js",
-    "content": "// @ts-check\nimport React from 'react';\nimport PropTypes from 'prop-types';\nimport { compose, setPropTypes, lifecycle } from 'recompose';\nimport { withState } from 'recompose';\n\nimport infinityIcon from '../../icons/Infinity.svg';\nimport { Fade } from '../Animation/index';\n\nconst enhance = compose(\n    setPropTypes({\n        url: PropTypes.string.isRequired,\n        text: PropTypes.string,\n        width: PropTypes.number,\n        height: PropTypes.number\n    }),\n    withState('loaded', 'setLoaded', false),\n    lifecycle({\n        componentDidMount: function(props) {\n            let image = new Image(0, 0);\n            image.src = this.props.url;\n            image.addEventListener('load', () => {\n                this.setState({ loaded: true });\n            });\n        }\n    })\n);\n\nexport const ImageComponent = ({ url, text, loaded, height = 200 }) => {\n    return (\n        <Fade in={true} appear={true}>\n            <div className=\"Image\">\n                {loaded ? (\n                    <img className=\"Image-image\" src={url} />\n                ) : (\n                    <div className=\"Image-loader\" style={{ height }}>\n                        <img className=\"Image-loaderIcon\" src={infinityIcon} />\n                    </div>\n                )}\n                {text && (\n                    <p className=\"Image-text Text\" dangerouslySetInnerHTML={{ __html: text }} />\n                )}\n            </div>\n        </Fade>\n    );\n};\n\nexport default enhance(ImageComponent);\n",
+    "content": "// @ts-check\nimport React from 'react';\nimport PropTypes from 'prop-types';\nimport { compose, setPropTypes, lifecycle } from 'recompose';\nimport { withState } from 'recompose';\n\nimport infinityIcon from '../../icons/Infinity.svg';\nimport { Fade } from '../Animation/index';\n\nconst enhance = compose(\n    setPropTypes({\n        url: PropTypes.string.isRequired,\n        text: PropTypes.string,\n        width: PropTypes.number,\n        height: PropTypes.number\n    }),\n    withState('loaded', 'setLoaded', false),\n    lifecycle({\n        componentDidMount: function(props) {\n            let image = new Image(0, 0);\n            image.src = this.props.url;\n            image.addEventListener('load', () => {\n                this.setState({ loaded: true });\n            });\n        }\n    })\n);\n\n/**\n * An image\n * @param {Object} param\n * @param {string} param.url - image url\n * @param {number} param.width - width of the image in pixels\n * @param {number} param.height - height of the image in pixels\n * @return {Object} React component\n */\n\nexport const ImageComponent = ({ url, text, loaded, height = 200 }) => {\n    return (\n        <Fade in={true} appear={true}>\n            <div className=\"Image\">\n                {loaded ? (\n                    <img className=\"Image-image\" src={url} />\n                ) : (\n                    <div className=\"Image-loader\" style={{ height }}>\n                        <img className=\"Image-loaderIcon\" src={infinityIcon} />\n                    </div>\n                )}\n                {text && (\n                    <p className=\"Image-text Text\" dangerouslySetInnerHTML={{ __html: text }} />\n                )}\n            </div>\n        </Fade>\n    );\n};\n\nexport default enhance(ImageComponent);\n",
     "static": true,
     "longname": "/home/peter/praekelt/react-web-chat/src/themes/default/components/Image/index.js",
     "access": "public",
@@ -2290,7 +2382,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 124,
+    "__docId__": 123,
     "kind": "variable",
     "name": "enhance",
     "memberof": "src/themes/default/components/Image/index.js",
@@ -2311,7 +2403,7 @@
     "ignore": true
   },
   {
-    "__docId__": 125,
+    "__docId__": 124,
     "kind": "function",
     "name": "ImageComponent",
     "memberof": "src/themes/default/components/Image/index.js",
@@ -2323,35 +2415,64 @@
     "export": true,
     "importPath": "react-web-chat/src/themes/default/components/Image/index.js",
     "importStyle": "{ImageComponent}",
-    "description": null,
-    "lineNumber": 29,
-    "undocument": true,
+    "description": "An image",
+    "lineNumber": 38,
     "params": [
       {
-        "name": "objectPattern",
+        "nullable": null,
         "types": [
-          "{\"url\": *, \"text\": *, \"loaded\": *, \"height\": *}"
+          "Object"
         ],
-        "defaultRaw": {
-          "url": null,
-          "text": null,
-          "loaded": null,
-          "height": null
-        },
-        "defaultValue": "{\"url\":null,\"text\":null,\"loaded\":null,\"height\":null}"
+        "spread": false,
+        "optional": false,
+        "name": "param",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "param.url",
+        "description": "image url"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "param.width",
+        "description": "width of the image in pixels"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "param.height",
+        "description": "height of the image in pixels"
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Object"
+      ],
+      "spread": false,
+      "description": "React component"
     }
   },
   {
-    "__docId__": 126,
+    "__docId__": 125,
     "kind": "file",
     "name": "src/themes/default/components/Input/index.js",
-    "content": "// @ts-check\nimport React from 'react';\nimport PropTypes from 'prop-types';\nimport { compose, setPropTypes, withState } from 'recompose';\n\nimport Button from '../Button';\n\nconst enhance = compose(\n    setPropTypes({\n        submitHandler: PropTypes.func\n    }),\n    withState('value', 'setValue', '')\n);\n\nexport const Input = ({ submitHandler, value, setValue }) => (\n    <div className=\"Input\">\n        <input\n            className=\"Input-input\"\n            type=\"text\"\n            value={value}\n            onChange={({ target: { value } }) => setValue(value)}\n        />\n        <button className=\"Input-send\" onClick={() => submitHandler(value)}>\n            SEND\n        </button>\n    </div>\n);\n\nexport default enhance(Input);\n",
+    "content": "// @ts-check\nimport React from 'react';\nimport PropTypes from 'prop-types';\nimport { compose, setPropTypes, withState } from 'recompose';\n\nimport Button from '../Button';\n\nconst enhance = compose(\n    setPropTypes({\n        submitHandler: PropTypes.func\n    }),\n    withState('value', 'setValue', '')\n);\n\n/**\n * A simple text Input component.\n * @param {Object} param\n * @param {string|number} param.value - the input's value.\n * @param {function(text: string)} param.submitHandler - submit handler function. This will send a message to the server using data supplied as parameter\n * @return {Object} React component\n */\nexport const Input = ({ submitHandler, value, setValue }) => (\n    <div className=\"Input\">\n        <input\n            className=\"Input-input\"\n            type=\"text\"\n            value={value}\n            onChange={({ target: { value } }) => setValue(value)}\n        />\n        <button className=\"Input-send\" onClick={() => submitHandler(value)}>\n            SEND\n        </button>\n    </div>\n);\n\nexport default enhance(Input);\n",
     "static": true,
     "longname": "/home/peter/praekelt/react-web-chat/src/themes/default/components/Input/index.js",
     "access": "public",
@@ -2359,7 +2480,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 127,
+    "__docId__": 126,
     "kind": "variable",
     "name": "enhance",
     "memberof": "src/themes/default/components/Input/index.js",
@@ -2380,7 +2501,7 @@
     "ignore": true
   },
   {
-    "__docId__": 128,
+    "__docId__": 127,
     "kind": "function",
     "name": "Input",
     "memberof": "src/themes/default/components/Input/index.js",
@@ -2392,30 +2513,55 @@
     "export": true,
     "importPath": "react-web-chat/src/themes/default/components/Input/index.js",
     "importStyle": "{Input}",
-    "description": null,
-    "lineNumber": 15,
-    "undocument": true,
+    "description": "A simple text Input component.",
+    "lineNumber": 22,
     "params": [
       {
-        "name": "objectPattern",
+        "nullable": null,
         "types": [
-          "{\"submitHandler\": *, \"value\": *, \"setValue\": *}"
+          "Object"
         ],
-        "defaultRaw": {
-          "submitHandler": null,
-          "value": null,
-          "setValue": null
-        },
-        "defaultValue": "{\"submitHandler\":null,\"value\":null,\"setValue\":null}"
+        "spread": false,
+        "optional": false,
+        "name": "param",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string",
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "param.value",
+        "description": "the input's value."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function(text: string)"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "param.submitHandler",
+        "description": "submit handler function. This will send a message to the server using data supplied as parameter"
       }
     ],
-    "return": null
+    "return": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": "React component"
+    }
   },
   {
-    "__docId__": 129,
+    "__docId__": 128,
     "kind": "file",
     "name": "src/themes/default/components/Menu/index.js",
-    "content": "// @ts-check\nimport React from 'react';\nimport PropTypes from 'prop-types';\nimport { compose, withStateHandlers } from 'recompose';\n\nimport Button from '../Button';\n\nconst enhance = compose(\n    withStateHandlers(\n        ({ initialState = false, initialItems = [] }) => ({\n            open: initialState,\n            selectedItems: initialItems\n        }),\n        {\n            toggleState: ({ open }) => _ => ({\n                open: !open\n            }),\n            toggleItem: ({ selectedItems }) => item => {\n                let newItems = [...selectedItems];\n                let index = newItems.indexOf(item);\n                if (index === -1) {\n                    newItems.push(item);\n                } else {\n                    newItems.splice(index, 1);\n                }\n                return { selectedItems: newItems };\n            }\n        }\n    )\n);\n\nexport const Menu = ({ open, toggleState, items, submitHandler }) => (\n    <div className={`Menu ${open ? 'is-open' : ''}`}>\n        {items && (\n            <ul className=\"Menu-items\">\n                {items.map((item, i) => (\n                    <li\n                        className=\"Menu-item\"\n                        key={i}\n                        onClick={() => {\n                            submitHandler(item.text);\n                            toggleState();\n                        }}\n                    >\n                        {item.text}\n                    </li>\n                ))}\n            </ul>\n        )}\n        <button className=\"Menu-button\" onClick={toggleState}>\n            <div className=\"Menu-buttonSegment\" />\n            <div className=\"Menu-buttonSegment\" />\n            <div className=\"Menu-buttonSegment\" />\n        </button>\n    </div>\n);\n\nexport const CheckboxMenu = enhance(\n    ({ open, toggleState, items, submitHandler, toggleItem, selectedItems }) => (\n        <div className={`Menu CheckboxMenu ${open ? 'is-open' : ''}`}>\n            {items && (\n                <ul className=\"Menu-items\">\n                    {items.map((item, i) => (\n                        <li\n                            className=\"Menu-item CheckboxMenu-item\"\n                            key={i}\n                            onClick={() => toggleItem(item.text)}\n                        >\n                            <input\n                                className=\"CheckboxMenu-checkbox\"\n                                type=\"checkbox\"\n                                checked={selectedItems.includes(item.text)}\n                            />\n                            <label className=\"CheckboxMenu-label\">{item.text}</label>\n                        </li>\n                    ))}\n                </ul>\n            )}\n            <button\n                className=\"CheckboxMenu-submitButton\"\n                onClick={() => {\n                    submitHandler(selectedItems);\n                    toggleState();\n                }}\n            >\n                SEND\n            </button>\n            <button className=\"Menu-button\" onClick={toggleState}>\n                <div className=\"Menu-buttonSegment\" />\n                <div className=\"Menu-buttonSegment\" />\n                <div className=\"Menu-buttonSegment\" />\n            </button>\n        </div>\n    )\n);\n\nexport default enhance(Menu);\n",
+    "content": "// @ts-check\nimport React from 'react';\nimport PropTypes from 'prop-types';\nimport { compose, withStateHandlers } from 'recompose';\n\nimport Button from '../Button';\n\nconst enhance = compose(\n    withStateHandlers(\n        ({ initialState = false, initialItems = [] }) => ({\n            open: initialState,\n            selectedItems: initialItems\n        }),\n        {\n            toggleState: ({ open }) => _ => ({\n                open: !open\n            }),\n            toggleItem: ({ selectedItems }) => item => {\n                let newItems = [...selectedItems];\n                let index = newItems.indexOf(item);\n                if (index === -1) {\n                    newItems.push(item);\n                } else {\n                    newItems.splice(index, 1);\n                }\n                return { selectedItems: newItems };\n            }\n        }\n    )\n);\n\n/**\n * A menu listing several items. (single choice)\n * @param {Object} param\n * @param {Array<Object>} param.items - The menu items to be displayed\n * @param {function(text: string)} param.submitHandler - submit handler function. This will send a message to the server using data supplied as parameter\n * @return {Object} React component\n */\nexport const Menu = ({ open, toggleState, items, submitHandler }) => (\n    <div className={`Menu ${open ? 'is-open' : ''}`}>\n        {items && (\n            <ul className=\"Menu-items\">\n                {items.map((item, i) => (\n                    <li\n                        className=\"Menu-item\"\n                        key={i}\n                        onClick={() => {\n                            submitHandler(item.text);\n                            toggleState();\n                        }}\n                    >\n                        {item.text}\n                    </li>\n                ))}\n            </ul>\n        )}\n        <button className=\"Menu-button\" onClick={toggleState}>\n            <div className=\"Menu-buttonSegment\" />\n            <div className=\"Menu-buttonSegment\" />\n            <div className=\"Menu-buttonSegment\" />\n        </button>\n    </div>\n);\n\n/**\n * A menu listing several checkbox items. (multiple choice)\n * @param {Object} param\n * @param {Array<Object>} param.items - The menu items to be displayed\n * @param {function(items: Array<string>)} param.submitHandler - submit handler function. This will send a message to the server using data supplied as parameter\n * @return {Object} React component\n */\nexport const CheckboxMenu = enhance(\n    ({ open, toggleState, items, submitHandler, toggleItem, selectedItems }) => (\n        <div className={`Menu CheckboxMenu ${open ? 'is-open' : ''}`}>\n            {items && (\n                <ul className=\"Menu-items\">\n                    {items.map((item, i) => (\n                        <li\n                            className=\"Menu-item CheckboxMenu-item\"\n                            key={i}\n                            onClick={() => toggleItem(item.text)}\n                        >\n                            <input\n                                className=\"CheckboxMenu-checkbox\"\n                                type=\"checkbox\"\n                                checked={selectedItems.includes(item.text)}\n                            />\n                            <label className=\"CheckboxMenu-label\">{item.text}</label>\n                        </li>\n                    ))}\n                </ul>\n            )}\n            <button\n                className=\"CheckboxMenu-submitButton\"\n                onClick={() => {\n                    submitHandler(selectedItems);\n                    toggleState();\n                }}\n            >\n                SEND\n            </button>\n            <button className=\"Menu-button\" onClick={toggleState}>\n                <div className=\"Menu-buttonSegment\" />\n                <div className=\"Menu-buttonSegment\" />\n                <div className=\"Menu-buttonSegment\" />\n            </button>\n        </div>\n    )\n);\n\nexport default enhance(Menu);\n",
     "static": true,
     "longname": "/home/peter/praekelt/react-web-chat/src/themes/default/components/Menu/index.js",
     "access": "public",
@@ -2423,7 +2569,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 130,
+    "__docId__": 129,
     "kind": "variable",
     "name": "enhance",
     "memberof": "src/themes/default/components/Menu/index.js",
@@ -2444,7 +2590,7 @@
     "ignore": true
   },
   {
-    "__docId__": 131,
+    "__docId__": 130,
     "kind": "function",
     "name": "Menu",
     "memberof": "src/themes/default/components/Menu/index.js",
@@ -2456,28 +2602,51 @@
     "export": true,
     "importPath": "react-web-chat/src/themes/default/components/Menu/index.js",
     "importStyle": "{Menu}",
-    "description": null,
-    "lineNumber": 32,
-    "undocument": true,
+    "description": "A menu listing several items. (single choice)",
+    "lineNumber": 39,
     "params": [
       {
-        "name": "objectPattern",
+        "nullable": null,
         "types": [
-          "{\"open\": *, \"toggleState\": *, \"items\": *, \"submitHandler\": *}"
+          "Object"
         ],
-        "defaultRaw": {
-          "open": null,
-          "toggleState": null,
-          "items": null,
-          "submitHandler": null
-        },
-        "defaultValue": "{\"open\":null,\"toggleState\":null,\"items\":null,\"submitHandler\":null}"
+        "spread": false,
+        "optional": false,
+        "name": "param",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Array<Object>"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "param.items",
+        "description": "The menu items to be displayed"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function(text: string)"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "param.submitHandler",
+        "description": "submit handler function. This will send a message to the server using data supplied as parameter"
       }
     ],
-    "return": null
+    "return": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": "React component"
+    }
   },
   {
-    "__docId__": 132,
+    "__docId__": 131,
     "kind": "variable",
     "name": "CheckboxMenu",
     "memberof": "src/themes/default/components/Menu/index.js",
@@ -2487,9 +2656,48 @@
     "export": true,
     "importPath": "react-web-chat/src/themes/default/components/Menu/index.js",
     "importStyle": "{CheckboxMenu}",
-    "description": null,
-    "lineNumber": 58,
-    "undocument": true,
+    "description": "A menu listing several checkbox items. (multiple choice)",
+    "lineNumber": 72,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "param",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Array<Object>"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "param.items",
+        "description": "The menu items to be displayed"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function(items: Array<string>)"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "param.submitHandler",
+        "description": "submit handler function. This will send a message to the server using data supplied as parameter"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": "React component"
+    },
     "type": {
       "types": [
         "*"
@@ -2497,10 +2705,10 @@
     }
   },
   {
-    "__docId__": 133,
+    "__docId__": 132,
     "kind": "file",
     "name": "src/themes/default/components/Text/index.js",
-    "content": "//@ts-check\nimport React from 'react';\nimport PropTypes from 'prop-types';\nimport { compose, setPropTypes } from 'recompose';\nimport { CSSTransition } from 'react-transition-group';\n\nimport { Fade } from '../Animation/index';\n\nconst createMarkup = (children, title) => {\n    const text = title ? `<h1 class=\"Text-h1\">${children}</h1>` : children;\n    return { __html: text };\n};\n\nconst enhance = compose(\n    setPropTypes({\n        title: PropTypes.string,\n        isLocal: PropTypes.bool\n    })\n);\n\nconst Text = ({ title, children, isLocal }) => (\n    <Fade in={true} appear={true}>\n        <div\n            className={`Text ${isLocal ? 'is-local' : ''}`}\n            dangerouslySetInnerHTML={createMarkup(children, title)}\n        />\n    </Fade>\n);\n\nexport default enhance(Text);\n",
+    "content": "//@ts-check\nimport React from 'react';\nimport PropTypes from 'prop-types';\nimport { compose, setPropTypes } from 'recompose';\nimport { CSSTransition } from 'react-transition-group';\n\nimport { Fade } from '../Animation/index';\n\nconst createMarkup = (children, title) => {\n    const text = title ? `<h1 class=\"Text-h1\">${children}</h1>` : children;\n    return { __html: text };\n};\n\nconst enhance = compose(\n    setPropTypes({\n        title: PropTypes.string,\n        isLocal: PropTypes.bool\n    })\n);\n\n/**\n * A simple text component for use inside messages.\n * @param {Object} param\n * @param {string} param.title - the text message's title.\n * @param {string} param.children - markdown-generated html to render.  \n * @return {Object} React component\n */\nconst Text = ({ title, children, isLocal }) => (\n    <Fade in={true} appear={true}>\n        <div\n            className={`Text ${isLocal ? 'is-local' : ''}`}\n            dangerouslySetInnerHTML={createMarkup(children, title)}\n        />\n    </Fade>\n);\n\nexport default enhance(Text);\n",
     "static": true,
     "longname": "/home/peter/praekelt/react-web-chat/src/themes/default/components/Text/index.js",
     "access": "public",
@@ -2508,7 +2716,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 134,
+    "__docId__": 133,
     "kind": "function",
     "name": "createMarkup",
     "memberof": "src/themes/default/components/Text/index.js",
@@ -2545,7 +2753,7 @@
     "ignore": true
   },
   {
-    "__docId__": 135,
+    "__docId__": 134,
     "kind": "variable",
     "name": "enhance",
     "memberof": "src/themes/default/components/Text/index.js",
@@ -2566,7 +2774,7 @@
     "ignore": true
   },
   {
-    "__docId__": 136,
+    "__docId__": 135,
     "kind": "function",
     "name": "Text",
     "memberof": "src/themes/default/components/Text/index.js",
@@ -2578,31 +2786,55 @@
     "export": false,
     "importPath": "react-web-chat/src/themes/default/components/Text/index.js",
     "importStyle": null,
-    "description": null,
-    "lineNumber": 21,
-    "undocument": true,
+    "description": "A simple text component for use inside messages.",
+    "lineNumber": 28,
     "params": [
       {
-        "name": "objectPattern",
+        "nullable": null,
         "types": [
-          "{\"title\": *, \"children\": *, \"isLocal\": *}"
+          "Object"
         ],
-        "defaultRaw": {
-          "title": null,
-          "children": null,
-          "isLocal": null
-        },
-        "defaultValue": "{\"title\":null,\"children\":null,\"isLocal\":null}"
+        "spread": false,
+        "optional": false,
+        "name": "param",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "param.title",
+        "description": "the text message's title."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "param.children",
+        "description": "markdown-generated html to render."
       }
     ],
-    "return": null,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": "React component"
+    },
     "ignore": true
   },
   {
-    "__docId__": 137,
+    "__docId__": 136,
     "kind": "file",
     "name": "src/themes/default/components/TypingIndicator/index.js",
-    "content": "import React from 'react';\n\nconst TypingIndicator = () => (\n    <div className=\"TypingIndicator\">\n        <div className=\"TypingIndicator-dot\" />\n        <div className=\"TypingIndicator-dot\" />\n        <div className=\"TypingIndicator-dot\" />\n    </div>\n);\n\nexport default TypingIndicator;\n",
+    "content": "import React from 'react';\n\n/**\n * A typing indicator component\n * @return {Object} React component\n */\nconst TypingIndicator = () => (\n    <div className=\"TypingIndicator\">\n        <div className=\"TypingIndicator-dot\" />\n        <div className=\"TypingIndicator-dot\" />\n        <div className=\"TypingIndicator-dot\" />\n    </div>\n);\n\nexport default TypingIndicator;\n",
     "static": true,
     "longname": "/home/peter/praekelt/react-web-chat/src/themes/default/components/TypingIndicator/index.js",
     "access": "public",
@@ -2610,7 +2842,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 138,
+    "__docId__": 137,
     "kind": "function",
     "name": "TypingIndicator",
     "memberof": "src/themes/default/components/TypingIndicator/index.js",
@@ -2622,14 +2854,20 @@
     "export": true,
     "importPath": "react-web-chat/src/themes/default/components/TypingIndicator/index.js",
     "importStyle": "TypingIndicator",
-    "description": null,
-    "lineNumber": 3,
-    "undocument": true,
-    "params": [],
-    "return": null
+    "description": "A typing indicator component",
+    "lineNumber": 7,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": "React component"
+    },
+    "params": []
   },
   {
-    "__docId__": 139,
+    "__docId__": 138,
     "kind": "file",
     "name": "src/themes/default/index.js",
     "content": "// @ts-check\nimport React from 'react';\nimport Avatar from './components/Avatar';\nimport Button from './components/Button';\nimport { CheckboxMenu } from './components/Menu';\nimport Image from './components/Image';\nimport Input from './components/Input';\nimport Menu from './components/Menu';\nimport Text from './components/Text';\nimport TypingIndicator from './components/TypingIndicator';\n\nimport './styles.scss';\n\nexport default {\n    AvatarComponent: Avatar,\n    ButtonComponent: Button,\n    CheckboxMenuComponent: CheckboxMenu,\n    ImageComponent: Image,\n    InputComponent: Input,\n    MenuComponent: Menu,\n    TextComponent: Text,\n    TypingIndicatorComponent: TypingIndicator\n};\n",
@@ -2640,7 +2878,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 140,
+    "__docId__": 139,
     "kind": "file",
     "name": "src/utils/filters.js",
     "content": "// @ts-check\n\n/**\n * Checks if a message belongs to remote\n * @param {Object} message\n */\nexport const remoteMessage = message => message.origin === 'remote';\n",
@@ -2651,7 +2889,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 141,
+    "__docId__": 140,
     "kind": "function",
     "name": "remoteMessage",
     "memberof": "src/utils/filters.js",
@@ -2680,7 +2918,7 @@
     "return": null
   },
   {
-    "__docId__": 142,
+    "__docId__": 141,
     "kind": "file",
     "name": "src/utils/helpers.js",
     "content": "// @ts-check\n\nimport { remoteMessage } from './filters';\n\n/**\n * Returns the latest remote message\n * @param {Array} messages \n */\nexport const getLatestRemote = messages => messages.filter(remoteMessage).pop();\n",
@@ -2691,7 +2929,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 143,
+    "__docId__": 142,
     "kind": "function",
     "name": "getLatestRemote",
     "memberof": "src/utils/helpers.js",
@@ -2720,10 +2958,10 @@
     "return": null
   },
   {
-    "__docId__": 144,
+    "__docId__": 143,
     "kind": "file",
     "name": "src/utils/network.js",
-    "content": "// @ts-check\nimport { MESSAGE_ADD, MESSAGE_SEND } from '../actionTypes';\n\nimport * as connectionActions from '../actions/connection';\nimport * as messageActions from '../actions/messages';\n\nconst networkManager = {\n    init({ store, client, url }) {\n        this.url = url;\n        this.dispatch = store.dispatch;\n        this.client = client;\n        this.store = store;\n        this.dispatch(connectionActions.attempted());\n        this.subscribed = false;\n        this.messageSendHandler = this.messageSendHandler.bind(this);\n        this.messageReceiveHandler = this.messageReceiveHandler.bind(this);\n        this.connectionCloseHandler = this.connectionCloseHandler.bind(this);\n        client\n            .init(url)\n            .then(_ => {\n                this.bindActionEvents();\n                this.dispatch(connectionActions.established());\n            })\n            .catch(error => {\n                console.error('react-web-chat connection error: ', error);\n                this.connectionRetry();\n            });\n        this.subscribe();\n    },\n\n    messageReceiveHandler(message) {\n        this.dispatch(messageActions.messageReceive(message));\n    },\n\n    connectionCloseHandler(event) {\n        this.dispatch(connectionActions.dropped());\n        this.connectionRetry();\n    },\n\n    connectionRetry() {\n        setTimeout(\n            () =>\n                this.client\n                    .init(this.url)\n                    .then(_ => {\n                        this.bindActionEvents();\n                        this.dispatch(connectionActions.established());\n                        this.subscribe();\n                    })\n                    .catch(error => {\n                        console.error('react-web-chat connection error: ', error);\n                        this.connectionRetry();\n                    }),\n            500\n        );\n    },\n\n    messageSendHandler({ detail: { payload } }) {\n        this.client.send(JSON.stringify(payload));\n    },\n\n    bindActionEvents() {\n        window.addEventListener(`rwc-${MESSAGE_SEND}`, this.messageSendHandler);\n    },\n\n    subscribe() {\n        this.store.subscribe(() => {\n            if (\n                !this.subscribed &&\n                this.store.getState().connection.established &&\n                !this.store.getState().connection.listening\n            ) {\n                this.client.onmessage(this.messageReceiveHandler);\n                this.client.onclose(this.connectionCloseHandler);\n                this.store.dispatch(connectionActions.listening());\n                this.subscribed = true;\n            }\n        });\n    }\n};\n\nexport default networkManager;\n",
+    "content": "// @ts-check\nimport { MESSAGE_ADD, MESSAGE_SEND } from '../actionTypes';\n\nimport * as connectionActions from '../actions/connection';\nimport * as messageActions from '../actions/messages';\n\n/**\n * Network manager that handles message sending and receiving.\n * @type {Object}\n * @property {function()} networkManager.init Initilises network client and binds events\n * @property {function()} networkManager.messageReceiveHandler Dispatches redux action when message is received from client\n * @property {function()} networkManager.connectionCloseHandler Dispatches redux action when connection is dropped. Also retries connection.\n * @property {function()} networkManager.connectionRetry Recursively retries network connection\n */\nconst networkManager = {\n    init({ store, client, url }) {\n        this.url = url;\n        this.dispatch = store.dispatch;\n        this.client = client;\n        this.store = store;\n        this.dispatch(connectionActions.attempted());\n        this.subscribed = false;\n        this.messageSendHandler = this.messageSendHandler.bind(this);\n        this.messageReceiveHandler = this.messageReceiveHandler.bind(this);\n        this.connectionCloseHandler = this.connectionCloseHandler.bind(this);\n        client\n            .init(url)\n            .then(_ => {\n                this.bindActionEvents();\n                this.dispatch(connectionActions.established());\n            })\n            .catch(error => {\n                console.error('react-web-chat connection error: ', error);\n                this.connectionRetry();\n            });\n        this.subscribe();\n    },\n\n    messageReceiveHandler(message) {\n        this.dispatch(messageActions.messageReceive(message));\n    },\n\n    connectionCloseHandler(event) {\n        this.dispatch(connectionActions.dropped());\n        this.connectionRetry();\n    },\n\n    connectionRetry() {\n        setTimeout(\n            () =>\n                this.client\n                    .init(this.url)\n                    .then(_ => {\n                        this.bindActionEvents();\n                        this.dispatch(connectionActions.established());\n                        this.subscribe();\n                    })\n                    .catch(error => {\n                        console.error('react-web-chat connection error: ', error);\n                        this.connectionRetry();\n                    }),\n            500\n        );\n    },\n\n    messageSendHandler({ detail: { payload } }) {\n        this.client.send(JSON.stringify(payload));\n    },\n\n    bindActionEvents() {\n        window.addEventListener(`rwc-${MESSAGE_SEND}`, this.messageSendHandler);\n    },\n\n    subscribe() {\n        this.store.subscribe(() => {\n            if (\n                !this.subscribed &&\n                this.store.getState().connection.established &&\n                !this.store.getState().connection.listening\n            ) {\n                this.client.onmessage(this.messageReceiveHandler);\n                this.client.onclose(this.connectionCloseHandler);\n                this.store.dispatch(connectionActions.listening());\n                this.subscribed = true;\n            }\n        });\n    }\n};\n\nexport default networkManager;\n",
     "static": true,
     "longname": "/home/peter/praekelt/react-web-chat/src/utils/network.js",
     "access": "public",
@@ -2731,7 +2969,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 145,
+    "__docId__": 144,
     "kind": "variable",
     "name": "networkManager",
     "memberof": "src/utils/network.js",
@@ -2741,18 +2979,62 @@
     "export": true,
     "importPath": "react-web-chat/src/utils/network.js",
     "importStyle": "networkManager",
-    "description": null,
-    "lineNumber": 7,
-    "undocument": true,
+    "description": "Network manager that handles message sending and receiving.",
+    "lineNumber": 15,
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "function()"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "networkManager.init",
+        "description": "Initilises network client and binds events"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function()"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "networkManager.messageReceiveHandler",
+        "description": "Dispatches redux action when message is received from client"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function()"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "networkManager.connectionCloseHandler",
+        "description": "Dispatches redux action when connection is dropped. Also retries connection."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function()"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "networkManager.connectionRetry",
+        "description": "Recursively retries network connection"
+      }
+    ],
     "type": {
+      "nullable": null,
       "types": [
-        "{\"init\": function, \"messageReceiveHandler\": function, \"connectionCloseHandler\": function, \"connectionRetry\": function, \"messageSendHandler\": function, \"bindActionEvents\": function, \"subscribe\": function}"
-      ]
+        "Object"
+      ],
+      "spread": false,
+      "description": null
     }
   },
   {
     "kind": "index",
-    "content": "# react-web-chat\n\n[![Travis][build-badge]][build]\n[![npm package][npm-badge]][npm]\n[![Coveralls][coveralls-badge]][coveralls]\n\nReact web chat is a react-based instant messaging UI.\n\n# Table of contents\n\n  * [Table of contents](#table-of-contents)\n  * [Installation](#installation)\n  * [Usage](#usage)\n    * [As a stand-alone module](#as-a-stand-alone-module)\n    * [As a react component](#as-a-react-component)\n  * [Custom events](#custom-events)\n    * [Listening](#listening)\n    * [As a react component](#dispatching)\n\nInstallation\n============\n\nSimply install it with your favourite package manager: \n\n`npm install --save-dev react-web-chat`  \n`yarn add react-web-chat`\n\nUsage\n============\n\n## As a stand-alone module\n\nThe stand-alone version of the module will render itself into a supplied dom element.  \nCommunication with the module is done via custom events described [here](#custom-events).\n\n### ES6\n```js\nimport ReactWebChat from 'react-web-chat'\nlet myChatElement = document.getElementByID('my-chat-element'); \n\nconst reactWebChat = new ReactWebChat({\n    url: 'http://localhost:8000',\n    element: myChatElement\n});\n```\n\n### CommonJS\n```js\nvar ReactWebChat = require('react-web-chat').default\nvar myChatElement = document.getElementByID('my-chat-element'); \n\nconst reactWebChat = new ReactWebChat({\n    url: 'http://localhost:8000',\n    element: myChatElement\n});\n```\n\n### UMD\nReact-webi-chat is also available as a UMD module. Simply load the module and instantiate a new instance as described in the example below.  \n**NOTE: `react` and `react-dom` are peer dependencies so make sure they are loaded too**\n\n```html\n<head>\n    <script crossorigin src=\"https://unpkg.com/react@16/umd/react.production.min.js\"></script>\n    <script crossorigin src=\"https://unpkg.com/react-dom@16/umd/react-dom.production.min.js\"></script>\n    <script src=\"https://unpkg.com/react-web-chat@1.1.2/umd/react-web-chat.js\">\n</head>\n<html>\n    <div id=\"my-chat-element\">\n</html>\n<script>\n    var myChatElement = document.getElementByID('my-chat-element'); \n\n    var reactWebChat = new ReactWebChat.default({\n        url: 'http://localhost:8080',\n        element: reactWebChat\n    });\n</script>\n```\n\n## As a react component\n```jsx\nimport { ReactWebChat } from 'react-web-chat'\n\nconst MyComponent = props => \n    <div>\n        <ReactWebChat url=\"http://localhost:8080\">\n    </div>\n\n```\n\nCustom events\n============\n\nCommunication with the react-web-chat module is handled via custom events.\n\n## Listening\n\n\n## Dispatching\n\n[build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square\n[build]: https://travis-ci.org/user/repo\n\n[npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square\n[npm]: https://www.npmjs.org/package/npm-package\n\n[coveralls-badge]: https://img.shields.io/coveralls/praekelt/react-web-chat/master.png?style=flat-square\n[coveralls]: https://coveralls.io/github/praekelt/react-web-chat\n",
+    "content": "# react-web-chat\n\n[![Travis][build-badge]][build]\n[![npm package][npm-badge]][npm]\n[![Coveralls][coveralls-badge]][coveralls]\n\n`react-web-chat` is an instant messaging UI built with React.\n\n# Table of contents\n\n  * [Table of contents](#table-of-contents)\n  * [Installation](#installation)\n  * [Usage](#usage)\n    * [As a stand-alone module](#as-a-stand-alone-module)\n    * [As a react component](#as-a-react-component)\n  * [Custom events](#custom-events)\n    * [Listening](#listening)\n    * [As a react component](#dispatching)\n* [Custom themes](#custom-themes)\n* [Custom network clients](#custom-network-clients)\n\nInstallation\n============\n\nSimply install it with your favorite package manager: \n\n`npm install --save-dev react-web-chat`  \n`yarn add react-web-chat`\n\nUsage\n============\n\n## As a stand-alone module\n\nThe stand-alone version of the module will render to a supplied dom element.  \nIt accepts the following parameters:\n\n| Argument  | Description | Required | Type |\n| ------------- | ------------- | ------------- | --------- |\n| url  | The url of your chat server  | yes | String |\n| element  | The element `react-web-chat` should render to   | yes | Element |\n| theme | A custom [theme](#custom-themes)  | no | Object |\n| client | A custom [client](#custom-clients)  | no | Object |\n\nCommunication with the module is handled via custom events described [here](#custom-events).\n\n### ES6\n```js\nimport ReactWebChat from 'react-web-chat'\nlet myChatElement = document.getElementByID('my-chat-element'); \n\nconst reactWebChat = new ReactWebChat({\n    url: 'http://localhost:8000',\n    element: myChatElement\n});\n```\n\n### CommonJS\n```js\nvar ReactWebChat = require('react-web-chat').default\nvar myChatElement = document.getElementByID('my-chat-element'); \n\nconst reactWebChat = new ReactWebChat({\n    url: 'http://localhost:8000',\n    element: myChatElement\n});\n```\n\n### UMD\n`react-web-chat` is also available as a UMD module. Simply load the module and instantiate a new instance as described in the example below.  \n**NOTE: `react` and `react-dom` are peer dependencies so make sure they are loaded too**\n\n```html\n<html>\n    <head>\n        <script crossorigin src=\"https://unpkg.com/react@16/umd/react.production.min.js\"></script>\n        <script crossorigin src=\"https://unpkg.com/react-dom@16/umd/react-dom.production.min.js\"></script>\n        <script src=\"https://unpkg.com/react-web-chat@1.1.2/umd/react-web-chat.js\"/>>\n    </head>\n<body>  \n    <div id=\"my-chat-element\"> \n</body>  \n<script>\n    var myChatElement = document.getElementByID('my-chat-element'); \n\n    var reactWebChat = new ReactWebChat.default({\n        url: 'http://localhost:8080',\n        element: reactWebChat\n    });\n</script>\n</html>\n```\n\n## As a react component\n\nThe exported `ReactWebChatComponent` can be used within an existing react application.  \nIt accepts the following parameters:\n\n| Argument  | Description | Required | Type |\n| ------------- | ------------- | ------------- | --------- |\n| url  | The url of your chat server  | yes | String |\n| theme | A custom [theme](#custom-themes)  | no | Object |\n| client | A custom [client](#custom-clients)  | no | Object |\n\n### Example\n```jsx\nimport { ReactWebChatComponent } from 'react-web-chat'\n\nconst MyComponent = props => \n    <div>\n        <ReactWebChatComponent url=\"http://localhost:8080\"/>\n    </div>\n\n```\n\nCustom events\n============\n\nCommunication with the `react-web-chat` module is handled via a series of custom events.\n\n## Listening\nCustom `react-web-chat` events are namespaced using the `rwc-` prefix.  \nAny dispatched redux action will fire a custom event using the following format:  \n`rwc-ACTION_TYPE`\n\n### Example:\n```js\nwindow.addEventListener('rwc-MESSAGE_RECEIVE', function(data) {\n    // do something with data\n});\n```\nThe `data` parameter object adheres to the CustomEvent specification:   \nhttps://developer.mozilla.org/en-US/docs/Web/API/CustomEvent\n\nA full list of actions to listen for can be found here:\n\n## Dispatching\n\nDispatching an event follows the same namespaced convention as described above.\nHowever not all redux actions can be dispatched via custom events.  \nCurrently only the `MESSAGE_SEND` action type is supported.    \nMore action types may be supported in future releases if justifiable use cases can be demonstrated. \n\n### Example:\n```js\nfunction sendRWCMessage() {\n    var rwcEvent = window.CustomEvent(\"rwc-MESSAGE_SEND\", {\n        detail: {\n            payload: message\n        }\n    });\n    window.dispatchEvent(rwcEvent);\n}\n\nvar message = {\n    type: 'message',\n    layout: 'plain',\n    pages: [\n        {\n            text: 'Hello world'\n        }\n    ]\n}\n\nsendRWCMessage(message);\n\n```\n\nCustom themes\n============\n\n`react-web-chat` allows you to inject custom react components for specific parts of the UI.\nAny components not specified in the custom theme object will use the default theme's components.\n\nThe following components can be overridden:\n\n- [AvatarComponent](https://praekelt.github.io/react-web-chat/function/index.html#static-function-Avatar)\n- [ButtonComponent](https://praekelt.github.io/react-web-chat/function/index.html#static-function-Button)\n- CheckboxMenuComponent\n- ImageComponent\n- InputComponent\n- MenuComponent\n- TextComponent\n- TypingIndicatorComponent\n\nPlease consult the [API documentation](https://praekelt.github.io/react-web-chat/) as a guide to help you develop custom components for your themes.\n\n### Example\n\n```jsx\nimport { ReactWebChatComponent } from 'react-web-chat'\n\n// your custom theme components\nimport React from 'react';\nimport Avatar from './customTheme/Avatar';\nimport Button from './customTheme/Button';\nimport Input from './customTheme/Input';\n\nconst MyComponent = props => \n    <div>\n        <ReactWebChatComponent \n            url=\"http://localhost:8080\"\n            theme={{\n                AvatarComponent: Avatar,\n                ButtonComponent: Button,\n                InputComponent: Input\n            }}\n        />\n    </div>\n\n```\n\nCustom network clients\n============\n\n`react-web-chat` supports custom network clients to manage network communication with your server.\n\nNetwork clients have the following responsibilities:\n- determine which protocol/standard to use (WS, socket.io, HTTP, XHR, Fetch, etc.)\n- translate messages to a format the server understands\n\nCurrently the only available client is [`rwc-feersum-client`](https://github.com/praekelt/rwc-feersum-client). \n\nIt's also the default client used by `react-web-chat` which happens to make use the feersum message schema.\nFurther reading:\n- [Feersum Engine](https://www.feersum.io/)\n- [Feersum 0.9 Schema](http://dev.feersum.io/static/help/transports/feersum09.html#transports-feersum09-send-schema)\n\nIn future there will hopefully be several clients to support a wider range of IM back-ends.\n\n## Writing your own network client\nWriting a custom network client is easy :) All you need is an object with the following methods:\n\n```js\nconst feersumClient = {\n    init(url) {\n        // Connect to server, then bind \"onmessage\" and \"onclose\" methods.\n    },\n\n    send(message) {\n        // Translate message from feersum schema, then send to server. \n    },\n\n    onmessage(fn) {\n        // Translate message to feersum schema, then execute callback function with message as parameter.\n    },\n\n    onclose(fn) {\n        // Execute callback when the connection is closed.\n    }\n};\n```\n\n[build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square\n[build]: https://travis-ci.org/user/repo\n\n[npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square\n[npm]: https://www.npmjs.org/package/npm-package\n\n[coveralls-badge]: https://img.shields.io/coveralls/praekelt/react-web-chat/master.png?style=flat-square\n[coveralls]: https://coveralls.io/github/praekelt/react-web-chat\n",
     "longname": "/home/peter/praekelt/react-web-chat/README.md",
     "name": "./README.md",
     "static": true,

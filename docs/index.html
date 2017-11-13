@@ -31,7 +31,6 @@
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/index.js~ReactWebChat.html">ReactWebChat</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ReactWebChatComponent">ReactWebChatComponent</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-MESSAGE_ADD">MESSAGE_ADD</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#actions">actions</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-attempted">attempted</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-dropped">dropped</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-established">established</a></span></span></li>
@@ -47,11 +46,9 @@
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-message">components/Message</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Message">Message</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-messagecontainer">components/MessageContainer</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-MessageContainer">MessageContainer</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#middleware">middleware</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-eventEmitterMiddleware">eventEmitterMiddleware</a></span></span></li>
-<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#reducers">reducers</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-connection">connection</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-messages">messages</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-reducers">reducers</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#themes-default-components-animation">themes/default/components/Animation</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Fade">Fade</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#themes-default-components-avatar">themes/default/components/Avatar</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Avatar">Avatar</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#themes-default-components-button">themes/default/components/Button</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Button">Button</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#themes-default-components-image">themes/default/components/Image</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ImageComponent">ImageComponent</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#themes-default-components-input">themes/default/components/Input</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Input">Input</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#themes-default-components-menu">themes/default/components/Menu</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Menu">Menu</a></span></span></li>
@@ -67,7 +64,7 @@
 <div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="react-web-chat">react-web-chat</h1><p><a href="https://travis-ci.org/user/repo"><img src="https://img.shields.io/travis/user/repo/master.png?style=flat-square" alt="Travis"></a>
 <a href="https://www.npmjs.org/package/npm-package"><img src="https://img.shields.io/npm/v/npm-package.png?style=flat-square" alt="npm package"></a>
 <a href="https://coveralls.io/github/praekelt/react-web-chat"><img src="https://img.shields.io/coveralls/praekelt/react-web-chat/master.png?style=flat-square" alt="Coveralls"></a></p>
-<p>React web chat is a react-based instant messaging UI.</p>
+<p><code>react-web-chat</code> is an instant messaging UI built with React.</p>
 <h1 id="table-of-contents">Table of contents</h1><ul>
 <li><a href="#table-of-contents">Table of contents</a></li>
 <li><a href="#installation">Installation</a></li>
@@ -79,12 +76,51 @@
 <li><a href="#custom-events">Custom events</a><ul>
 <li><a href="#listening">Listening</a></li>
 <li><a href="#dispatching">As a react component</a></li>
+<li><a href="#custom-themes">Custom themes</a></li>
+<li><a href="#custom-network-clients">Custom network clients</a></li>
 </ul>
 </li>
 </ul>
-<h1 id="installation">Installation</h1><p>Simply install it with your favourite package manager: </p>
+<h1 id="installation">Installation</h1><p>Simply install it with your favorite package manager: </p>
 <p><code>npm install --save-dev react-web-chat</code><br><code>yarn add react-web-chat</code></p>
-<h1 id="usage">Usage</h1><h2 id="as-a-stand-alone-module">As a stand-alone module</h2><p>The stand-alone version of the module will render itself into a supplied dom element.<br>Communication with the module is done via custom events described <a href="#custom-events">here</a>.</p>
+<h1 id="usage">Usage</h1><h2 id="as-a-stand-alone-module">As a stand-alone module</h2><p>The stand-alone version of the module will render to a supplied dom element.<br>It accepts the following parameters:</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+<th>Required</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>url</td>
+<td>The url of your chat server</td>
+<td>yes</td>
+<td>String</td>
+</tr>
+<tr>
+<td>element</td>
+<td>The element <code>react-web-chat</code> should render to</td>
+<td>yes</td>
+<td>Element</td>
+</tr>
+<tr>
+<td>theme</td>
+<td>A custom <a href="#custom-themes">theme</a></td>
+<td>no</td>
+<td>Object</td>
+</tr>
+<tr>
+<td>client</td>
+<td>A custom <a href="#custom-clients">client</a></td>
+<td>no</td>
+<td>Object</td>
+</tr>
+</tbody>
+</table>
+<p>Communication with the module is handled via custom events described <a href="#custom-events">here</a>.</p>
 <h3 id="es6">ES6</h3><pre><code class="lang-js"><code class="source-code prettyprint">import ReactWebChat from &apos;react-web-chat&apos;
 let myChatElement = document.getElementByID(&apos;my-chat-element&apos;); 
 
@@ -101,15 +137,16 @@ const reactWebChat = new ReactWebChat({
     element: myChatElement
 });</code>
 </code></pre>
-<h3 id="umd">UMD</h3><p>React-webi-chat is also available as a UMD module. Simply load the module and instantiate a new instance as described in the example below.<br><strong>NOTE: <code>react</code> and <code>react-dom</code> are peer dependencies so make sure they are loaded too</strong></p>
-<pre><code class="lang-html"><code class="source-code prettyprint">&lt;head&gt;
-    &lt;script crossorigin src=&quot;https://unpkg.com/react@16/umd/react.production.min.js&quot;&gt;&lt;/script&gt;
-    &lt;script crossorigin src=&quot;https://unpkg.com/react-dom@16/umd/react-dom.production.min.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;https://unpkg.com/react-web-chat@1.1.2/umd/react-web-chat.js&quot;&gt;
-&lt;/head&gt;
-&lt;html&gt;
-    &lt;div id=&quot;my-chat-element&quot;&gt;
-&lt;/html&gt;
+<h3 id="umd">UMD</h3><p><code>react-web-chat</code> is also available as a UMD module. Simply load the module and instantiate a new instance as described in the example below.<br><strong>NOTE: <code>react</code> and <code>react-dom</code> are peer dependencies so make sure they are loaded too</strong></p>
+<pre><code class="lang-html"><code class="source-code prettyprint">&lt;html&gt;
+    &lt;head&gt;
+        &lt;script crossorigin src=&quot;https://unpkg.com/react@16/umd/react.production.min.js&quot;&gt;&lt;/script&gt;
+        &lt;script crossorigin src=&quot;https://unpkg.com/react-dom@16/umd/react-dom.production.min.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;https://unpkg.com/react-web-chat@1.1.2/umd/react-web-chat.js&quot;/&gt;&gt;
+    &lt;/head&gt;
+&lt;body&gt;  
+    &lt;div id=&quot;my-chat-element&quot;&gt; 
+&lt;/body&gt;  
 &lt;script&gt;
     var myChatElement = document.getElementByID(&apos;my-chat-element&apos;); 
 
@@ -117,17 +154,146 @@ const reactWebChat = new ReactWebChat({
         url: &apos;http://localhost:8080&apos;,
         element: reactWebChat
     });
-&lt;/script&gt;</code>
+&lt;/script&gt;
+&lt;/html&gt;</code>
 </code></pre>
-<h2 id="as-a-react-component">As a react component</h2><pre><code class="lang-jsx"><code class="source-code prettyprint">import { ReactWebChat } from &apos;react-web-chat&apos;
+<h2 id="as-a-react-component">As a react component</h2><p>The exported <code>ReactWebChatComponent</code> can be used within an existing react application.<br>It accepts the following parameters:</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+<th>Required</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>url</td>
+<td>The url of your chat server</td>
+<td>yes</td>
+<td>String</td>
+</tr>
+<tr>
+<td>theme</td>
+<td>A custom <a href="#custom-themes">theme</a></td>
+<td>no</td>
+<td>Object</td>
+</tr>
+<tr>
+<td>client</td>
+<td>A custom <a href="#custom-clients">client</a></td>
+<td>no</td>
+<td>Object</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example">Example</h3><pre><code class="lang-jsx"><code class="source-code prettyprint">import { ReactWebChatComponent } from &apos;react-web-chat&apos;
 
 const MyComponent = props =&gt; 
     &lt;div&gt;
-        &lt;ReactWebChat url=&quot;http://localhost:8080&quot;&gt;
+        &lt;ReactWebChatComponent url=&quot;http://localhost:8080&quot;/&gt;
     &lt;/div&gt;</code>
 </code></pre>
-<h1 id="custom-events">Custom events</h1><p>Communication with the react-web-chat module is handled via custom events.</p>
-<h2 id="listening">Listening</h2><h2 id="dispatching">Dispatching</h2></div>
+<h1 id="custom-events">Custom events</h1><p>Communication with the <code>react-web-chat</code> module is handled via a series of custom events.</p>
+<h2 id="listening">Listening</h2><p>Custom <code>react-web-chat</code> events are namespaced using the <code>rwc-</code> prefix.<br>Any dispatched redux action will fire a custom event using the following format:<br><code>rwc-ACTION_TYPE</code></p>
+<h3 id="example-">Example:</h3><pre><code class="lang-js"><code class="source-code prettyprint">window.addEventListener(&apos;rwc-MESSAGE_RECEIVE&apos;, function(data) {
+    // do something with data
+});</code>
+</code></pre>
+<p>The <code>data</code> parameter object adheres to the CustomEvent specification:<br><a href="https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent">https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent</a></p>
+<p>A full list of actions to listen for can be found here:</p>
+<h2 id="dispatching">Dispatching</h2><p>Dispatching an event follows the same namespaced convention as described above.
+However not all redux actions can be dispatched via custom events.<br>Currently only the <code>MESSAGE_SEND</code> action type is supported.<br>More action types may be supported in future releases if justifiable use cases can be demonstrated. </p>
+<h3 id="example-">Example:</h3><pre><code class="lang-js"><code class="source-code prettyprint">function sendRWCMessage() {
+    var rwcEvent = window.CustomEvent(&quot;rwc-MESSAGE_SEND&quot;, {
+        detail: {
+            payload: message
+        }
+    });
+    window.dispatchEvent(rwcEvent);
+}
+
+var message = {
+    type: &apos;message&apos;,
+    layout: &apos;plain&apos;,
+    pages: [
+        {
+            text: &apos;Hello world&apos;
+        }
+    ]
+}
+
+sendRWCMessage(message);</code>
+</code></pre>
+<h1 id="custom-themes">Custom themes</h1><p><code>react-web-chat</code> allows you to inject custom react components for specific parts of the UI.
+Any components not specified in the custom theme object will use the default theme&apos;s components.</p>
+<p>The following components can be overridden:</p>
+<ul>
+<li><a href="https://praekelt.github.io/react-web-chat/function/index.html#static-function-Avatar">AvatarComponent</a></li>
+<li><a href="https://praekelt.github.io/react-web-chat/function/index.html#static-function-Button">ButtonComponent</a></li>
+<li>CheckboxMenuComponent</li>
+<li>ImageComponent</li>
+<li>InputComponent</li>
+<li>MenuComponent</li>
+<li>TextComponent</li>
+<li>TypingIndicatorComponent</li>
+</ul>
+<p>Please consult the <a href="https://praekelt.github.io/react-web-chat/">API documentation</a> as a guide to help you develop custom components for your themes.</p>
+<h3 id="example">Example</h3><pre><code class="lang-jsx"><code class="source-code prettyprint">import { ReactWebChatComponent } from &apos;react-web-chat&apos;
+
+// your custom theme components
+import React from &apos;react&apos;;
+import Avatar from &apos;./customTheme/Avatar&apos;;
+import Button from &apos;./customTheme/Button&apos;;
+import Input from &apos;./customTheme/Input&apos;;
+
+const MyComponent = props =&gt; 
+    &lt;div&gt;
+        &lt;ReactWebChatComponent 
+            url=&quot;http://localhost:8080&quot;
+            theme={{
+                AvatarComponent: Avatar,
+                ButtonComponent: Button,
+                InputComponent: Input
+            }}
+        /&gt;
+    &lt;/div&gt;</code>
+</code></pre>
+<h1 id="custom-network-clients">Custom network clients</h1><p><code>react-web-chat</code> supports custom network clients to manage network communication with your server.</p>
+<p>Network clients have the following responsibilities:</p>
+<ul>
+<li>determine which protocol/standard to use (WS, socket.io, HTTP, XHR, Fetch, etc.)</li>
+<li>translate messages to a format the server understands</li>
+</ul>
+<p>Currently the only available client is <a href="https://github.com/praekelt/rwc-feersum-client"><code>rwc-feersum-client</code></a>. </p>
+<p>It&apos;s also the default client used by <code>react-web-chat</code> which happens to make use the feersum message schema.
+Further reading:</p>
+<ul>
+<li><a href="https://www.feersum.io/">Feersum Engine</a></li>
+<li><a href="http://dev.feersum.io/static/help/transports/feersum09.html#transports-feersum09-send-schema">Feersum 0.9 Schema</a></li>
+</ul>
+<p>In future there will hopefully be several clients to support a wider range of IM back-ends.</p>
+<h2 id="writing-your-own-network-client">Writing your own network client</h2><p>Writing a custom network client is easy :) All you need is an object with the following methods:</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">const feersumClient = {
+    init(url) {
+        // Connect to server, then bind &quot;onmessage&quot; and &quot;onclose&quot; methods.
+    },
+
+    send(message) {
+        // Translate message from feersum schema, then send to server. 
+    },
+
+    onmessage(fn) {
+        // Translate message to feersum schema, then execute callback function with message as parameter.
+    },
+
+    onclose(fn) {
+        // Execute callback when the connection is closed.
+    }
+};</code>
+</code></pre>
+</div>
 </div>
 
 <footer class="footer">
