@@ -1,0 +1,2769 @@
+[
+  {
+    "__docId__": 1,
+    "kind": "external",
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Infinity",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 2,
+    "kind": "external",
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~NaN",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 3,
+    "kind": "external",
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~undefined",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 4,
+    "kind": "external",
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~null",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 5,
+    "kind": "external",
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 6,
+    "kind": "external",
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 7,
+    "kind": "external",
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 8,
+    "kind": "external",
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 9,
+    "kind": "external",
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 10,
+    "kind": "external",
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 11,
+    "kind": "external",
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Symbol",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 12,
+    "kind": "external",
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Error",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 13,
+    "kind": "external",
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~EvalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 14,
+    "kind": "external",
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~InternalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 15,
+    "kind": "external",
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RangeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 16,
+    "kind": "external",
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ReferenceError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 17,
+    "kind": "external",
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~SyntaxError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 18,
+    "kind": "external",
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~TypeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 19,
+    "kind": "external",
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~URIError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 20,
+    "kind": "external",
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 21,
+    "kind": "external",
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 22,
+    "kind": "external",
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Date",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 23,
+    "kind": "external",
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~String",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 24,
+    "kind": "external",
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~string",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 25,
+    "kind": "external",
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RegExp",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 26,
+    "kind": "external",
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 27,
+    "kind": "external",
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 28,
+    "kind": "external",
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 29,
+    "kind": "external",
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8ClampedArray",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 30,
+    "kind": "external",
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 31,
+    "kind": "external",
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 32,
+    "kind": "external",
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 33,
+    "kind": "external",
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 34,
+    "kind": "external",
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 35,
+    "kind": "external",
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float64Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 36,
+    "kind": "external",
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Map",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 37,
+    "kind": "external",
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Set",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 38,
+    "kind": "external",
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakMap",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 39,
+    "kind": "external",
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakSet",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 40,
+    "kind": "external",
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ArrayBuffer",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 41,
+    "kind": "external",
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~DataView",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 42,
+    "kind": "external",
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~JSON",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 43,
+    "kind": "external",
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Promise",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 44,
+    "kind": "external",
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Generator",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 45,
+    "kind": "external",
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~GeneratorFunction",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 46,
+    "kind": "external",
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Reflect",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 47,
+    "kind": "external",
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Proxy",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 48,
+    "kind": "file",
+    "name": "src/actionTypes.js",
+    "content": "// @ts-check\nexport const MESSAGE_ADD = 'MESSAGE_ADD',\n    MESSAGE_SEND = 'MESSAGE_SEND',\n    MESSAGE_RECEIVE = 'MESSAGE_RECEIVE',\n    MESSAGE_QUEUE = 'MESSAGE_QUEUE',\n    // Connection\n    CONNECTION_ESTABLISHED = 'CONNECTION_ESTABLISHED',\n    CONNECTION_ATTEMPTED = 'CONNECTION_ATTEMPTED',\n    CONNECTION_DROPPED = 'CONNECTION_DROPPED',\n    CONNECTION_LISTENING = 'CONNECTION_LISTENING';\n",
+    "static": true,
+    "longname": "/home/peter/praekelt/react-web-chat/src/actionTypes.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 49,
+    "kind": "variable",
+    "name": "MESSAGE_ADD",
+    "memberof": "src/actionTypes.js",
+    "static": true,
+    "longname": "src/actionTypes.js~MESSAGE_ADD",
+    "access": "public",
+    "export": true,
+    "importPath": "react-web-chat/src/actionTypes.js",
+    "importStyle": "{MESSAGE_ADD}",
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true,
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 50,
+    "kind": "file",
+    "name": "src/actions/connection.js",
+    "content": "import {\n    CONNECTION_ESTABLISHED,\n    CONNECTION_ATTEMPTED,\n    CONNECTION_DROPPED,\n    CONNECTION_LISTENING\n} from '../actionTypes';\n\n/**\n * Sets connection to established\n * @param {object} message \n */\nexport const established = message => ({\n    type: CONNECTION_ESTABLISHED\n});\n\nexport const attempted = message => ({\n    type: CONNECTION_ATTEMPTED\n});\n\nexport const dropped = message => ({\n    type: CONNECTION_DROPPED\n});\n\nexport const listening = message => ({\n    type: CONNECTION_LISTENING\n});\n",
+    "static": true,
+    "longname": "/home/peter/praekelt/react-web-chat/src/actions/connection.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 51,
+    "kind": "function",
+    "name": "established",
+    "memberof": "src/actions/connection.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/actions/connection.js~established",
+    "access": "public",
+    "export": true,
+    "importPath": "react-web-chat/src/actions/connection.js",
+    "importStyle": "{established}",
+    "description": "Sets connection to established",
+    "lineNumber": 12,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 52,
+    "kind": "function",
+    "name": "attempted",
+    "memberof": "src/actions/connection.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/actions/connection.js~attempted",
+    "access": "public",
+    "export": true,
+    "importPath": "react-web-chat/src/actions/connection.js",
+    "importStyle": "{attempted}",
+    "description": null,
+    "lineNumber": 16,
+    "undocument": true,
+    "params": [
+      {
+        "name": "message",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 53,
+    "kind": "function",
+    "name": "dropped",
+    "memberof": "src/actions/connection.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/actions/connection.js~dropped",
+    "access": "public",
+    "export": true,
+    "importPath": "react-web-chat/src/actions/connection.js",
+    "importStyle": "{dropped}",
+    "description": null,
+    "lineNumber": 20,
+    "undocument": true,
+    "params": [
+      {
+        "name": "message",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 54,
+    "kind": "function",
+    "name": "listening",
+    "memberof": "src/actions/connection.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/actions/connection.js~listening",
+    "access": "public",
+    "export": true,
+    "importPath": "react-web-chat/src/actions/connection.js",
+    "importStyle": "{listening}",
+    "description": null,
+    "lineNumber": 24,
+    "undocument": true,
+    "params": [
+      {
+        "name": "message",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 55,
+    "kind": "file",
+    "name": "src/actions/messages.js",
+    "content": "import { MESSAGE_ADD, MESSAGE_SEND, MESSAGE_RECEIVE, MESSAGE_QUEUE } from '../actionTypes';\n\n/**\n * Adds a message to the store.\n * @param {object} message \n */\nexport const messageAdd = message => ({\n    type: MESSAGE_ADD,\n    payload: message\n});\n\n/**\n * Async action creator.\n * Adds a new message after a delay of 1200 milliseconds. This is designed to simulate the \"typing...\" state of a chat user.\n * @todo Make timeout duration a configurable setting.\n * @param {object} message \n */\nexport function delayedMessageAdd(message) {\n    return dispatch => {\n        setTimeout(() => dispatch(messageAdd(message)), 1200);\n    };\n}\n\n/**\n * Dispatched when a message is received from the server. The message will get added to a dispatch queue.\n * @param {object} message \n */\nexport function messageReceive(message) {\n    return dispatch => {\n        dispatch({\n            type: MESSAGE_QUEUE,\n            payload: message\n        });\n        dispatch({\n            type: MESSAGE_RECEIVE,\n            payload: message\n        });\n    };\n}\n\n/**\n * Dispatched when a message is received from the server. The message will get added to a dispatch queue.\n * @param {object} message \n */\nexport function messageSend({ text }) {\n    let message = {\n        pages: [{ text: text, buttons: [] }],\n        responseType: 'text',\n        origin: 'local'\n    };\n    return dispatch => {\n        dispatch({\n            type: MESSAGE_SEND,\n            payload: message\n        });\n        dispatch(messageAdd(message));\n    };\n}\n",
+    "static": true,
+    "longname": "/home/peter/praekelt/react-web-chat/src/actions/messages.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 56,
+    "kind": "function",
+    "name": "messageAdd",
+    "memberof": "src/actions/messages.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/actions/messages.js~messageAdd",
+    "access": "public",
+    "export": true,
+    "importPath": "react-web-chat/src/actions/messages.js",
+    "importStyle": "{messageAdd}",
+    "description": "Adds a message to the store.",
+    "lineNumber": 7,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 57,
+    "kind": "function",
+    "name": "delayedMessageAdd",
+    "memberof": "src/actions/messages.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/actions/messages.js~delayedMessageAdd",
+    "access": "public",
+    "export": true,
+    "importPath": "react-web-chat/src/actions/messages.js",
+    "importStyle": "{delayedMessageAdd}",
+    "description": "Async action creator.\nAdds a new message after a delay of 1200 milliseconds. This is designed to simulate the \"typing...\" state of a chat user.",
+    "lineNumber": 18,
+    "todo": [
+      "Make timeout duration a configurable setting."
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 58,
+    "kind": "function",
+    "name": "messageReceive",
+    "memberof": "src/actions/messages.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/actions/messages.js~messageReceive",
+    "access": "public",
+    "export": true,
+    "importPath": "react-web-chat/src/actions/messages.js",
+    "importStyle": "{messageReceive}",
+    "description": "Dispatched when a message is received from the server. The message will get added to a dispatch queue.",
+    "lineNumber": 28,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 59,
+    "kind": "function",
+    "name": "messageSend",
+    "memberof": "src/actions/messages.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/actions/messages.js~messageSend",
+    "access": "public",
+    "export": true,
+    "importPath": "react-web-chat/src/actions/messages.js",
+    "importStyle": "{messageSend}",
+    "description": "Dispatched when a message is received from the server. The message will get added to a dispatch queue.",
+    "lineNumber": 45,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 60,
+    "kind": "file",
+    "name": "src/components/AvatarContainer/index.js",
+    "content": "import React from 'react';\nimport { connect } from 'react-redux';\n\nimport { compose, setPropTypes } from 'recompose';\nimport PropTypes from 'prop-types';\n\nconst mapStateToProps = ({ connection, messages: { messageQueue } }) => ({\n    connection,\n    typing: messageQueue.length\n});\n\nconst enhance = compose(\n    setPropTypes({\n        connection: PropTypes.object,\n        typing: PropTypes.bool\n    }),\n    connect(mapStateToProps)\n);\n\nexport const AvatarContainer = ({ AvatarComponent, connection, typing }) => {\n    return (\n        <div>\n            <AvatarComponent avatar=\"http://i.pravatar.cc/300\" {...connection} typing={typing} />\n        </div>\n    );\n};\n\nexport default enhance(AvatarContainer);\n",
+    "static": true,
+    "longname": "/home/peter/praekelt/react-web-chat/src/components/AvatarContainer/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 61,
+    "kind": "function",
+    "name": "mapStateToProps",
+    "memberof": "src/components/AvatarContainer/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/components/AvatarContainer/index.js~mapStateToProps",
+    "access": "public",
+    "export": false,
+    "importPath": "react-web-chat/src/components/AvatarContainer/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 7,
+    "undocument": true,
+    "params": [
+      {
+        "name": "objectPattern",
+        "types": [
+          "{\"connection\": *, \"messages\": *}"
+        ],
+        "defaultRaw": {
+          "connection": null,
+          "messages": null
+        },
+        "defaultValue": "{\"connection\":null,\"messages\":null}"
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 62,
+    "kind": "variable",
+    "name": "enhance",
+    "memberof": "src/components/AvatarContainer/index.js",
+    "static": true,
+    "longname": "src/components/AvatarContainer/index.js~enhance",
+    "access": "public",
+    "export": false,
+    "importPath": "react-web-chat/src/components/AvatarContainer/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 12,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 63,
+    "kind": "function",
+    "name": "AvatarContainer",
+    "memberof": "src/components/AvatarContainer/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/components/AvatarContainer/index.js~AvatarContainer",
+    "access": "public",
+    "export": true,
+    "importPath": "react-web-chat/src/components/AvatarContainer/index.js",
+    "importStyle": "{AvatarContainer}",
+    "description": null,
+    "lineNumber": 20,
+    "undocument": true,
+    "params": [
+      {
+        "name": "objectPattern",
+        "types": [
+          "{\"AvatarComponent\": *, \"connection\": *, \"typing\": *}"
+        ],
+        "defaultRaw": {
+          "AvatarComponent": null,
+          "connection": null,
+          "typing": null
+        },
+        "defaultValue": "{\"AvatarComponent\":null,\"connection\":null,\"typing\":null}"
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 64,
+    "kind": "file",
+    "name": "src/components/ButtonContainer/index.js",
+    "content": "import React from 'react';\nimport { connect } from 'react-redux';\n\nimport { compose, setPropTypes } from 'recompose';\nimport PropTypes from 'prop-types';\n\nconst enhance = compose(\n    setPropTypes({\n        connection: PropTypes.object,\n        typing: PropTypes.bool\n    })\n);\n\nexport const ButtonContainer = ({ children }) => {\n    return <div className=\"ButtonContainer\">{children}</div>;\n};\n\nexport default enhance(ButtonContainer);\n",
+    "static": true,
+    "longname": "/home/peter/praekelt/react-web-chat/src/components/ButtonContainer/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 65,
+    "kind": "variable",
+    "name": "enhance",
+    "memberof": "src/components/ButtonContainer/index.js",
+    "static": true,
+    "longname": "src/components/ButtonContainer/index.js~enhance",
+    "access": "public",
+    "export": false,
+    "importPath": "react-web-chat/src/components/ButtonContainer/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 7,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 66,
+    "kind": "function",
+    "name": "ButtonContainer",
+    "memberof": "src/components/ButtonContainer/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/components/ButtonContainer/index.js~ButtonContainer",
+    "access": "public",
+    "export": true,
+    "importPath": "react-web-chat/src/components/ButtonContainer/index.js",
+    "importStyle": "{ButtonContainer}",
+    "description": null,
+    "lineNumber": 14,
+    "undocument": true,
+    "params": [
+      {
+        "name": "objectPattern",
+        "types": [
+          "{\"children\": *}"
+        ],
+        "defaultRaw": {
+          "children": null
+        },
+        "defaultValue": "{\"children\":null}"
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 67,
+    "kind": "file",
+    "name": "src/components/ChatContainer/index.js",
+    "content": "// @ts-check\nimport React from 'react';\nimport { connect } from 'react-redux';\nimport PropTypes from 'prop-types';\nimport { compose, setPropTypes } from 'recompose';\n\nimport MessageList from '../MessageList';\nimport InputArea from '../InputArea';\n\nconst mapStateToProps = ({ connection }) => {\n    return { connection };\n};\n\nconst enhance = compose(\n    setPropTypes({\n        theme: PropTypes.shape({\n            ImageComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),\n            InputComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),\n            MessageComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),\n            TextComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func])\n        })\n    }),\n    connect(mapStateToProps)\n);\n\nexport const ChatContainer = ({ theme, connection }) => {\n    return (\n        <div className=\"ChatContainer\">\n            <MessageList theme={theme} />\n            <InputArea {...theme} />\n        </div>\n    );\n};\n\nexport default enhance(ChatContainer);\n",
+    "static": true,
+    "longname": "/home/peter/praekelt/react-web-chat/src/components/ChatContainer/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 68,
+    "kind": "function",
+    "name": "mapStateToProps",
+    "memberof": "src/components/ChatContainer/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/components/ChatContainer/index.js~mapStateToProps",
+    "access": "public",
+    "export": false,
+    "importPath": "react-web-chat/src/components/ChatContainer/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 10,
+    "undocument": true,
+    "params": [
+      {
+        "name": "objectPattern",
+        "types": [
+          "{\"connection\": *}"
+        ],
+        "defaultRaw": {
+          "connection": null
+        },
+        "defaultValue": "{\"connection\":null}"
+      }
+    ],
+    "return": {
+      "types": [
+        "{\"connection\": *}"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 69,
+    "kind": "variable",
+    "name": "enhance",
+    "memberof": "src/components/ChatContainer/index.js",
+    "static": true,
+    "longname": "src/components/ChatContainer/index.js~enhance",
+    "access": "public",
+    "export": false,
+    "importPath": "react-web-chat/src/components/ChatContainer/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 14,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 70,
+    "kind": "function",
+    "name": "ChatContainer",
+    "memberof": "src/components/ChatContainer/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/components/ChatContainer/index.js~ChatContainer",
+    "access": "public",
+    "export": true,
+    "importPath": "react-web-chat/src/components/ChatContainer/index.js",
+    "importStyle": "{ChatContainer}",
+    "description": null,
+    "lineNumber": 26,
+    "undocument": true,
+    "params": [
+      {
+        "name": "objectPattern",
+        "types": [
+          "{\"theme\": *, \"connection\": *}"
+        ],
+        "defaultRaw": {
+          "theme": null,
+          "connection": null
+        },
+        "defaultValue": "{\"theme\":null,\"connection\":null}"
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 71,
+    "kind": "file",
+    "name": "src/components/InputArea/index.js",
+    "content": "// @ts-check\nimport React from 'react';\nimport { connect } from 'react-redux';\nimport PropTypes from 'prop-types';\nimport { compose, setPropTypes } from 'recompose';\n\nimport * as messageActions from '../../actions/messages';\nimport { getLatestRemote } from '../../utils/helpers';\n\nconst mapStateToProps = ({ messages }) => {\n    let latestMessage = getLatestRemote(messages.messages);\n    return {\n        inputExpected: latestMessage && latestMessage.input_expected,\n        buttons: latestMessage && latestMessage.buttons\n    };\n};\n\nconst mapDispatchToProps = dispatch => ({\n    submitHandler: text => {\n        dispatch(\n            messageActions.messageSend({\n                text: text\n            })\n        );\n    }\n});\n\nconst enhance = compose(\n    setPropTypes({\n        messages: PropTypes.object\n    }),\n    connect(mapStateToProps, mapDispatchToProps)\n);\n\nexport const InputArea = ({\n    InputComponent,\n    submitHandler,\n    inputExpected,\n    MenuComponent,\n    CheckboxMenuComponent,\n    buttons\n}) => {\n    return (\n        <div className=\"ChatContainer-input\">\n            {inputExpected === 'radio' && (\n                <MenuComponent items={buttons} submitHandler={submitHandler} />\n            )}\n            {inputExpected === 'checkbox' && (\n                <CheckboxMenuComponent items={buttons} submitHandler={submitHandler} />\n            )}\n            <InputComponent submitHandler={submitHandler} />\n        </div>\n    );\n};\n\nexport default enhance(InputArea);\n",
+    "static": true,
+    "longname": "/home/peter/praekelt/react-web-chat/src/components/InputArea/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 72,
+    "kind": "function",
+    "name": "mapStateToProps",
+    "memberof": "src/components/InputArea/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/components/InputArea/index.js~mapStateToProps",
+    "access": "public",
+    "export": false,
+    "importPath": "react-web-chat/src/components/InputArea/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 10,
+    "undocument": true,
+    "params": [
+      {
+        "name": "objectPattern",
+        "types": [
+          "{\"messages\": *}"
+        ],
+        "defaultRaw": {
+          "messages": null
+        },
+        "defaultValue": "{\"messages\":null}"
+      }
+    ],
+    "return": {
+      "types": [
+        "{\"inputExpected\": *, \"buttons\": *}"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 73,
+    "kind": "function",
+    "name": "mapDispatchToProps",
+    "memberof": "src/components/InputArea/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/components/InputArea/index.js~mapDispatchToProps",
+    "access": "public",
+    "export": false,
+    "importPath": "react-web-chat/src/components/InputArea/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 18,
+    "undocument": true,
+    "params": [
+      {
+        "name": "dispatch",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 74,
+    "kind": "variable",
+    "name": "enhance",
+    "memberof": "src/components/InputArea/index.js",
+    "static": true,
+    "longname": "src/components/InputArea/index.js~enhance",
+    "access": "public",
+    "export": false,
+    "importPath": "react-web-chat/src/components/InputArea/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 28,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 75,
+    "kind": "function",
+    "name": "InputArea",
+    "memberof": "src/components/InputArea/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/components/InputArea/index.js~InputArea",
+    "access": "public",
+    "export": true,
+    "importPath": "react-web-chat/src/components/InputArea/index.js",
+    "importStyle": "{InputArea}",
+    "description": null,
+    "lineNumber": 35,
+    "undocument": true,
+    "params": [
+      {
+        "name": "objectPattern",
+        "types": [
+          "{\"InputComponent\": *, \"submitHandler\": *, \"inputExpected\": *, \"MenuComponent\": *, \"CheckboxMenuComponent\": *, \"buttons\": *}"
+        ],
+        "defaultRaw": {
+          "InputComponent": null,
+          "submitHandler": null,
+          "inputExpected": null,
+          "MenuComponent": null,
+          "CheckboxMenuComponent": null,
+          "buttons": null
+        },
+        "defaultValue": "{\"InputComponent\":null,\"submitHandler\":null,\"inputExpected\":null,\"MenuComponent\":null,\"CheckboxMenuComponent\":null,\"buttons\":null}"
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 76,
+    "kind": "file",
+    "name": "src/components/Message/index.js",
+    "content": "import React from 'react';\nimport PropTypes from 'prop-types';\nimport { compose, setPropTypes } from 'recompose';\nimport { ButtonContainer } from '../ButtonContainer';\n\nconst enhance = compose(\n    setPropTypes({\n        page: PropTypes.object,\n        isLocal: PropTypes.bool,\n        ImageComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),\n        InputComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),\n        MessageComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),\n        TextComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),\n        ButtonComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func])\n    })\n);\n\nexport const Message = ({\n    page,\n    isLocal,\n    ImageComponent,\n    InputComponent,\n    MessageComponent,\n    TextComponent,\n    ButtonComponent,\n    submitHandler\n}) => {\n    return [\n        <TextComponent key=\"text\" isLocal={isLocal}>\n            {page.text}\n        </TextComponent>,\n        page.image && <ImageComponent key=\"image\" {...page.image} />,\n        page.buttons.length > 0 && (\n            <ButtonContainer key=\"buttons\">\n                {page.buttons.map((button, i) => (\n                    <ButtonComponent\n                        key={`button-${i}`}\n                        {...button}\n                        onClick={() => submitHandler(button.text)}\n                    />\n                ))}\n            </ButtonContainer>\n        )\n    ];\n};\n\nexport default enhance(Message);\n",
+    "static": true,
+    "longname": "/home/peter/praekelt/react-web-chat/src/components/Message/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 77,
+    "kind": "variable",
+    "name": "enhance",
+    "memberof": "src/components/Message/index.js",
+    "static": true,
+    "longname": "src/components/Message/index.js~enhance",
+    "access": "public",
+    "export": false,
+    "importPath": "react-web-chat/src/components/Message/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 78,
+    "kind": "function",
+    "name": "Message",
+    "memberof": "src/components/Message/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/components/Message/index.js~Message",
+    "access": "public",
+    "export": true,
+    "importPath": "react-web-chat/src/components/Message/index.js",
+    "importStyle": "{Message}",
+    "description": null,
+    "lineNumber": 18,
+    "undocument": true,
+    "params": [
+      {
+        "name": "objectPattern",
+        "types": [
+          "{\"page\": *, \"isLocal\": *, \"ImageComponent\": *, \"InputComponent\": *, \"MessageComponent\": *, \"TextComponent\": *, \"ButtonComponent\": *, \"submitHandler\": *}"
+        ],
+        "defaultRaw": {
+          "page": null,
+          "isLocal": null,
+          "ImageComponent": null,
+          "InputComponent": null,
+          "MessageComponent": null,
+          "TextComponent": null,
+          "ButtonComponent": null,
+          "submitHandler": null
+        },
+        "defaultValue": "{\"page\":null,\"isLocal\":null,\"ImageComponent\":null,\"InputComponent\":null,\"MessageComponent\":null,\"TextComponent\":null,\"ButtonComponent\":null,\"submitHandler\":null}"
+      }
+    ],
+    "return": {
+      "types": [
+        "undefined[]"
+      ]
+    }
+  },
+  {
+    "__docId__": 79,
+    "kind": "file",
+    "name": "src/components/MessageContainer/index.js",
+    "content": "import React from 'react';\nimport Slider from 'react-slick';\n\nconst layoutClasses = {\n    plain: 'MessageContainer',\n    list: 'ListContainer',\n    carousel: 'CarouselContainer'\n};\n\n// TODO: Test browser resizing\nconst sliderSettings = {\n    dots: true,\n    infinite: true,\n    speed: 500,\n    slidesToShow: 1,\n    slidesToScroll: 1,\n    nextArrow: <button className=\"slick-next\" />,\n    prevArrow: <button className=\"slick-next\" />\n};\n\nconst MessageContainer = ({ userId, type, children, layout, origin, pages, ...rest }) => {\n    let hasSelectedInput = rest.selectedInput !== undefined && rest.selectedInput !== null;\n\n    return (\n        <div\n            className={`${layoutClasses[layout] || 'MessageContainer'} ${origin === 'local'\n                ? 'is-local'\n                : ''}`}\n        >\n            {layout === 'carousel' ? (\n                <Slider {...sliderSettings}>\n                    {React.Children.map(children, child => (\n                        <div className=\"CarouselContainer-item\">{child}</div>\n                    ))}\n                </Slider>\n            ) : (\n                children\n            )}\n        </div>\n    );\n};\n\nexport default MessageContainer;\n",
+    "static": true,
+    "longname": "/home/peter/praekelt/react-web-chat/src/components/MessageContainer/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 80,
+    "kind": "variable",
+    "name": "layoutClasses",
+    "memberof": "src/components/MessageContainer/index.js",
+    "static": true,
+    "longname": "src/components/MessageContainer/index.js~layoutClasses",
+    "access": "public",
+    "export": false,
+    "importPath": "react-web-chat/src/components/MessageContainer/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "type": {
+      "types": [
+        "{\"plain\": string, \"list\": string, \"carousel\": string}"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 81,
+    "kind": "variable",
+    "name": "sliderSettings",
+    "memberof": "src/components/MessageContainer/index.js",
+    "static": true,
+    "longname": "src/components/MessageContainer/index.js~sliderSettings",
+    "access": "public",
+    "export": false,
+    "importPath": "react-web-chat/src/components/MessageContainer/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 11,
+    "undocument": true,
+    "type": {
+      "types": [
+        "{\"dots\": boolean, \"infinite\": boolean, \"speed\": number, \"slidesToShow\": number, \"slidesToScroll\": number, \"nextArrow\": *, \"prevArrow\": *}"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 82,
+    "kind": "function",
+    "name": "MessageContainer",
+    "memberof": "src/components/MessageContainer/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/components/MessageContainer/index.js~MessageContainer",
+    "access": "public",
+    "export": true,
+    "importPath": "react-web-chat/src/components/MessageContainer/index.js",
+    "importStyle": "MessageContainer",
+    "description": null,
+    "lineNumber": 21,
+    "undocument": true,
+    "params": [
+      {
+        "name": "objectPattern",
+        "types": [
+          "{\"userId\": *, \"type\": *, \"children\": *, \"layout\": *, \"origin\": *, \"pages\": *, ...rest: Object}"
+        ],
+        "defaultRaw": {
+          "userId": null,
+          "type": null,
+          "children": null,
+          "layout": null,
+          "origin": null,
+          "pages": null,
+          "rest": {}
+        },
+        "defaultValue": "{\"userId\":null,\"type\":null,\"children\":null,\"layout\":null,\"origin\":null,\"pages\":null,\"rest\":{}}"
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 83,
+    "kind": "file",
+    "name": "src/components/MessageList/index.js",
+    "content": "// @ts-check\nimport React from 'react';\nimport { connect } from 'react-redux';\nimport PropTypes from 'prop-types';\n\nimport AvatarContainer from '../AvatarContainer';\nimport MessageContainer from '../MessageContainer';\nimport Message from '../Message';\n\nimport * as messageActions from '../../actions/messages';\n\nimport Avatar from '../../../es/themes/default/components/Avatar/index';\nimport networkManager from '../../../es/utils/network';\n\nconst mapStateToProps = ({ messages }) => ({\n    messages: messages.messages,\n    messageQueue: messages.messageQueue\n});\n\nconst mapDispatchToProps = (dispatch, ownProps) => ({\n    delayedMessageAdd: message => {\n        dispatch(messageActions.delayedMessageAdd(message));\n    },\n    submitHandler: text => {\n        dispatch(messageActions.messageSend({ text }));\n    }\n});\n\nclass MessageList extends React.Component {\n    constructor(props) {\n        super(props);\n        this.state = {\n            offset: 0\n        };\n    }\n\n    componentDidUpdate() {\n        this._last &&\n            this._last.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'end' });\n\n        let { messageQueue, delayedMessageAdd } = this.props;\n\n        messageQueue.length && delayedMessageAdd(messageQueue[messageQueue.length - 1]);\n    }\n\n    render() {\n        let { theme, messages, messageQueue, submitHandler } = this.props;\n        return (\n            <ul className=\"ChatContainer-content\" ref={ref => (this._ref = ref)}>\n                <div className=\"MessagesList\">\n                    {messages.map((message, i) => (\n                        <li\n                            key={i}\n                            ref={ref => {\n                                if (i === messages.length - 1) {\n                                    this._last = ref;\n                                }\n                            }}\n                        >\n                            {message.origin === 'remote' && (\n                                <AvatarContainer AvatarComponent={theme.AvatarComponent} />\n                            )}\n                            <MessageContainer key=\"text\" {...message}>\n                                {message.pages.map((page, i) => (\n                                    <Message\n                                        key={i}\n                                        page={page}\n                                        isLocal={message.origin === 'local'}\n                                        {...theme}\n                                        submitHandler={submitHandler}\n                                    />\n                                ))}\n                            </MessageContainer>\n                            {message.buttons &&\n                                message.buttonStyle === 'default' && (\n                                    <MessageContainer key=\"buttons\" {...message}>\n                                        {message.buttons.map((button, i) => (\n                                            <theme.ButtonComponent\n                                                key={i}\n                                                text={button.text}\n                                                onClick={() => submitHandler(button.text)}\n                                            />\n                                        ))}\n                                    </MessageContainer>\n                                )}\n                            {messageQueue.length && i === messages.length - 1\n                                ? [\n                                      <AvatarContainer\n                                          key=\"avatar\"\n                                          AvatarComponent={theme.AvatarComponent}\n                                      />,\n                                      <MessageContainer key=\"typing\">\n                                          <theme.TypingIndicatorComponent />\n                                      </MessageContainer>\n                                  ]\n                                : null}\n                        </li>\n                    ))}\n                </div>\n            </ul>\n        );\n    }\n}\n\nMessageList.PropTypes = {\n    messages: PropTypes.object,\n    theme: PropTypes.shape({\n        ImageComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),\n        InputComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),\n        MessageComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),\n        TextComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func])\n    })\n};\n\nexport default connect(mapStateToProps, mapDispatchToProps)(MessageList);\n",
+    "static": true,
+    "longname": "/home/peter/praekelt/react-web-chat/src/components/MessageList/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 84,
+    "kind": "function",
+    "name": "mapStateToProps",
+    "memberof": "src/components/MessageList/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/components/MessageList/index.js~mapStateToProps",
+    "access": "public",
+    "export": false,
+    "importPath": "react-web-chat/src/components/MessageList/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 15,
+    "undocument": true,
+    "params": [
+      {
+        "name": "objectPattern",
+        "types": [
+          "{\"messages\": *}"
+        ],
+        "defaultRaw": {
+          "messages": null
+        },
+        "defaultValue": "{\"messages\":null}"
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 85,
+    "kind": "function",
+    "name": "mapDispatchToProps",
+    "memberof": "src/components/MessageList/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/components/MessageList/index.js~mapDispatchToProps",
+    "access": "public",
+    "export": false,
+    "importPath": "react-web-chat/src/components/MessageList/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 20,
+    "undocument": true,
+    "params": [
+      {
+        "name": "dispatch",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "ownProps",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 86,
+    "kind": "class",
+    "name": "MessageList",
+    "memberof": "src/components/MessageList/index.js",
+    "static": true,
+    "longname": "src/components/MessageList/index.js~MessageList",
+    "access": "public",
+    "export": false,
+    "importPath": "react-web-chat/src/components/MessageList/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 29,
+    "undocument": true,
+    "interface": false,
+    "extends": [
+      "react~React.Component"
+    ],
+    "ignore": true
+  },
+  {
+    "__docId__": 87,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/components/MessageList/index.js~MessageList",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/components/MessageList/index.js~MessageList#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 30,
+    "undocument": true
+  },
+  {
+    "__docId__": 88,
+    "kind": "member",
+    "name": "state",
+    "memberof": "src/components/MessageList/index.js~MessageList",
+    "static": false,
+    "longname": "src/components/MessageList/index.js~MessageList#state",
+    "access": "public",
+    "description": null,
+    "lineNumber": 32,
+    "undocument": true,
+    "type": {
+      "types": [
+        "{\"offset\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 89,
+    "kind": "method",
+    "name": "componentDidUpdate",
+    "memberof": "src/components/MessageList/index.js~MessageList",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/components/MessageList/index.js~MessageList#componentDidUpdate",
+    "access": "public",
+    "description": null,
+    "lineNumber": 37,
+    "undocument": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 90,
+    "kind": "member",
+    "name": "_last",
+    "memberof": "src/components/MessageList/index.js~MessageList",
+    "static": false,
+    "longname": "src/components/MessageList/index.js~MessageList#_last",
+    "access": "private",
+    "description": null,
+    "lineNumber": 38,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 91,
+    "kind": "method",
+    "name": "render",
+    "memberof": "src/components/MessageList/index.js~MessageList",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/components/MessageList/index.js~MessageList#render",
+    "access": "public",
+    "description": null,
+    "lineNumber": 46,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 93,
+    "kind": "file",
+    "name": "src/index.js",
+    "content": "import React, { Component } from 'react';\nimport ReactDOM from 'react-dom';\nimport store from './store';\n\nimport { Provider } from 'react-redux';\nimport 'smoothscroll-polyfill';\n\nimport ChatContainer from './components/ChatContainer';\nimport defaultTheme from './themes/default';\n\nimport * as actionTypes from './actionTypes';\nimport feersumClient from 'rwc-feersum-client';\nimport networkManager from './utils/network';\n\n/**\n * The main react component for React Web Chat\n * @param {Object} params - An object containing configuration parameters\n * @param {Object} params.theme - Custom theme\n * @param {Object} params.client - Which client to use for network communication\n */\nexport const ReactWebChatComponent = ({ theme, client = feersumClient, url }) => {\n    networkManager.init({\n        store,\n        client,\n        url\n    });\n    return (\n        <Provider store={store}>\n            <ChatContainer theme={{ ...defaultTheme, ...theme }} />\n        </Provider>\n    );\n};\n\n/**\n * The wrapping constructor module which exposes an interace\n * @param {Object} params - An object containing configuration parameters\n * @param {Object} params.theme - Custom theme\n * @param {Object} params.client - Which client to use for network communication\n * @param {Object} params.elemt - A target element to render to\n */\nclass ReactWebChat {\n    constructor(\n        { theme, client, element, url } = {\n            theme: defaultTheme,\n            client: feersumClient,\n            element,\n            url: 'http://localhost:8080/echo'\n        }\n    ) {\n        this.eventHandlers = { message: [], connection: [] };\n        if (element && element.nodeName) {\n            this.element = element;\n            this.client = client;\n            this.bindEventsToActions();\n            ReactDOM.render(\n                <ReactWebChatComponent theme={theme} client={client} url={url} />,\n                element\n            );\n        } else {\n            console.error(\n                'React Web Chat: expected element passed to constructor to be a DOM node. Recieved instead: ',\n                element\n            );\n        }\n    }\n\n    bindEventsToActions() {\n        Object.values(actionTypes).map(type =>\n            window.addEventListener(`rwc-dispatch-${type}`, ({ detail: { payload } }) =>\n                store.dispatch({\n                    type,\n                    payload\n                })\n            )\n        );\n    }\n}\n\nexport default ReactWebChat;\n",
+    "static": true,
+    "longname": "/home/peter/praekelt/react-web-chat/src/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 94,
+    "kind": "function",
+    "name": "ReactWebChatComponent",
+    "memberof": "src/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/index.js~ReactWebChatComponent",
+    "access": "public",
+    "export": true,
+    "importPath": "react-web-chat/src/index.js",
+    "importStyle": "{ReactWebChatComponent}",
+    "description": "The main react component for React Web Chat",
+    "lineNumber": 21,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "params",
+        "description": "An object containing configuration parameters"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "params.theme",
+        "description": "Custom theme"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "params.client",
+        "description": "Which client to use for network communication"
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 95,
+    "kind": "class",
+    "name": "ReactWebChat",
+    "memberof": "src/index.js",
+    "static": true,
+    "longname": "src/index.js~ReactWebChat",
+    "access": "public",
+    "export": true,
+    "importPath": "react-web-chat/src/index.js",
+    "importStyle": "ReactWebChat",
+    "description": "The wrapping constructor module which exposes an interace",
+    "lineNumber": 41,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "params",
+        "description": "An object containing configuration parameters"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "params.theme",
+        "description": "Custom theme"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "params.client",
+        "description": "Which client to use for network communication"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "params.elemt",
+        "description": "A target element to render to"
+      }
+    ],
+    "interface": false
+  },
+  {
+    "__docId__": 96,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/index.js~ReactWebChat",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~ReactWebChat#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 42,
+    "undocument": true
+  },
+  {
+    "__docId__": 97,
+    "kind": "member",
+    "name": "eventHandlers",
+    "memberof": "src/index.js~ReactWebChat",
+    "static": false,
+    "longname": "src/index.js~ReactWebChat#eventHandlers",
+    "access": "public",
+    "description": null,
+    "lineNumber": 50,
+    "undocument": true,
+    "type": {
+      "types": [
+        "{\"message\": *, \"connection\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 98,
+    "kind": "member",
+    "name": "element",
+    "memberof": "src/index.js~ReactWebChat",
+    "static": false,
+    "longname": "src/index.js~ReactWebChat#element",
+    "access": "public",
+    "description": null,
+    "lineNumber": 52,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 99,
+    "kind": "member",
+    "name": "client",
+    "memberof": "src/index.js~ReactWebChat",
+    "static": false,
+    "longname": "src/index.js~ReactWebChat#client",
+    "access": "public",
+    "description": null,
+    "lineNumber": 53,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 100,
+    "kind": "method",
+    "name": "bindEventsToActions",
+    "memberof": "src/index.js~ReactWebChat",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~ReactWebChat#bindEventsToActions",
+    "access": "public",
+    "description": null,
+    "lineNumber": 67,
+    "undocument": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 101,
+    "kind": "file",
+    "name": "src/middleware/eventEmitter.js",
+    "content": "// @ts-check\nconst eventEmitterMiddleware = store => next => action => {\n    const event = new CustomEvent(`rwc-${action.type}`, {\n        detail: {\n            payload: action.payload\n        }\n    });\n\n    window.dispatchEvent(event);\n    return next(action);\n};\n\nexport default eventEmitterMiddleware;\n",
+    "static": true,
+    "longname": "/home/peter/praekelt/react-web-chat/src/middleware/eventEmitter.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 102,
+    "kind": "function",
+    "name": "eventEmitterMiddleware",
+    "memberof": "src/middleware/eventEmitter.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/middleware/eventEmitter.js~eventEmitterMiddleware",
+    "access": "public",
+    "export": true,
+    "importPath": "react-web-chat/src/middleware/eventEmitter.js",
+    "importStyle": "eventEmitterMiddleware",
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true,
+    "params": [
+      {
+        "name": "store",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 103,
+    "kind": "file",
+    "name": "src/reducers/connection.js",
+    "content": "// @ts-check\nimport {\n    CONNECTION_ESTABLISHED,\n    CONNECTION_ATTEMPTED,\n    CONNECTION_DROPPED,\n    CONNECTION_LISTENING\n} from '../actionTypes';\n\nconst initialState = {\n    established: false,\n    connecting: false,\n    offline: true,\n    listening: false\n};\n\nexport default (state = initialState, action) => {\n    switch (action.type) {\n        case CONNECTION_ESTABLISHED:\n            return { ...state, established: true, connecting: false, offline: false };\n        case CONNECTION_ATTEMPTED:\n            return { ...state, connecting: true, offline: true };\n        case CONNECTION_DROPPED:\n            return {\n                ...state,\n                established: false,\n                connecting: false,\n                offline: true,\n                listening: false\n            };\n        case CONNECTION_LISTENING:\n            return {\n                ...state,\n                listening: true\n            };\n        default:\n            return state;\n    }\n};\n",
+    "static": true,
+    "longname": "/home/peter/praekelt/react-web-chat/src/reducers/connection.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 104,
+    "kind": "variable",
+    "name": "initialState",
+    "memberof": "src/reducers/connection.js",
+    "static": true,
+    "longname": "src/reducers/connection.js~initialState",
+    "access": "public",
+    "export": false,
+    "importPath": "react-web-chat/src/reducers/connection.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 9,
+    "undocument": true,
+    "type": {
+      "types": [
+        "{\"established\": *, \"connecting\": *, \"offline\": boolean, \"listening\": *}"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 105,
+    "kind": "function",
+    "name": "connection",
+    "memberof": "src/reducers/connection.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/reducers/connection.js~connection",
+    "access": "public",
+    "export": true,
+    "importPath": "react-web-chat/src/reducers/connection.js",
+    "importStyle": "connection",
+    "description": null,
+    "lineNumber": 16,
+    "undocument": true,
+    "params": [
+      {
+        "name": "state",
+        "optional": true,
+        "types": [
+          "*"
+        ],
+        "defaultRaw": "initialState",
+        "defaultValue": "initialState"
+      },
+      {
+        "name": "action",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 106,
+    "kind": "file",
+    "name": "src/reducers/index.js",
+    "content": "// @ts-check\nimport { combineReducers } from 'redux';\n\nimport messages from './messages';\nimport connection from './connection';\n\nexport const reducers = combineReducers({\n    messages,\n    connection\n});\n",
+    "static": true,
+    "longname": "/home/peter/praekelt/react-web-chat/src/reducers/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 107,
+    "kind": "variable",
+    "name": "reducers",
+    "memberof": "src/reducers/index.js",
+    "static": true,
+    "longname": "src/reducers/index.js~reducers",
+    "access": "public",
+    "export": true,
+    "importPath": "react-web-chat/src/reducers/index.js",
+    "importStyle": "{reducers}",
+    "description": null,
+    "lineNumber": 7,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 108,
+    "kind": "file",
+    "name": "src/reducers/messages.js",
+    "content": "// @ts-check\n/** @module connectionReducers */\nimport { MESSAGE_ADD, MESSAGE_QUEUE } from '../actionTypes';\n\nconst initialState = {\n    messages: [],\n    messageQueue: []\n};\n\nexport default (state = initialState, action) => {\n    switch (action.type) {\n        case MESSAGE_ADD:\n            return {\n                ...state,\n                messages: [...state.messages, action.payload],\n                messageQueue: state.messageQueue.filter(message => message !== action.payload)\n            };\n        case MESSAGE_QUEUE:\n            return { ...state, messageQueue: [...state.messageQueue, action.payload] };\n        default:\n            return state;\n    }\n};\n",
+    "static": true,
+    "longname": "/home/peter/praekelt/react-web-chat/src/reducers/messages.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 109,
+    "kind": "variable",
+    "name": "initialState",
+    "memberof": "src/reducers/messages.js",
+    "static": true,
+    "longname": "src/reducers/messages.js~initialState",
+    "access": "public",
+    "export": false,
+    "importPath": "react-web-chat/src/reducers/messages.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "type": {
+      "types": [
+        "{\"messages\": *, \"messageQueue\": *}"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 110,
+    "kind": "function",
+    "name": "messages",
+    "memberof": "src/reducers/messages.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/reducers/messages.js~messages",
+    "access": "public",
+    "export": true,
+    "importPath": "react-web-chat/src/reducers/messages.js",
+    "importStyle": "messages",
+    "description": null,
+    "lineNumber": 10,
+    "undocument": true,
+    "params": [
+      {
+        "name": "state",
+        "optional": true,
+        "types": [
+          "*"
+        ],
+        "defaultRaw": "initialState",
+        "defaultValue": "initialState"
+      },
+      {
+        "name": "action",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 111,
+    "kind": "file",
+    "name": "src/store.js",
+    "content": "// @ts-check\nimport { createStore, applyMiddleware, compose } from 'redux';\nimport thunk from 'redux-thunk';\n\nimport { reducers } from './reducers/index';\nimport eventEmitterMiddleware from './middleware/eventEmitter';\n\nlet middlewares = [eventEmitterMiddleware, thunk];\n\nlet middleware = applyMiddleware(...middlewares);\n\nif (window.devToolsExtension) {\n    middleware = compose(middleware, window.devToolsExtension());\n}\n\nexport default createStore(reducers, middleware);\n",
+    "static": true,
+    "longname": "/home/peter/praekelt/react-web-chat/src/store.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 112,
+    "kind": "variable",
+    "name": "middlewares",
+    "memberof": "src/store.js",
+    "static": true,
+    "longname": "src/store.js~middlewares",
+    "access": "public",
+    "export": false,
+    "importPath": "react-web-chat/src/store.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 8,
+    "undocument": true,
+    "type": {
+      "types": [
+        "undefined[]"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 113,
+    "kind": "variable",
+    "name": "middleware",
+    "memberof": "src/store.js",
+    "static": true,
+    "longname": "src/store.js~middleware",
+    "access": "public",
+    "export": false,
+    "importPath": "react-web-chat/src/store.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 10,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 114,
+    "kind": "file",
+    "name": "src/themes/default/components/Animation/index.js",
+    "content": "//@ts-check\nimport React from 'react';\nimport { CSSTransition } from 'react-transition-group';\n\nexport const Fade = ({ children, ...props }) => (\n    <CSSTransition {...props} timeout={350} classNames=\"fade\">\n        {children}\n    </CSSTransition>\n);\n",
+    "static": true,
+    "longname": "/home/peter/praekelt/react-web-chat/src/themes/default/components/Animation/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 115,
+    "kind": "function",
+    "name": "Fade",
+    "memberof": "src/themes/default/components/Animation/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/themes/default/components/Animation/index.js~Fade",
+    "access": "public",
+    "export": true,
+    "importPath": "react-web-chat/src/themes/default/components/Animation/index.js",
+    "importStyle": "{Fade}",
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "params": [
+      {
+        "name": "objectPattern",
+        "types": [
+          "{\"children\": *, ...props: Object}"
+        ],
+        "defaultRaw": {
+          "children": null,
+          "props": {}
+        },
+        "defaultValue": "{\"children\":null,\"props\":{}}"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 116,
+    "kind": "file",
+    "name": "src/themes/default/components/Avatar/index.js",
+    "content": "import React from 'react';\n\nconst Avatar = props => (\n    <div className=\"AvatarStatus\">\n        <div className=\"AvatarStatus-avatar\">\n            <img className=\"Avatar\" src={props.avatar} />\n        </div>\n        <div className=\"AvatarStatus-status\">{switchIndicator(props)}</div>\n    </div>\n);\n\nconst switchIndicator = ({ connecting, established, offline, avatar, typing }) => {\n    if (typing) {\n        return <StatusIndicator status=\"typing\" />;\n    } else {\n        if (established) {\n            return <StatusIndicator status=\"online\" />;\n        }\n        if (connecting) {\n            return <StatusIndicator status=\"thinking\" />;\n        }\n        if (offline) {\n            return <StatusIndicator status=\"offline\" />;\n        }\n    }\n};\n\nconst StatusIndicator = ({ status }) => (\n    <div\n        className={`StatusIndicator\n            ${status ? `StatusIndicator--${status}` : ''}\n        `}\n    />\n);\n\nexport default Avatar;\n",
+    "static": true,
+    "longname": "/home/peter/praekelt/react-web-chat/src/themes/default/components/Avatar/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 117,
+    "kind": "function",
+    "name": "switchIndicator",
+    "memberof": "src/themes/default/components/Avatar/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/themes/default/components/Avatar/index.js~switchIndicator",
+    "access": "public",
+    "export": false,
+    "importPath": "react-web-chat/src/themes/default/components/Avatar/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 12,
+    "undocument": true,
+    "params": [
+      {
+        "name": "objectPattern",
+        "types": [
+          "{\"connecting\": *, \"established\": *, \"offline\": *, \"avatar\": *, \"typing\": *}"
+        ],
+        "defaultRaw": {
+          "connecting": null,
+          "established": null,
+          "offline": null,
+          "avatar": null,
+          "typing": null
+        },
+        "defaultValue": "{\"connecting\":null,\"established\":null,\"offline\":null,\"avatar\":null,\"typing\":null}"
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 118,
+    "kind": "function",
+    "name": "StatusIndicator",
+    "memberof": "src/themes/default/components/Avatar/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/themes/default/components/Avatar/index.js~StatusIndicator",
+    "access": "public",
+    "export": false,
+    "importPath": "react-web-chat/src/themes/default/components/Avatar/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 28,
+    "undocument": true,
+    "params": [
+      {
+        "name": "objectPattern",
+        "types": [
+          "{\"status\": *}"
+        ],
+        "defaultRaw": {
+          "status": null
+        },
+        "defaultValue": "{\"status\":null}"
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 119,
+    "kind": "function",
+    "name": "Avatar",
+    "memberof": "src/themes/default/components/Avatar/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/themes/default/components/Avatar/index.js~Avatar",
+    "access": "public",
+    "export": true,
+    "importPath": "react-web-chat/src/themes/default/components/Avatar/index.js",
+    "importStyle": "Avatar",
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "params": [
+      {
+        "name": "props",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 120,
+    "kind": "file",
+    "name": "src/themes/default/components/Button/index.js",
+    "content": "//@ts-check\nimport React from 'react';\nimport PropTypes from 'prop-types';\nimport { compose, setPropTypes } from 'recompose';\n\nconst enhance = compose(\n    setPropTypes({\n        text: PropTypes.string\n    })\n);\n\nconst Button = ({ text, onClick }) => (\n    <button className=\"Button Button--solid\" onClick={onClick}>\n        {text}\n    </button>\n);\n\nexport default enhance(Button);\n",
+    "static": true,
+    "longname": "/home/peter/praekelt/react-web-chat/src/themes/default/components/Button/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 121,
+    "kind": "variable",
+    "name": "enhance",
+    "memberof": "src/themes/default/components/Button/index.js",
+    "static": true,
+    "longname": "src/themes/default/components/Button/index.js~enhance",
+    "access": "public",
+    "export": false,
+    "importPath": "react-web-chat/src/themes/default/components/Button/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 122,
+    "kind": "function",
+    "name": "Button",
+    "memberof": "src/themes/default/components/Button/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/themes/default/components/Button/index.js~Button",
+    "access": "public",
+    "export": false,
+    "importPath": "react-web-chat/src/themes/default/components/Button/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 12,
+    "undocument": true,
+    "params": [
+      {
+        "name": "objectPattern",
+        "types": [
+          "{\"text\": *, \"onClick\": *}"
+        ],
+        "defaultRaw": {
+          "text": null,
+          "onClick": null
+        },
+        "defaultValue": "{\"text\":null,\"onClick\":null}"
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 123,
+    "kind": "file",
+    "name": "src/themes/default/components/Image/index.js",
+    "content": "// @ts-check\nimport React from 'react';\nimport PropTypes from 'prop-types';\nimport { compose, setPropTypes, lifecycle } from 'recompose';\nimport { withState } from 'recompose';\n\nimport infinityIcon from '../../icons/Infinity.svg';\nimport { Fade } from '../Animation/index';\n\nconst enhance = compose(\n    setPropTypes({\n        url: PropTypes.string.isRequired,\n        text: PropTypes.string,\n        width: PropTypes.number,\n        height: PropTypes.number\n    }),\n    withState('loaded', 'setLoaded', false),\n    lifecycle({\n        componentDidMount: function(props) {\n            let image = new Image(0, 0);\n            image.src = this.props.url;\n            image.addEventListener('load', () => {\n                this.setState({ loaded: true });\n            });\n        }\n    })\n);\n\nexport const ImageComponent = ({ url, text, loaded, height = 200 }) => {\n    return (\n        <Fade in={true} appear={true}>\n            <div className=\"Image\">\n                {loaded ? (\n                    <img className=\"Image-image\" src={url} />\n                ) : (\n                    <div className=\"Image-loader\" style={{ height }}>\n                        <img className=\"Image-loaderIcon\" src={infinityIcon} />\n                    </div>\n                )}\n                {text && (\n                    <p className=\"Image-text Text\" dangerouslySetInnerHTML={{ __html: text }} />\n                )}\n            </div>\n        </Fade>\n    );\n};\n\nexport default enhance(ImageComponent);\n",
+    "static": true,
+    "longname": "/home/peter/praekelt/react-web-chat/src/themes/default/components/Image/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 124,
+    "kind": "variable",
+    "name": "enhance",
+    "memberof": "src/themes/default/components/Image/index.js",
+    "static": true,
+    "longname": "src/themes/default/components/Image/index.js~enhance",
+    "access": "public",
+    "export": false,
+    "importPath": "react-web-chat/src/themes/default/components/Image/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 10,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 125,
+    "kind": "function",
+    "name": "ImageComponent",
+    "memberof": "src/themes/default/components/Image/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/themes/default/components/Image/index.js~ImageComponent",
+    "access": "public",
+    "export": true,
+    "importPath": "react-web-chat/src/themes/default/components/Image/index.js",
+    "importStyle": "{ImageComponent}",
+    "description": null,
+    "lineNumber": 29,
+    "undocument": true,
+    "params": [
+      {
+        "name": "objectPattern",
+        "types": [
+          "{\"url\": *, \"text\": *, \"loaded\": *, \"height\": *}"
+        ],
+        "defaultRaw": {
+          "url": null,
+          "text": null,
+          "loaded": null,
+          "height": null
+        },
+        "defaultValue": "{\"url\":null,\"text\":null,\"loaded\":null,\"height\":null}"
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 126,
+    "kind": "file",
+    "name": "src/themes/default/components/Input/index.js",
+    "content": "// @ts-check\nimport React from 'react';\nimport PropTypes from 'prop-types';\nimport { compose, setPropTypes, withState } from 'recompose';\n\nimport Button from '../Button';\n\nconst enhance = compose(\n    setPropTypes({\n        submitHandler: PropTypes.func\n    }),\n    withState('value', 'setValue', '')\n);\n\nexport const Input = ({ submitHandler, value, setValue }) => (\n    <div className=\"Input\">\n        <input\n            className=\"Input-input\"\n            type=\"text\"\n            value={value}\n            onChange={({ target: { value } }) => setValue(value)}\n        />\n        <button className=\"Input-send\" onClick={() => submitHandler(value)}>\n            SEND\n        </button>\n    </div>\n);\n\nexport default enhance(Input);\n",
+    "static": true,
+    "longname": "/home/peter/praekelt/react-web-chat/src/themes/default/components/Input/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 127,
+    "kind": "variable",
+    "name": "enhance",
+    "memberof": "src/themes/default/components/Input/index.js",
+    "static": true,
+    "longname": "src/themes/default/components/Input/index.js~enhance",
+    "access": "public",
+    "export": false,
+    "importPath": "react-web-chat/src/themes/default/components/Input/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 8,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 128,
+    "kind": "function",
+    "name": "Input",
+    "memberof": "src/themes/default/components/Input/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/themes/default/components/Input/index.js~Input",
+    "access": "public",
+    "export": true,
+    "importPath": "react-web-chat/src/themes/default/components/Input/index.js",
+    "importStyle": "{Input}",
+    "description": null,
+    "lineNumber": 15,
+    "undocument": true,
+    "params": [
+      {
+        "name": "objectPattern",
+        "types": [
+          "{\"submitHandler\": *, \"value\": *, \"setValue\": *}"
+        ],
+        "defaultRaw": {
+          "submitHandler": null,
+          "value": null,
+          "setValue": null
+        },
+        "defaultValue": "{\"submitHandler\":null,\"value\":null,\"setValue\":null}"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 129,
+    "kind": "file",
+    "name": "src/themes/default/components/Menu/index.js",
+    "content": "// @ts-check\nimport React from 'react';\nimport PropTypes from 'prop-types';\nimport { compose, withStateHandlers } from 'recompose';\n\nimport Button from '../Button';\n\nconst enhance = compose(\n    withStateHandlers(\n        ({ initialState = false, initialItems = [] }) => ({\n            open: initialState,\n            selectedItems: initialItems\n        }),\n        {\n            toggleState: ({ open }) => _ => ({\n                open: !open\n            }),\n            toggleItem: ({ selectedItems }) => item => {\n                let newItems = [...selectedItems];\n                let index = newItems.indexOf(item);\n                if (index === -1) {\n                    newItems.push(item);\n                } else {\n                    newItems.splice(index, 1);\n                }\n                return { selectedItems: newItems };\n            }\n        }\n    )\n);\n\nexport const Menu = ({ open, toggleState, items, submitHandler }) => (\n    <div className={`Menu ${open ? 'is-open' : ''}`}>\n        {items && (\n            <ul className=\"Menu-items\">\n                {items.map((item, i) => (\n                    <li\n                        className=\"Menu-item\"\n                        key={i}\n                        onClick={() => {\n                            submitHandler(item.text);\n                            toggleState();\n                        }}\n                    >\n                        {item.text}\n                    </li>\n                ))}\n            </ul>\n        )}\n        <button className=\"Menu-button\" onClick={toggleState}>\n            <div className=\"Menu-buttonSegment\" />\n            <div className=\"Menu-buttonSegment\" />\n            <div className=\"Menu-buttonSegment\" />\n        </button>\n    </div>\n);\n\nexport const CheckboxMenu = enhance(\n    ({ open, toggleState, items, submitHandler, toggleItem, selectedItems }) => (\n        <div className={`Menu CheckboxMenu ${open ? 'is-open' : ''}`}>\n            {items && (\n                <ul className=\"Menu-items\">\n                    {items.map((item, i) => (\n                        <li\n                            className=\"Menu-item CheckboxMenu-item\"\n                            key={i}\n                            onClick={() => toggleItem(item.text)}\n                        >\n                            <input\n                                className=\"CheckboxMenu-checkbox\"\n                                type=\"checkbox\"\n                                checked={selectedItems.includes(item.text)}\n                            />\n                            <label className=\"CheckboxMenu-label\">{item.text}</label>\n                        </li>\n                    ))}\n                </ul>\n            )}\n            <button\n                className=\"CheckboxMenu-submitButton\"\n                onClick={() => {\n                    submitHandler(selectedItems);\n                    toggleState();\n                }}\n            >\n                SEND\n            </button>\n            <button className=\"Menu-button\" onClick={toggleState}>\n                <div className=\"Menu-buttonSegment\" />\n                <div className=\"Menu-buttonSegment\" />\n                <div className=\"Menu-buttonSegment\" />\n            </button>\n        </div>\n    )\n);\n\nexport default enhance(Menu);\n",
+    "static": true,
+    "longname": "/home/peter/praekelt/react-web-chat/src/themes/default/components/Menu/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 130,
+    "kind": "variable",
+    "name": "enhance",
+    "memberof": "src/themes/default/components/Menu/index.js",
+    "static": true,
+    "longname": "src/themes/default/components/Menu/index.js~enhance",
+    "access": "public",
+    "export": false,
+    "importPath": "react-web-chat/src/themes/default/components/Menu/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 8,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 131,
+    "kind": "function",
+    "name": "Menu",
+    "memberof": "src/themes/default/components/Menu/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/themes/default/components/Menu/index.js~Menu",
+    "access": "public",
+    "export": true,
+    "importPath": "react-web-chat/src/themes/default/components/Menu/index.js",
+    "importStyle": "{Menu}",
+    "description": null,
+    "lineNumber": 32,
+    "undocument": true,
+    "params": [
+      {
+        "name": "objectPattern",
+        "types": [
+          "{\"open\": *, \"toggleState\": *, \"items\": *, \"submitHandler\": *}"
+        ],
+        "defaultRaw": {
+          "open": null,
+          "toggleState": null,
+          "items": null,
+          "submitHandler": null
+        },
+        "defaultValue": "{\"open\":null,\"toggleState\":null,\"items\":null,\"submitHandler\":null}"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 132,
+    "kind": "variable",
+    "name": "CheckboxMenu",
+    "memberof": "src/themes/default/components/Menu/index.js",
+    "static": true,
+    "longname": "src/themes/default/components/Menu/index.js~CheckboxMenu",
+    "access": "public",
+    "export": true,
+    "importPath": "react-web-chat/src/themes/default/components/Menu/index.js",
+    "importStyle": "{CheckboxMenu}",
+    "description": null,
+    "lineNumber": 58,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 133,
+    "kind": "file",
+    "name": "src/themes/default/components/Text/index.js",
+    "content": "//@ts-check\nimport React from 'react';\nimport PropTypes from 'prop-types';\nimport { compose, setPropTypes } from 'recompose';\nimport { CSSTransition } from 'react-transition-group';\n\nimport { Fade } from '../Animation/index';\n\nconst createMarkup = (children, title) => {\n    const text = title ? `<h1 class=\"Text-h1\">${children}</h1>` : children;\n    return { __html: text };\n};\n\nconst enhance = compose(\n    setPropTypes({\n        title: PropTypes.string,\n        isLocal: PropTypes.bool\n    })\n);\n\nconst Text = ({ title, children, isLocal }) => (\n    <Fade in={true} appear={true}>\n        <div\n            className={`Text ${isLocal ? 'is-local' : ''}`}\n            dangerouslySetInnerHTML={createMarkup(children, title)}\n        />\n    </Fade>\n);\n\nexport default enhance(Text);\n",
+    "static": true,
+    "longname": "/home/peter/praekelt/react-web-chat/src/themes/default/components/Text/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 134,
+    "kind": "function",
+    "name": "createMarkup",
+    "memberof": "src/themes/default/components/Text/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/themes/default/components/Text/index.js~createMarkup",
+    "access": "public",
+    "export": false,
+    "importPath": "react-web-chat/src/themes/default/components/Text/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 9,
+    "undocument": true,
+    "params": [
+      {
+        "name": "children",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "title",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "{\"__html\": *}"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 135,
+    "kind": "variable",
+    "name": "enhance",
+    "memberof": "src/themes/default/components/Text/index.js",
+    "static": true,
+    "longname": "src/themes/default/components/Text/index.js~enhance",
+    "access": "public",
+    "export": false,
+    "importPath": "react-web-chat/src/themes/default/components/Text/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 14,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 136,
+    "kind": "function",
+    "name": "Text",
+    "memberof": "src/themes/default/components/Text/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/themes/default/components/Text/index.js~Text",
+    "access": "public",
+    "export": false,
+    "importPath": "react-web-chat/src/themes/default/components/Text/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 21,
+    "undocument": true,
+    "params": [
+      {
+        "name": "objectPattern",
+        "types": [
+          "{\"title\": *, \"children\": *, \"isLocal\": *}"
+        ],
+        "defaultRaw": {
+          "title": null,
+          "children": null,
+          "isLocal": null
+        },
+        "defaultValue": "{\"title\":null,\"children\":null,\"isLocal\":null}"
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 137,
+    "kind": "file",
+    "name": "src/themes/default/components/TypingIndicator/index.js",
+    "content": "import React from 'react';\n\nconst TypingIndicator = () => (\n    <div className=\"TypingIndicator\">\n        <div className=\"TypingIndicator-dot\" />\n        <div className=\"TypingIndicator-dot\" />\n        <div className=\"TypingIndicator-dot\" />\n    </div>\n);\n\nexport default TypingIndicator;\n",
+    "static": true,
+    "longname": "/home/peter/praekelt/react-web-chat/src/themes/default/components/TypingIndicator/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 138,
+    "kind": "function",
+    "name": "TypingIndicator",
+    "memberof": "src/themes/default/components/TypingIndicator/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/themes/default/components/TypingIndicator/index.js~TypingIndicator",
+    "access": "public",
+    "export": true,
+    "importPath": "react-web-chat/src/themes/default/components/TypingIndicator/index.js",
+    "importStyle": "TypingIndicator",
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 139,
+    "kind": "file",
+    "name": "src/themes/default/index.js",
+    "content": "// @ts-check\nimport React from 'react';\nimport Avatar from './components/Avatar';\nimport Button from './components/Button';\nimport { CheckboxMenu } from './components/Menu';\nimport Image from './components/Image';\nimport Input from './components/Input';\nimport Menu from './components/Menu';\nimport Text from './components/Text';\nimport TypingIndicator from './components/TypingIndicator';\n\nimport './styles.scss';\n\nexport default {\n    AvatarComponent: Avatar,\n    ButtonComponent: Button,\n    CheckboxMenuComponent: CheckboxMenu,\n    ImageComponent: Image,\n    InputComponent: Input,\n    MenuComponent: Menu,\n    TextComponent: Text,\n    TypingIndicatorComponent: TypingIndicator\n};\n",
+    "static": true,
+    "longname": "/home/peter/praekelt/react-web-chat/src/themes/default/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 140,
+    "kind": "file",
+    "name": "src/utils/filters.js",
+    "content": "// @ts-check\n\n/**\n * Checks if a message belongs to remote\n * @param {Object} message\n */\nexport const remoteMessage = message => message.origin === 'remote';\n",
+    "static": true,
+    "longname": "/home/peter/praekelt/react-web-chat/src/utils/filters.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 141,
+    "kind": "function",
+    "name": "remoteMessage",
+    "memberof": "src/utils/filters.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/utils/filters.js~remoteMessage",
+    "access": "public",
+    "export": true,
+    "importPath": "react-web-chat/src/utils/filters.js",
+    "importStyle": "{remoteMessage}",
+    "description": "Checks if a message belongs to remote",
+    "lineNumber": 7,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 142,
+    "kind": "file",
+    "name": "src/utils/helpers.js",
+    "content": "// @ts-check\n\nimport { remoteMessage } from './filters';\n\n/**\n * Returns the latest remote message\n * @param {Array} messages \n */\nexport const getLatestRemote = messages => messages.filter(remoteMessage).pop();\n",
+    "static": true,
+    "longname": "/home/peter/praekelt/react-web-chat/src/utils/helpers.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 143,
+    "kind": "function",
+    "name": "getLatestRemote",
+    "memberof": "src/utils/helpers.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/utils/helpers.js~getLatestRemote",
+    "access": "public",
+    "export": true,
+    "importPath": "react-web-chat/src/utils/helpers.js",
+    "importStyle": "{getLatestRemote}",
+    "description": "Returns the latest remote message",
+    "lineNumber": 9,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "messages",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 144,
+    "kind": "file",
+    "name": "src/utils/network.js",
+    "content": "// @ts-check\nimport { MESSAGE_ADD, MESSAGE_SEND } from '../actionTypes';\n\nimport * as connectionActions from '../actions/connection';\nimport * as messageActions from '../actions/messages';\n\nconst networkManager = {\n    init({ store, client, url }) {\n        this.url = url;\n        this.dispatch = store.dispatch;\n        this.client = client;\n        this.store = store;\n        this.dispatch(connectionActions.attempted());\n        this.subscribed = false;\n        this.messageSendHandler = this.messageSendHandler.bind(this);\n        this.messageReceiveHandler = this.messageReceiveHandler.bind(this);\n        this.connectionCloseHandler = this.connectionCloseHandler.bind(this);\n        client\n            .init(url)\n            .then(_ => {\n                this.bindActionEvents();\n                this.dispatch(connectionActions.established());\n            })\n            .catch(error => {\n                console.error('react-web-chat connection error: ', error);\n                this.connectionRetry();\n            });\n        this.subscribe();\n    },\n\n    messageReceiveHandler(message) {\n        this.dispatch(messageActions.messageReceive(message));\n    },\n\n    connectionCloseHandler(event) {\n        this.dispatch(connectionActions.dropped());\n        this.connectionRetry();\n    },\n\n    connectionRetry() {\n        setTimeout(\n            () =>\n                this.client\n                    .init(this.url)\n                    .then(_ => {\n                        this.bindActionEvents();\n                        this.dispatch(connectionActions.established());\n                        this.subscribe();\n                    })\n                    .catch(error => {\n                        console.error('react-web-chat connection error: ', error);\n                        this.connectionRetry();\n                    }),\n            500\n        );\n    },\n\n    messageSendHandler({ detail: { payload } }) {\n        this.client.send(JSON.stringify(payload));\n    },\n\n    bindActionEvents() {\n        window.addEventListener(`rwc-${MESSAGE_SEND}`, this.messageSendHandler);\n    },\n\n    subscribe() {\n        this.store.subscribe(() => {\n            if (\n                !this.subscribed &&\n                this.store.getState().connection.established &&\n                !this.store.getState().connection.listening\n            ) {\n                this.client.onmessage(this.messageReceiveHandler);\n                this.client.onclose(this.connectionCloseHandler);\n                this.store.dispatch(connectionActions.listening());\n                this.subscribed = true;\n            }\n        });\n    }\n};\n\nexport default networkManager;\n",
+    "static": true,
+    "longname": "/home/peter/praekelt/react-web-chat/src/utils/network.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 145,
+    "kind": "variable",
+    "name": "networkManager",
+    "memberof": "src/utils/network.js",
+    "static": true,
+    "longname": "src/utils/network.js~networkManager",
+    "access": "public",
+    "export": true,
+    "importPath": "react-web-chat/src/utils/network.js",
+    "importStyle": "networkManager",
+    "description": null,
+    "lineNumber": 7,
+    "undocument": true,
+    "type": {
+      "types": [
+        "{\"init\": function, \"messageReceiveHandler\": function, \"connectionCloseHandler\": function, \"connectionRetry\": function, \"messageSendHandler\": function, \"bindActionEvents\": function, \"subscribe\": function}"
+      ]
+    }
+  },
+  {
+    "kind": "index",
+    "content": "# react-web-chat\n\n[![Travis][build-badge]][build]\n[![npm package][npm-badge]][npm]\n[![Coveralls][coveralls-badge]][coveralls]\n\nReact web chat is a react-based instant messaging UI.\n\n# Table of contents\n\n  * [Table of contents](#table-of-contents)\n  * [Installation](#installation)\n  * [Usage](#usage)\n    * [As a stand-alone module](#as-a-stand-alone-module)\n    * [As a react component](#as-a-react-component)\n  * [Custom events](#custom-events)\n    * [Listening](#listening)\n    * [As a react component](#dispatching)\n\nInstallation\n============\n\nSimply install it with your favourite package manager: \n\n`npm install --save-dev react-web-chat`  \n`yarn add react-web-chat`\n\nUsage\n============\n\n## As a stand-alone module\n\nThe stand-alone version of the module will render itself into a supplied dom element.  \nCommunication with the module is done via custom events described [here](#custom-events).\n\n### ES6\n```js\nimport ReactWebChat from 'react-web-chat'\nlet myChatElement = document.getElementByID('my-chat-element'); \n\nconst reactWebChat = new ReactWebChat({\n    url: 'http://localhost:8000',\n    element: myChatElement\n});\n```\n\n### CommonJS\n```js\nvar ReactWebChat = require('react-web-chat').default\nvar myChatElement = document.getElementByID('my-chat-element'); \n\nconst reactWebChat = new ReactWebChat({\n    url: 'http://localhost:8000',\n    element: myChatElement\n});\n```\n\n### UMD\nReact-webi-chat is also available as a UMD module. Simply load the module and instantiate a new instance as described in the example below.  \n**NOTE: `react` and `react-dom` are peer dependencies so make sure they are loaded too**\n\n```html\n<head>\n    <script crossorigin src=\"https://unpkg.com/react@16/umd/react.production.min.js\"></script>\n    <script crossorigin src=\"https://unpkg.com/react-dom@16/umd/react-dom.production.min.js\"></script>\n    <script src=\"https://unpkg.com/react-web-chat@1.1.2/umd/react-web-chat.js\">\n</head>\n<html>\n    <div id=\"my-chat-element\">\n</html>\n<script>\n    var myChatElement = document.getElementByID('my-chat-element'); \n\n    var reactWebChat = new ReactWebChat.default({\n        url: 'http://localhost:8080',\n        element: reactWebChat\n    });\n</script>\n```\n\n## As a react component\n```jsx\nimport { ReactWebChat } from 'react-web-chat'\n\nconst MyComponent = props => \n    <div>\n        <ReactWebChat url=\"http://localhost:8080\">\n    </div>\n\n```\n\nCustom events\n============\n\nCommunication with the react-web-chat module is handled via custom events.\n\n## Listening\n\n\n## Dispatching\n\n[build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square\n[build]: https://travis-ci.org/user/repo\n\n[npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square\n[npm]: https://www.npmjs.org/package/npm-package\n\n[coveralls-badge]: https://img.shields.io/coveralls/praekelt/react-web-chat/master.png?style=flat-square\n[coveralls]: https://coveralls.io/github/praekelt/react-web-chat\n",
+    "longname": "/home/peter/praekelt/react-web-chat/README.md",
+    "name": "./README.md",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "packageJSON",
+    "content": "{\n    \"name\": \"react-web-chat\",\n    \"version\": \"1.1.3\",\n    \"description\": \"react-web-chat React component\",\n    \"main\": \"lib/index.js\",\n    \"module\": \"es/index.js\",\n    \"files\": [\"css\", \"es\", \"lib\", \"umd\"],\n    \"scripts\": {\n        \"build\": \"nwb build-react-component\",\n        \"clean\": \"nwb clean-module && nwb clean-demo\",\n        \"start\": \"nwb serve-react-demo\",\n        \"test\": \"nwb test-react\",\n        \"test:coverage\": \"nwb test-react --coverage\",\n        \"test:watch\": \"nwb test-react --server\",\n        \"document:watch\": \"nodemon --watch src --exec './node_modules/.bin/esdoc'\"\n    },\n    \"dependencies\": {\n        \"documentation\": \"^5.3.3\",\n        \"esdoc\": \"^1.0.4\",\n        \"esdoc-ecmascript-proposal-plugin\": \"^1.0.0\",\n        \"esdoc-jsx-plugin\": \"^1.0.0\",\n        \"esdoc-standard-plugin\": \"^1.0.0\",\n        \"nodemon\": \"^1.12.1\",\n        \"react-slick\": \"^0.15.4\",\n        \"react-transition-group\": \"^2.2.1\",\n        \"redux-thunk\": \"^2.2.0\",\n        \"smoothscroll-polyfill\": \"^0.4.0\"\n    },\n    \"peerDependencies\": {\n        \"react\": \"16.x\"\n    },\n    \"devDependencies\": {\n        \"nwb\": \"0.19.x\",\n        \"nwb-sass\": \"^0.8.1\",\n        \"prop-types\": \"^15.6.0\",\n        \"react\": \"^16.0.0\",\n        \"react-dom\": \"^16.0.0\",\n        \"react-redux\": \"^5.0.6\",\n        \"recompose\": \"^0.26.0\",\n        \"redux\": \"^3.7.2\"\n    },\n    \"author\": \"\",\n    \"homepage\": \"\",\n    \"license\": \"MIT\",\n    \"repository\": \"\",\n    \"keywords\": [\"react-component\"]\n}\n",
+    "longname": "/home/peter/praekelt/react-web-chat/package.json",
+    "name": "package.json",
+    "static": true,
+    "access": "public"
+  }
+]

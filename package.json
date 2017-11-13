@@ -11,9 +11,16 @@
         "start": "nwb serve-react-demo",
         "test": "nwb test-react",
         "test:coverage": "nwb test-react --coverage",
-        "test:watch": "nwb test-react --server"
+        "test:watch": "nwb test-react --server",
+        "document:watch": "nodemon --watch src --exec './node_modules/.bin/esdoc'"
     },
     "dependencies": {
+        "documentation": "^5.3.3",
+        "esdoc": "^1.0.4",
+        "esdoc-ecmascript-proposal-plugin": "^1.0.0",
+        "esdoc-jsx-plugin": "^1.0.0",
+        "esdoc-standard-plugin": "^1.0.0",
+        "nodemon": "^1.12.1",
         "react-slick": "^0.15.4",
         "react-transition-group": "^2.2.1",
         "redux-thunk": "^2.2.0",

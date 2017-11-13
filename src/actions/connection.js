@@ -5,6 +5,10 @@ import {
     CONNECTION_LISTENING
 } from '../actionTypes';
 
+/**
+ * Sets connection to established
+ * @param {object} message 
+ */
 export const established = message => ({
     type: CONNECTION_ESTABLISHED
 });

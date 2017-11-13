@@ -1,4 +1,5 @@
 // @ts-check
+/** @module connectionReducers */
 import { MESSAGE_ADD, MESSAGE_QUEUE } from '../actionTypes';
 
 const initialState = {

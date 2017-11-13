@@ -1,0 +1,226 @@
+{
+  "coverage": "13.04%",
+  "expectCount": 69,
+  "actualCount": 9,
+  "files": {
+    "src/actionTypes.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        2
+      ]
+    },
+    "src/actions/connection.js": {
+      "expectCount": 4,
+      "actualCount": 1,
+      "undocumentLines": [
+        16,
+        20,
+        24
+      ]
+    },
+    "src/actions/messages.js": {
+      "expectCount": 4,
+      "actualCount": 4,
+      "undocumentLines": []
+    },
+    "src/components/AvatarContainer/index.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        7,
+        12,
+        20
+      ]
+    },
+    "src/components/ButtonContainer/index.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        7,
+        14
+      ]
+    },
+    "src/components/ChatContainer/index.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        10,
+        14,
+        26
+      ]
+    },
+    "src/components/InputArea/index.js": {
+      "expectCount": 4,
+      "actualCount": 0,
+      "undocumentLines": [
+        10,
+        18,
+        28,
+        35
+      ]
+    },
+    "src/components/Message/index.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        6,
+        18
+      ]
+    },
+    "src/components/MessageContainer/index.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        4,
+        11,
+        21
+      ]
+    },
+    "src/components/MessageList/index.js": {
+      "expectCount": 8,
+      "actualCount": 0,
+      "undocumentLines": [
+        15,
+        20,
+        29,
+        30,
+        32,
+        37,
+        38,
+        46
+      ]
+    },
+    "src/index.js": {
+      "expectCount": 7,
+      "actualCount": 2,
+      "undocumentLines": [
+        42,
+        50,
+        52,
+        53,
+        67
+      ]
+    },
+    "src/middleware/eventEmitter.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        2
+      ]
+    },
+    "src/reducers/connection.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        9,
+        16
+      ]
+    },
+    "src/reducers/index.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        7
+      ]
+    },
+    "src/reducers/messages.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        5,
+        10
+      ]
+    },
+    "src/store.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        8,
+        10
+      ]
+    },
+    "src/themes/default/components/Animation/index.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        5
+      ]
+    },
+    "src/themes/default/components/Avatar/index.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        12,
+        28,
+        3
+      ]
+    },
+    "src/themes/default/components/Button/index.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        6,
+        12
+      ]
+    },
+    "src/themes/default/components/Image/index.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        10,
+        29
+      ]
+    },
+    "src/themes/default/components/Input/index.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        8,
+        15
+      ]
+    },
+    "src/themes/default/components/Menu/index.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        8,
+        32,
+        58
+      ]
+    },
+    "src/themes/default/components/Text/index.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        9,
+        14,
+        21
+      ]
+    },
+    "src/themes/default/components/TypingIndicator/index.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        3
+      ]
+    },
+    "src/utils/filters.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/utils/helpers.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/utils/network.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        7
+      ]
+    }
+  }
+}
