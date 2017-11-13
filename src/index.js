@@ -61,7 +61,7 @@ class ReactWebChat {
             );
         } else {
             console.error(
-                'React Web Chat: expected element passed to constructor to be a DOM node. Recieved instead: ',
+                'React Web Chat: expected element passed to constructor to be a DOM node. Received instead: ',
                 element
             );
         }

@@ -15,7 +15,7 @@
     * [As a react component](#as-a-react-component)
   * [Custom events](#custom-events)
     * [Listening](#listening)
-    * [As a react component](#dispatching)
+    * [Dispatching](#dispatching)
 * [Custom themes](#custom-themes)
 * [Custom network clients](#custom-network-clients)
 
@@ -132,7 +132,16 @@ window.addEventListener('rwc-MESSAGE_RECEIVE', function(data) {
 The `data` parameter object adheres to the CustomEvent specification:   
 https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent
 
-A full list of actions to listen for can be found here:
+A full list of actions to listen for:
+
+- rwc-MESSAGE_ADD
+- rwc-MESSAGE_SEND
+- rwc-MESSAGE_RECEIVE
+- rwc-MESSAGE_QUEUE
+- rwc-CONNECTION_ESTABLISHED
+- rwc-CONNECTION_ATTEMPTED
+- rwc-CONNECTION_DROPPED
+- rwc-CONNECTION_LISTENING
 
 ## Dispatching
 
