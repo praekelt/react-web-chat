@@ -1,6 +1,6 @@
 {
     "name": "react-web-chat",
-    "version": "1.1.4",
+    "version": "1.1.5",
     "description": "react-web-chat React component",
     "main": "lib/index.js",
     "module": "es/index.js",
@@ -15,7 +15,6 @@
         "document:watch": "nodemon --watch src --exec './node_modules/.bin/esdoc'"
     },
     "dependencies": {
-        "documentation": "^5.3.3",
         "esdoc": "^1.0.4",
         "esdoc-ecmascript-proposal-plugin": "^1.0.0",
         "esdoc-jsx-plugin": "^1.0.0",
