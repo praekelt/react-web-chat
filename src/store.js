@@ -14,3 +14,4 @@ if (window.devToolsExtension) {
 }
 
 export default createStore(reducers, middleware);
+export const createStoreWithState = initialState => createStore(reducers, initialState, middleware);

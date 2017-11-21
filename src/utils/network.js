@@ -45,22 +45,28 @@ const networkManager = {
         this.connectionRetry();
     },
 
-    connectionRetry() {
-        setTimeout(
-            () =>
-                this.client
-                    .init(this.url)
-                    .then(_ => {
-                        this.bindActionEvents();
-                        this.dispatch(connectionActions.established());
-                        this.subscribe();
-                    })
-                    .catch(error => {
-                        console.error('react-web-chat connection error: ', error);
-                        this.connectionRetry();
-                    }),
-            500
-        );
+    connectionRetry(count = 0) {
+        let {
+            retransmissionTimeout,
+            retransmissionAttempts
+        } = this.store.getState().config.network;
+
+        if (count < retransmissionAttempts)
+            setTimeout(
+                () =>
+                    this.client
+                        .init(this.url)
+                        .then(_ => {
+                            this.bindActionEvents();
+                            this.dispatch(connectionActions.established());
+                            this.subscribe();
+                        })
+                        .catch(error => {
+                            console.error('react-web-chat connection error: ', error);
+                            this.connectionRetry(count + 1);
+                        }),
+                retransmissionTimeout
+            );
     },
 
     messageSendHandler({ detail: { payload } }) {

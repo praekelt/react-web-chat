@@ -1,4 +1,5 @@
 import { MESSAGE_ADD, MESSAGE_SEND, MESSAGE_RECEIVE, MESSAGE_QUEUE } from '../actionTypes';
+import TypingIndicator from '../themes/default/components/TypingIndicator/index';
 
 /**
  * Action creator: Adds a message to the store.
@@ -19,8 +20,20 @@ export const messageAdd = message => ({
  * @return {function()} dispatches {@link messageAdd} after 1200ms
  */
 export function delayedMessageAdd(message) {
-    return dispatch => {
-        setTimeout(() => dispatch(messageAdd(message)), 1200);
+    return (dispatch, getState) => {
+        let { delay, variance, varianceMethod, active } = getState().config.typingStatus;
+        let queueDelay = 0;
+
+        switch (varianceMethod) {
+            case 'fixed':
+                queueDelay = Math.round(delay + variance * Math.round(1.5 + Math.random() * -3));
+                break;
+            case 'range':
+            default:
+                queueDelay = Math.round(delay + variance * (1 + Math.random() * -2));
+        }
+
+        setTimeout(() => dispatch(messageAdd(message)), active ? queueDelay : 0);
     };
 }
 

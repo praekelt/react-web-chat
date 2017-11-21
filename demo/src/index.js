@@ -17,8 +17,19 @@ class Demo extends Component {
                     backgroundColor: '#16161d',
                     backgroundImage: 'url(http://pngimg.com/uploads/iphone/iphone_PNG5724.png)'
                 }}
+                className="ReactWebChat"
             >
-                <ReactWebChatComponent url="http://localhost:8080/echo/" />
+                <ReactWebChatComponent
+                    url="http://localhost:8080/echo/"
+                    typingStatus={{
+                        delay: 1000,
+                        variance: 500
+                    }}
+                    network={{
+                        retransmissionTimeout: 500,
+                        retransmissionAttempts: 10
+                    }}
+                />
             </div>
         );
     }

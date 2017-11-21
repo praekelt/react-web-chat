@@ -1,0 +1,12 @@
+{
+    "typingStatus": {
+        "active": true,
+        "delay": 500,
+        "variance": 250,
+        "varianceMethod": "random"
+    },
+    "network": {
+        "retransmissionTimeout": 500,
+        "retransmissionAttempts": 10
+    }
+}

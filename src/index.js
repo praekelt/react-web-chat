@@ -1,26 +1,39 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import store from './store';
+import { createStoreWithState } from './store';
+import { merge } from 'lodash';
 
 import { Provider } from 'react-redux';
 import 'smoothscroll-polyfill';
 
 import ChatContainer from './components/ChatContainer';
-import defaultTheme from './themes/default';
 
 import * as actionTypes from './actionTypes';
-import feersumClient from 'rwc-feersum-client';
+import { feersumClientLegacy } from 'rwc-feersum-client';
 import networkManager from './utils/network';
+import defaultTheme from './themes/default';
+import defaultConfig from './config';
 
 /**
  * The main react component for React Web Chat
  * @param {Object} params - An object containing configuration parameters
  * @param {Object} params.theme - Custom theme
- * @param {Object} params.url - Chat server url to post messages to
+ * @param {String} params.url - Chat server url to post messages to
  * @param {Object} params.client - Which client to use for network communication
+ * @param {Object} params.typingStatus - A list of configuration options for the typing status indicator
+ * @param {Object} params.network - A list of configuration options for network communication
  * @return {Object} React component
  */
-export const ReactWebChatComponent = ({ theme, client = feersumClient, url }) => {
+export const ReactWebChatComponent = ({
+    theme,
+    client = feersumClientLegacy,
+    url,
+    typingStatus,
+    network
+}) => {
+    const store = createStoreWithState({
+        config: merge({}, defaultConfig, { typingStatus }, { network })
+    });
     networkManager.init({
         store,
         client,
@@ -40,7 +53,7 @@ class ReactWebChat {
     constructor(
         { theme, client, element, url } = {
             theme: defaultTheme,
-            client: feersumClient,
+            client: feersumClientLegacy,
             element,
             url: 'http://localhost:8080/echo'
         }

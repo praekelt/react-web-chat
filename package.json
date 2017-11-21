@@ -4,7 +4,12 @@
     "description": "react-web-chat React component",
     "main": "lib/index.js",
     "module": "es/index.js",
-    "files": ["css", "es", "lib", "umd"],
+    "files": [
+        "css",
+        "es",
+        "lib",
+        "umd"
+    ],
     "scripts": {
         "build": "nwb build-react-component",
         "clean": "nwb clean-module && nwb clean-demo",
@@ -19,6 +24,7 @@
         "esdoc-ecmascript-proposal-plugin": "^1.0.0",
         "esdoc-jsx-plugin": "^1.0.0",
         "esdoc-standard-plugin": "^1.0.0",
+        "lodash": "^4.17.4",
         "nodemon": "^1.12.1",
         "react-slick": "^0.15.4",
         "react-transition-group": "^2.2.1",
@@ -42,5 +48,7 @@
     "homepage": "",
     "license": "MIT",
     "repository": "",
-    "keywords": ["react-component"]
+    "keywords": [
+        "react-component"
+    ]
 }

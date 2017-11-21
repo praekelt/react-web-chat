@@ -11,10 +11,12 @@ import * as messageActions from '../../actions/messages';
 
 import Avatar from '../../../es/themes/default/components/Avatar/index';
 import networkManager from '../../../es/utils/network';
+import TypingIndicator from '../../../es/themes/default/components/TypingIndicator/index';
 
-const mapStateToProps = ({ messages }) => ({
+const mapStateToProps = ({ messages, config }) => ({
     messages: messages.messages,
-    messageQueue: messages.messageQueue
+    messageQueue: messages.messageQueue,
+    config
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
@@ -44,7 +46,7 @@ class MessageList extends React.Component {
     }
 
     render() {
-        let { theme, messages, messageQueue, submitHandler } = this.props;
+        let { theme, messages, messageQueue, submitHandler, config } = this.props;
         return (
             <ul className="ChatContainer-content" ref={ref => (this._ref = ref)}>
                 <div className="MessagesList">
@@ -83,14 +85,18 @@ class MessageList extends React.Component {
                                         ))}
                                     </MessageContainer>
                                 )}
-                            {messageQueue.length && i === messages.length - 1
+                            {messageQueue.length &&
+                            i === messages.length - 1 &&
+                            config.typingStatus.active
                                 ? [
                                       <AvatarContainer
                                           key="avatar"
                                           AvatarComponent={theme.AvatarComponent}
                                       />,
                                       <MessageContainer key="typing">
-                                          <theme.TypingIndicatorComponent />
+                                          <theme.TypingIndicatorComponent
+                                              {...config.TypingIndicator}
+                                          />
                                       </MessageContainer>
                                   ]
                                 : null}
@@ -109,7 +115,8 @@ MessageList.PropTypes = {
         InputComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
         MessageComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
         TextComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func])
-    })
+    }),
+    config: PropTypes.object
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(MessageList);
