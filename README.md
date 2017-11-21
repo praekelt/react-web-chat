@@ -41,8 +41,32 @@ It accepts the following parameters:
 | element  | The element `react-web-chat` should render to   | yes | Element |
 | theme | A custom [theme](#custom-themes)  | no | Object |
 | client | A custom [client](#custom-clients)  | no | Object |
+| typingStatus | Configuration options for the typing status indicator | no | Object |
+| network | Configuration options for network communication  | no | Object |
 
 Communication with the module is handled via custom events described [here](#custom-events).
+
+### Fully configured example
+
+```js
+
+new ReactWebChat({
+    url: 'http://localhost:8000',
+    element: myChatElement,
+    typingStatus: {
+        active: true || false,              // Enable/disable typing status indicator
+        delay: 500,                         // How many ms to show the indicator for
+        variance: 250,                      // How many ms to vary the delay by
+        varianceMethod: "random" || "fixed" // Random or fixed value between delay +- variance
+    },
+    network: {
+        retransmissionTimeout: 500,         // How many ms to wait between network request retries
+        retransmissionAttempts: 10          // Retry limit
+    }
+}
+
+});
+```
 
 ### ES6
 ```js
@@ -60,7 +84,7 @@ const reactWebChat = new ReactWebChat({
 var ReactWebChat = require('react-web-chat').default
 var myChatElement = document.getElementByID('my-chat-element'); 
 
-const reactWebChat = new ReactWebChat({
+var reactWebChat = new ReactWebChat({
     url: 'http://localhost:8000',
     element: myChatElement
 });
