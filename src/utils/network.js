@@ -74,7 +74,8 @@ const networkManager = {
     },
 
     bindActionEvents() {
-        window.addEventListener(`rwc-${MESSAGE_SEND}`, this.messageSendHandler);
+        let { eventNamespace } = this.store.getState().config.network;
+        window.addEventListener(`${eventNamespace}-${MESSAGE_SEND}`, this.messageSendHandler);
     },
 
     subscribe() {

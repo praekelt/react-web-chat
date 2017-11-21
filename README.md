@@ -61,7 +61,8 @@ new ReactWebChat({
     },
     network: {
         retransmissionTimeout: 500,         // How many ms to wait between network request retries
-        retransmissionAttempts: 10          // Retry limit
+        retransmissionAttempts: 10,         // Retry limit
+        eventNamespace: "rwc"               // Custom even namespace
     }
 }
 
@@ -144,8 +145,10 @@ Communication with the `react-web-chat` module is handled via a series of custom
 
 ## Listening
 Custom `react-web-chat` events are namespaced using the `rwc-` prefix.  
-Any dispatched redux action will fire a custom event using the following format:  
+
+Any dispatched redux action will fire a custom event using the following type:  
 `rwc-ACTION_TYPE`
+
 
 ### Example:
 ```js
@@ -166,6 +169,18 @@ A full list of actions to listen for:
 - rwc-CONNECTION_ATTEMPTED
 - rwc-CONNECTION_DROPPED
 - rwc-CONNECTION_LISTENING
+
+> **Note: event namespaces can be configured by passing in the following configuration to the constructor:**
+> ```js
+> new ReactWebChat({
+>    /* ... */
+>    network: {
+>        eventNamespace: "your-custom-namespace"
+>    }
+>}
+>```
+> This will result in the following event type:
+> `your-custom-namespace-ACTION_TYPE`
 
 ## Dispatching
 

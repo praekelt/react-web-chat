@@ -4,7 +4,8 @@
  * @param {Object} store - a redux store instance
  */
 const eventEmitterMiddleware = store => next => action => {
-    const event = new CustomEvent(`rwc-${action.type}`, {
+    let { eventNamespace } = store.getState().config.network;
+    const event = new CustomEvent(`${eventNamespace}-${action.type}`, {
         detail: {
             payload: action.payload
         }

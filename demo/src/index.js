@@ -27,7 +27,8 @@ class Demo extends Component {
                     }}
                     network={{
                         retransmissionTimeout: 500,
-                        retransmissionAttempts: 10
+                        retransmissionAttempts: 10,
+                        eventNamespace: 'foobar'
                     }}
                 />
             </div>
