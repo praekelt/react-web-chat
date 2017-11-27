@@ -1,5 +1,5 @@
 // @ts-check
-import { MESSAGE_ADD, MESSAGE_SEND } from '../actionTypes';
+import { MESSAGE_ADD, MESSAGE_SEND, PASSTHROUGH_SEND, PASSTHROUGH_RECEIVE } from '../actionTypes';
 
 import * as connectionActions from '../actions/connection';
 import * as messageActions from '../actions/messages';
@@ -20,8 +20,13 @@ const networkManager = {
         this.store = store;
         this.dispatch(connectionActions.attempted());
         this.subscribed = false;
+
         this.messageSendHandler = this.messageSendHandler.bind(this);
         this.messageReceiveHandler = this.messageReceiveHandler.bind(this);
+
+        this.passThroughSendHandler = this.passThroughSendHandler.bind(this);
+        this.passThroughReceiveHandler = this.passThroughReceiveHandler.bind(this);
+
         this.connectionCloseHandler = this.connectionCloseHandler.bind(this);
         client
             .init(url)
@@ -73,9 +78,24 @@ const networkManager = {
         this.client.send(JSON.stringify(payload));
     },
 
+    passThroughSendHandler({ detail: { payload } }) {
+        this.client.send(JSON.stringify(payload));
+    },
+
+    passThroughReceiveHandler(message) {
+        this.dispatch({
+            type: PASSTHROUGH_RECEIVE,
+            payload: message
+        });
+    },
+
     bindActionEvents() {
         let { eventNamespace } = this.store.getState().config.network;
         window.addEventListener(`${eventNamespace}-${MESSAGE_SEND}`, this.messageSendHandler);
+        window.addEventListener(
+            `${eventNamespace}-${PASSTHROUGH_SEND}`,
+            this.passThroughSendHandler
+        );
     },
 
     subscribe() {
@@ -86,6 +106,7 @@ const networkManager = {
                 !this.store.getState().connection.listening
             ) {
                 this.client.onmessage(this.messageReceiveHandler);
+                this.client.onpassthrough(this.passThroughReceiveHandler);
                 this.client.onclose(this.connectionCloseHandler);
                 this.store.dispatch(connectionActions.listening());
                 this.subscribed = true;
