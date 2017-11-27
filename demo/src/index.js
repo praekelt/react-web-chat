@@ -35,8 +35,4 @@ class Demo extends Component {
     }
 }
 
-window.addEventListener('foobar-PASSTHROUGH_RECEIVE', function(data) {
-    console.log('PASSTHOUGHTY~!', data);
-});
-
 render(<Demo />, document.querySelector('#demo'));
