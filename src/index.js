@@ -9,8 +9,8 @@ import 'smoothscroll-polyfill';
 import ChatContainer from './components/ChatContainer';
 
 import * as actionTypes from './actionTypes';
-import { feersumClientLegacy } from 'rwc-feersum-client';
-import networkManager from './utils/network';
+import RWCFeersumClient from 'rwc-feersum-client';
+import NetworkManager from './utils/network';
 import defaultTheme from './themes/default';
 import defaultConfig from './config';
 
@@ -26,7 +26,7 @@ import defaultConfig from './config';
  */
 export const ReactWebChatComponent = ({
     theme,
-    client = feersumClientLegacy,
+    client,
     url,
     typingStatus,
     network
@@ -34,11 +34,20 @@ export const ReactWebChatComponent = ({
     const store = createStoreWithState({
         config: merge({}, defaultConfig, { typingStatus }, { network })
     });
-    networkManager.init({
+    const networkManager = new NetworkManager({
         store,
-        client,
-        url
+        client:
+            client ||
+            new RWCFeersumClient({
+                url,
+                config: {
+                    retransmissionTimeout: 500,
+                    retransmissionAttempts: 10,
+                    schemaVersion: '0.10'
+                }
+            })
     });
+    networkManager.init();
     return (
         <Provider store={store}>
             <ChatContainer theme={{ ...defaultTheme, ...theme }} />
@@ -69,7 +78,11 @@ class ReactWebChat {
             this.client = client;
             this.bindEventsToActions();
             ReactDOM.render(
-                <ReactWebChatComponent theme={theme} client={client} url={url} />,
+                <ReactWebChatComponent
+                    theme={theme}
+                    client={client}
+                    url={url}
+                />,
                 element
             );
         } else {
@@ -82,11 +95,13 @@ class ReactWebChat {
 
     bindEventsToActions() {
         Object.values(actionTypes).map(type =>
-            window.addEventListener(`rwc-dispatch-${type}`, ({ detail: { payload } }) =>
-                store.dispatch({
-                    type,
-                    payload
-                })
+            window.addEventListener(
+                `rwc-dispatch-${type}`,
+                ({ detail: { payload } }) =>
+                    store.dispatch({
+                        type,
+                        payload
+                    })
             )
         );
     }

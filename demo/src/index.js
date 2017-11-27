@@ -15,7 +15,8 @@ class Demo extends Component {
                     backgroundPosition: '-144px 3px',
                     backgroundSize: '717px, 580px',
                     backgroundColor: '#16161d',
-                    backgroundImage: 'url(http://pngimg.com/uploads/iphone/iphone_PNG5724.png)'
+                    backgroundImage:
+                        'url(http://pngimg.com/uploads/iphone/iphone_PNG5724.png)'
                 }}
                 className="ReactWebChat"
             >
@@ -26,8 +27,6 @@ class Demo extends Component {
                         variance: 500
                     }}
                     network={{
-                        retransmissionTimeout: 500,
-                        retransmissionAttempts: 10,
                         eventNamespace: 'foobar'
                     }}
                 />
