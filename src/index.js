@@ -1,5 +1,3 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import { createStoreWithState } from './store';
 import { merge } from 'lodash';
 
@@ -62,7 +60,7 @@ class ReactWebChat {
     constructor(
         { theme, client, element, url } = {
             theme: defaultTheme,
-            client: feersumClientLegacy,
+            client,
             element,
             url: 'http://localhost:8080/echo'
         }
