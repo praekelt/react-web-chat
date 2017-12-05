@@ -63,15 +63,16 @@ class MessageList extends React.Component {
 								<AvatarContainer AvatarComponent={theme.AvatarComponent} />
 							)}
 							<MessageContainer key="text" {...message}>
-								{message.pages.map((page, i) => (
-									<Message
-										key={i}
-										page={page}
-										isLocal={message.origin === 'local'}
-										{...theme}
-										submitHandler={submitHandler}
-									/>
-								))}
+								{message.pages &&
+									message.pages.map((page, i) => (
+										<Message
+											key={i}
+											page={page}
+											isLocal={message.origin === 'local'}
+											{...theme}
+											submitHandler={submitHandler}
+										/>
+									))}
 							</MessageContainer>
 							{message.buttons &&
 								message.buttonStyle === 'default' && (
