@@ -6248,6 +6248,12 @@ run-series@1.1.4:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/run-series/-/run-series-1.1.4.tgz#89a73ddc5e75c9ef8ab6320c0a1600d6a41179b9"
 
+rwc-feersum-client@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/rwc-feersum-client/-/rwc-feersum-client-1.1.0.tgz#b218f57fbb13922ac8ead3a7a034123c917f8767"
+  dependencies:
+    sockjs-client "^1.1.4"
+
 rx-lite-aggregates@^4.0.8:
   version "4.0.8"
   resolved "https://registry.yarnpkg.com/rx-lite-aggregates/-/rx-lite-aggregates-4.0.8.tgz#753b87a89a11c95467c4ac1626c4efc4e05c67be"
@@ -6483,7 +6489,7 @@ socket.io@1.7.3:
     socket.io-client "1.7.3"
     socket.io-parser "2.3.1"
 
-sockjs-client@1.1.4:
+sockjs-client@1.1.4, sockjs-client@^1.1.4:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/sockjs-client/-/sockjs-client-1.1.4.tgz#5babe386b775e4cf14e7520911452654016c8b12"
   dependencies:

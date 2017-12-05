@@ -8,8 +8,8 @@ import TypingIndicator from '../themes/default/components/TypingIndicator/index'
  * @return {{type: MESSAGE_ADD}} redux action type returned
  */
 export const messageAdd = message => ({
-    type: MESSAGE_ADD,
-    payload: message
+	type: MESSAGE_ADD,
+	payload: message
 });
 
 /**
@@ -20,21 +20,21 @@ export const messageAdd = message => ({
  * @return {function()} dispatches {@link messageAdd} after 1200ms
  */
 export function delayedMessageAdd(message) {
-    return (dispatch, getState) => {
-        let { delay, variance, varianceMethod, active } = getState().config.typingStatus;
-        let queueDelay = 0;
+	return (dispatch, getState) => {
+		let { delay, variance, varianceMethod, active } = getState().config.typingStatus;
+		let queueDelay = 0;
 
-        switch (varianceMethod) {
-            case 'fixed':
-                queueDelay = Math.round(delay + variance * Math.round(1.5 + Math.random() * -3));
-                break;
-            case 'range':
-            default:
-                queueDelay = Math.round(delay + variance * (1 + Math.random() * -2));
-        }
+		switch (varianceMethod) {
+			case 'fixed':
+				queueDelay = Math.round(delay + variance * Math.round(1.5 + Math.random() * -3));
+				break;
+			case 'range':
+			default:
+				queueDelay = Math.round(delay + variance * (1 + Math.random() * -2));
+		}
 
-        setTimeout(() => dispatch(messageAdd(message)), active ? queueDelay : 0);
-    };
+		setTimeout(() => dispatch(messageAdd(message)), active ? queueDelay : 0);
+	};
 }
 
 /**
@@ -44,35 +44,36 @@ export function delayedMessageAdd(message) {
  * @return {function()}
  */
 export function messageReceive(message) {
-    return dispatch => {
-        dispatch({
-            type: MESSAGE_QUEUE,
-            payload: message
-        });
-        dispatch({
-            type: MESSAGE_RECEIVE,
-            payload: message
-        });
-    };
+	return dispatch => {
+		dispatch({
+			type: MESSAGE_QUEUE,
+			payload: message
+		});
+		dispatch({
+			type: MESSAGE_RECEIVE,
+			payload: message
+		});
+	};
 }
 
 /**
  * Async action creator:
- * Dispatched when a message is received from the server. The message will get added to a dispatch queue.
+ * Dispatched when a message is sent by the user.
  * @param {object} message 
  * @return {function()} dispatches {@link messageAdd} action creator and `MESSAGE_SEND` action type
  */
-export function messageSend({ text }) {
-    let message = {
-        pages: [{ text: text, buttons: [] }],
-        responseType: 'text',
-        origin: 'local'
-    };
-    return dispatch => {
-        dispatch({
-            type: MESSAGE_SEND,
-            payload: message
-        });
-        dispatch(messageAdd(message));
-    };
+export function messageSend({ postback, text, type }) {
+	let message = {
+		type: type || 'text',
+		origin: 'local',
+		postback,
+		text
+	};
+	return dispatch => {
+		dispatch({
+			type: MESSAGE_SEND,
+			payload: message
+		});
+		dispatch(messageAdd(message));
+	};
 }
