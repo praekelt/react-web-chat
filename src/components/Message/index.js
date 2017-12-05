@@ -30,17 +30,18 @@ export const Message = ({
 			{page.text}
 		</TextComponent>,
 		page.image && <ImageComponent key="image" {...page.image} />,
-		page.buttons.length > 0 && (
-			<ButtonContainer key="buttons">
-				{page.buttons.map((button, i) => (
-					<ButtonComponent
-						key={`button-${i}`}
-						{...button}
-						onClick={() => submitHandler(button.postback)}
-					/>
-				))}
-			</ButtonContainer>
-		)
+		page.buttons &&
+			page.buttons.length > 0 && (
+				<ButtonContainer key="buttons">
+					{page.buttons.map((button, i) => (
+						<ButtonComponent
+							key={`button-${i}`}
+							{...button}
+							onClick={() => submitHandler(button.postback)}
+						/>
+					))}
+				</ButtonContainer>
+			)
 	];
 };
 
