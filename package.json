@@ -24,7 +24,7 @@
 		"react-slick": "^0.15.4",
 		"react-transition-group": "^2.2.1",
 		"redux-thunk": "^2.2.0",
-		"rwc-feersum-client": "^1.1.0",
+        "rwc-feersum-client": "^1.2.0",
 		"smoothscroll-polyfill": "^0.4.0"
 	},
 	"peerDependencies": {
