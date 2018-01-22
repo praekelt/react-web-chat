@@ -7,7 +7,8 @@ import Button from '../Button';
 
 const enhance = compose(
     setPropTypes({
-        submitHandler: PropTypes.func
+        submitHandler: PropTypes.func,
+        onKeyDown: PropTypes.func
     }),
     withState('value', 'setValue', '')
 );
@@ -19,8 +20,8 @@ const enhance = compose(
  * @param {function(text: string)} param.submitHandler - submit handler function. This will send a message to the server using data supplied as parameter
  * @return {Object} React component
  */
-export const Input = ({ submitHandler, value, setValue }) => (
-    <div className="Input">
+export const Input = ({ submitHandler, onKeyDown, value, setValue }) => (
+    <div className="Input" onKeyDown={event => onKeyDown(event, value)}>
         <input
             className="Input-input"
             type="text"
