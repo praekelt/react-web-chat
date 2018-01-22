@@ -11,7 +11,6 @@ import RWCFeersumClient from 'rwc-feersum-client';
 import NetworkManager from './utils/network';
 import defaultTheme from './themes/default';
 import defaultConfig from './config';
-import network from '../es/utils/network';
 
 /**
  * The main react component for React Web Chat
