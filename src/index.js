@@ -11,6 +11,7 @@ import RWCFeersumClient from 'rwc-feersum-client';
 import NetworkManager from './utils/network';
 import defaultTheme from './themes/default';
 import defaultConfig from './config';
+import network from '../es/utils/network';
 
 /**
  * The main react component for React Web Chat
@@ -39,9 +40,13 @@ export const ReactWebChatComponent = ({
             new RWCFeersumClient({
                 url,
                 config: {
-                    retransmissionTimeout: 500,
-                    retransmissionAttempts: 10,
-                    schemaVersion: '0.10'
+                    channel_id: network.channel_id,
+                    address: network.address,
+                    startNew: network.startNew,
+                    retransmissionTimeout: network.retransmissionTimeout || 500,
+                    retransmissionMaxTimeout: network.retransmissionMaxTimeout,
+                    retransmissionAttempts: network.retransmissionAttempts,
+                    schemaVersion: network.schemaVersion
                 }
             })
     });
@@ -58,11 +63,12 @@ export const ReactWebChatComponent = ({
  */
 class ReactWebChat {
     constructor(
-        { theme, client, element, url } = {
+        { theme, client, element, url, network } = {
             theme: defaultTheme,
             client,
             element,
-            url: 'http://localhost:8080/echo'
+            url: 'http://localhost:8080/echo',
+            network
         }
     ) {
         if (element && element.nodeName) {
@@ -80,6 +86,7 @@ class ReactWebChat {
                     theme={theme}
                     client={client}
                     url={url}
+                    network={network}
                 />,
                 element
             );
