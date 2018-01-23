@@ -81,6 +81,8 @@ class MessageList extends React.Component {
 											<theme.ButtonComponent
 												key={i}
 												text={button.text}
+												phone={button.phone}
+												url={button.url}
 												onClick={() => submitHandler(button.postback)}
 											/>
 										))}

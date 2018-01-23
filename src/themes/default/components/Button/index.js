@@ -6,6 +6,8 @@ import { compose, setPropTypes } from 'recompose';
 const enhance = compose(
     setPropTypes({
         text: PropTypes.string,
+        phone: PropTypes.string,
+        url: PropTypes.string,
         onClick: PropTypes.func
     })
 );
@@ -17,10 +19,19 @@ const enhance = compose(
  * @param {function(e: Object)} param.onClick - click handler function
  * @return {Object} React component
  */
-export const Button = ({ text, onClick }) => (
-    <button className="Button Button--solid" onClick={onClick}>
-        {text}
-    </button>
-);
+export const Button = ({ text, phone, url, onClick }) =>
+    phone || url ? (
+        <a
+            className="Button Button--solid"
+            target="_blank"
+            href={phone ? `tel:${phone}` : url}
+        >
+            {text}
+        </a>
+    ) : (
+        <button className="Button Button--solid" onClick={onClick}>
+            {text}
+        </button>
+    );
 
 export default enhance(Button);

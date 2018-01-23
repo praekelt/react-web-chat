@@ -7,6 +7,7 @@ import { compose, setPropTypes } from 'recompose';
 import * as messageActions from '../../actions/messages';
 import { getLatestRemote } from '../../utils/helpers';
 
+
 const mapStateToProps = ({ messages }) => {
     let latestMessage = getLatestRemote(messages.messages);
     return {
@@ -17,11 +18,16 @@ const mapStateToProps = ({ messages }) => {
 
 const mapDispatchToProps = dispatch => ({
     submitHandler: text => {
-        dispatch(
-            messageActions.messageSend({
+        dispatch(messageActions.messageSend({
+            text: text
+        }));
+    },
+    onKeyDown: (event, text) => {
+        if (event.keyCode === 13) {
+            dispatch(messageActions.messageSend({
                 text: text
-            })
-        );
+            }));
+        }
     }
 });
 
@@ -35,6 +41,7 @@ const enhance = compose(
 export const InputArea = ({
     InputComponent,
     submitHandler,
+    onKeyDown,
     inputExpected,
     MenuComponent,
     CheckboxMenuComponent,
@@ -46,9 +53,15 @@ export const InputArea = ({
                 <MenuComponent items={buttons} submitHandler={submitHandler} />
             )}
             {inputExpected === 'checkbox' && (
-                <CheckboxMenuComponent items={buttons} submitHandler={submitHandler} />
+                <CheckboxMenuComponent
+                    items={buttons}
+                    submitHandler={submitHandler}
+                />
             )}
-            <InputComponent submitHandler={submitHandler} />
+            <InputComponent
+                onKeyDown={onKeyDown}
+                submitHandler={submitHandler}
+            />
         </div>
     );
 };
