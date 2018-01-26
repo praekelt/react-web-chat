@@ -1,5 +1,4 @@
 a {
-    font-size: 13.33;
     border: solid 2px;
 }
 
@@ -39,6 +38,8 @@ a {
         color: $grey-dark;
         border-color: $grey-dark;
         border-radius: 2rem;
+        border-style: solid;
+        font-size: small;
 
         &:hover,
         &:focus {

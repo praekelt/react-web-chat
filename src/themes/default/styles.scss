@@ -114,6 +114,7 @@ $rhythm: 1 / 67 * 420px;
         flex-grow: 1;
         height: 90%;
         background-color: transparent;
+        overflow-x: hidden;
         overflow-y: scroll;
         scroll-behavior: smooth;
         &::-webkit-scrollbar {
@@ -266,18 +267,13 @@ $rhythm: 1 / 67 * 420px;
 }
 
 .ButtonContainer {
-    height: 2.2rem;
     width: 109%;
     margin-top: $rhythm * 2;
     margin-left: $rhythm * -2;
     margin-bottom: $rhythm * 2;
-    overflow-x: scroll;
+    overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
-
-    &::-webkit-scrollbar {
-        display: none;
-    }
 
     .Button {
         display: inline-block;

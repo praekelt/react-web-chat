@@ -1,5 +1,6 @@
 // @ts-check
 import { MESSAGE_ADD, MESSAGE_QUEUE } from '../actionTypes';
+import { MESSAGE_RECEIVE } from '../../es/actionTypes';
 
 const initialState = {
     messages: [],
@@ -13,11 +14,22 @@ export default (state = initialState, action) => {
         case MESSAGE_ADD:
             return {
                 ...state,
-                messages: [...state.messages, action.payload],
-                messageQueue: state.messageQueue.filter(message => message !== action.payload)
+                messages: [
+                    ...state.messages,
+                    {
+                        ...action.payload,
+                        timeAdded: Date.now()
+                    }
+                ],
+                messageQueue: state.messageQueue.filter(
+                    message => message !== action.payload
+                )
             };
         case MESSAGE_QUEUE:
-            return { ...state, messageQueue: [...state.messageQueue, action.payload] };
+            return {
+                ...state,
+                messageQueue: [...state.messageQueue, ...action.payload]
+            };
         default:
             return state;
     }

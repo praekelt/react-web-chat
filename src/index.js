@@ -24,13 +24,20 @@ import defaultConfig from './config';
  */
 export const ReactWebChatComponent = ({
     theme,
+    avatar,
     client,
     url,
     typingStatus,
     network
 }) => {
     const store = createStoreWithState({
-        config: merge({}, defaultConfig, { typingStatus }, { network })
+        config: merge(
+            {},
+            defaultConfig,
+            { typingStatus },
+            { network },
+            { avatar }
+        )
     });
     const networkManager = new NetworkManager({
         store,
@@ -62,11 +69,13 @@ export const ReactWebChatComponent = ({
  */
 class ReactWebChat {
     constructor(
-        { theme, client, element, url, network } = {
+        { theme, avatar, client, element, url, typingStatus, network } = {
             theme: defaultTheme,
+            avatar,
             client,
             element,
             url: 'http://localhost:8080/echo',
+            typingStatus,
             network
         }
     ) {
@@ -83,8 +92,10 @@ class ReactWebChat {
             ReactDOM.render(
                 <ReactWebChatComponent
                     theme={theme}
+                    avatar={avatar || 'http://i.pravatar.cc/300'}
                     client={client}
                     url={url}
+                    typingStatus={typingStatus}
                     network={network}
                 />,
                 element

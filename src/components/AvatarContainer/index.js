@@ -4,9 +4,14 @@ import { connect } from 'react-redux';
 import { compose, setPropTypes } from 'recompose';
 import PropTypes from 'prop-types';
 
-const mapStateToProps = ({ connection, messages: { messageQueue } }) => ({
+const mapStateToProps = ({
     connection,
-    typing: messageQueue.length
+    messages: { messageQueue },
+    config
+}) => ({
+    connection,
+    typing: messageQueue.length,
+    avatar: config.avatar
 });
 
 const enhance = compose(
@@ -17,10 +22,15 @@ const enhance = compose(
     connect(mapStateToProps)
 );
 
-export const AvatarContainer = ({ AvatarComponent, connection, typing }) => {
+export const AvatarContainer = ({
+    AvatarComponent,
+    avatar,
+    connection,
+    typing
+}) => {
     return (
         <div>
-            <AvatarComponent avatar="http://i.pravatar.cc/300" {...connection} typing={typing} />
+            <AvatarComponent avatar={avatar} {...connection} typing={typing} />
         </div>
     );
 };
