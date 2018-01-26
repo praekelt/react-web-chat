@@ -69,11 +69,14 @@ class MessageList extends React.Component {
                                 }
                             }}
                         >
-                            {message.origin === 'remote' && (
-                                <AvatarContainer
-                                    AvatarComponent={theme.AvatarComponent}
-                                />
-                            )}
+                            {message.origin === 'remote' &&
+                                (messages[i - 1]
+                                    ? messages[i - 1].origin !== 'remote'
+                                    : true) && (
+                                    <AvatarContainer
+                                        AvatarComponent={theme.AvatarComponent}
+                                    />
+                                )}
                             <MessageContainer key="text" {...message}>
                                 {message.pages &&
                                     message.pages.map((page, i) => (
@@ -111,12 +114,6 @@ class MessageList extends React.Component {
                             i === messages.length - 1 &&
                             config.typingStatus.active
                                 ? [
-                                      <AvatarContainer
-                                          key="avatar"
-                                          AvatarComponent={
-                                              theme.AvatarComponent
-                                          }
-                                      />,
                                       <MessageContainer key="typing">
                                           <theme.TypingIndicatorComponent
                                               {...config.TypingIndicator}
