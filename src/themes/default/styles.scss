@@ -275,10 +275,6 @@ $rhythm: 1 / 67 * 420px;
     overflow-y: hidden;
     white-space: nowrap;
 
-    &::-webkit-scrollbar {
-        display: none;
-    }
-
     .Button {
         display: inline-block;
     }
