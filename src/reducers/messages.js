@@ -14,7 +14,13 @@ export default (state = initialState, action) => {
         case MESSAGE_ADD:
             return {
                 ...state,
-                messages: [...state.messages, action.payload],
+                messages: [
+                    ...state.messages,
+                    {
+                        ...action.payload,
+                        timeAdded: Date.now()
+                    }
+                ],
                 messageQueue: state.messageQueue.filter(
                     message => message !== action.payload
                 )
@@ -22,7 +28,7 @@ export default (state = initialState, action) => {
         case MESSAGE_QUEUE:
             return {
                 ...state,
-                messageQueue: [...state.messageQueue, action.payload]
+                messageQueue: [...state.messageQueue, ...action.payload]
             };
         default:
             return state;

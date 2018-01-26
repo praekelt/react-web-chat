@@ -17,50 +17,19 @@ export const messageAdd = message => ({
     payload: message
 });
 
+let messageQueue = [];
+let popping = false;
+
 /**
  * Async action creator:
- * Adds a new message after a delay of 1200 milliseconds. This is designed to simulate the "typing..." state of a chat user.
- * @todo Make timeout duration a configurable setting.
+ * Dispatched when a message is received from the server. The message will get added to a dispatch queue
+ * if not the first message. The message queue is then popped off into the message store based on the delays given.
  * @param {object} message
- * @return {function()} dispatches {@link messageAdd} after 1200ms
+ * @return {function()}
  */
-// export function delayedMessageAdd(message) {
-//     return (dispatch, getState) => {
-//         let {
-//             delay,
-//             variance,
-//             varianceMethod,
-//             active
-//         } = getState().config.typingStatus;
-//         let queueDelay = 0;
-
-//         switch (varianceMethod) {
-//             case 'fixed':
-//                 queueDelay = Math.round(
-//                     delay + variance * Math.round(1.5 + Math.random() * -3)
-//                 );
-//                 break;
-//             case 'range':
-//             default:
-//                 queueDelay = Math.round(
-//                     delay + variance * (1 + Math.random() * -2)
-//                 );
-//         }
-
-//         setTimeout(
-//             () => dispatch(messageAdd(message)),
-//             active ? queueDelay : 0
-//         );
-//     };
-// }
-
-/**
- * Async action creator:
- * Waits until the delay is over and then handles the message queue.
- * @return {function()} dispatches {@link messageAdd} after a delay.
- */
-export function waitForMessage() {
+export function messageReceive(message) {
     return (dispatch, getState) => {
+        let messages = getState().messages.messages;
         let {
             delay,
             variance,
@@ -82,40 +51,32 @@ export function waitForMessage() {
                 );
         }
 
-        delay = setTimeout(() => {
-            let messageNotHere = setInterval(() => {
-                let messageQueue = getState().messages.messageQueue;
-                if (messageQueue.length > 0) {
-                    dispatch(messageAdd(messageQueue[0]));
-                    clearInterval(messageNotHere);
-                }
-            }, 10);
-            let messageQueue = getState().messages.messageQueue;
-            if (messageQueue.length > 0) {
-                dispatch(waitForMessage());
-                clearTimeout(delay);
-            }
-        }, active ? queueDelay : 0);
-    };
-}
-
-/**
- * Async action creator:
- * Dispatched when a message is received from the server. The message will get added to a dispatch queue.
- * @param {object} message
- * @return {function()}
- */
-export function messageReceive(message) {
-    return (dispatch, getState) => {
-        let messages = getState().messages.messages;
         // Catch following messages or add first message.
-        if (messages.length > 0) {
+        if (
+            messageQueue.length === 0 &&
+            (messages.length === 0 ||
+                Date.now() - messages[messages.length - 1].timeAdded >
+                    queueDelay)
+        ) {
+            dispatch(messageAdd(message));
+        } else {
             dispatch({
                 type: MESSAGE_QUEUE,
                 payload: message
             });
-        } else {
-            dispatch(messageAdd(message));
+            messageQueue.push(
+                () =>
+                    new Promise(resolve =>
+                        setTimeout(() => {
+                            dispatch(messageAdd(message));
+                            resolve();
+                        }, queueDelay)
+                    )
+            );
+            if (!popping) {
+                popping = true;
+                popMessages();
+            }
         }
         dispatch({
             type: MESSAGE_RECEIVE,
@@ -123,6 +84,17 @@ export function messageReceive(message) {
         });
     };
 }
+
+const popMessages = () => {
+    let promise = messageQueue.shift();
+    promise().then(() => {
+        if (messageQueue.length > 0) {
+            popMessages();
+        } else {
+            popping = false;
+        }
+    });
+};
 
 /**
  * Async action creator:
@@ -145,6 +117,5 @@ export function messageSend({ postback, text, type }) {
         if (text) {
             dispatch(messageAdd(message));
         }
-        dispatch(waitForMessage());
     };
 }
