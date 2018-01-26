@@ -22,7 +22,7 @@ export default (state = initialState, action) => {
                     }
                 ],
                 messageQueue: state.messageQueue.filter(
-                    message => message !== action.payload
+                    message => message.message !== action.payload
                 )
             };
         case MESSAGE_QUEUE:

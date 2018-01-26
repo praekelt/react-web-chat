@@ -17,8 +17,8 @@ export const messageAdd = message => ({
     payload: message
 });
 
-let messageQueue = [];
 let popping = false;
+let waitingForMessage = false;
 
 /**
  * Async action creator:
@@ -29,7 +29,7 @@ let popping = false;
  */
 export function messageReceive(message) {
     return (dispatch, getState) => {
-        let messages = getState().messages.messages;
+        let { messages, messageQueue } = getState().messages;
         let {
             delay,
             variance,
@@ -54,28 +54,30 @@ export function messageReceive(message) {
         // Catch following messages or add first message.
         if (
             messageQueue.length === 0 &&
+            !waitingForMessage &&
             (messages.length === 0 ||
                 Date.now() - messages[messages.length - 1].timeAdded >
                     queueDelay)
         ) {
             dispatch(messageAdd(message));
         } else {
+            waitingForMessage = false;
             dispatch({
                 type: MESSAGE_QUEUE,
-                payload: message
+                payload: {
+                    message: message,
+                    delay: () =>
+                        new Promise(resolve =>
+                            setTimeout(() => {
+                                dispatch(messageAdd(message));
+                                resolve();
+                            }, queueDelay)
+                        )
+                }
             });
-            messageQueue.push(
-                () =>
-                    new Promise(resolve =>
-                        setTimeout(() => {
-                            dispatch(messageAdd(message));
-                            resolve();
-                        }, queueDelay)
-                    )
-            );
             if (!popping) {
                 popping = true;
-                popMessages();
+                dispatch(popMessages());
             }
         }
         dispatch({
@@ -85,16 +87,20 @@ export function messageReceive(message) {
     };
 }
 
-const popMessages = () => {
-    let promise = messageQueue.shift();
-    promise().then(() => {
-        if (messageQueue.length > 0) {
-            popMessages();
-        } else {
-            popping = false;
-        }
-    });
-};
+export function popMessages() {
+    return (dispatch, getState) => {
+        let messageQueue = getState().messages.messageQueue;
+        let delay = messageQueue[0].delay;
+        delay().then(() => {
+            let messageQueue = getState().messages.messageQueue;
+            if (messageQueue.length > 0) {
+                dispatch(popMessages());
+            } else {
+                popping = false;
+            }
+        });
+    };
+}
 
 /**
  * Async action creator:
@@ -110,6 +116,7 @@ export function messageSend({ postback, text, type }) {
         text
     };
     return dispatch => {
+        waitingForMessage = true;
         dispatch({
             type: MESSAGE_SEND,
             payload: message
