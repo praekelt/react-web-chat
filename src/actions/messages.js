@@ -38,17 +38,19 @@ export function messageReceive(message) {
         } = getState().config.typingStatus;
         let queueDelay = 0;
 
-        switch (varianceMethod) {
-            case 'fixed':
-                queueDelay = Math.round(
-                    delay + variance * Math.round(1.5 + Math.random() * -3)
-                );
-                break;
-            case 'range':
-            default:
-                queueDelay = Math.round(
-                    delay + variance * (1 + Math.random() * -2)
-                );
+        if (active) {
+            switch (varianceMethod) {
+                case 'fixed':
+                    queueDelay = Math.round(
+                        delay + variance * Math.round(1.5 + Math.random() * -3)
+                    );
+                    break;
+                case 'range':
+                default:
+                    queueDelay = Math.round(
+                        delay + variance * (1 + Math.random() * -2)
+                    );
+            }
         }
 
         // Catch following messages or add first message.

@@ -7,7 +7,6 @@ import { compose, setPropTypes } from 'recompose';
 import * as messageActions from '../../actions/messages';
 import { getLatestRemote } from '../../utils/helpers';
 
-
 const mapStateToProps = ({ messages }) => {
     let latestMessage = getLatestRemote(messages.messages);
     return {
@@ -18,16 +17,22 @@ const mapStateToProps = ({ messages }) => {
 
 const mapDispatchToProps = dispatch => ({
     submitHandler: text => {
-        dispatch(messageActions.messageSend({
-            text: text
-        }));
+        dispatch(
+            messageActions.messageSend({
+                text: text
+            })
+        );
     },
     onKeyDown: (event, text) => {
         if (event.keyCode === 13) {
-            dispatch(messageActions.messageSend({
-                text: text
-            }));
+            dispatch(
+                messageActions.messageSend({
+                    text: text
+                })
+            );
+            return true;
         }
+        return false;
     }
 });
 
