@@ -31,26 +31,30 @@ export function messageReceive(message) {
     return (dispatch, getState) => {
         let { messages, messageQueue } = getState().messages;
         let {
-            delay,
+            active,
+            baseDelay,
             variance,
-            varianceMethod,
-            active
+            letterDelay,
+            minDelay,
+            maxDelay
         } = getState().config.typingStatus;
         let queueDelay = 0;
 
         if (active) {
-            switch (varianceMethod) {
-                case 'fixed':
-                    queueDelay = Math.round(
-                        delay + variance * Math.round(1.5 + Math.random() * -3)
-                    );
-                    break;
-                case 'range':
-                default:
-                    queueDelay = Math.round(
-                        delay + variance * (1 + Math.random() * -2)
-                    );
-            }
+            // Base delay plus the variance.
+            queueDelay = Math.round(
+                baseDelay + variance * Math.round(1.5 + Math.random() * -3)
+            );
+            // Add Delay per letter in the message.
+            let textSize = 0;
+            message.pages.map(page => {
+                textSize +=
+                    (page.title ? page.title.length : 0) +
+                    (page.text ? page.text.length : 0);
+            });
+            queueDelay += textSize * 40;
+            // Clamp to min and max delay size.
+            queueDelay = Math.max(Math.min(queueDelay, maxDelay), minDelay);
         }
 
         // Catch following messages or add first message.
