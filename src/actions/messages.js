@@ -17,8 +17,8 @@ export const messageAdd = message => ({
     payload: message
 });
 
-let messageQueue = [];
 let popping = false;
+let waitingForMessage = false;
 
 /**
  * Async action creator:
@@ -29,53 +29,54 @@ let popping = false;
  */
 export function messageReceive(message) {
     return (dispatch, getState) => {
-        let messages = getState().messages.messages;
+        let { messages, messageQueue } = getState().messages;
         let {
-            delay,
+            active,
+            baseDelay,
             variance,
-            varianceMethod,
-            active
+            letterDelay,
+            minDelay,
+            maxDelay
         } = getState().config.typingStatus;
         let queueDelay = 0;
 
-        switch (varianceMethod) {
-            case 'fixed':
-                queueDelay = Math.round(
-                    delay + variance * Math.round(1.5 + Math.random() * -3)
-                );
-                break;
-            case 'range':
-            default:
-                queueDelay = Math.round(
-                    delay + variance * (1 + Math.random() * -2)
-                );
+        if (active) {
+            // Base delay plus the variance.
+            queueDelay = Math.round(
+                baseDelay + variance * Math.round(1.5 + Math.random() * -3)
+            );
+            // Add Delay per letter in the message.
+            let textSize = 0;
+            message.pages.map(page => {
+                textSize +=
+                    (page.title ? page.title.length : 0) +
+                    (page.text ? page.text.length : 0);
+            });
+            queueDelay += textSize * 40;
+            // Clamp to min and max delay size.
+            queueDelay = Math.max(Math.min(queueDelay, maxDelay), minDelay);
         }
 
         // Catch following messages or add first message.
         if (
             messageQueue.length === 0 &&
-            (messages.length === 0 ||
+            (!waitingForMessage ||
                 Date.now() - messages[messages.length - 1].timeAdded >
                     queueDelay)
         ) {
             dispatch(messageAdd(message));
         } else {
+            waitingForMessage = false;
             dispatch({
                 type: MESSAGE_QUEUE,
-                payload: message
+                payload: {
+                    message: message,
+                    delay: queueDelay
+                }
             });
-            messageQueue.push(
-                () =>
-                    new Promise(resolve =>
-                        setTimeout(() => {
-                            dispatch(messageAdd(message));
-                            resolve();
-                        }, queueDelay)
-                    )
-            );
             if (!popping) {
                 popping = true;
-                popMessages();
+                dispatch(popMessages());
             }
         }
         dispatch({
@@ -85,16 +86,27 @@ export function messageReceive(message) {
     };
 }
 
-const popMessages = () => {
-    let promise = messageQueue.shift();
-    promise().then(() => {
-        if (messageQueue.length > 0) {
-            popMessages();
-        } else {
-            popping = false;
-        }
-    });
-};
+export function popMessages() {
+    return (dispatch, getState) => {
+        let messageQueue = getState().messages.messageQueue;
+        let delay = () =>
+            new Promise(resolve =>
+                setTimeout(() => {
+                    dispatch(messageAdd(messageQueue[0].message));
+                    resolve();
+                }, messageQueue[0].delay)
+            );
+
+        delay().then(() => {
+            let messageQueue = getState().messages.messageQueue;
+            if (messageQueue.length > 0) {
+                dispatch(popMessages());
+            } else {
+                popping = false;
+            }
+        });
+    };
+}
 
 /**
  * Async action creator:
@@ -110,12 +122,11 @@ export function messageSend({ postback, text, type }) {
         text
     };
     return dispatch => {
+        waitingForMessage = true;
         dispatch({
             type: MESSAGE_SEND,
             payload: message
         });
-        if (text) {
-            dispatch(messageAdd(message));
-        }
+        dispatch(messageAdd(message));
     };
 }

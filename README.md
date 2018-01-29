@@ -39,7 +39,7 @@ It accepts the following parameters:
 | element      | The element `react-web-chat` should render to                                                                                                                                                                                        | yes      | Element |
 | theme        | A custom [theme](#custom-themes)                                                                                                                                                                                                     | no       | Object  |
 | client       | A custom [client](#custom-clients)                                                                                                                                                                                                   | no       | Object  |
-| typingStatus | Configuration options for the typing status indicator                                                                                                                                                                                | no       | Object  |
+| typingStatus | Configuration options for the typing status indicator. Note! This delay will be a compounded value as per all the settings you provide.                                                                                              | no       | Object  |
 | network      | Configuration options for network communication of the default Feersum Client (NOTE! Required if using the default client, channel_id field must also be specified else the Feersum Client connection will fail! See below example.) | no       | Object  |
 
 Communication with the module is handled via custom events described [here](#custom-events).
@@ -51,10 +51,12 @@ new ReactWebChat({
     url: 'http://localhost:8000',
     element: myChatElement,
     typingStatus: {
-        active: true || false,              // Enable/disable typing status indicator
-        delay: 500,                         // How many ms to show the indicator for
-        variance: 250,                      // How many ms to vary the delay by
-        varianceMethod: "random" || "fixed" // Random or fixed value between delay +- variance
+        active: true || false,              // Enable/disable typing status indicator (default = true)
+        baseDelay: 500,                     // How many ms to show the indicator for (default = 750)
+        variance: 250,                      // How many ms to vary the delay by (default = 250)
+        letterDelay: 30,                    // How many ms to add for each letter in a message (default = 20)
+        minDelay: 200,                      // The minimum delay allowed. (default = 200)
+        maxDelay: 3000                      // The maximum delay allowed. (default = 3000)
     },
     network: {
         channel_id: 'f8472758-f804-4a7e-a225-5e303e121099',         // The required channel_id for the default feersum client.

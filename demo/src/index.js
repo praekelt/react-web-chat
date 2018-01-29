@@ -23,7 +23,8 @@ class Demo extends Component {
                 <ReactWebChatComponent
                     url="http://localhost:8080/echo/"
                     typingStatus={{
-                        delay: 1000,
+                        active: true,
+                        baseDelay: 1000,
                         variance: 500
                     }}
                     network={{

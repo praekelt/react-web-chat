@@ -1,9 +1,11 @@
 {
     "typingStatus": {
         "active": true,
-        "delay": 500,
+        "baseDelay": 750,
         "variance": 250,
-        "varianceMethod": "random"
+        "letterDelay": 20,
+        "minDelay": 200,
+        "maxDelay": 3000
     },
     "network": {
         "retransmissionTimeout": 500,
