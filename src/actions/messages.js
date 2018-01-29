@@ -60,8 +60,7 @@ export function messageReceive(message) {
         // Catch following messages or add first message.
         if (
             messageQueue.length === 0 &&
-            !waitingForMessage &&
-            (messages.length === 0 ||
+            (!waitingForMessage ||
                 Date.now() - messages[messages.length - 1].timeAdded >
                     queueDelay)
         ) {
@@ -72,13 +71,7 @@ export function messageReceive(message) {
                 type: MESSAGE_QUEUE,
                 payload: {
                     message: message,
-                    delay: () =>
-                        new Promise(resolve =>
-                            setTimeout(() => {
-                                dispatch(messageAdd(message));
-                                resolve();
-                            }, queueDelay)
-                        )
+                    delay: queueDelay
                 }
             });
             if (!popping) {
@@ -96,7 +89,14 @@ export function messageReceive(message) {
 export function popMessages() {
     return (dispatch, getState) => {
         let messageQueue = getState().messages.messageQueue;
-        let delay = messageQueue[0].delay;
+        let delay = () =>
+            new Promise(resolve =>
+                setTimeout(() => {
+                    dispatch(messageAdd(messageQueue[0].message));
+                    resolve();
+                }, messageQueue[0].delay)
+            );
+
         delay().then(() => {
             let messageQueue = getState().messages.messageQueue;
             if (messageQueue.length > 0) {
