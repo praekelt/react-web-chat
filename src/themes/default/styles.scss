@@ -133,6 +133,12 @@ $rhythm: 1 / 67 * 420px;
     }
 }
 
+.ListContainer {
+    margin: {
+        top: $message-spacing-thick;
+    }
+}
+
 .MessageContainer {
     @extend %chatWidth;
     $blockName: &;

@@ -127,8 +127,6 @@ export function messageSend({ postback, text, type }) {
             type: MESSAGE_SEND,
             payload: message
         });
-        if (text) {
-            dispatch(messageAdd(message));
-        }
+        dispatch(messageAdd(message));
     };
 }

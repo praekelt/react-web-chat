@@ -20,8 +20,13 @@ const mapStateToProps = ({ messages, config }) => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-    submitHandler: postback => {
-        dispatch(messageActions.messageSend({ postback, type: 'button' }));
+    submitHandler: message => {
+        dispatch(
+            messageActions.messageSend({
+                ...message,
+                type: 'button'
+            })
+        );
     }
 });
 
@@ -78,7 +83,7 @@ class MessageList extends React.Component {
                                     />
                                 )}
                             <MessageContainer key="text" {...message}>
-                                {message.pages &&
+                                {message.origin === 'remote' ? (
                                     message.pages.map((page, i) => (
                                         <Message
                                             key={i}
@@ -87,8 +92,16 @@ class MessageList extends React.Component {
                                             {...theme}
                                             submitHandler={submitHandler}
                                         />
-                                    ))}
-                            </MessageContainer>
+                                    ))
+                                ) : (
+                                    <Message
+                                        key={i}
+                                        page={{ text: message.text }}
+                                        isLocal={true}
+                                        {...theme}
+                                    />
+                                )}
+                            </MessageContainer>{' '}
                             {message.buttons &&
                                 message.buttonStyle === 'default' && (
                                     <MessageContainer
@@ -102,9 +115,11 @@ class MessageList extends React.Component {
                                                 phone={button.phone}
                                                 url={button.url}
                                                 onClick={() =>
-                                                    submitHandler(
-                                                        button.postback
-                                                    )
+                                                    submitHandler({
+                                                        postback:
+                                                            button.postback,
+                                                        text: button.text
+                                                    })
                                                 }
                                             />
                                         ))}
