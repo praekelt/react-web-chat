@@ -38,10 +38,10 @@ export const Message = ({
     submitHandler
 }) => {
     return [
+        page.image && <ImageComponent key="image" {...page.image} />,
         <TextComponent key="text" isLocal={isLocal}>
             {page.text}
         </TextComponent>,
-        page.image && <ImageComponent key="image" {...page.image} />,
         page.buttons &&
             page.buttons.length > 0 && (
                 <ButtonContainer key="buttons">
