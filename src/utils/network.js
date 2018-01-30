@@ -1,5 +1,5 @@
 // @ts-check
-import { MESSAGE_ADD, MESSAGE_SEND, PASSTHROUGH_SEND, PASSTHROUGH_RECEIVE } from '../actionTypes';
+import { MESSAGE_SEND, PASSTHROUGH_SEND, PASSTHROUGH_RECEIVE } from '../actionTypes';
 
 import * as connectionActions from '../actions/connection';
 import * as messageActions from '../actions/messages';

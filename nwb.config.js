@@ -1,11 +1,12 @@
 module.exports = {
   type: 'react-component',
   npm: {
-    esModules: true,
+    cjs: false,
+    esModules: false,
     umd: {
       global: 'ReactWebChat',
       externals: {
-        react: 'React'
+        react: 'React',
       }
     }
   }

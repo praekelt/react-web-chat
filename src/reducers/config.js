@@ -1,10 +1,10 @@
-// @ts-check
-import {
-    CONNECTION_ESTABLISHED,
-    CONNECTION_ATTEMPTED,
-    CONNECTION_DROPPED,
-    CONNECTION_LISTENING
-} from '../actionTypes';
+// // @ts-check
+// import {
+//     CONNECTION_ESTABLISHED,
+//     CONNECTION_ATTEMPTED,
+//     CONNECTION_DROPPED,
+//     CONNECTION_LISTENING
+// } from '../actionTypes';
 
 /**
  * @ignore

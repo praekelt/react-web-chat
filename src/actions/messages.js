@@ -4,7 +4,7 @@ import {
     MESSAGE_RECEIVE,
     MESSAGE_QUEUE
 } from '../actionTypes';
-import TypingIndicator from '../themes/default/components/TypingIndicator/index';
+//import TypingIndicator from '../themes/default/components/TypingIndicator/index';
 
 /**
  * Action creator: Adds a message to the store.

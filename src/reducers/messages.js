@@ -1,6 +1,5 @@
 // @ts-check
 import { MESSAGE_ADD, MESSAGE_QUEUE } from '../actionTypes';
-import { MESSAGE_RECEIVE } from '../../es/actionTypes';
 
 const initialState = {
     messages: [],

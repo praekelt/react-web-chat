@@ -9,9 +9,9 @@ import Message from '../Message';
 
 import * as messageActions from '../../actions/messages';
 
-import Avatar from '../../../es/themes/default/components/Avatar/index';
-import networkManager from '../../../es/utils/network';
-import TypingIndicator from '../../../es/themes/default/components/TypingIndicator/index';
+//import Avatar from '../../themes/default/components/Avatar/index';
+//import networkManager from '../../../es/utils/network';
+import TypingIndicator from '../../themes/default/components/TypingIndicator/index';
 
 const mapStateToProps = ({ messages, config }) => ({
     messages: messages.messages,

@@ -20,10 +20,6 @@
 		"document:watch": "nodemon --watch src --exec './node_modules/.bin/esdoc'"
 	},
 	"dependencies": {
-		"esdoc": "^1.0.4",
-		"esdoc-ecmascript-proposal-plugin": "^1.0.0",
-		"esdoc-jsx-plugin": "^1.0.0",
-		"esdoc-standard-plugin": "^1.0.0",
 		"lodash": "^4.17.4",
 		"nodemon": "^1.12.1",
 		"react-slick": "^0.15.4",
@@ -37,6 +33,10 @@
 		"react-dom": "^16.0.0"
 	},
 	"devDependencies": {
+		"esdoc": "^1.0.4",
+		"esdoc-ecmascript-proposal-plugin": "^1.0.0",
+		"esdoc-jsx-plugin": "^1.0.0",
+		"esdoc-standard-plugin": "^1.0.0",
 		"nwb": "0.19.x",
 		"nwb-sass": "^0.8.1",
 		"prop-types": "^15.6.0",

@@ -1,9 +1,9 @@
 // @ts-check
-import React from 'react';
-import PropTypes from 'prop-types';
+//import React from 'react';
+//import PropTypes from 'prop-types';
 import { compose, withStateHandlers } from 'recompose';
 
-import Button from '../Button';
+//import Button from '../Button';
 
 const enhance = compose(
     withStateHandlers(

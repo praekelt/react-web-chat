@@ -1,5 +1,5 @@
 // @ts-check
-import React from 'react';
+//import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { compose, setPropTypes } from 'recompose';

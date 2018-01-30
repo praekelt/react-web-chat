@@ -1,4 +1,4 @@
-import React from 'react';
+//import React from 'react';
 
 /**
  * Renders the chat bot's avatar along with a status indicator. 
