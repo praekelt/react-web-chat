@@ -1,0 +1,47 @@
+.ChatContainer {
+    height: 100%;
+    overflow-y: hidden;
+    background-color: $background;
+    scroll-behavior: smooth;
+
+    &-content {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        height: 90%;
+        margin: 0;
+        padding: 0 $rhythm * 2;
+        background-color: transparent;
+        list-style: none;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    &-input {
+        @extend %chatWidth;
+        display: flex;
+        position: relative;
+        width: 100%;
+        height: 10%;
+        background-color: transparent;
+        z-index: 1;
+    }
+}
+
+.MessageContainer {
+    @extend %chatWidth;
+    $blockName: &;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+
+    &.is-local {
+        align-items: flex-end;
+        margin: $message-spacing-medium 0;
+    }
+}

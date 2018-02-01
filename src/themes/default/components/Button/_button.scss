@@ -1,15 +1,29 @@
-a {
-    border: solid 2px;
+.ButtonContainer {
+    width: 100%;
+    height: auto;
+    margin-left: 0;
+    margin-top: 0;
+    white-space: normal;
+    overflow-y: visible;
 }
 
 .Button {
     $block: &;
     display: block;
-    text-align: center;
+    margin-bottom: $message-spacing-thin;
+    width: 100%;
+    padding: $message-padding;
+    border: none;
+    text-align: left;
     text-decoration: none;
     font-family: $helvetica;
+    font-weight: 600;
     cursor: pointer;
-    margin-left: $message-spacing-thin;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
     transition: {
         property: color, background-color, box-shadow;
         duration: $duration;
@@ -33,13 +47,8 @@ a {
     }
 
     &--solid {
-        padding: 0.5rem 0.5rem;
-        background-color: $background;
-        color: $grey-dark;
-        border-color: $grey-dark;
-        border-radius: 2rem;
-        border-style: solid;
-        font-size: small;
+        background-color: $white;
+        font-size: inherit;
 
         &:hover,
         &:focus {

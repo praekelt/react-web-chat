@@ -1,0 +1,88 @@
+.CarouselContainer {
+    @extend %chatWidth;
+    $blockName: &;
+    align-items: flex-start;
+    width: 100%;
+
+    margin: {
+        top: $message-spacing-thick;
+        bottom: $message-spacing-thick;
+    }
+
+    &-item {
+        display: inline-block;
+        vertical-align: top;
+        padding: {
+            left: $message-spacing-thick;
+            right: $message-spacing-thick;
+        }
+    }
+
+    .Text {
+        border-radius: 0;
+        width: 100%;
+    }
+
+    .slick-slider {
+        position: relative;
+        .slick-prev {
+            position: absolute;
+            border: 0;
+            left: $message-spacing-thick * -1;
+            width: $message-spacing-thick;
+            top: 0;
+            height: 100%;
+            background-color: $grey-light;
+
+            color: $white;
+            transition: 0.2s ease;
+            z-index: 1;
+
+            outline: none;
+            border-top-right-radius: $message-border-radius-small;
+            border-bottom-right-radius: $message-border-radius-small;
+            cursor: pointer;
+            &:hover {
+                width: 2rem;
+                background-color: $grey-dark;
+            }
+        }
+        .slick-next {
+            @extend .slick-prev;
+            right: $message-spacing-thick * -1;
+            left: auto;
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+            border-top-left-radius: $message-border-radius-small;
+            border-bottom-left-radius: $message-border-radius-small;
+        }
+        .slick-dots {
+            list-style: none;
+            padding-left: 0;
+            margin: 0 auto;
+            text-align: center;
+            li {
+                display: inline-block;
+                button {
+                    background-color: $grey-light;
+                    border: 0;
+                    color: $grey-light;
+                    outline: none;
+                    transition: 0.2s ease;
+                    cursor: pointer;
+                    border-radius: 0.5rem;
+                    width: 1rem;
+                    height: 1rem;
+                    margin: $message-spacing-thin;
+                }
+
+                &.slick-active {
+                    button {
+                        background-color: $grey-dark;
+                        color: $grey-dark;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,3 +1,25 @@
+.AvatarStatus {
+    position: absolute;
+    top: 0;
+    width: $avatar-size;
+
+    &-avatar {
+        width: $rhythm * 6;
+        height: $rhythm * 6;
+    }
+
+    &-status {
+        position: absolute;
+        top: $rhythm * 4;
+        left: $rhythm * 4;
+    }
+
+    &--collapsed {
+        width: 24px;
+        height: 24px;
+    }
+}
+
 .Avatar {
     display: block;
     width: 100%;
