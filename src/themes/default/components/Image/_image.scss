@@ -1,35 +1,40 @@
 .Image {
     display: block;
     width: 100%;
-    border-radius: $message-border-radius;
-    overflow: hidden;
+    max-height: 50%;
     background-color: $white;
-    margin: $message-spacing-thin 0;
+    overflow: hidden;
+
     &-image {
         display: block;
         object-fit: cover;
-        height: 100%;
+        width: 100%;
         object-position: center;
     }
 
     &-text {
+        margin: 0;
         padding: $message-padding;
         font-family: $helvetica;
-        margin: 0;
     }
+
     &-loader {
-        background-color: $grey-light;
         position: relative;
+        background-color: $grey-light;
     }
 
     &-loaderIcon {
         display: block;
-        width: 4rem;
-        height: 4rem;
         position: absolute;
         top: 36%;
         left: 0;
         right: 0;
+        width: 4rem;
+        height: 4rem;
         margin: 0 auto;
+    }
+
+    &:only-child {
+        border-radius: $message-border-radius;
     }
 }

@@ -67,6 +67,7 @@ class MessageList extends React.Component {
                 <div className="MessagesList">
                     {messages.map((message, i) => (
                         <li
+                            className="MessagesList-item"
                             key={i}
                             ref={ref => {
                                 if (i === messages.length - 1) {
@@ -82,49 +83,56 @@ class MessageList extends React.Component {
                                         AvatarComponent={theme.AvatarComponent}
                                     />
                                 )}
-                            <MessageContainer key="text" {...message}>
-                                {message.origin === 'remote' ? (
-                                    message.pages.map((page, i) => (
+                            <div className="MessagesList-messageItem">
+                                <MessageContainer key="text" {...message}>
+                                    {message.origin === 'remote' ? (
+                                        message.pages.map((page, i) => (
+                                            <Message
+                                                key={i}
+                                                page={page}
+                                                isLocal={
+                                                    message.origin === 'local'
+                                                }
+                                                {...theme}
+                                                submitHandler={submitHandler}
+                                            />
+                                        ))
+                                    ) : (
                                         <Message
                                             key={i}
-                                            page={page}
-                                            isLocal={message.origin === 'local'}
+                                            page={{ text: message.text }}
+                                            isLocal={true}
                                             {...theme}
-                                            submitHandler={submitHandler}
                                         />
-                                    ))
-                                ) : (
-                                    <Message
-                                        key={i}
-                                        page={{ text: message.text }}
-                                        isLocal={true}
-                                        {...theme}
-                                    />
-                                )}
-                            </MessageContainer>{' '}
-                            {message.buttons &&
-                                message.buttonStyle === 'default' && (
-                                    <MessageContainer
-                                        key="buttons"
-                                        {...message}
-                                    >
-                                        {message.buttons.map((button, i) => (
-                                            <theme.ButtonComponent
-                                                key={i}
-                                                text={button.text}
-                                                phone={button.phone}
-                                                url={button.url}
-                                                onClick={() =>
-                                                    submitHandler({
-                                                        postback:
-                                                            button.postback,
-                                                        text: button.text
-                                                    })
-                                                }
-                                            />
-                                        ))}
-                                    </MessageContainer>
-                                )}
+                                    )}
+                                </MessageContainer>{' '}
+                                {message.buttons &&
+                                    message.buttonStyle === 'default' && (
+                                        <MessageContainer
+                                            key="buttons"
+                                            {...message}
+                                        >
+                                            {message.buttons.map(
+                                                (button, i) => (
+                                                    <theme.ButtonComponent
+                                                        key={i}
+                                                        text={button.text}
+                                                        phone={button.phone}
+                                                        url={button.url}
+                                                        onClick={() =>
+                                                            submitHandler({
+                                                                postback:
+                                                                    button.postback,
+                                                                text:
+                                                                    button.text
+                                                            })
+                                                        }
+                                                    />
+                                                )
+                                            )}
+                                        </MessageContainer>
+                                    )}
+                            </div>
                             {messageQueue.length &&
                             i === messages.length - 1 &&
                             config.typingStatus.active

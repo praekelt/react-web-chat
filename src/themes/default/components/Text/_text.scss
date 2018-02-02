@@ -2,27 +2,17 @@
     //FIXME: this is necessary because this module can be namespaced. find cleaner solution
     $blockName: 'Text';
     display: inline-block;
+    width: 100%;
     padding: $message-padding;
-    border-radius: $message-border-radius;
-    border-bottom-left-radius: $message-border-radius-small;
-    border-top-left-radius: $message-border-radius-small;
     background-color: $white;
     white-space: pre-line;
     font-family: $helvetica;
-
-    @extend %messageSpacing;
-
-    &:first-of-type {
-        border-top-left-radius: $message-border-radius;
+    margin: {
+        bottom: $message-spacing-thin;
     }
 
-    &:last-of-type {
-        border-bottom-left-radius: $message-border-radius;
-    }
-
-    &:only-child {
-        border-bottom-left-radius: $message-border-radius-small;
-        border-top-left-radius: $message-border-radius;
+    &:last-child {
+        margin-bottom: 0;
     }
 
     &--transparent {
@@ -48,21 +38,10 @@
     }
 
     &.is-local {
+        width: auto;
+        border-radius: $message-border-radius;
+        border-bottom-right-radius: 0;
         background-color: $grey-dark;
         color: $white;
-
-        &:first-child {
-            border-bottom-right-radius: $message-border-radius-small;
-            border-bottom-left-radius: $message-border-radius;
-        }
-
-        &:last-child {
-            border-top-right-radius: $message-border-radius-small;
-        }
-
-        &:only-child {
-            border-bottom-right-radius: $message-border-radius-small;
-            border-top-right-radius: $message-border-radius;
-        }
     }
 }

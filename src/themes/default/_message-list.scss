@@ -1,0 +1,12 @@
+.MessagesList {
+    &-item {
+        position: relative;
+    }
+
+    &-messageItem {
+        margin-left: $avatar-size;
+        margin-bottom: $message-spacing-thin;
+        border-radius: $message-border-radius;
+        overflow: hidden;
+    }
+}

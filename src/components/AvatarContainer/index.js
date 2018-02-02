@@ -28,11 +28,7 @@ export const AvatarContainer = ({
     connection,
     typing
 }) => {
-    return (
-        <div>
-            <AvatarComponent avatar={avatar} {...connection} typing={typing} />
-        </div>
-    );
+    return <AvatarComponent avatar={avatar} {...connection} typing={typing} />;
 };
 
 export default enhance(AvatarContainer);

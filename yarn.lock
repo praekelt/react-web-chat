@@ -6248,9 +6248,9 @@ run-series@1.1.4:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/run-series/-/run-series-1.1.4.tgz#89a73ddc5e75c9ef8ab6320c0a1600d6a41179b9"
 
-rwc-feersum-client@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/rwc-feersum-client/-/rwc-feersum-client-1.1.0.tgz#b218f57fbb13922ac8ead3a7a034123c917f8767"
+rwc-feersum-client@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/rwc-feersum-client/-/rwc-feersum-client-1.2.0.tgz#c4c9d955b37fba059da9bd1c24735d1b50b98a3e"
   dependencies:
     sockjs-client "^1.1.4"
 
