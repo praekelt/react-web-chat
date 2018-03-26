@@ -10,7 +10,7 @@
         flex-grow: 1;
         height: 90%;
         margin: 0;
-        padding: 0 $rhythm * 2;
+        padding: 10px $rhythm * 2 10px;
         background-color: transparent;
         list-style: none;
         overflow-x: hidden;
@@ -39,6 +39,7 @@
     display: flex;
     align-items: flex-start;
     flex-direction: column;
+    padding-bottom: 10px;
 
     &.is-local {
         align-items: flex-end;
