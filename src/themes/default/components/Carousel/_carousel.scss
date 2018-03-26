@@ -21,7 +21,6 @@
     .Text {
         border-radius: 10px;
         width: 100%;
-        height: 110px;
     }
 
     .slick-slider {
@@ -52,16 +51,14 @@
             @extend .slick-prev;
             right: $message-spacing-thick * -1;
             left: auto;
-            border-top-right-radius: 0px;
-            border-bottom-right-radius: 0px;
-            border-top-left-radius: $message-border-radius-small;
-            border-bottom-left-radius: $message-border-radius-small;
+            border-radius: $message-border-radius-small 0px 0px $message-border-radius-small;
         }
         .slick-dots {
             list-style: none;
             padding-left: 0;
             margin: 0 auto;
             text-align: center;
+
             li {
                 display: inline-block;
                 button {

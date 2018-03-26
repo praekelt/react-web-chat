@@ -32,9 +32,9 @@ $background: $off-white;
 
 // FONTS
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
-$font-small: rem(16);
-$font-medium: rem(22);
-$font-large: rem(30);
+$font-small: 16px;
+$font-medium: 22px;
+$font-large: 30px;
 // stylelint-disable-next-line value-keyword-case
 $helvetica: Helvetica, 'Montserrat', sans-serif;
 
