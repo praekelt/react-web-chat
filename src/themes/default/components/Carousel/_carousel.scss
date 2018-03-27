@@ -51,7 +51,10 @@
             @extend .slick-prev;
             right: $message-spacing-thick * -1;
             left: auto;
-            border-radius: $message-border-radius-small 0px 0px $message-border-radius-small;
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+            border-top-left-radius: $message-border-radius-small;
+            border-bottom-left-radius: $message-border-radius-small;
         }
         .slick-dots {
             list-style: none;
