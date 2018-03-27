@@ -11,7 +11,7 @@
         outline: 0 none;
         background-color: transparent;
         color: $grey-dark;
-        font-size: rem(20);
+        font-size: 16px;
 
         &::placeholder {
             transition: {
@@ -40,7 +40,7 @@
         outline: 0 none;
         background-color: transparent;
         color: $grey-dark;
-        font-size: rem(20);
+        font-size: 16px;
         line-height: 1;
         transition: {
             property: background-color;
