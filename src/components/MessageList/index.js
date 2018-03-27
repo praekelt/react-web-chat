@@ -1,5 +1,5 @@
 // @ts-check
-import React from 'react';
+import React from '../../utils/dev_react_import';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -152,8 +152,8 @@ class MessageList extends React.Component {
     }
 }
 
-MessageList.PropTypes = {
-    messages: PropTypes.object,
+MessageList.propTypes = {
+    messages: PropTypes.array,
     theme: PropTypes.shape({
         ImageComponent: PropTypes.oneOfType([
             PropTypes.element,

@@ -69,7 +69,7 @@ $duration: 200ms;
 
 // GRID:
 $rhythm: 1 / 67 * 420px;
-$avatar-size: $rhythm * 8;
+$avatar-size: $rhythm * 6;
 
 @import './_animations.scss';
 @import './_containers.scss';
