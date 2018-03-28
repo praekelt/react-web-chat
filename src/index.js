@@ -3,7 +3,7 @@ import { createStoreWithState } from './store';
 import { merge } from 'lodash';
 
 import { Provider } from 'react-redux';
-import 'smoothscroll-polyfill';
+import smoothscroll from 'smoothscroll-polyfill';
 
 import ChatContainer from './components/ChatContainer';
 
@@ -13,6 +13,7 @@ import NetworkManager from './utils/network';
 import defaultTheme from './themes/default';
 import defaultConfig from './config';
 
+smoothscroll.polyfill();
 /**
  * The main react component for React Web Chat
  * @param {Object} params - An object containing configuration parameters

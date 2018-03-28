@@ -42,7 +42,8 @@ class MessageList extends React.Component {
         this._last &&
             this._last.scrollIntoView({
                 behavior: 'smooth',
-                inline: 'start'
+                block: 'end',
+                inline: 'end'
             });
 
         // let { messageQueue, delayedMessageAdd } = this.props;
