@@ -7,7 +7,7 @@ import { compose, setPropTypes } from 'recompose';
 import * as messageActions from '../../actions/messages';
 import { getLatestRemote } from '../../utils/helpers';
 
-const mapStateToProps = ({ messages }) => {
+const mapStateToProps = ({ messages, config }) => {
     let latestMessage = getLatestRemote(messages.messages);
     return {
         inputExpected: latestMessage && latestMessage.input_expected,
