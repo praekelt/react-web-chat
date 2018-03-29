@@ -21,32 +21,15 @@ class Demo extends Component {
                 className="ReactWebChat"
             >
                 <ReactWebChatComponent
-                    url="https://dev.feersum.io/chat_sockjs"
+                    url="http://localhost:8080/echo/"
                     typingStatus={{
                         active: true,
                         baseDelay: 1000,
                         variance: 500
                     }}
                     network={{
-                        eventNamespace: 'foobar',
-                        channel_id: '07911543-7d9e-46e3-b4d3-48d1370a98b7',
+                        eventNamespace: 'foobar'
                     }}
-                    menu={{
-                      buttons: [
-                        {
-                          type: "transition",
-                          text: "asdf",
-                          postback: {
-                            route: "f\/w\/3f-1BQnWQbGFeFUi_ZkeNg"
-                          }
-                        },
-                        {
-                          type: "url",
-                          text: "fdsa",
-                          url: "http:\/\/fas.s"
-                        }
-                      ]
-                }}
                 />
             </div>
         );
