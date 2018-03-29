@@ -43,6 +43,45 @@ const enhance = compose(
     connect(mapStateToProps, mapDispatchToProps)
 );
 
+const tmpButtons = {
+  buttons: [
+            {
+                type: 'transition',
+                transition: {
+                    type: 'workflow',
+                    ref: '_sA3lHnvTG2dam8pXIQiIQ'
+                },
+                text: 'Speaker'
+            },
+            {
+                type: 'transition',
+                transition: {
+                    type: 'workflow',
+                    ref: 'X_cXr2oHRHSjazCXsST6AA'
+                },
+                text: 'Agenda'
+            }
+        ],
+}
+
+// const test = {config: {
+//     typingStatus: {
+//       active: true,
+//       baseDelay: 1000,
+//       variance: 500,
+//       letterDelay: 10,
+//       minDelay: 200,
+//       maxDelay: 2000
+//     },
+//     network: {
+//       retransmissionTimeout: 500,
+//       retransmissionAttempts: 10,
+//       eventNamespace: 'foobar',
+//       channel_id: 'f131a49f-b505-4cac-ae0a-7e1fff0aed1b'
+//     },
+//     avatar: '/demo/src/images/avatar.png'
+//   }}
+
 export const InputArea = ({
     InputComponent,
     submitHandler,
@@ -63,10 +102,11 @@ export const InputArea = ({
                     submitHandler={submitHandler}
                 />
             )}
-            <InputComponent
-                onKeyDown={onKeyDown}
-                submitHandler={submitHandler}
-            />
+            {/*<InputComponent*/}
+                {/*onKeyDown={onKeyDown}*/}
+                {/*submitHandler={submitHandler}*/}
+            {/*/>*/}
+            <MenuComponent items={tmpButtons.buttons} submitHandler={submitHandler} />
         </div>
     );
 };

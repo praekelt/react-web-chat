@@ -22,6 +22,7 @@
 	"dependencies": {
 		"lodash": "^4.17.4",
 		"nodemon": "^1.12.1",
+		"prettier": "^1.11.1",
 		"react-slick": "^0.22.3",
 		"react-transition-group": "^2.2.1",
 		"redux-thunk": "^2.2.0",
