@@ -11,7 +11,7 @@ const mapStateToProps = ({ messages }) => {
     let latestMessage = getLatestRemote(messages.messages);
     return {
         inputExpected: latestMessage && latestMessage.input_expected,
-        buttons: latestMessage && latestMessage.buttons
+        buttons: config.menu.buttons
     };
 };
 
@@ -41,30 +41,6 @@ const enhance = compose(
     connect(mapStateToProps, mapDispatchToProps)
 );
 
-const tmpButtons = {
-    buttons: [
-        {
-            type: 'transition',
-            postback: {
-                route: '/'
-            },
-            text: 'Home'
-        },
-        {
-            type: 'transition',
-            postback: {
-                route: 'f/s/gFNuJcqzTBOb_bbZgn1YMA'
-            },
-            text: 'Colour'
-        },
-        {
-            text: 'two',
-            type: 'url',
-            url: '/chris'
-        }
-    ]
-};
-
 export const InputArea = ({
     InputComponent,
     submitHandler,
@@ -85,9 +61,9 @@ export const InputArea = ({
             {
                 // TODO Change to config instead of tmpButtons
             }
-            {tmpButtons.buttons && (
+            {buttons && (
                 <MenuComponent
-                    items={tmpButtons.buttons}
+                    items={buttons}
                     submitHandler={submitHandler}
                 />
             )}
