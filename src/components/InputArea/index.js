@@ -1,5 +1,5 @@
 // @ts-check
-//import React from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { compose, setPropTypes } from 'recompose';
@@ -7,20 +7,18 @@ import { compose, setPropTypes } from 'recompose';
 import * as messageActions from '../../actions/messages';
 import { getLatestRemote } from '../../utils/helpers';
 
-const mapStateToProps = ({ messages }) => {
+const mapStateToProps = ({ messages, config }) => {
     let latestMessage = getLatestRemote(messages.messages);
     return {
         inputExpected: latestMessage && latestMessage.input_expected,
-        buttons: latestMessage && latestMessage.buttons
+        buttons: config.menu.buttons
     };
 };
 
 const mapDispatchToProps = dispatch => ({
-    submitHandler: text => {
+    submitHandler: payload => {
         dispatch(
-            messageActions.messageSend({
-                text: text
-            })
+            messageActions.messageSend(payload)
         );
     },
     onKeyDown: (event, text) => {
@@ -54,11 +52,14 @@ export const InputArea = ({
 }) => {
     return (
         <div className="ChatContainer-input">
-            {inputExpected === 'radio' && (
-                <MenuComponent items={buttons} submitHandler={submitHandler} />
-            )}
             {inputExpected === 'checkbox' && (
                 <CheckboxMenuComponent
+                    items={buttons}
+                    submitHandler={submitHandler}
+                />
+            )}
+            {buttons && (
+                <MenuComponent
                     items={buttons}
                     submitHandler={submitHandler}
                 />

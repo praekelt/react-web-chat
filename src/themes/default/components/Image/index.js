@@ -1,5 +1,5 @@
 // @ts-check
-//import React from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { compose, setPropTypes, lifecycle } from 'recompose';
 import { withState } from 'recompose';
@@ -47,7 +47,10 @@ export const ImageComponent = ({ url, text, loaded, height = 200 }) => {
                     </div>
                 )}
                 {text && (
-                    <p className="Image-text Text" dangerouslySetInnerHTML={{ __html: text }} />
+                    <p
+                        className="Image-text Text"
+                        dangerouslySetInnerHTML={{ __html: text }}
+                    />
                 )}
             </div>
         </Fade>

@@ -1,8 +1,10 @@
+import React from 'react';
+
 import { createStoreWithState } from './store';
 import { merge } from 'lodash';
 
 import { Provider } from 'react-redux';
-import 'smoothscroll-polyfill';
+import smoothscroll from 'smoothscroll-polyfill';
 
 import ChatContainer from './components/ChatContainer';
 
@@ -12,6 +14,7 @@ import NetworkManager from './utils/network';
 import defaultTheme from './themes/default';
 import defaultConfig from './config';
 
+smoothscroll.polyfill();
 /**
  * The main react component for React Web Chat
  * @param {Object} params - An object containing configuration parameters
@@ -28,7 +31,8 @@ export const ReactWebChatComponent = ({
     client,
     url,
     typingStatus,
-    network
+    network,
+    menu
 }) => {
     const store = createStoreWithState({
         config: merge(
@@ -36,6 +40,7 @@ export const ReactWebChatComponent = ({
             defaultConfig,
             { typingStatus },
             { network },
+            { menu },
             { avatar }
         )
     });
@@ -52,7 +57,8 @@ export const ReactWebChatComponent = ({
                     retransmissionTimeout: network.retransmissionTimeout || 500,
                     retransmissionMaxTimeout: network.retransmissionMaxTimeout,
                     retransmissionAttempts: network.retransmissionAttempts,
-                    schemaVersion: network.schemaVersion
+                    schemaVersion: network.schemaVersion,
+                    menu: menu
                 }
             })
     });
@@ -69,14 +75,15 @@ export const ReactWebChatComponent = ({
  */
 class ReactWebChat {
     constructor(
-        { theme, avatar, client, element, url, typingStatus, network } = {
+        { theme, avatar, client, element, url, typingStatus, network, menu } = {
             theme: defaultTheme,
             avatar,
             client,
             element,
             url: 'http://localhost:8080/echo',
             typingStatus,
-            network
+            network,
+            menu
         }
     ) {
         if (element && element.nodeName) {
@@ -97,6 +104,7 @@ class ReactWebChat {
                     url={url}
                     typingStatus={typingStatus}
                     network={network}
+                    menu={menu}
                 />,
                 element
             );

@@ -1,9 +1,5 @@
 // @ts-check
-//import React from 'react';
-//import PropTypes from 'prop-types';
-import { compose, withStateHandlers } from 'recompose';
-
-//import Button from '../Button';
+import React from 'react';
 
 const enhance = compose(
     withStateHandlers(
@@ -45,11 +41,21 @@ export const Menu = ({ open, toggleState, items, submitHandler }) => (
                         className="Menu-item"
                         key={i}
                         onClick={() => {
-                            submitHandler(item.text);
+                            submitHandler({
+                                postback: item.postback,
+                                text: item.text,
+                                type: 'button'
+                            });
                             toggleState();
                         }}
                     >
-                        {item.text}
+                        {item.type === 'url' ? (
+                            <a target="_blank" href={item.url}>
+                                {item.text}
+                            </a>
+                        ) : (
+                            item.text
+                        )}
                     </li>
                 ))}
             </ul>
@@ -70,7 +76,14 @@ export const Menu = ({ open, toggleState, items, submitHandler }) => (
  * @return {Object} React component
  */
 export const CheckboxMenu = enhance(
-    ({ open, toggleState, items, submitHandler, toggleItem, selectedItems }) => (
+    ({
+        open,
+        toggleState,
+        items,
+        submitHandler,
+        toggleItem,
+        selectedItems
+    }) => (
         <div className={`Menu CheckboxMenu ${open ? 'is-open' : ''}`}>
             {items && (
                 <ul className="Menu-items">
@@ -85,7 +98,9 @@ export const CheckboxMenu = enhance(
                                 type="checkbox"
                                 checked={selectedItems.includes(item.text)}
                             />
-                            <label className="CheckboxMenu-label">{item.text}</label>
+                            <label className="CheckboxMenu-label">
+                                {item.text}
+                            </label>
                         </li>
                     ))}
                 </ul>
