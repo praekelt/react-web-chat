@@ -1,7 +1,8 @@
+//@ts-check
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import { compose, setPropTypes } from 'recompose';
-//import { CSSTransition } from 'react-transition-group';
 
 import { Fade } from '../Animation/index';
 

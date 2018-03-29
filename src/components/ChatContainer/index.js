@@ -14,10 +14,22 @@ const mapStateToProps = ({ connection }) => {
 const enhance = compose(
     setPropTypes({
         theme: PropTypes.shape({
-            ImageComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
-            InputComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
-            MessageComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
-            TextComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func])
+            ImageComponent: PropTypes.oneOfType([
+                PropTypes.element,
+                PropTypes.func
+            ]),
+            InputComponent: PropTypes.oneOfType([
+                PropTypes.element,
+                PropTypes.func
+            ]),
+            MessageComponent: PropTypes.oneOfType([
+                PropTypes.element,
+                PropTypes.func
+            ]),
+            TextComponent: PropTypes.oneOfType([
+                PropTypes.element,
+                PropTypes.func
+            ])
         })
     }),
     connect(mapStateToProps)

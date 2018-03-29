@@ -1,8 +1,5 @@
 // @ts-check
 import React from 'react';
-//import PropTypes from 'prop-types';
-import { compose, withStateHandlers } from 'recompose';
-
 
 const enhance = compose(
     withStateHandlers(
@@ -79,7 +76,14 @@ export const Menu = ({ open, toggleState, items, submitHandler }) => (
  * @return {Object} React component
  */
 export const CheckboxMenu = enhance(
-    ({ open, toggleState, items, submitHandler, toggleItem, selectedItems }) => (
+    ({
+        open,
+        toggleState,
+        items,
+        submitHandler,
+        toggleItem,
+        selectedItems
+    }) => (
         <div className={`Menu CheckboxMenu ${open ? 'is-open' : ''}`}>
             {items && (
                 <ul className="Menu-items">
@@ -94,7 +98,9 @@ export const CheckboxMenu = enhance(
                                 type="checkbox"
                                 checked={selectedItems.includes(item.text)}
                             />
-                            <label className="CheckboxMenu-label">{item.text}</label>
+                            <label className="CheckboxMenu-label">
+                                {item.text}
+                            </label>
                         </li>
                     ))}
                 </ul>

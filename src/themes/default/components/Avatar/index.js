@@ -23,7 +23,13 @@ const Avatar = props => (
  * Toggles different indicator states based on connection state variable
  * @todo refactor this to use a map
  */
-const switchIndicator = ({ connecting, established, offline, avatar, typing }) => {
+const switchIndicator = ({
+    connecting,
+    established,
+    offline,
+    avatar,
+    typing
+}) => {
     if (typing) {
         return <StatusIndicator status="typing" />;
     } else {
