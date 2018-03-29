@@ -1,4 +1,4 @@
-import React from '../../utils/dev_react_import';
+import React from 'react';
 //import { connect } from 'react-redux';
 
 import { compose, setPropTypes } from 'recompose';

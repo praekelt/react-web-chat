@@ -1,5 +1,4 @@
-//@ts-check
-import React from '../../../../utils/dev_react_import';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { compose, setPropTypes } from 'recompose';
 //import { CSSTransition } from 'react-transition-group';

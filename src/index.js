@@ -1,4 +1,4 @@
-import React from './utils/dev_react_import';
+import React from 'react';
 import { createStoreWithState } from './store';
 import { merge } from 'lodash';
 
