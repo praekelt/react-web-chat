@@ -2,6 +2,7 @@
 import React from '../../../../utils/dev_react_import';
 //import PropTypes from 'prop-types';
 import { compose, withStateHandlers } from 'recompose';
+import { Button } from "../Button";
 
 //import Button from '../Button';
 
@@ -45,11 +46,21 @@ export const Menu = ({ open, toggleState, items, submitHandler }) => (
                         className="Menu-item"
                         key={i}
                         onClick={() => {
-                            submitHandler(item.text);
+                            submitHandler({
+                                postback: item.postback,
+                                text: item.text,
+                                type: 'button'
+                            });
                             toggleState();
                         }}
                     >
-                        {item.text}
+                        {item.type === 'url' ? (
+                            <a className="Menu-item-itemLink" target="_blank" href={item.url}>
+                                {item.text}
+                            </a>
+                        ) : (
+                            item.text
+                        )}
                     </li>
                 ))}
             </ul>

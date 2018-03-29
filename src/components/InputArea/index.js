@@ -16,11 +16,9 @@ const mapStateToProps = ({ messages }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-    submitHandler: text => {
+    submitHandler: payload => {
         dispatch(
-            messageActions.messageSend({
-                text: text
-            })
+            messageActions.messageSend(payload)
         );
     },
     onKeyDown: (event, text) => {
@@ -47,40 +45,25 @@ const tmpButtons = {
     buttons: [
         {
             type: 'transition',
-            transition: {
-                type: 'workflow',
-                ref: '_sA3lHnvTG2dam8pXIQiIQ'
+            postback: {
+                route: '/'
             },
-            text: 'Speaker'
+            text: 'Home'
         },
         {
             type: 'transition',
-            transition: {
-                type: 'workflow',
-                ref: 'X_cXr2oHRHSjazCXsST6AA'
+            postback: {
+                route: 'f/s/gFNuJcqzTBOb_bbZgn1YMA'
             },
-            text: 'Agenda'
+            text: 'Colour'
+        },
+        {
+            text: 'two',
+            type: 'url',
+            url: '/chris'
         }
     ]
 };
-
-// const test = {config: {
-//     typingStatus: {
-//       active: true,
-//       baseDelay: 1000,
-//       variance: 500,
-//       letterDelay: 10,
-//       minDelay: 200,
-//       maxDelay: 2000
-//     },
-//     network: {
-//       retransmissionTimeout: 500,
-//       retransmissionAttempts: 10,
-//       eventNamespace: 'foobar',
-//       channel_id: 'f131a49f-b505-4cac-ae0a-7e1fff0aed1b'
-//     },
-//     avatar: '/demo/src/images/avatar.png'
-//   }}
 
 export const InputArea = ({
     InputComponent,

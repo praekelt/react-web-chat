@@ -49,6 +49,12 @@
     &--solid {
         background-color: $white;
         font-size: inherit;
+        color: $grey-dark;
+
+        a {
+          text-decoration: none;
+          color: inherit;
+        }
 
         &:hover,
         &:focus {
