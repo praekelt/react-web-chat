@@ -152,8 +152,8 @@ class MessageList extends React.Component {
     }
 }
 
-MessageList.PropTypes = {
-    messages: PropTypes.object,
+MessageList.propTypes = {
+    messages: PropTypes.array,
     theme: PropTypes.shape({
         ImageComponent: PropTypes.oneOfType([
             PropTypes.element,

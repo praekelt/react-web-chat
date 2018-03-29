@@ -10,7 +10,7 @@
         padding: $rhythm * 2;
         border: 0;
         background-color: $white;
-        outline:0;
+        outline: 0;
     }
 
     &-buttonSegment {
@@ -20,7 +20,7 @@
         margin-bottom: 4px;
         margin-left: 50%;
         transition: .2s ease;
-        transform: translate(-50%, 0); 
+        transform: translate(-50%, 0);
         &:first-child {
             margin-top: $rhythm;
         }
@@ -37,9 +37,10 @@
         overflow: hidden;
     }
 
+
     &-item {
         cursor: pointer;
-        transition: .2s ease;
+        transition: 0.2s ease;
         font-family: $helvetica;
         text-align: center;
         color: $grey-dark;
@@ -47,6 +48,7 @@
         height: 0;
         border: 0;
         padding: 0;
+        font-weight: 600;
 
         &:hover {
             background-color: $grey-dark;
@@ -58,8 +60,10 @@
     &.is-open {
         #{$block} {
             &-item {
-                height: $rhythm * 7;
-                padding: $rhythm * 2 $rhythm * 2;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: $rhythm * 8;
                 border-bottom: 2px solid $background;
 
                 &:first-child {
@@ -70,7 +74,7 @@
             &-buttonSegment {
                 opacity: 0;
                 &:first-child {
-                    margin-left: $rhythm * 2;
+                    bottom: $rhythm * 2;
                     opacity: 1;
                     transform: translate(-50%, 0) rotate(45deg);
                 }
@@ -125,14 +129,13 @@
             left: $message-spacing-thick * -2;
             height: $rhythm * 3;
             background-color: $grey-light;
-            transition: .2s ease;
+            transition: 0.2s ease;
             border-radius: $rhythm * 1.5;
             border: 2px solid $white;
         }
     }
 
     &.is-open {
-
         #{$block} {
             &-submitButton {
                 display: block;

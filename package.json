@@ -1,6 +1,6 @@
 {
 	"name": "react-web-chat",
-	"version": "1.3.0",
+	"version": "1.3.2",
 	"description": "react-web-chat React component",
 	"main": "lib/index.js",
 	"module": "es/index.js",
@@ -22,7 +22,8 @@
 	"dependencies": {
 		"lodash": "^4.17.4",
 		"nodemon": "^1.12.1",
-		"react-slick": "^0.15.4",
+		"prettier": "^1.11.1",
+		"react-slick": "^0.22.3",
 		"react-transition-group": "^2.2.1",
 		"redux-thunk": "^2.2.0",
 		"rwc-feersum-client": "^1.2.0",

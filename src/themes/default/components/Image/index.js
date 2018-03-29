@@ -1,5 +1,5 @@
 // @ts-check
-//import React from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { compose, setPropTypes, lifecycle } from 'recompose';
 import { withState } from 'recompose';

@@ -1,5 +1,5 @@
 //@ts-check
-//import React from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { compose, setPropTypes } from 'recompose';
 
@@ -23,7 +23,7 @@ export const Button = ({ text, phone, url, onClick }) =>
     phone || url ? (
         <a
             className="Button Button--solid"
-            target="_blank"
+            target={url ? `_blank`: ""}
             href={phone ? `tel:${phone}` : url}
         >
             {text}

@@ -1,5 +1,5 @@
 // @ts-check
-//import React from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { compose, setPropTypes, withState } from 'recompose';
 
@@ -48,7 +48,7 @@ export const Input = ({ submitHandler, onKeyDown, value, setValue }) => {
                     setValue('');
                 }}
             >
-                SEND
+
             </button>
         </div>
     );
