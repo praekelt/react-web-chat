@@ -1,7 +1,7 @@
-//import React from 'react';
+import React from 'react';
 
 /**
- * Renders the chat bot's avatar along with a status indicator. 
+ * Renders the chat bot's avatar along with a status indicator.
  * @param {Object} props
  * @param {string} props.avatar - A url to an image to use as the avatar.
  * @param {boolean} props.connecting - A state variable indicating that the chat app is busy attempting a connection to the server.
@@ -23,7 +23,13 @@ const Avatar = props => (
  * Toggles different indicator states based on connection state variable
  * @todo refactor this to use a map
  */
-const switchIndicator = ({ connecting, established, offline, avatar, typing }) => {
+const switchIndicator = ({
+    connecting,
+    established,
+    offline,
+    avatar,
+    typing
+}) => {
     if (typing) {
         return <StatusIndicator status="typing" />;
     } else {
