@@ -2,9 +2,7 @@
 import React from 'react';
 //import PropTypes from 'prop-types';
 import { compose, withStateHandlers } from 'recompose';
-import { Button } from "../Button";
 
-//import Button from '../Button';
 
 const enhance = compose(
     withStateHandlers(
@@ -55,7 +53,7 @@ export const Menu = ({ open, toggleState, items, submitHandler }) => (
                         }}
                     >
                         {item.type === 'url' ? (
-                            <a className="Menu-item-itemLink" target="_blank" href={item.url}>
+                            <a target="_blank" href={item.url}>
                                 {item.text}
                             </a>
                         ) : (

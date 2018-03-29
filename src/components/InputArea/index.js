@@ -58,9 +58,6 @@ export const InputArea = ({
                     submitHandler={submitHandler}
                 />
             )}
-            {
-                // TODO Change to config instead of tmpButtons
-            }
             {buttons && (
                 <MenuComponent
                     items={buttons}

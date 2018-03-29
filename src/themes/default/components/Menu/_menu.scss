@@ -19,7 +19,7 @@
         width: 60%;
         margin-bottom: 4px;
         margin-left: 50%;
-        transition: 0.2s ease;
+        transition: .2s ease;
         transform: translate(-50%, 0);
         &:first-child {
             margin-top: $rhythm;
@@ -49,11 +49,6 @@
         border: 0;
         padding: 0;
         font-weight: 600;
-
-        &-itemLink {
-          text-decoration: none;
-          color: inherit;
-        }
 
         &:hover {
             background-color: $grey-dark;

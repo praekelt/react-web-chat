@@ -20,7 +20,7 @@ const enhance = compose(
  * @param {function(text: string)} param.submitHandler - submit handler function. This will send a message to the server using data supplied as parameter
  * @return {Object} React component
  */
-export const Input = ({ submitHandler, onKeyDown, value, setValue, menuIcon }) => {
+export const Input = ({ submitHandler, onKeyDown, value, setValue }) => {
     const onClick = value => {
         submitHandler(value);
         setValue('');
@@ -48,9 +48,7 @@ export const Input = ({ submitHandler, onKeyDown, value, setValue, menuIcon }) =
                     setValue('');
                 }}
             >
-                {/*<div className="AvatarStatus-avatar">*/}
-            {/*<img className="Avatar" src={props.avatar} />*/}
-        {/*</div>*/}
+
             </button>
         </div>
     );
