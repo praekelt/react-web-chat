@@ -44,25 +44,25 @@ const enhance = compose(
 );
 
 const tmpButtons = {
-  buttons: [
-            {
-                type: 'transition',
-                transition: {
-                    type: 'workflow',
-                    ref: '_sA3lHnvTG2dam8pXIQiIQ'
-                },
-                text: 'Speaker'
+    buttons: [
+        {
+            type: 'transition',
+            transition: {
+                type: 'workflow',
+                ref: '_sA3lHnvTG2dam8pXIQiIQ'
             },
-            {
-                type: 'transition',
-                transition: {
-                    type: 'workflow',
-                    ref: 'X_cXr2oHRHSjazCXsST6AA'
-                },
-                text: 'Agenda'
-            }
-        ],
-}
+            text: 'Speaker'
+        },
+        {
+            type: 'transition',
+            transition: {
+                type: 'workflow',
+                ref: 'X_cXr2oHRHSjazCXsST6AA'
+            },
+            text: 'Agenda'
+        }
+    ]
+};
 
 // const test = {config: {
 //     typingStatus: {
@@ -102,11 +102,14 @@ export const InputArea = ({
                     submitHandler={submitHandler}
                 />
             )}
-            {/*<InputComponent*/}
-                {/*onKeyDown={onKeyDown}*/}
-                {/*submitHandler={submitHandler}*/}
-            {/*/>*/}
-            <MenuComponent items={tmpButtons.buttons} submitHandler={submitHandler} />
+            <MenuComponent
+                items={tmpButtons.buttons}
+                submitHandler={submitHandler}
+            />
+            <InputComponent
+                onKeyDown={onKeyDown}
+                submitHandler={submitHandler}
+            />
         </div>
     );
 };
