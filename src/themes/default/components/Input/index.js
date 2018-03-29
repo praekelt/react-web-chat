@@ -46,7 +46,7 @@ export const Input = ({ submitHandler, onKeyDown, value, setValue }) => {
                     setValue('');
                 }}
             >
-                SEND
+
             </button>
         </div>
     );

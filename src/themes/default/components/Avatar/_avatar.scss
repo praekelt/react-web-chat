@@ -2,6 +2,7 @@
     position: absolute;
     top: 0;
     width: $avatar-size;
+    margin-left: $rhythm * -1.1;
 
     &-avatar {
         width: $rhythm * 6;

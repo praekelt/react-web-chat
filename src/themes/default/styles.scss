@@ -62,6 +62,11 @@ $message-spacing-thin: 4px;
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 // TRANSITIONS:
 $ease-in: ease-in;
 $ease-out: ease-out;
@@ -69,7 +74,7 @@ $duration: 200ms;
 
 // GRID:
 $rhythm: 1 / 67 * 420px;
-$avatar-size: $rhythm * 8;
+$avatar-size: $rhythm * 6;
 
 @import './_animations.scss';
 @import './_containers.scss';

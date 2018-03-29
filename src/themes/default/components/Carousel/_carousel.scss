@@ -5,17 +5,12 @@
     width: 100%;
 
     margin: {
-        top: $message-spacing-thick;
-        bottom: $message-spacing-thick;
+        bottom: $message-spacing-medium;
     }
 
     &-item {
         display: inline-block;
         vertical-align: top;
-        padding: {
-            left: $message-spacing-thick;
-            right: $message-spacing-thick;
-        }
     }
 
     .Text {

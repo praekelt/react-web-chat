@@ -1,6 +1,5 @@
 // @ts-check
 import React from 'react';
-import { compose, withStateHandlers } from 'recompose';
 
 const enhance = compose(
     withStateHandlers(
@@ -42,11 +41,21 @@ export const Menu = ({ open, toggleState, items, submitHandler }) => (
                         className="Menu-item"
                         key={i}
                         onClick={() => {
-                            submitHandler(item.text);
+                            submitHandler({
+                                postback: item.postback,
+                                text: item.text,
+                                type: 'button'
+                            });
                             toggleState();
                         }}
                     >
-                        {item.text}
+                        {item.type === 'url' ? (
+                            <a target="_blank" href={item.url}>
+                                {item.text}
+                            </a>
+                        ) : (
+                            item.text
+                        )}
                     </li>
                 ))}
             </ul>
