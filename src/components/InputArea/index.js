@@ -93,19 +93,21 @@ export const InputArea = ({
 }) => {
     return (
         <div className="ChatContainer-input">
-            {inputExpected === 'radio' && (
-                <MenuComponent items={buttons} submitHandler={submitHandler} />
-            )}
             {inputExpected === 'checkbox' && (
                 <CheckboxMenuComponent
                     items={buttons}
                     submitHandler={submitHandler}
                 />
             )}
-            <MenuComponent
-                items={tmpButtons.buttons}
-                submitHandler={submitHandler}
-            />
+            {
+                // TODO Change to config instead of tmpButtons
+            }
+            {tmpButtons.buttons && (
+                <MenuComponent
+                    items={tmpButtons.buttons}
+                    submitHandler={submitHandler}
+                />
+            )}
             <InputComponent
                 onKeyDown={onKeyDown}
                 submitHandler={submitHandler}

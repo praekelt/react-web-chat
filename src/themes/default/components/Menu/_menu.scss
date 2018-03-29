@@ -58,8 +58,10 @@
     &.is-open {
         #{$block} {
             &-item {
-                height: $rhythm * 7;
-                padding: $rhythm * 2 $rhythm * 2;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: $rhythm * 8;
                 border-bottom: 2px solid $background;
 
                 &:first-child {
