@@ -1,5 +1,6 @@
 // @ts-check
 import React from 'react';
+import { compose, withStateHandlers } from 'recompose';
 
 const enhance = compose(
     withStateHandlers(
