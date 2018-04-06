@@ -9,6 +9,9 @@ import Message from '../Message';
 
 import * as messageActions from '../../actions/messages';
 
+// TODO: We strongly recommend not to do this unless your project strongly needs it.
+window.__forceSmoothScrollPolyfill__ = true;
+
 //import Avatar from '../../themes/default/components/Avatar/index';
 //import networkManager from '../../../es/utils/network';
 import TypingIndicator from '../../themes/default/components/TypingIndicator/index';
@@ -41,9 +44,7 @@ class MessageList extends React.Component {
     componentDidUpdate() {
         this._last &&
             this._last.scrollIntoView({
-                behavior: 'smooth',
-                block: 'end',
-                inline: 'end'
+                behavior: 'smooth'
             });
 
         // let { messageQueue, delayedMessageAdd } = this.props;
