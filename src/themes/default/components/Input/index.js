@@ -37,6 +37,7 @@ export const Input = ({ submitHandler, onKeyDown, value, setValue }) => {
                 className="Input-input"
                 type="text"
                 value={value}
+                placeholder="Write message..."
                 onChange={({ target: { value } }) => setValue(value)}
             />
             <button
