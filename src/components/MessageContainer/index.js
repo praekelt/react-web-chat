@@ -21,6 +21,7 @@ const sliderSettings = {
 
 const MessageContainer = ({ userId, type, children, layout, origin, pages, ...rest }) => {
     let hasSelectedInput = rest.selectedInput !== undefined && rest.selectedInput !== null;
+
     return (
         <div
             className={`${layoutClasses[layout] || 'MessageContainer'} ${origin === 'local'
