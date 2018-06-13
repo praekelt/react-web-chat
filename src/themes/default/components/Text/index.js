@@ -7,7 +7,7 @@ import { compose, setPropTypes } from 'recompose';
 import { Fade } from '../Animation/index';
 
 const createMarkup = (children, title) => {
-    const text = title ? `<h1 class="Text-h1">${children}</h1>` : children;
+    const text = title ? `<p class="Text title">${children}</p>` : children;
     return { __html: text };
 };
 

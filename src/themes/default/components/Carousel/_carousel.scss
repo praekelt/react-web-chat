@@ -11,6 +11,8 @@
     &-item {
         display: inline-block;
         vertical-align: top;
+        outline: none;
+        padding-right: $message-spacing-medium;
     }
 
     .Text {
@@ -20,6 +22,7 @@
 
     .slick-slider {
         position: relative;
+
         .slick-prev {
             position: absolute;
             border: 0;
@@ -54,8 +57,10 @@
         .slick-dots {
             list-style: none;
             padding-left: 0;
-            margin: 0 auto;
+            margin: 1.5em auto;
             text-align: center;
+            position: relative;
+            z-index: 20000;
 
             li {
                 display: inline-block;

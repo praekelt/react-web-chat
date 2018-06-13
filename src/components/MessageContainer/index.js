@@ -15,7 +15,8 @@ const sliderSettings = {
     slidesToShow: 1,
     slidesToScroll: 1,
     nextArrow: <button className="slick-next" />,
-    prevArrow: <button className="slick-next" />
+    prevArrow: <button className="slick-next" />,
+    adaptiveHeight: true
 };
 
 const MessageContainer = ({ userId, type, children, layout, origin, pages, ...rest }) => {
