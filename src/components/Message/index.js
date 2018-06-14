@@ -39,6 +39,11 @@ export const Message = ({
 }) => {
     return [
         page.image && <ImageComponent key="image" {...page.image} />,
+        page.title && (
+            <TextComponent key="title" isLocal={isLocal} title={page.title}>
+                {page.title}
+            </TextComponent>
+        ),
         <TextComponent key="text" isLocal={isLocal}>
             {page.text}
         </TextComponent>,
