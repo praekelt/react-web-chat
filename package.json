@@ -1,6 +1,6 @@
 {
     "name": "@prk/react-web-chat",
-    "version": "1.3.4",
+    "version": "1.3.5",
     "description": "react-web-chat React component",
     "main": "lib/index.js",
     "module": "es/index.js",
@@ -47,10 +47,8 @@
         "recompose": "^0.26.0",
         "redux": "^3.7.2"
     },
-    "author": "",
-    "homepage": "",
     "license": "MIT",
-    "repository": "",
+    "repository": "git@github.com:praekelt/react-web-chat.git",
     "keywords": [
         "react-component"
     ]
