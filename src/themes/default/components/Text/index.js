@@ -27,16 +27,15 @@ const enhance = compose(
  * @param {string} param.children - markdown-generated html to render.
  * @return {Object} React component
  */
-const Text = ({ title, children, isLocal }) =>
-    (title || children) && (
-        <Fade in={true} appear={true}>
-            <div
-                className={`Text ${isLocal ? 'is-local' : ''} ${
-                    title ? 'title' : ''
-                }`}
-                dangerouslySetInnerHTML={createMarkup(children, title)}
-            />
-        </Fade>
-    );
+const Text = ({ title, children, isLocal }) => (
+    <Fade in={true} appear={true}>
+        <div
+            className={`Text ${isLocal ? 'is-local' : ''} ${
+                title ? 'title' : ''
+            }`}
+            dangerouslySetInnerHTML={createMarkup(children, title)}
+        />
+    </Fade>
+);
 
 export default enhance(Text);

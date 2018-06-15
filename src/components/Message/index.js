@@ -44,9 +44,11 @@ export const Message = ({
                 {page.title}
             </TextComponent>
         ),
-        <TextComponent key="text" isLocal={isLocal}>
-            {page.text}
-        </TextComponent>,
+        page.text && (
+            <TextComponent key="text" isLocal={isLocal}>
+                {page.text}
+            </TextComponent>
+        ),
         page.buttons &&
             page.buttons.length > 0 && (
                 <ButtonContainer key="buttons">
