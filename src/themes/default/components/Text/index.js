@@ -7,7 +7,9 @@ import { compose, setPropTypes } from 'recompose';
 import { Fade } from '../Animation/index';
 
 const createMarkup = (children, title) => {
-    const text = title ? `<p class="Text title">${children}</p>` : children;
+    const text = title
+        ? `<p class="Text title-text">${children}</p>`
+        : children;
     return { __html: text };
 };
 
@@ -28,7 +30,9 @@ const enhance = compose(
 const Text = ({ title, children, isLocal }) => (
     <Fade in={true} appear={true}>
         <div
-            className={`Text ${isLocal ? 'is-local' : ''}`}
+            className={`Text ${isLocal ? 'is-local' : ''} ${
+                title ? 'title' : ''
+            }`}
             dangerouslySetInnerHTML={createMarkup(children, title)}
         />
     </Fade>
