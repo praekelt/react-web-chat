@@ -8,7 +8,11 @@
     white-space: pre-line;
     font-family: $helvetica;
     margin: {
-        bottom: $message-spacing-thin;
+        bottom: $message-spacing-thinner;
+    }
+
+    &.title {
+        margin-bottom: $message-spacing-title;
     }
 
     &:last-child {
@@ -45,7 +49,7 @@
         color: $white;
     }
 
-    &.title {
+    &.title-text {
         font-size: $title-font;
         font-weight: 600;
         padding: 0;

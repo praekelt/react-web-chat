@@ -7,7 +7,9 @@ import { compose, setPropTypes } from 'recompose';
 import { Fade } from '../Animation/index';
 
 const createMarkup = (children, title) => {
-    const text = title ? `<p class="Text title">${children}</p>` : children;
+    const text = title
+        ? `<p class="Text title-text">${children}</p>`
+        : children;
     return { __html: text };
 };
 
@@ -25,13 +27,16 @@ const enhance = compose(
  * @param {string} param.children - markdown-generated html to render.
  * @return {Object} React component
  */
-const Text = ({ title, children, isLocal }) => (
-    <Fade in={true} appear={true}>
-        <div
-            className={`Text ${isLocal ? 'is-local' : ''}`}
-            dangerouslySetInnerHTML={createMarkup(children, title)}
-        />
-    </Fade>
-);
+const Text = ({ title, children, isLocal }) =>
+    (title || children) && (
+        <Fade in={true} appear={true}>
+            <div
+                className={`Text ${isLocal ? 'is-local' : ''} ${
+                    title ? 'title' : ''
+                }`}
+                dangerouslySetInnerHTML={createMarkup(children, title)}
+            />
+        </Fade>
+    );
 
 export default enhance(Text);
