@@ -53,8 +53,7 @@ export const InputArea = ({
 }) => {
     return (
         <div className="ChatContainer-input">
-            {inputExpected === 'checkbox' &&
-                buttons && (
+            {inputExpected === 'checkbox' && (
                     <CheckboxMenuComponent
                         items={buttons}
                         submitHandler={submitHandler}

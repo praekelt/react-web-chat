@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment, Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { compose, setPropTypes } from 'recompose';
@@ -34,7 +34,7 @@ const enhance = compose(
     connect(mapStateToProps)
 );
 
-export class ChatContainer extends React.Component {
+export class ChatContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -51,7 +51,7 @@ export class ChatContainer extends React.Component {
     }
 
     render() {
-        if (this.state.hasError) return <React.Fragment></React.Fragment>;
+        if (this.state.hasError) return <Fragment></Fragment>;
 
         return (
             <div className="ChatContainer">
