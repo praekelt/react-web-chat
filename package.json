@@ -20,6 +20,8 @@
         "document:watch": "nodemon --watch src --exec './node_modules/.bin/esdoc'"
     },
     "dependencies": {
+        "@prk/eslint-config": "^0.0.9",
+        "@prk/prettier-config": "^0.0.2",
         "lodash": "^4.17.10",
         "nodemon": "^1.17.5",
         "react-slick": "^0.23.1",
