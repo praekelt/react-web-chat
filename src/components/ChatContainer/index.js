@@ -1,5 +1,4 @@
-// @ts-check
-import React from 'react';
+import React, { Fragment, Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { compose, setPropTypes } from 'recompose';
@@ -35,13 +34,32 @@ const enhance = compose(
     connect(mapStateToProps)
 );
 
-export const ChatContainer = ({ theme, connection }) => {
-    return (
-        <div className="ChatContainer">
-            <MessageList theme={theme} />
-            <InputArea {...theme} />
-        </div>
-    );
-};
+export class ChatContainer extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            hasError: false
+        }
+    }
+
+    componentDidCatch(error, info) {
+        // TODO: Refactor this to dispatch a
+        // friendly message to the chat UI.
+        // Currently, we simply do not render the UI.
+        this.setState({ hasError: true });
+        console.error(error, info);
+    }
+
+    render() {
+        if (this.state.hasError) return <Fragment></Fragment>;
+
+        return (
+            <div className="ChatContainer">
+                <MessageList theme={this.props.theme} />
+                <InputArea {...this.props.theme} />
+            </div>
+        );
+    }
+}
 
 export default enhance(ChatContainer);

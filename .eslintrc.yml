@@ -1,0 +1,3 @@
+---
+extends:
+    - '@prk/eslint-config'

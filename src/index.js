@@ -1,4 +1,5 @@
 import React from 'react';
+import { render } from 'react-dom';
 
 import { createStoreWithState } from './store';
 import { merge } from 'lodash';
@@ -32,7 +33,7 @@ export const ReactWebChatComponent = ({
     url,
     typingStatus,
     network,
-    menu
+    menu = {}
 }) => {
     const store = createStoreWithState({
         config: merge(
@@ -96,7 +97,8 @@ class ReactWebChat {
              */
             this.client = client;
             this.bindEventsToActions();
-            ReactDOM.render(
+
+            render(
                 <ReactWebChatComponent
                     theme={theme}
                     avatar={avatar || 'http://i.pravatar.cc/300'}

@@ -17,9 +17,7 @@ const mapStateToProps = ({ messages, config }) => {
 
 const mapDispatchToProps = dispatch => ({
     submitHandler: payload => {
-        dispatch(
-            messageActions.messageSend(payload)
-        );
+        dispatch(messageActions.messageSend(payload));
     },
     onKeyDown: (event, text) => {
         if (event.keyCode === 13) {
@@ -38,7 +36,10 @@ const enhance = compose(
     setPropTypes({
         messages: PropTypes.object
     }),
-    connect(mapStateToProps, mapDispatchToProps)
+    connect(
+        mapStateToProps,
+        mapDispatchToProps
+    )
 );
 
 export const InputArea = ({
@@ -53,16 +54,13 @@ export const InputArea = ({
     return (
         <div className="ChatContainer-input">
             {inputExpected === 'checkbox' && (
-                <CheckboxMenuComponent
-                    items={buttons}
-                    submitHandler={submitHandler}
-                />
-            )}
+                    <CheckboxMenuComponent
+                        items={buttons}
+                        submitHandler={submitHandler}
+                    />
+                )}
             {buttons && (
-                <MenuComponent
-                    items={buttons}
-                    submitHandler={submitHandler}
-                />
+                <MenuComponent items={buttons} submitHandler={submitHandler} />
             )}
             <InputComponent
                 onKeyDown={onKeyDown}

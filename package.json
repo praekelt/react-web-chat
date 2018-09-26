@@ -1,6 +1,6 @@
 {
     "name": "@prk/react-web-chat",
-    "version": "1.3.7",
+    "version": "1.3.8",
     "description": "react-web-chat React component",
     "main": "lib/index.js",
     "module": "es/index.js",
@@ -20,6 +20,8 @@
         "document:watch": "nodemon --watch src --exec './node_modules/.bin/esdoc'"
     },
     "dependencies": {
+        "@prk/eslint-config": "^0.0.9",
+        "@prk/prettier-config": "^0.0.2",
         "lodash": "^4.17.10",
         "nodemon": "^1.17.5",
         "react-slick": "^0.23.1",
