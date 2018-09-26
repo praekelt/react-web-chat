@@ -23,14 +23,14 @@
 
 Simply install it with your favorite package manager:
 
-`npm install --save-dev react-web-chat`  
+`npm install --save-dev react-web-chat`
 `yarn add react-web-chat`
 
 # Usage
 
 ## As a stand-alone module
 
-The stand-alone version of the module will render to a supplied dom element.  
+The stand-alone version of the module will render to a supplied dom element.
 It accepts the following parameters:
 
 | Argument     | Description                                                                                                                                                                                                                          | Required | Type    |
@@ -98,25 +98,25 @@ var reactWebChat = new ReactWebChat({
 
 ### UMD
 
-`react-web-chat` is also available as a UMD module. Simply load the module and instantiate a new instance as described in the example below.  
+`react-web-chat` is also available as a UMD module. Simply load the module and instantiate a new instance as described in the example below.
 **NOTE: `react` and `react-dom` are peer dependencies so make sure they are loaded too**
 
 ```html
 <html>
     <head>
-        <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
-        <script src="https://unpkg.com/react-web-chat@1.1.2/umd/react-web-chat.js"/>>
+        <script crossorigin src="https://unpkg.com/react/umd/react.production.min.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"></script>
+        <script src="https://unpkg.com/react-web-chat/umd/react-web-chat.js"/>>
     </head>
-<body>  
+<body>
     <div id="my-chat-element">
-</body>  
+</body>
 <script>
     var myChatElement = document.getElementByID('my-chat-element');
 
     var reactWebChat = new ReactWebChat.default({
         url: 'http://localhost:8080',
-        element: reactWebChat
+        element: myChatElement
     });
 </script>
 </html>
@@ -124,7 +124,7 @@ var reactWebChat = new ReactWebChat({
 
 ## As a react component
 
-The exported `ReactWebChatComponent` can be used within an existing react application.  
+The exported `ReactWebChatComponent` can be used within an existing react application.
 It accepts the following parameters:
 
 | Argument | Description                        | Required | Type   |
@@ -153,7 +153,7 @@ Communication with the `react-web-chat` module is handled via a series of custom
 
 Custom `react-web-chat` events are namespaced using the `rwc-` prefix.
 
-Any dispatched redux action will fire a custom event using the following type:  
+Any dispatched redux action will fire a custom event using the following type:
 `rwc-ACTION_TYPE`
 
 ### Example:
@@ -195,7 +195,7 @@ A full list of actions to listen for:
 ## Dispatching
 
 Dispatching an event follows the same namespaced convention as described above.
-However not all redux actions can be dispatched via custom events.  
+However not all redux actions can be dispatched via custom events.
 Currently only the `MESSAGE_SEND` action type is supported.
 More action types may be supported in future releases if justifiable use cases can be demonstrated.
 
@@ -310,9 +310,9 @@ const feersumClient = {
 };
 ```
 
-[build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
-[build]: https://travis-ci.org/user/repo
-[npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square
-[npm]: https://www.npmjs.org/package/npm-package
+[build-badge]: https://img.shields.io/travis/praekelt/react-web-chat/master.png?style=flat-square
+[build]: https://travis-ci.org/praekelt/react-web-chat
+[npm-badge]: https://img.shields.io/npm/v/@prk/react-web-chat.png?style=flat-square
+[npm]: https://www.npmjs.org/package/@prk/react-web-chat
 [coveralls-badge]: https://img.shields.io/coveralls/praekelt/react-web-chat/master.png?style=flat-square
 [coveralls]: https://coveralls.io/github/praekelt/react-web-chat
