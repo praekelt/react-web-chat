@@ -11,7 +11,7 @@
         "umd"
     ],
     "scripts": {
-        "build": "nwb build-react-component",
+        "build": "nwb build-react-component --copy-files",
         "clean": "nwb clean-module && nwb clean-demo",
         "start": "nwb serve-react-demo",
         "test": "nwb test-react",
@@ -29,7 +29,7 @@
         "redux-thunk": "^2.3.0",
         "rwc-feersum-client": "^1.2.0",
         "slick-carousel": "^1.8.1",
-        "smoothscroll-polyfill": "^0.4.3"
+        "smooth-scroll-to-js": "^0.0.2"
     },
     "peerDependencies": {
         "react": "^16.0.0",

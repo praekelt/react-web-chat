@@ -1,20 +1,13 @@
-// @ts-check
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import smoothScrollTo from 'smooth-scroll-to-js';
 
 import AvatarContainer from '../AvatarContainer';
 import MessageContainer from '../MessageContainer';
 import Message from '../Message';
 
 import * as messageActions from '../../actions/messages';
-
-// TODO: We strongly recommend not to do this unless your project strongly needs it.
-window.__forceSmoothScrollPolyfill__ = true;
-
-//import Avatar from '../../themes/default/components/Avatar/index';
-//import networkManager from '../../../es/utils/network';
-import TypingIndicator from '../../themes/default/components/TypingIndicator/index';
 
 const mapStateToProps = ({ messages, config }) => ({
     messages: messages.messages,
@@ -43,13 +36,10 @@ class MessageList extends React.Component {
 
     componentDidUpdate() {
         this._last &&
-            this._last.scrollIntoView({
-                behavior: 'smooth'
-            });
-
-        // let { messageQueue, delayedMessageAdd } = this.props;
-
-        // messageQueue.length && delayedMessageAdd(messageQueue[messageQueue.length - 1]);
+            smoothScrollTo({
+                to: this._last,
+                container: this._last.parentElement.parentElement
+            })
     }
 
     render() {
