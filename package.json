@@ -30,11 +30,11 @@
         "react-dom": "^16.4.1",
         "react-redux": "^5.0.7",
         "redux": "^4.0.0",
+        "rwc-feersum-client": "^1.2.0",
         "recompose": "^0.27.1"
     },
     "devDependencies": {
         "prop-types": "^15.6.1",
-        "rwc-feersum-client": "^1.2.0",
         "@prk/eslint-config": "^0.0.9",
         "@prk/prettier-config": "^0.0.2",
         "nodemon": "^1.17.5",
