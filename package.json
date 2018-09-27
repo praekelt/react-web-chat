@@ -1,6 +1,6 @@
 {
     "name": "@prk/react-web-chat",
-    "version": "1.3.12",
+    "version": "1.3.14",
     "description": "react-web-chat React component",
     "main": "lib/index.js",
     "module": "es/index.js",
@@ -22,13 +22,13 @@
     },
     "peerDependencies": {
         "react": "*",
-        "react-dom": "*",
-        "react-transition-group": "*",
-        "redux": "*",
-        "redux-thunk": "*",
-        "react-redux": "*"
+        "react-dom": "*"
     },
     "dependencies": {
+        "react-transition-group": "^2.3.1",
+        "redux": "^4.0.0",
+        "react-redux": "^5.0.7",
+        "redux-thunk": "^2.3.0",
         "lodash": "^4.17.10",
         "react-slick": "^0.23.1",
         "slick-carousel": "^1.8.1",
@@ -37,12 +37,8 @@
         "recompose": "^0.27.1"
     },
     "devDependencies": {
-        "redux": "^4.0.0",
-        "react-redux": "^5.0.7",
-        "redux-thunk": "^2.3.0",
         "react": "^16.4.1",
         "react-dom": "^16.4.1",
-        "react-transition-group": "^2.3.1",
         "prop-types": "^15.6.1",
         "@prk/eslint-config": "^0.0.9",
         "@prk/prettier-config": "^0.0.2",
