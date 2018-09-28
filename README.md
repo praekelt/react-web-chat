@@ -104,21 +104,25 @@ var reactWebChat = new ReactWebChat({
 ```html
 <html>
     <head>
+        <link rel="stylesheet" href="https://unpkg.com/react-web-chat/umd/main.css"/>
         <script crossorigin src="https://unpkg.com/react/umd/react.production.min.js"></script>
         <script crossorigin src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"></script>
-        <script src="https://unpkg.com/react-web-chat/umd/react-web-chat.js"/>>
+        <script src="https://unpkg.com/@prk/react-web-chat/umd/@prk/react-web-chat.min.js"></script>
     </head>
-<body>
-    <div id="my-chat-element">
-</body>
-<script>
-    var myChatElement = document.getElementByID('my-chat-element');
+    <body>
+        <div id="my-chat-element">
+        <script>
+            var myChatElement = document.getElementById('my-chat-element');
 
-    var reactWebChat = new ReactWebChat.default({
-        url: 'http://localhost:8080',
-        element: myChatElement
-    });
-</script>
+            var reactWebChat = new ReactWebChat({
+                url: "https://dev.feersum.io/chat_sockjs",
+                element: myChatElement,
+                network: {
+                    channel_id: '3998e8a9-b329-4de9-a03c-040cc0348e42'
+                }
+            });
+        </script>
+    </body>
 </html>
 ```
 
