@@ -39,7 +39,7 @@ class MessageList extends React.Component {
             smoothScrollTo({
                 to: this._last,
                 container: this._last.parentElement.parentElement
-            })
+            });
     }
 
     render() {
@@ -51,14 +51,16 @@ class MessageList extends React.Component {
             config
         } = this.props;
         return (
-            <ul
+            <div
                 className="ChatContainer-content"
                 ref={ref => (this._ref = ref)}
             >
-                <div className="MessagesList">
+                <ul className="MessagesList">
                     {messages.map((message, i) => (
                         <li
-                            className="MessagesList-item"
+                            className={`MessagesList-item${
+                                message.origin === 'local' ? ' is-local' : ''
+                            }`}
                             key={i}
                             ref={ref => {
                                 if (i === messages.length - 1) {
@@ -137,8 +139,8 @@ class MessageList extends React.Component {
                                 : null}
                         </li>
                     ))}
-                </div>
-            </ul>
+                </ul>
+            </div>
         );
     }
 }
@@ -163,4 +165,7 @@ MessageList.propTypes = {
     config: PropTypes.object
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(MessageList);
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(MessageList);

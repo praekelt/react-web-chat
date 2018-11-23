@@ -52,19 +52,24 @@ export const InputArea = ({
     buttons
 }) => {
     return (
-        <div className="ChatContainer-input">
+        <div
+            className={`ChatContainer-input${
+                inputExpected ? ' is-expected-input' : ''
+            }`}
+        >
             {inputExpected === 'checkbox' && (
-                    <CheckboxMenuComponent
-                        items={buttons}
-                        submitHandler={submitHandler}
-                    />
-                )}
+                <CheckboxMenuComponent
+                    items={buttons}
+                    submitHandler={submitHandler}
+                />
+            )}
             {buttons && (
                 <MenuComponent items={buttons} submitHandler={submitHandler} />
             )}
             <InputComponent
                 onKeyDown={onKeyDown}
                 submitHandler={submitHandler}
+                inputExpected={inputExpected}
             />
         </div>
     );

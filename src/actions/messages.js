@@ -61,8 +61,9 @@ export function messageReceive(message) {
         if (
             messageQueue.length === 0 &&
             (!waitingForMessage ||
-                Date.now() - messages[messages.length - 1].timeAdded >
-                    queueDelay)
+                (messages.length &&
+                    Date.now() - messages[messages.length - 1].timeAdded >
+                        queueDelay))
         ) {
             dispatch(messageAdd(message));
         } else {
