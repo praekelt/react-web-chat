@@ -46,9 +46,7 @@ export const Input = ({ submitHandler, onKeyDown, value, setValue }) => {
                     onClick(value);
                     setValue('');
                 }}
-            >
-
-            </button>
+            />
         </div>
     );
 };
