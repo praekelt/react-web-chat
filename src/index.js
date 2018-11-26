@@ -40,7 +40,6 @@ const createNetwork = ({ client, menu, network, store, url }) =>
                     retransmissionMaxTimeout: network.retransmissionMaxTimeout,
                     retransmissionAttempts: network.retransmissionAttempts,
                     schemaVersion: network.schemaVersion,
-
                     menu: menu
                 }
             })
@@ -61,10 +60,7 @@ const createStore = ({ avatar, menu = {}, network, typingStatus }) =>
 export class ReactWebChatComponent extends Component {
     constructor(props) {
         super(props);
-
-        console.log('RWC class constructor');
         const { avatar, client, menu, network, typingStatus, url } = this.props;
-        console.log({ avatar, client, menu, network, typingStatus, url });
         this.store = createStore({ avatar, menu, network, typingStatus });
         const networkManager = createNetwork({
             client,
@@ -74,11 +70,9 @@ export class ReactWebChatComponent extends Component {
             url
         });
         networkManager.init();
-        console.log(this.store);
     }
 
     render() {
-        console.log(this.store);
         const { theme } = this.props;
         return (
             <Provider store={this.store}>
