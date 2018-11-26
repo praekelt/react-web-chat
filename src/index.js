@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { render } from 'react-dom';
 
 import { createStoreWithState } from './store';
@@ -24,26 +24,9 @@ import defaultConfig from './config';
  * @param {Object} params.network - A list of configuration options for network communication
  * @return {Object} React component
  */
-export const ReactWebChatComponent = ({
-    theme,
-    avatar,
-    client,
-    url,
-    typingStatus,
-    network,
-    menu = {}
-}) => {
-    const store = createStoreWithState({
-        config: merge(
-            {},
-            defaultConfig,
-            { typingStatus },
-            { network },
-            { menu },
-            { avatar }
-        )
-    });
-    const networkManager = new NetworkManager({
+
+const createNetwork = ({ client, menu, network, store, url }) =>
+    new NetworkManager({
         store,
         client:
             client ||
@@ -57,17 +40,53 @@ export const ReactWebChatComponent = ({
                     retransmissionMaxTimeout: network.retransmissionMaxTimeout,
                     retransmissionAttempts: network.retransmissionAttempts,
                     schemaVersion: network.schemaVersion,
+
                     menu: menu
                 }
             })
     });
-    networkManager.init();
-    return (
-        <Provider store={store}>
-            <ChatContainer theme={{ ...defaultTheme, ...theme }} />
-        </Provider>
-    );
-};
+
+const createStore = ({ avatar, menu = {}, network, typingStatus }) =>
+    createStoreWithState({
+        config: merge(
+            {},
+            defaultConfig,
+            { typingStatus },
+            { network },
+            { menu },
+            { avatar }
+        )
+    });
+
+export class ReactWebChatComponent extends Component {
+    constructor(props) {
+        super(props);
+
+        console.log('RWC class constructor');
+        const { avatar, client, menu, network, typingStatus, url } = this.props;
+        console.log({ avatar, client, menu, network, typingStatus, url });
+        this.store = createStore({ avatar, menu, network, typingStatus });
+        const networkManager = createNetwork({
+            client,
+            menu,
+            network,
+            store: this.store,
+            url
+        });
+        networkManager.init();
+        console.log(this.store);
+    }
+
+    render() {
+        console.log(this.store);
+        const { theme } = this.props;
+        return (
+            <Provider store={this.store}>
+                <ChatContainer theme={{ ...defaultTheme, ...theme }} />
+            </Provider>
+        );
+    }
+}
 
 /**
  * The wrapping constructor module which renders {@link ReactWebChatComponent} to the target element
