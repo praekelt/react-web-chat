@@ -7,11 +7,15 @@ import eventEmitterMiddleware from './middleware/eventEmitter';
 
 let middlewares = [eventEmitterMiddleware, thunk];
 
-let middleware = applyMiddleware(...middlewares);
+const composeEnhancers =
+    typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+        ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+              name: 'react-web-chat'
+          })
+        : compose;
 
-if (window.devToolsExtension) {
-    middleware = compose(middleware, window.devToolsExtension());
-}
+const enhancer = composeEnhancers(applyMiddleware(...middlewares));
 
-export default createStore(reducers, middleware);
-export const createStoreWithState = initialState => createStore(reducers, initialState, middleware);
+export default createStore(reducers, enhancer);
+export const createStoreWithState = initialState =>
+    createStore(reducers, initialState, enhancer);
