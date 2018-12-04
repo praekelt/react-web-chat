@@ -38,7 +38,8 @@ class MessageList extends React.Component {
         this._last &&
             smoothScrollTo({
                 to: this._last,
-                container: this._last.parentElement.parentElement
+                container: this._last.parentElement.parentElement,
+                duration: 12
             });
     }
 
