@@ -3,10 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import smoothScrollTo from 'smooth-scroll-to-js';
 
-// import AvatarContainer from '../AvatarContainer';
 import MessageContainer from '../MessageContainer';
-// import Message from '../Message';
-
 import * as messageActions from '../../actions/messages';
 import MessageListItem from './MessageListItem';
 
