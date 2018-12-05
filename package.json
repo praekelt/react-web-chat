@@ -1,6 +1,6 @@
 {
     "name": "@prk/react-web-chat",
-    "version": "1.4.1",
+    "version": "1.4.2",
     "description": "react-web-chat React component",
     "main": "lib/index.js",
     "module": "es/index.js",
