@@ -11,7 +11,7 @@ import ChatContainer from './components/ChatContainer';
 import * as actionTypes from './actionTypes';
 import RWCFeersumClient from 'rwc-feersum-client';
 import NetworkManager from './utils/network';
-import defaultTheme from './themes/default';
+import unstyledTheme from './themes/unstyled';
 import defaultConfig from './config';
 
 /**
@@ -76,7 +76,7 @@ export class ReactWebChatComponent extends Component {
         const { theme } = this.props;
         return (
             <Provider store={this.store}>
-                <ChatContainer theme={{ ...defaultTheme, ...theme }} />
+                <ChatContainer theme={{ ...unstyledTheme, ...theme }} />
             </Provider>
         );
     }
@@ -88,7 +88,7 @@ export class ReactWebChatComponent extends Component {
 class ReactWebChat {
     constructor(
         { theme, avatar, client, element, url, typingStatus, network, menu } = {
-            theme: defaultTheme,
+            theme: unstyledTheme,
             avatar,
             client,
             element,

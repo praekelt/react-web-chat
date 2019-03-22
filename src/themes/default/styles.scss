@@ -31,13 +31,12 @@ $error: $red;
 $background: $off-white;
 
 // FONTS
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
 $font-small: 16px;
 $font-medium: 22px;
 $font-large: 30px;
 $title-font: 18px;
 // stylelint-disable-next-line value-keyword-case
-$helvetica: Helvetica, 'Montserrat', sans-serif;
+$helvetica: Helvetica, sans-serif;
 
 // SPACING
 $message-border-radius: 1.5em;
@@ -80,7 +79,7 @@ $duration: 200ms;
 $rhythm: 1 / 67 * 420px;
 $avatar-size: $rhythm * 6;
 
-@import "~slick-carousel/slick/slick.css";
+@import '../../../node_modules/slick-carousel/slick/slick.scss';
 @import './_animations.scss';
 @import './_containers.scss';
 @import './_message-list.scss';
