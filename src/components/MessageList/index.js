@@ -3,11 +3,9 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import smoothScrollTo from 'smooth-scroll-to-js';
 
-import AvatarContainer from '../AvatarContainer';
 import MessageContainer from '../MessageContainer';
-import Message from '../Message';
-
 import * as messageActions from '../../actions/messages';
+import MessageListItem from './MessageListItem';
 
 const mapStateToProps = ({ messages, config }) => ({
     messages: messages.messages,
@@ -32,14 +30,18 @@ class MessageList extends React.Component {
         this.state = {
             offset: 0
         };
+
+        this.lastMsgRef = React.createRef();
+        this.containerRef = React.createRef();
     }
 
     componentDidUpdate() {
-        this._last &&
+        this.lastMsgRef.current &&
+            this.containerRef.current &&
             smoothScrollTo({
-                to: this._last,
-                container: this._last.parentElement.parentElement,
-                duration: 12
+                to: this.lastMsgRef.current,
+                container: this.containerRef.current,
+                duration: 1
             });
     }
 
@@ -52,94 +54,34 @@ class MessageList extends React.Component {
             config
         } = this.props;
         return (
-            <div
-                className="ChatContainer-content"
-                ref={ref => (this._ref = ref)}
-            >
+            <div className="ChatContainer-content" ref={this.containerRef}>
                 <ul className="MessagesList">
                     {messages.map((message, i) => (
-                        <li
-                            className={`MessagesList-item${
-                                message.origin === 'local' ? ' is-local' : ''
-                            }`}
-                            key={i}
-                            ref={ref => {
-                                if (i === messages.length - 1) {
-                                    this._last = ref;
-                                }
-                            }}
-                        >
-                            {message.origin === 'remote' &&
-                                (messages[i - 1]
+                        <MessageListItem
+                            key={message.timeAdded}
+                            {...{
+                                message,
+                                prevMessageOrigin: messages[i - 1]
                                     ? messages[i - 1].origin !== 'remote'
-                                    : true) && (
-                                    <AvatarContainer
-                                        AvatarComponent={theme.AvatarComponent}
-                                    />
-                                )}
-                            <div className="MessagesList-messageItem">
-                                <MessageContainer key="text" {...message}>
-                                    {message.origin === 'remote' ? (
-                                        message.pages.map((page, i) => (
-                                            <Message
-                                                key={i}
-                                                page={page}
-                                                isLocal={
-                                                    message.origin === 'local'
-                                                }
-                                                {...theme}
-                                                submitHandler={submitHandler}
-                                            />
-                                        ))
-                                    ) : (
-                                        <Message
-                                            key={i}
-                                            page={{ text: message.text }}
-                                            isLocal={true}
-                                            {...theme}
-                                        />
-                                    )}
-                                </MessageContainer>{' '}
-                                {message.buttons &&
-                                    message.buttonStyle === 'default' && (
-                                        <MessageContainer
-                                            key="buttons"
-                                            {...message}
-                                        >
-                                            {message.buttons.map(
-                                                (button, i) => (
-                                                    <theme.ButtonComponent
-                                                        key={i}
-                                                        text={button.text}
-                                                        phone={button.phone}
-                                                        url={button.url}
-                                                        onClick={() =>
-                                                            submitHandler({
-                                                                postback:
-                                                                    button.postback,
-                                                                text:
-                                                                    button.text
-                                                            })
-                                                        }
-                                                    />
-                                                )
-                                            )}
-                                        </MessageContainer>
-                                    )}
-                            </div>
-                            {messageQueue.length &&
-                            i === messages.length - 1 &&
-                            config.typingStatus.active
-                                ? [
-                                      <MessageContainer key="typing">
-                                          <theme.TypingIndicatorComponent
-                                              {...config.TypingIndicator}
-                                          />
-                                      </MessageContainer>
-                                  ]
-                                : null}
-                        </li>
+                                    : true,
+
+                                submitHandler,
+                                theme,
+                                ...(messages.length - 1 === i && {
+                                    itemRef: this.lastMsgRef
+                                })
+                            }}
+                        />
                     ))}
+                    {messageQueue.length && config.typingStatus.active ? (
+                        <li>
+                            <MessageContainer key="typing">
+                                <theme.TypingIndicatorComponent
+                                    {...config.TypingIndicator}
+                                />
+                            </MessageContainer>
+                        </li>
+                    ) : null}
                 </ul>
             </div>
         );
