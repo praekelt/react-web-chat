@@ -9,7 +9,7 @@ import Menu from './components/Menu';
 import Text from './components/Text';
 import TypingIndicator from './components/TypingIndicator';
 
-import './styles.scss';
+import './styles.css';
 
 export default {
     AvatarComponent: Avatar,
