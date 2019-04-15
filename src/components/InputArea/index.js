@@ -7,11 +7,12 @@ import { compose, setPropTypes } from 'recompose';
 import * as messageActions from '../../actions/messages';
 import { getLatestRemote } from '../../utils/helpers';
 
-const mapStateToProps = ({ messages, config }) => {
+const mapStateToProps = ({ messages, config, connection }) => {
     let latestMessage = getLatestRemote(messages.messages);
     return {
         inputExpected: latestMessage && latestMessage.input_expected,
-        buttons: config.menu.buttons
+        buttons: config.menu.buttons,
+        connection
     };
 };
 
@@ -19,8 +20,8 @@ const mapDispatchToProps = dispatch => ({
     submitHandler: payload => {
         dispatch(messageActions.messageSend(payload));
     },
-    onKeyDown: (event, text) => {
-        if (event.keyCode === 13) {
+    onKeyDown: connection => (event, text) => {
+        if (event.keyCode === 13 && !connection.offline) {
             dispatch(
                 messageActions.messageSend({
                     text: text
@@ -49,7 +50,8 @@ export const InputArea = ({
     inputExpected,
     MenuComponent,
     CheckboxMenuComponent,
-    buttons
+    buttons,
+    connection
 }) => {
     return (
         <div
@@ -67,9 +69,10 @@ export const InputArea = ({
                 <MenuComponent items={buttons} submitHandler={submitHandler} />
             )}
             <InputComponent
-                onKeyDown={onKeyDown}
+                onKeyDown={onKeyDown(connection)}
                 submitHandler={submitHandler}
                 inputExpected={inputExpected}
+                disabled={connection.offline}
             />
         </div>
     );
