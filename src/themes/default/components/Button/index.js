@@ -19,17 +19,22 @@ const enhance = compose(
  * @param {function(e: Object)} param.onClick - click handler function
  * @return {Object} React component
  */
-export const Button = ({ text, phone, url, onClick }) =>
+export const Button = ({ text, phone, url, onClick, disabled }) =>
     phone || url ? (
         <a
             className="Button Button--solid"
-            target={url ? `_blank`: ""}
+            target={url ? `_blank` : ''}
             href={phone ? `tel:${phone}` : url}
+            disabled={disabled}
         >
             {text}
         </a>
     ) : (
-        <button className="Button Button--solid" onClick={onClick}>
+        <button
+            className="Button Button--solid"
+            onClick={onClick}
+            disabled={disabled}
+        >
             {text}
         </button>
     );

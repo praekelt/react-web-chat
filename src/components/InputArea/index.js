@@ -20,8 +20,8 @@ const mapDispatchToProps = dispatch => ({
     submitHandler: payload => {
         dispatch(messageActions.messageSend(payload));
     },
-    onKeyDown: (event, text) => {
-        if (event.keyCode === 13) {
+    onKeyDown: connection => (event, text) => {
+        if (event.keyCode === 13 && !connection.offline) {
             dispatch(
                 messageActions.messageSend({
                     text: text
@@ -69,7 +69,7 @@ export const InputArea = ({
                 <MenuComponent items={buttons} submitHandler={submitHandler} />
             )}
             <InputComponent
-                onKeyDown={onKeyDown}
+                onKeyDown={onKeyDown(connection)}
                 submitHandler={submitHandler}
                 inputExpected={inputExpected}
                 disabled={connection.offline}

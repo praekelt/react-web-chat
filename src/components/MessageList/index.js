@@ -9,20 +9,22 @@ import Message from '../Message';
 
 import * as messageActions from '../../actions/messages';
 
-const mapStateToProps = ({ messages, config }) => ({
+const mapStateToProps = ({ messages, config, connection }) => ({
     messages: messages.messages,
     messageQueue: messages.messageQueue,
+    connection,
     config
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-    submitHandler: message => {
-        dispatch(
-            messageActions.messageSend({
-                ...message,
-                type: 'button'
-            })
-        );
+    submitHandler: connection => message => {
+        !connection.offline &&
+            dispatch(
+                messageActions.messageSend({
+                    ...message,
+                    type: 'button'
+                })
+            );
     }
 });
 
@@ -49,6 +51,7 @@ class MessageList extends React.Component {
             messages,
             messageQueue,
             submitHandler,
+            connection,
             config
         } = this.props;
         return (
@@ -87,8 +90,11 @@ class MessageList extends React.Component {
                                                 isLocal={
                                                     message.origin === 'local'
                                                 }
+                                                submitHandler={submitHandler(
+                                                    connection
+                                                )}
+                                                connection={connection}
                                                 {...theme}
-                                                submitHandler={submitHandler}
                                             />
                                         ))
                                     ) : (
@@ -96,6 +102,7 @@ class MessageList extends React.Component {
                                             key={i}
                                             page={{ text: message.text }}
                                             isLocal={true}
+                                            connection={connection}
                                             {...theme}
                                         />
                                     )}
@@ -113,8 +120,13 @@ class MessageList extends React.Component {
                                                         text={button.text}
                                                         phone={button.phone}
                                                         url={button.url}
+                                                        disabled={
+                                                            connection.offline
+                                                        }
                                                         onClick={() =>
-                                                            submitHandler({
+                                                            submitHandler(
+                                                                connection
+                                                            )({
                                                                 postback:
                                                                     button.postback,
                                                                 text:

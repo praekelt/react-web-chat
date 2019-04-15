@@ -63,4 +63,8 @@
             color: $white;
         }
     }
+
+    &:disabled {
+        color: $grey-light;
+    }
 }
