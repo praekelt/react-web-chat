@@ -7,11 +7,12 @@ import { compose, setPropTypes } from 'recompose';
 import * as messageActions from '../../actions/messages';
 import { getLatestRemote } from '../../utils/helpers';
 
-const mapStateToProps = ({ messages, config }) => {
+const mapStateToProps = ({ messages, config, connection }) => {
     let latestMessage = getLatestRemote(messages.messages);
     return {
         inputExpected: latestMessage && latestMessage.input_expected,
-        buttons: config.menu.buttons
+        buttons: config.menu.buttons,
+        connection
     };
 };
 
@@ -49,7 +50,8 @@ export const InputArea = ({
     inputExpected,
     MenuComponent,
     CheckboxMenuComponent,
-    buttons
+    buttons,
+    connection
 }) => {
     return (
         <div
@@ -70,6 +72,7 @@ export const InputArea = ({
                 onKeyDown={onKeyDown}
                 submitHandler={submitHandler}
                 inputExpected={inputExpected}
+                disabled={connection.offline}
             />
         </div>
     );

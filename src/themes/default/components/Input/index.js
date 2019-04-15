@@ -18,7 +18,13 @@ const enhance = compose(
  * @param {function(text: string)} param.submitHandler - submit handler function. This will send a message to the server using data supplied as parameter
  * @return {Object} React component
  */
-export const Input = ({ submitHandler, onKeyDown, value, setValue }) => {
+export const Input = ({
+    submitHandler,
+    onKeyDown,
+    value,
+    setValue,
+    ...rest
+}) => {
     const onClick = value => {
         submitHandler(value);
         setValue('');
@@ -39,6 +45,7 @@ export const Input = ({ submitHandler, onKeyDown, value, setValue }) => {
                 value={value}
                 placeholder="Write message..."
                 onChange={({ target: { value } }) => setValue(value)}
+                {...rest}
             />
             <button
                 className="Input-send"

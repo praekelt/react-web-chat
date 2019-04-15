@@ -1,4 +1,5 @@
 .Input {
+    $block: &;
     background-color: $white;
     height: 100%;
     width: 100%;
@@ -25,6 +26,16 @@
         &:focus::placeholder {
             transition-timing-function: $ease-in;
             color: $grey-dark;
+        }
+
+        &:disabled {
+            color: $grey-light;
+            background-color: rgba($black, 0.1);
+
+            & ~ #{$block}-send {
+                border-radius: 0;
+                background-color: rgba($black, 0.1);
+            }
         }
     }
 
@@ -59,5 +70,4 @@
             color: $grey-light;
         }
     }
-
 }
