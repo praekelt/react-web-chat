@@ -19,10 +19,6 @@ const enhance = compose(
  * @return {Object} React component
  */
 export const Input = ({ submitHandler, onKeyDown, value, setValue }) => {
-    const onClick = value => {
-        submitHandler(value);
-        setValue('');
-    };
     return (
         <div
             className="Input"
@@ -43,7 +39,7 @@ export const Input = ({ submitHandler, onKeyDown, value, setValue }) => {
             <button
                 className="Input-send"
                 onClick={() => {
-                    onClick(value);
+                    submitHandler({ text: value });
                     setValue('');
                 }}
             />
