@@ -18,7 +18,7 @@ const mapStateToProps = ({ messages, config, connection }) => {
 
 const mapDispatchToProps = dispatch => ({
     submitHandler: payload => {
-        dispatch(messageActions.messageSend(payload));
+        dispatch(messageActions.messageSend({ text: payload }));
     },
     onKeyDown: connection => (event, text) => {
         if (event.keyCode === 13 && !connection.offline) {
