@@ -46,7 +46,7 @@ export const Input = ({
             <button
                 className="Input-send"
                 onClick={() => {
-                    submitHandler(value);
+                    submitHandler({ text: value });
                     setValue('');
                 }}
             />
