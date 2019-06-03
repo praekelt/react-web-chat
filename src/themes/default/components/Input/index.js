@@ -25,10 +25,6 @@ export const Input = ({
     setValue,
     ...rest
 }) => {
-    const onClick = value => {
-        submitHandler(value);
-        setValue('');
-    };
     return (
         <div
             className="Input"
@@ -50,7 +46,7 @@ export const Input = ({
             <button
                 className="Input-send"
                 onClick={() => {
-                    onClick(value);
+                    submitHandler({ text: value });
                     setValue('');
                 }}
             />
