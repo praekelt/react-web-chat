@@ -39,7 +39,7 @@ export class ChatContainer extends Component {
         super(props);
         this.state = {
             hasError: false
-        }
+        };
     }
 
     componentDidCatch(error, info) {
@@ -51,7 +51,7 @@ export class ChatContainer extends Component {
     }
 
     render() {
-        if (this.state.hasError) return <Fragment></Fragment>;
+        if (this.state.hasError) return <Fragment />;
 
         return (
             <div className="ChatContainer">
