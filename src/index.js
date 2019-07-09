@@ -34,6 +34,7 @@ const createNetwork = ({ client, menu, network, store, url }) =>
                 url,
                 config: {
                     channel_id: network.channel_id,
+                    transportServerUrl: network.transportServerUrl,
                     address: network.address,
                     startNew: network.startNew,
                     retransmissionTimeout: network.retransmissionTimeout || 500,
