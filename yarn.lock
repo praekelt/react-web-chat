@@ -9228,10 +9228,10 @@ run-series@1.1.4:
   resolved "https://registry.yarnpkg.com/run-series/-/run-series-1.1.4.tgz#89a73ddc5e75c9ef8ab6320c0a1600d6a41179b9"
   integrity sha1-iac93F51ye+KtjIMChYA1qQRebk=
 
-rwc-feersum-client@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/rwc-feersum-client/-/rwc-feersum-client-1.2.0.tgz#c4c9d955b37fba059da9bd1c24735d1b50b98a3e"
-  integrity sha1-xMnZVbN/ugWdqb0cJHNdG1C5ij4=
+rwc-feersum-client@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/rwc-feersum-client/-/rwc-feersum-client-1.4.0.tgz#4abf218ca74a09f3b71efe82841aa1ac9010a476"
+  integrity sha512-EmOH62Dsz11ynvg/OfbeTJYR0/0K0mRfJEUksaaQjO2idRu9MbjHDCq1VgtZaZ7zjQ1XyTwXEYBH6M3QvhGnxA==
   dependencies:
     sockjs-client "^1.1.4"
 
