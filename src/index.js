@@ -73,10 +73,10 @@ export class ReactWebChatComponent extends Component {
     }
 
     render() {
-        const { theme } = this.props;
+        const { theme, toggleComponent } = this.props;
         return (
             <Provider store={this.store}>
-                <ChatContainer theme={{ ...unstyledTheme, ...theme }} />
+                <ChatContainer theme={{ ...unstyledTheme, ...theme }} toggleComponent={toggleComponent}/>
             </Provider>
         );
     }

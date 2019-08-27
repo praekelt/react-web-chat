@@ -38,7 +38,8 @@ export class ChatContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            hasError: false
+            hasError: false,
+            showChat: !props.toggleComponent
         };
     }
 
@@ -50,14 +51,36 @@ export class ChatContainer extends Component {
         console.error(error, info);
     }
 
+    toggleShowChat() {
+        this.setState({ showChat: !this.state.showChat });
+    }
+
     render() {
+        const { toggleComponent } = this.props;
+        const { showChat } = this.state;
         if (this.state.hasError) return <Fragment />;
 
         return (
-            <div className="ChatContainer">
-                <MessageList theme={this.props.theme} />
-                <InputArea {...this.props.theme} />
-            </div>
+            <React.Fragment>
+                {toggleComponent && (
+                    <div>
+                        {!showChat && (
+                            <a onClick={() => this.toggleShowChat()}>
+                                {toggleComponent}
+                            </a>
+                        )}
+                        {showChat && (
+                            <a onClick={() => this.toggleShowChat()}>Close</a>
+                        )}
+                    </div>
+                )}
+                {showChat && (
+                    <div className="ChatContainer">
+                        <MessageList theme={this.props.theme} />
+                        <InputArea {...this.props.theme} />
+                    </div>
+                )}
+            </React.Fragment>
         );
     }
 }
