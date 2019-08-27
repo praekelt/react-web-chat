@@ -11,13 +11,6 @@ class Demo extends Component {
                 style={{
                     height: '684px',
                     width: '427px'
-                    // padding: '92px 60px',
-                    // backgroundRepeat: 'no-repeat',
-                    // backgroundPosition: '-144px 3px',
-                    // backgroundSize: '717px, 580px',
-                    // backgroundColor: '#16161d',
-                    // backgroundImage:
-                    //     'url(http://pngimg.com/uploads/iphone/iphone_PNG5724.png)'
                 }}
                 className="ReactWebChat"
             >
@@ -33,7 +26,7 @@ class Demo extends Component {
                     }}
                     avatar="http://i.pravatar.cc/300"
                     theme={theme}
-                    toggleComponent={<button>Toggle</button>}
+                    // toggleComponent={<button>Toggle</button>} // enable to test toggeling
                 />
             </div>
         );
