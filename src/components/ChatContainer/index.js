@@ -2,6 +2,7 @@ import React, { Fragment, Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { compose, setPropTypes } from 'recompose';
+import { Fade } from '../../themes/default/components/Animation';
 
 import MessageList from '../MessageList';
 import InputArea from '../InputArea';
@@ -85,10 +86,12 @@ export class ChatContainer extends Component {
                     </div>
                 )}
                 {showChat && (
-                    <div className="ChatContainer">
-                        <MessageList theme={this.props.theme} />
-                        <InputArea {...this.props.theme} />
-                    </div>
+                    <Fade in={true} appear={true}>
+                        <div className="ChatContainer">
+                            <MessageList theme={this.props.theme} />
+                            <InputArea {...this.props.theme} />
+                        </div>
+                    </Fade>
                 )}
             </React.Fragment>
         );

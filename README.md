@@ -41,6 +41,7 @@ It accepts the following parameters:
 | client       | A custom [client](#custom-clients)                                                                                                                                                                                                   | no       | Object  |
 | typingStatus | Configuration options for the typing status indicator. Note! This delay will be a compounded value as per all the settings you provide.                                                                                              | no       | Object  |
 | network      | Configuration options for network communication of the default Feersum Client (NOTE! Required if using the default client, channel_id field must also be specified else the Feersum Client connection will fail! See below example.) | no       | Object  |
+| toggleComponent      | Provide any element to toggle the chat view. This can be used in cases where the chat should be minimised | no       | Element  |
 
 Communication with the module is handled via custom events described [here](#custom-events).
 
