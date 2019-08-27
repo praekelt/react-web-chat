@@ -65,12 +65,22 @@ export class ChatContainer extends Component {
                 {toggleComponent && (
                     <div>
                         {!showChat && (
-                            <a onClick={() => this.toggleShowChat()}>
+                            <button
+                                aria-label="Open Chat"
+                                onClick={() => this.toggleShowChat()}
+                                className="ChatContainer-button"
+                            >
                                 {toggleComponent}
-                            </a>
+                            </button>
                         )}
                         {showChat && (
-                            <a onClick={() => this.toggleShowChat()}>Close</a>
+                            <button
+                                aria-label="Close Chat"
+                                onClick={() => this.toggleShowChat()}
+                                className="ChatContainer-button ChatContainer-buttonClose"
+                            >
+                                &times;
+                            </button>
                         )}
                     </div>
                 )}
