@@ -2,6 +2,7 @@ import React, { Fragment, Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { compose, setPropTypes } from 'recompose';
+import { Fade } from '../../themes/default/components/Animation';
 
 import MessageList from '../MessageList';
 import InputArea from '../InputArea';
@@ -38,7 +39,8 @@ export class ChatContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            hasError: false
+            hasError: false,
+            showChat: !props.toggleComponent
         };
     }
 
@@ -50,14 +52,48 @@ export class ChatContainer extends Component {
         console.error(error, info);
     }
 
+    toggleShowChat() {
+        this.setState({ showChat: !this.state.showChat });
+    }
+
     render() {
+        const { toggleComponent } = this.props;
+        const { showChat } = this.state;
         if (this.state.hasError) return <Fragment />;
 
         return (
-            <div className="ChatContainer">
-                <MessageList theme={this.props.theme} />
-                <InputArea {...this.props.theme} />
-            </div>
+            <React.Fragment>
+                {toggleComponent && (
+                    <div>
+                        {!showChat && (
+                            <button
+                                aria-label="Open Chat"
+                                onClick={() => this.toggleShowChat()}
+                                className="ChatContainer-button"
+                            >
+                                {toggleComponent}
+                            </button>
+                        )}
+                        {showChat && (
+                            <button
+                                aria-label="Close Chat"
+                                onClick={() => this.toggleShowChat()}
+                                className="ChatContainer-button ChatContainer-buttonClose"
+                            >
+                                &times;
+                            </button>
+                        )}
+                    </div>
+                )}
+                {showChat && (
+                    <Fade in={true} appear={true}>
+                        <div className="ChatContainer">
+                            <MessageList theme={this.props.theme} />
+                            <InputArea {...this.props.theme} />
+                        </div>
+                    </Fade>
+                )}
+            </React.Fragment>
         );
     }
 }

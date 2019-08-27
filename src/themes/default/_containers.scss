@@ -31,6 +31,20 @@
         background-color: transparent;
         z-index: 1;
     }
+
+    &-button {
+        all: unset;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &Close {
+            display: block;
+            font-size: 30px;
+            margin-left: auto;
+        }
+    }
 }
 
 .MessageContainer {
