@@ -14,11 +14,11 @@ const mapStateToProps = ({ messages, config }) => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-    submitHandler: message => {
+    submitHandler: (message, type = 'button') => {
         dispatch(
             messageActions.messageSend({
                 ...message,
-                type: 'button'
+                type: type
             })
         );
     }
