@@ -76,7 +76,10 @@ export class ReactWebChatComponent extends Component {
         const { theme, toggleComponent } = this.props;
         return (
             <Provider store={this.store}>
-                <ChatContainer theme={{ ...unstyledTheme, ...theme }} toggleComponent={toggleComponent}/>
+                <ChatContainer
+                    theme={{ ...unstyledTheme, ...theme }}
+                    toggleComponent={toggleComponent}
+                />
             </Provider>
         );
     }
@@ -87,7 +90,17 @@ export class ReactWebChatComponent extends Component {
  */
 class ReactWebChat {
     constructor(
-        { theme, avatar, client, element, url, typingStatus, network, menu } = {
+        {
+            theme,
+            avatar,
+            client,
+            element,
+            url,
+            typingStatus,
+            network,
+            menu,
+            toggleComponent
+        } = {
             theme: unstyledTheme,
             avatar,
             client,
@@ -95,7 +108,8 @@ class ReactWebChat {
             url: 'http://localhost:8080/echo',
             typingStatus,
             network,
-            menu
+            menu,
+            toggleComponent
         }
     ) {
         if (element && element.nodeName) {
@@ -118,6 +132,7 @@ class ReactWebChat {
                     typingStatus={typingStatus}
                     network={network}
                     menu={menu}
+                    toggleComponent={toggleComponent}
                 />,
                 element
             );

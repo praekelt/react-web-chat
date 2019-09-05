@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import AvatarContainer from '../AvatarContainer';
 import MessageContainer from '../MessageContainer';
+import AttachmentMessage from './AttachmentMessage';
 import Message from '../Message';
 
 class MessageListItem extends PureComponent {
@@ -42,7 +43,7 @@ class MessageListItem extends PureComponent {
                                 {...theme}
                             />
                         )}
-                    </MessageContainer>{' '}
+                    </MessageContainer>
                     {message.buttons && message.buttonStyle === 'default' && (
                         <MessageContainer key="buttons" {...message}>
                             {message.buttons.map((button, i) => (
@@ -59,6 +60,14 @@ class MessageListItem extends PureComponent {
                                     }
                                 />
                             ))}
+                        </MessageContainer>
+                    )}
+                    {message.message_type === 'attachment' && (
+                        <MessageContainer key="attachment" {...message}>
+                            <AttachmentMessage
+                                message={message}
+                                submitHandler={submitHandler}
+                            />
                         </MessageContainer>
                     )}
                 </div>
