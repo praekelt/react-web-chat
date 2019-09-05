@@ -15,14 +15,14 @@ class Demo extends Component {
                 className="ReactWebChat"
             >
                 <ReactWebChatComponent
-                    url="https://qa.feersum.io/chat_sockjs"
+                    url="https://cloud.feersum.io/chat_sockjs"
                     typingStatus={{
                         active: true,
                         baseDelay: 1000,
                         variance: 500
                     }}
                     network={{
-                        channel_id: '1065489f-b2af-4a98-820e-a3f4abad6fa4'
+                        channel_id: 'fca88eda-f675-43e8-8403-781e1969beb3'
                     }}
                     avatar="http://i.pravatar.cc/300"
                     theme={theme}

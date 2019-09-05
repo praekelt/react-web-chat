@@ -12,22 +12,19 @@ class AttachmentMessage extends Component {
 
         reader.onload = (() => e =>
             this.uploadAttachment(
-                this.props.message.attachment_end_point,
-                window.btoa(e.target.result)
+                this.props.message,
+                `data:${file.type};base64,${window.btoa(e.target.result)}`
             ))(file);
         reader.readAsBinaryString(file);
     }
 
     successfulUploadAttachment(response) {
-        console.log(response);
 
         this.props.submitHandler({
             // postback: button.postback,
-            text: response.text
+            text: response.json()
         });
 
-        this.setState({ loading: false });
-        // return response;
     }
 
     failureUploadAttachment() {
@@ -35,24 +32,40 @@ class AttachmentMessage extends Component {
             loading: false,
             error: 'Something went wrong. Please try uploading again'
         });
-        // alert('FAIL');
     }
 
-    uploadAttachment(url, file) {
+    uploadAttachment(message, file) {
         this.setState({ loading: true, error: '' });
+
+        const {
+            attachment_end_point,
+            authorization,
+            organization_id,
+            agent_id
+        } = message;
+
+        console.log(
+            attachment_end_point,
+            authorization,
+            organization_id,
+            agent_id
+        );
+
+        console.log(file);
         let headers = new Headers();
 
-        // headers.set(
-        //     'Authorization',
-        //     'Basic ' + btoa(authString)
-        // );
-        fetch(url, {
+        headers.set('Authorization', authorization);
+        headers.set('Content-Type', 'application/json');
+        fetch(attachment_end_point, {
             method: 'POST',
-            // headers: headers
+            headers: headers,
             body: JSON.stringify({
-                a: 1,
-                b: 2,
-                file: file
+                file: {
+                    base64: file,
+                    organization_id,
+                    agent_id,
+                    meta: {}
+                }
             })
         })
             .then(r => this.successfulUploadAttachment(r))
@@ -60,10 +73,8 @@ class AttachmentMessage extends Component {
     }
 
     render() {
-        const { message } = this.props;
         const { loading, error } = this.state;
 
-        console.log('STATE', loading);
         return (
             <div>
                 {error && <p>{error}</p>}
@@ -71,7 +82,6 @@ class AttachmentMessage extends Component {
                 <input
                     type="file"
                     onChange={e => this.convertAndSaveAttachemnt(e)}
-                    // accept="image/png, image/jpeg"
                 />
             </div>
         );
