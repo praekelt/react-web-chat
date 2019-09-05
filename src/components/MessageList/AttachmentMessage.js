@@ -19,12 +19,19 @@ class AttachmentMessage extends Component {
     }
 
     successfulUploadAttachment(response) {
-
-        this.props.submitHandler({
-            // postback: button.postback,
-            text: response.json()
+        this.setState({
+            loading: false,
+            error: ''
         });
 
+        response.json().then(r => {
+            this.props.submitHandler(
+                {
+                    text: r.data.uuid
+                },
+                'text'
+            );
+        });
     }
 
     failureUploadAttachment() {
@@ -41,9 +48,9 @@ class AttachmentMessage extends Component {
             attachment_end_point,
             authorization,
             organization_id,
-            agent_id
+            agent_id,
+            bucket
         } = message;
-
 
         let headers = new Headers();
 
@@ -57,7 +64,9 @@ class AttachmentMessage extends Component {
                     base64: file,
                     organization_id,
                     agent_id,
-                    meta: {}
+                    meta: {
+                        bucket
+                    }
                 }
             })
         })
@@ -69,13 +78,16 @@ class AttachmentMessage extends Component {
         const { loading, error } = this.state;
 
         return (
-            <div>
-                {error && <p>{error}</p>}
-                {loading && <p>Loading</p>}
+            <div className="MessagesList-attachmentMessageItem">
+                {error && <p className="error">{error}</p>}
+                {loading && <div className="loader"></div>}
                 <input
                     type="file"
+                    name="file"
+                    id="file"
                     onChange={e => this.convertAndSaveAttachemnt(e)}
                 />
+                {!loading && <label for="file">Choose a file</label>}
             </div>
         );
     }
