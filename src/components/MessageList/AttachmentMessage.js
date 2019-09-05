@@ -44,14 +44,7 @@ class AttachmentMessage extends Component {
             agent_id
         } = message;
 
-        console.log(
-            attachment_end_point,
-            authorization,
-            organization_id,
-            agent_id
-        );
 
-        console.log(file);
         let headers = new Headers();
 
         headers.set('Authorization', authorization);
