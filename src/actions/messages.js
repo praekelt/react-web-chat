@@ -115,7 +115,7 @@ export function popMessages() {
  * @param {object} message
  * @return {function()} dispatches {@link messageAdd} action creator and `MESSAGE_SEND` action type
  */
-export function messageSend({ postback, text, type }) {
+export function messageSend({ postback, text, type, showMessage = true }) {
     let message = {
         type: type || 'text',
         origin: 'local',
@@ -128,6 +128,8 @@ export function messageSend({ postback, text, type }) {
             type: MESSAGE_SEND,
             payload: message
         });
-        dispatch(messageAdd(message));
+        if (showMessage) {
+            dispatch(messageAdd(message));
+        }
     };
 }

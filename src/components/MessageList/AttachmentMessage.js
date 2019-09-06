@@ -29,7 +29,8 @@ class AttachmentMessage extends Component {
             .then(r => {
                 this.props.submitHandler(
                     {
-                        text: r.data.uuid
+                        text: r.data.uuid,
+                        showMessage: false
                     },
                     'text'
                 );
