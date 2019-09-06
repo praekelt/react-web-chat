@@ -24,14 +24,17 @@ class AttachmentMessage extends Component {
             error: ''
         });
 
-        response.json().then(r => {
-            this.props.submitHandler(
-                {
-                    text: r.data.uuid
-                },
-                'text'
-            );
-        });
+        response
+            .json()
+            .then(r => {
+                this.props.submitHandler(
+                    {
+                        text: r.data.uuid
+                    },
+                    'text'
+                );
+            })
+            .catch(r => this.failureUploadAttachment(r));
     }
 
     failureUploadAttachment() {
@@ -39,6 +42,8 @@ class AttachmentMessage extends Component {
             loading: false,
             error: 'Something went wrong. Please try uploading again'
         });
+
+        document.getElementById('file').value = '';
     }
 
     uploadAttachment(message, file) {
