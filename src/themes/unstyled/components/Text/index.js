@@ -3,21 +3,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { compose, setPropTypes } from 'recompose';
+import Mark from 'react-mark-ii';
+import Linkify from 'react-linkify';
 
 import { Fade } from '../Animation/index';
-
-const createMarkup = (children, title) => {
-    const text = title
-        ? `<p class="Text title-text">${children}</p>`
-        : children;
-    return { __html: text };
-};
 
 const enhance = compose(
     setPropTypes({
         title: PropTypes.string,
         isLocal: PropTypes.bool
     })
+);
+
+const componentDecorator = (href, text, key) => (
+    <a
+        href={href}
+        key={key}
+        target="_blank"
+        style={{ textDecoration: 'underline' }}
+    >
+        {text}
+    </a>
 );
 
 /**
@@ -33,8 +39,17 @@ const Text = ({ title, children, isLocal }) => (
             className={`Text ${isLocal ? 'is-local' : ''} ${
                 title ? 'title' : ''
             }`}
-            dangerouslySetInnerHTML={createMarkup(children, title)}
-        />
+        >
+            {title ? (
+                <p className="Text title-text">{children}</p>
+            ) : (
+                <Mark>
+                    <Linkify componentDecorator={componentDecorator}>
+                        {children}
+                    </Linkify>
+                </Mark>
+            )}
+        </div>
     </Fade>
 );
 

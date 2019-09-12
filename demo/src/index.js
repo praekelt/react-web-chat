@@ -22,7 +22,7 @@ class Demo extends Component {
                         variance: 500
                     }}
                     network={{
-                        channel_id: '853b1b62-01ba-4b5d-b242-67927142fabe'
+                        channel_id: '94f0d9f0-0145-49ed-b50f-d19b16005dcb'
                     }}
                     avatar="http://i.pravatar.cc/300"
                     theme={theme}

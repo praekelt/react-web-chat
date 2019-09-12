@@ -49,23 +49,22 @@ export const Message = ({
                 {page.text}
             </TextComponent>
         ),
-        page.buttons &&
-            page.buttons.length > 0 && (
-                <ButtonContainer key="buttons">
-                    {page.buttons.map((button, i) => (
-                        <ButtonComponent
-                            key={`button-${i}`}
-                            {...button}
-                            onClick={() =>
-                                submitHandler({
-                                    postback: button.postback,
-                                    text: button.text
-                                })
-                            }
-                        />
-                    ))}
-                </ButtonContainer>
-            )
+        page.buttons && page.buttons.length > 0 && (
+            <ButtonContainer key="buttons">
+                {page.buttons.map((button, i) => (
+                    <ButtonComponent
+                        key={`button-${i}`}
+                        {...button}
+                        onClick={() =>
+                            submitHandler({
+                                postback: button.postback,
+                                text: button.text
+                            })
+                        }
+                    />
+                ))}
+            </ButtonContainer>
+        )
     ];
 };
 
