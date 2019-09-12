@@ -65,15 +65,14 @@ export class ChatContainer extends Component {
             <React.Fragment>
                 {toggleComponent && (
                     <div>
-                        {!showChat && (
-                            <button
-                                aria-label="Open Chat"
-                                onClick={() => this.toggleShowChat()}
-                                className="ChatContainer-button"
-                            >
-                                {toggleComponent}
-                            </button>
-                        )}
+                        <button
+                            aria-label="Open Chat"
+                            onClick={() => this.toggleShowChat()}
+                            className="ChatContainer-button ChatContainer-buttonOpen"
+                            style={{visibility: showChat ? 'hidden' : 'visible'}}
+                        >
+                            {toggleComponent}
+                        </button>
                         {showChat && (
                             <button
                                 aria-label="Close Chat"

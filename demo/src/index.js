@@ -26,7 +26,8 @@ class Demo extends Component {
                     }}
                     avatar="http://i.pravatar.cc/300"
                     theme={theme}
-                    // toggleComponent={<button>Toggle</button>} // enable to test toggeling
+                    
+                    toggleComponent={<button>Toggle</button>} // enable to test toggeling
                 />
             </div>
         );
