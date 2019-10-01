@@ -24,12 +24,13 @@ class AttachmentMessage extends Component {
             error: ''
         });
 
+        
         response
             .json()
             .then(r => {
                 this.props.submitHandler(
                     {
-                        text: r.data.uuid,
+                        text: JSON.stringify({uuid: r.data.uuid, mime_type: r.data.mime_type}),
                         showMessage: false
                     },
                     'text'
