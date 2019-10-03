@@ -122,14 +122,20 @@ export function messageSend({ postback, text, type, showMessage = true }) {
         postback,
         text
     };
+
     return dispatch => {
         waitingForMessage = true;
-        dispatch({
-            type: MESSAGE_SEND,
-            payload: message
-        });
-        if (showMessage) {
-            dispatch(messageAdd(message));
+
+        // NOTE: Quick fix to make sure we do not send empty message back
+        // TODO: Look at better UX patterns to handle this, instead of giving no UI hint
+        if (message.type !== 'text' || message.text.trim().length) {
+            dispatch({
+                type: MESSAGE_SEND,
+                payload: message
+            });
+            if (showMessage) {
+                dispatch(messageAdd(message));
+            }
         }
     };
 }
