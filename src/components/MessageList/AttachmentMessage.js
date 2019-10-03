@@ -24,13 +24,15 @@ class AttachmentMessage extends Component {
             error: ''
         });
 
-        
         response
             .json()
             .then(r => {
                 this.props.submitHandler(
                     {
-                        text: JSON.stringify({uuid: r.data.uuid, mime_type: r.data.mime_type}),
+                        text: JSON.stringify({
+                            uuid: r.data.uuid,
+                            mime_type: r.data.mime_type
+                        }),
                         showMessage: false
                     },
                     'text'
@@ -83,6 +85,7 @@ class AttachmentMessage extends Component {
 
     render() {
         const { loading, error } = this.state;
+        const { message } = this.props;
 
         return (
             <div className="MessagesList-attachmentMessageItem">
@@ -90,11 +93,15 @@ class AttachmentMessage extends Component {
                 {loading && <div className="loader"></div>}
                 <input
                     type="file"
-                    name="file"
-                    id="file"
+                    name={`file-${message.timeAdded}`}
+                    id={`file-${message.timeAdded}`}
                     onChange={e => this.convertAndSaveAttachemnt(e)}
                 />
-                {!loading && <label for="file">Choose a file</label>}
+                {!loading && (
+                    <label for={`file-${message.timeAdded}`}>
+                        Choose a file
+                    </label>
+                )}
             </div>
         );
     }

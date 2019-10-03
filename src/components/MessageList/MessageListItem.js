@@ -63,7 +63,10 @@ class MessageListItem extends PureComponent {
                         </MessageContainer>
                     )}
                     {message.message_type === 'attachment' && (
-                        <MessageContainer key="attachment" {...message}>
+                        <MessageContainer
+                            key={`attachment-${message.timeAdded}`}
+                            {...message}
+                        >
                             <AttachmentMessage
                                 message={message}
                                 submitHandler={submitHandler}
