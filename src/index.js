@@ -60,8 +60,25 @@ const createStore = ({ avatar, menu = {}, network, typingStatus }) =>
 export class ReactWebChatComponent extends Component {
     constructor(props) {
         super(props);
-        const { avatar, client, menu, network, typingStatus, url } = this.props;
+        const {
+            avatar,
+            menu,
+            network,
+            typingStatus,
+            toggleComponent
+        } = this.props;
         this.store = createStore({ avatar, menu, network, typingStatus });
+        this.state = {
+            initializedNetwork: false
+        };
+
+        this.setNetwork = this.setNetwork.bind(this);
+
+        !toggleComponent && this.initNetwork();
+    }
+
+    initNetwork() {
+        const { client, menu, network, url } = this.props;
         const networkManager = createNetwork({
             client,
             menu,
@@ -72,6 +89,12 @@ export class ReactWebChatComponent extends Component {
         networkManager.init();
     }
 
+    setNetwork() {
+        const { initializedNetwork } = this.state;
+        !initializedNetwork && this.initNetwork();
+        this.setState({ initializedNetwork: true });
+    }
+
     render() {
         const { theme, toggleComponent } = this.props;
         return (
@@ -79,6 +102,7 @@ export class ReactWebChatComponent extends Component {
                 <ChatContainer
                     theme={{ ...unstyledTheme, ...theme }}
                     toggleComponent={toggleComponent}
+                    setNetwork={this.setNetwork}
                 />
             </Provider>
         );

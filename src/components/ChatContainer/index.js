@@ -54,6 +54,7 @@ export class ChatContainer extends Component {
 
     toggleShowChat() {
         this.setState({ showChat: !this.state.showChat });
+        this.props.setNetwork();
     }
 
     render() {
@@ -69,7 +70,9 @@ export class ChatContainer extends Component {
                             aria-label="Open Chat"
                             onClick={() => this.toggleShowChat()}
                             className="ChatContainer-button ChatContainer-buttonOpen"
-                            style={{visibility: showChat ? 'hidden' : 'visible'}}
+                            style={{
+                                visibility: showChat ? 'hidden' : 'visible'
+                            }}
                         >
                             {toggleComponent}
                         </button>
