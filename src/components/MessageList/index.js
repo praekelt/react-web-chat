@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import smoothScrollTo from 'smooth-scroll-to-js';
+import AvatarContainer from '../AvatarContainer';
 
 import MessageContainer from '../MessageContainer';
 import * as messageActions from '../../actions/messages';
@@ -56,6 +57,22 @@ class MessageList extends React.Component {
         return (
             <div className="ChatContainer-content" ref={this.containerRef}>
                 <ul className="MessagesList">
+                    {messages.length < 1 && (
+                        <li
+                            className={`MessagesList-item is-local loading-chat`}
+                        >
+                            <AvatarContainer
+                                AvatarComponent={theme.AvatarComponent}
+                            />
+                            <div className="MessagesList-messageItem">
+                                <MessageContainer key="typing">
+                                    <theme.TypingIndicatorComponent
+                                        {...config.TypingIndicator}
+                                    />
+                                </MessageContainer>
+                            </div>
+                        </li>
+                    )}
                     {messages.map((message, i) => (
                         <MessageListItem
                             key={message.timeAdded}
@@ -108,7 +125,4 @@ MessageList.propTypes = {
     config: PropTypes.object
 };
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(MessageList);
+export default connect(mapStateToProps, mapDispatchToProps)(MessageList);

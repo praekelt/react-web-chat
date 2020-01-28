@@ -22,12 +22,11 @@ class Demo extends Component {
                         variance: 500
                     }}
                     network={{
-                        channel_id: '94f0d9f0-0145-49ed-b50f-d19b16005dcb'
+                        channel_id: '853b1b62-01ba-4b5d-b242-67927142fabe'
                     }}
                     avatar="http://i.pravatar.cc/300"
                     theme={theme}
-                    
-                    toggleComponent={<button>Toggle</button>} // enable to test toggeling
+                    // toggleComponent={<button>Toggle</button>} // enable to test toggeling
                 />
             </div>
         );
@@ -35,3 +34,11 @@ class Demo extends Component {
 }
 
 render(<Demo />, document.querySelector('#demo'));
+
+// The DStv Tumi spike
+// https://qa.feersum.io/chat_sockjs
+// b5a2435b-8b8a-4bac-83a3-9ec38b775a43
+
+// Avon QA Bot
+// https://qa.feersum.io/chat_sockjs
+//853b1b62-01ba-4b5d-b242-67927142fabe
