@@ -1,0 +1,64 @@
+// COLORS:
+// First, give them names, I don’t speak hex
+// http://chir.ag/projects/name-that-color/
+@use "sass:math";
+
+// Now use them for stuff
+$eigengrau: #16161d;
+$tundora: #4a4a4a;
+$aluminium: #a9acb6;
+$mishka: #d2d5dc;
+$concrete: #f2f2f2;
+$azure-radiance: #0084ff;
+$buttercup: #f5a623;
+$sushi: #8ec63f;
+$monza: #d0011b;
+
+
+$white: #ffffff;
+$black: $eigengrau;
+$off-white: $concrete;
+$grey-light: $mishka;
+$grey: $aluminium;
+$grey-dark: $tundora;
+
+$blue: $azure-radiance;
+$green: $sushi;
+$yellow: $buttercup;
+$red: $monza;
+
+$info: $blue;
+$success: $green;
+$warning: $yellow;
+$error: $red;
+$background: $off-white;
+
+// FONTS
+$font-small: 16px;
+$font-medium: 22px;
+$font-large: 30px;
+$title-font: 18px;
+// stylelint-disable-next-line value-keyword-case
+$helvetica: Helvetica, sans-serif;
+
+// SPACING
+$message-border-radius: 1.5em;
+$message-border-radius-large: 0.625em;
+
+// TRANSITIONS:
+$ease-in: ease-in;
+$ease-out: ease-out;
+$duration: 200ms;
+
+// GRID:
+$rhythm: math.div(1, 67) * 420px;
+$avatar-size: $rhythm * 6;
+
+$message-border-radius-small: math.div($message-border-radius, 4);
+$message-padding: 0.75em;
+$message-spacing-thick: 1.5em;
+$message-spacing-medium: 1em;
+$message-spacing-thin: 4px;
+$message-spacing-thinner: 3px;
+$message-spacing-title: -8px;
+$message-spacing-small: 8px;

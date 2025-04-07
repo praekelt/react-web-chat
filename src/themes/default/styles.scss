@@ -1,54 +1,71 @@
 // COLORS:
 // First, give them names, I don’t speak hex
 // http://chir.ag/projects/name-that-color/
-$eigengrau: #16161d;
-$tundora: #4a4a4a;
-$aluminium: #a9acb6;
-$mishka: #d2d5dc;
-$concrete: #f2f2f2;
-$azure-radiance: #0084ff;
-$buttercup: #f5a623;
-$sushi: #8ec63f;
-$monza: #d0011b;
 
-// Now use them for stuff
-$white: #ffffff;
-$black: $eigengrau;
-$off-white: $concrete;
-$grey-light: $mishka;
-$grey: $aluminium;
-$grey-dark: $tundora;
+// // Now use them for stuff
+// $eigengrau: #16161d;
+// $tundora: #4a4a4a;
+// $aluminium: #a9acb6;
+// $mishka: #d2d5dc;
+// $concrete: #f2f2f2;
+// $azure-radiance: #0084ff;
+// $buttercup: #f5a623;
+// $sushi: #8ec63f;
+// $monza: #d0011b;
 
-$blue: $azure-radiance;
-$green: $sushi;
-$yellow: $buttercup;
-$red: $monza;
 
-$info: $blue;
-$success: $green;
-$warning: $yellow;
-$error: $red;
-$background: $off-white;
+// $white: #ffffff;
+// $black: $eigengrau;
+// $off-white: $concrete;
+// $grey-light: $mishka;
+// $grey: $aluminium;
+// $grey-dark: $tundora;
 
-// FONTS
-$font-small: 16px;
-$font-medium: 22px;
-$font-large: 30px;
-$title-font: 18px;
-// stylelint-disable-next-line value-keyword-case
-$helvetica: Helvetica, sans-serif;
+// $blue: $azure-radiance;
+// $green: $sushi;
+// $yellow: $buttercup;
+// $red: $monza;
 
-// SPACING
-$message-border-radius: 1.5em;
-$message-border-radius-large: 0.625em;
-$message-border-radius-small: $message-border-radius / 4;
-$message-padding: 0.75em;
-$message-spacing-thick: 1.5em;
-$message-spacing-medium: 1em;
-$message-spacing-thin: 4px;
-$message-spacing-thinner: 3px;
-$message-spacing-title: -8px;
-$message-spacing-small: 8px;
+// $info: $blue;
+// $success: $green;
+// $warning: $yellow;
+// $error: $red;
+// $background: $off-white;
+
+
+
+
+
+
+// // FONTS
+// $font-small: 16px;
+// $font-medium: 22px;
+// $font-large: 30px;
+// $title-font: 18px;
+// // stylelint-disable-next-line value-keyword-case
+// $helvetica: Helvetica, sans-serif;
+
+// // SPACING
+// $message-border-radius: 1.5em;
+// $message-border-radius-large: 0.625em;
+
+@use "sass:math";
+@use './_variables.scss' as *;
+@use '../../../node_modules/slick-carousel/slick/slick.scss' as *;
+@use './_animations.scss';
+@use './_containers.scss';
+@use './_message-list.scss';
+@use './components/Avatar/_avatar.scss';
+@use './components/Button/_button.scss';
+@use './components/Input/_input.scss';
+@use './components/Image/_image.scss';
+@use './components/Menu/_menu.scss';
+@use './components/Text/_text.scss';
+@use './components/Carousel/_carousel.scss';
+@use './components/List/_list.scss';
+@use './components/TypingIndicator/_typing-indicator.scss';
+
+
 
 %chatWidth {
     width: 100%;
@@ -70,25 +87,6 @@ a {
     color: inherit;
 }
 
-// TRANSITIONS:
-$ease-in: ease-in;
-$ease-out: ease-out;
-$duration: 200ms;
 
-// GRID:
-$rhythm: 1 / 67 * 420px;
-$avatar-size: $rhythm * 6;
 
-@import '../../../node_modules/slick-carousel/slick/slick.scss';
-@import './_animations.scss';
-@import './_containers.scss';
-@import './_message-list.scss';
-@import './components/Avatar/_avatar.scss';
-@import './components/Button/_button.scss';
-@import './components/Input/_input.scss';
-@import './components/Image/_image.scss';
-@import './components/Menu/_menu.scss';
-@import './components/Text/_text.scss';
-@import './components/Carousel/_carousel.scss';
-@import './components/List/_list.scss';
-@import './components/TypingIndicator/_typing-indicator.scss';
+

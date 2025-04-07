@@ -1,3 +1,5 @@
+@use '../../_variables.scss' as *;
+
 .Text {
     //FIXME: this is necessary because this module can be namespaced. find cleaner solution
     $blockName: 'Text';

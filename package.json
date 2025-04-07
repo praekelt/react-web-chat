@@ -13,7 +13,7 @@
     ],
     "scripts": {
         "dev": "rollup -c -w",
-        "build": "rollup -c && yarn build:css && yarn build:types",
+        "build": "rollup -c && npm run build:css && npm run build:types",
         "build:css": "sass src/themes/default/styles.scss:dist/css/default.css --style=compressed",
         "build:types": "cp src/index.d.ts dist/index.d.ts",
         "lint": "eslint src --ext ts,tsx",

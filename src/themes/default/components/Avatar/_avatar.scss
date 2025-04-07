@@ -1,3 +1,5 @@
+@use '../../_variables.scss' as *;
+
 .AvatarStatus {
     position: absolute;
     top: 0;
@@ -39,7 +41,7 @@
 
 .StatusIndicator {
     $width: $rhythm * 2;
-    $border-width: $rhythm / 3 * 2;
+    $border-width: calc($rhythm / 3) * 2;
     width: $width + $border-width * 2;
     height: $width + $border-width * 2;
     margin: -$border-width;
@@ -47,7 +49,7 @@
         width: $border-width;
         color: $background;
         style: solid;
-        radius: ($width + $border-width * 2) / 2;
+        radius: calc(($width + $border-width * 2) / 2);
     }
     transition: {
         property: background-color;

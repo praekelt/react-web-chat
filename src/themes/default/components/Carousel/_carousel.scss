@@ -1,6 +1,14 @@
+@use '../../_variables.scss' as *;
+
 .CarouselContainer {
-    @extend %chatWidth;
     $blockName: &;
+    width: 100%;
+    max-width: 100%;
+    margin: {
+        left: auto;
+        right: auto;
+    }
+    
     align-items: flex-start;
     width: 100%;
 

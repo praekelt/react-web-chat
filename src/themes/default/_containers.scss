@@ -1,3 +1,5 @@
+@use './_variables.scss' as *;
+
 .ChatContainer {
     height: 100%;
     overflow-y: hidden;
@@ -23,7 +25,7 @@
     }
 
     &-input {
-        @extend %chatWidth;
+        
         display: flex;
         position: relative;
         width: 100%;
@@ -48,7 +50,12 @@
 }
 
 .MessageContainer {
-    @extend %chatWidth;
+    width: 100%;
+    max-width: 100%;
+    margin: {
+        left: auto;
+        right: auto;
+    }
     $blockName: &;
     display: flex;
     align-items: flex-start;
