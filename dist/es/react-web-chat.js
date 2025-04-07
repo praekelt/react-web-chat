@@ -174,24 +174,6 @@ class NetworkManager {
     store,
     client
   }) {
-    Object.defineProperty(this, "store", {
-      enumerable: true,
-      configurable: true,
-      writable: true,
-      value: void 0
-    });
-    Object.defineProperty(this, "client", {
-      enumerable: true,
-      configurable: true,
-      writable: true,
-      value: void 0
-    });
-    Object.defineProperty(this, "dispatch", {
-      enumerable: true,
-      configurable: true,
-      writable: true,
-      value: void 0
-    });
     this.store = store;
     this.client = client;
     this.dispatch = store.dispatch;
@@ -553,4 +535,4 @@ class ReactWebChat {
 }
 
 export { ReactWebChat, ReactWebChatComponent, ReactWebChat as default };
-//# sourceMappingURL=react-web-chat.mjs.map
+//# sourceMappingURL=react-web-chat.js.map

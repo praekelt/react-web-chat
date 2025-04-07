@@ -5,9 +5,11 @@ import babel from '@rollup/plugin-babel';
 import terser from '@rollup/plugin-terser';
 import replace from '@rollup/plugin-replace';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import postcss from 'rollup-plugin-postcss';
 import { defineConfig } from 'rollup';
 import { readFileSync } from 'fs';
 
+// Use `import` for the JSON file reading
 const packageJson = JSON.parse(
   readFileSync(new URL('./package.json', import.meta.url), 'utf8')
 );
@@ -29,22 +31,19 @@ const globals = {
 };
 
 export default defineConfig([
-  // Main builds
   {
     input: 'src/index.jsx',
     output: [
-      // UMD build
       {
-        file: packageJson.main,
+        file: 'umd/react-web-chat.js',
         format: 'umd',
         name: 'ReactWebChat',
         globals,
         sourcemap: true,
         exports: 'named'
       },
-      // Minified UMD build
       {
-        file: packageJson.unpkg,
+        file: 'umd/react-web-chat.min.js',
         format: 'umd',
         name: 'ReactWebChat',
         globals,
@@ -52,13 +51,18 @@ export default defineConfig([
         sourcemap: true,
         exports: 'named'
       },
-      // ESM build
       {
-        file: packageJson.module,
+        file: 'dist/es/react-web-chat.js',
         format: 'es',
         sourcemap: true,
         exports: 'named',
         inlineDynamicImports: true
+      },
+      {
+        file: 'dist/lib/react-web-chat.js',
+        format: 'cjs',
+        sourcemap: true,
+        exports: 'named',
       },
     ],
     plugins: [
@@ -71,7 +75,7 @@ export default defineConfig([
         preventAssignment: true,
       }),
       commonjs(),
-      typescript({ 
+      typescript({
         tsconfig: './tsconfig.json',
         declaration: true,
         declarationDir: './dist',
@@ -86,7 +90,15 @@ export default defineConfig([
           ['@babel/plugin-proposal-decorators', { legacy: true }],
         ],
       }),
+      postcss({
+        extract: 'umd/main.css',      // Place the CSS output in 'umd/main.css'
+        minimize: true,               // Minify the CSS
+        sourceMap: true,              // Enable source maps for CSS
+        plugins: [
+          require('autoprefixer')(),  // Optionally add autoprefixer
+        ],
+      }),
     ],
     external: Object.keys(globals),
   },
-]); 
+]);
