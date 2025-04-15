@@ -75,7 +75,7 @@ export default [
       file: pkg.main,
       format: 'umd',
       name: 'ReactWebChat',
-      exports: 'auto',
+      exports: 'named',
       globals: {
         react: 'React',
         'react-dom': 'ReactDOM',
@@ -89,7 +89,7 @@ export default [
       },
       sourcemap: true
     },
-    external: ['react', 'react-dom'],
+    external: external,
     plugins: [
       replace({
         preventAssignment: true,

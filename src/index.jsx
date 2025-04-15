@@ -180,4 +180,6 @@ class ReactWebChat {
   }
 }
 
+// Export the ReactWebChat class directly as well as a named export
+export { ReactWebChat };
 export default ReactWebChat; 
