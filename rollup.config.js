@@ -5,6 +5,7 @@ import terser from '@rollup/plugin-terser';
 import scss from 'rollup-plugin-scss';
 import { createRequire } from 'module';
 import replace from '@rollup/plugin-replace';
+import fs from 'fs';
 
 const require = createRequire(import.meta.url);
 const pkg = require('./package.json');
@@ -15,8 +16,15 @@ const extensions = ['.js', '.jsx'];
 // Get NODE_ENV from environment or default to production
 const NODE_ENV = process.env.NODE_ENV || 'production';
 
-// External dependencies
+// External dependencies - ONLY React and ReactDOM for UMD
+// All other dependencies will be bundled in
 const external = [
+  'react',
+  'react-dom'
+];
+
+// ESM build can have more externals
+const esmExternal = [
   'react',
   'react-dom',
   'react-redux',
@@ -38,7 +46,7 @@ export default [
       sourcemap: true,
       exports: 'named'
     },
-    external,
+    external: esmExternal,
     plugins: [
       replace({
         preventAssignment: true,
@@ -63,8 +71,11 @@ export default [
         ]
       }),
       scss({
-        output: 'dist/style.css',
-        outputStyle: 'compressed'
+        output: function(styles) {
+          fs.writeFileSync('dist/style.css', styles);
+        },
+        outputStyle: 'compressed',
+        watch: 'src'
       })
     ]
   },
@@ -78,18 +89,11 @@ export default [
       exports: 'named',
       globals: {
         react: 'React',
-        'react-dom': 'ReactDOM',
-        'react-redux': 'ReactRedux',
-        redux: 'Redux',
-        'redux-thunk': 'ReduxThunk',
-        'redux-logger': 'ReduxLogger',
-        classnames: 'classNames',
-        'emoji-mart': 'EmojiMart',
-        'prop-types': 'PropTypes'
+        'react-dom': 'ReactDOM'
       },
       sourcemap: true
     },
-    external: external,
+    external,
     plugins: [
       replace({
         preventAssignment: true,
@@ -98,6 +102,7 @@ export default [
       resolve({ 
         extensions,
         browser: true,
+        preferBuiltins: false,
         mainFields: ['browser', 'module', 'main']
       }),
       commonjs({
@@ -115,8 +120,11 @@ export default [
       }),
       terser(),
       scss({
-        output: 'dist/style.css',
-        outputStyle: 'compressed'
+        output: function(styles) {
+          fs.writeFileSync('dist/style.css', styles);
+        },
+        outputStyle: 'compressed',
+        watch: 'src'
       })
     ]
   }

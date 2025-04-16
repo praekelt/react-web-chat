@@ -21,13 +21,26 @@ export default (state = initialState, action) => {
                     }
                 ],
                 messageQueue: state.messageQueue.filter(
-                    message => message.message !== action.payload
+                    message => {
+                        // Ensure we're checking safely for objects with a message property
+                        if (!message || typeof message !== 'object') {
+                            return true; // Keep items we can't check properly
+                        }
+                        // Check if message has a message property
+                        if (!('message' in message)) {
+                            return true;
+                        }
+                        // Use bracket notation for safer access
+                        return message['message'] !== action.payload;
+                    }
                 )
             };
         case MESSAGE_QUEUE:
+            // Ensure payload is always treated as an array for safety
+            const queueItems = Array.isArray(action.payload) ? action.payload : [action.payload];
             return {
                 ...state,
-                messageQueue: [...state.messageQueue, ...action.payload]
+                messageQueue: [...state.messageQueue, ...queueItems]
             };
         default:
             return state;
