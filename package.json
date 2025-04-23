@@ -17,9 +17,9 @@
     ],
     "scripts": {
         "clean": "rm -rf dist",
-        "build": "NODE_ENV=production rollup -c",
-        "build:dev": "NODE_ENV=development rollup -c",
-        "build:staging": "NODE_ENV=staging rollup -c",
+        "build": "mkdir -p dist && NODE_ENV=production rollup -c",
+        "build:dev": "mkdir -p dist && NODE_ENV=development rollup -c",
+        "build:staging": "mkdir -p dist && NODE_ENV=staging rollup -c",
         "test-umd": "node serve.js",
         "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0"
     },

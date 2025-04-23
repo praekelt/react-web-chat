@@ -58,7 +58,9 @@ const MessageList = ({ theme }) => {
             key={message.timeAdded}
             {...{
               message,
-              prevMessageOrigin: i === 0 || messages[i - 1].origin === 'local',
+              prevMessageOrigin: messages[i - 1]
+                ? messages[i - 1].origin !== 'remote'
+                : true,
               submitHandler,
               theme,
               ...(messages.length - 1 === i && {
@@ -67,13 +69,13 @@ const MessageList = ({ theme }) => {
             }}
           />
         ))}
-        {messageQueue.length && config.typingStatus.active ? (
+        {messageQueue.length > 0 && config.typingStatus.active && (
           <li>
             <MessageContainer key="typing">
               <theme.TypingIndicatorComponent {...config.TypingIndicator} />
             </MessageContainer>
           </li>
-        ) : null}
+        )}
       </ul>
     </div>
   );
@@ -86,8 +88,12 @@ MessageList.propTypes = {
     InputComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
     MessageComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
     TextComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+    ButtonComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
     TypingIndicatorComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func])
-  })
+  }).isRequired,
+  messages: PropTypes.array,
+  messageQueue: PropTypes.array,
+  config: PropTypes.object
 };
 
 export default MessageList; 
