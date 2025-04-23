@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import AvatarContainer from './AvatarContainer';
 import MessageContainer from './MessageContainer';
 import Message from './Message';
+import AttachmentMessage from './AttachmentMessage';
 
 /**
  * MessageListItem - Component for rendering a single message item in the list
@@ -15,7 +16,7 @@ const MessageListItem = ({ message, prevMessageOrigin, submitHandler, theme, ite
       className={`MessagesList-item ${isLocal ? 'is-local' : ''}`}
       ref={itemRef}
     >
-      {!isLocal && (
+      {!isLocal && prevMessageOrigin && (
         <AvatarContainer AvatarComponent={theme.AvatarComponent} />
       )}
       <div className="MessagesList-messageItem">
@@ -37,6 +38,14 @@ const MessageListItem = ({ message, prevMessageOrigin, submitHandler, theme, ite
               />
             ))}
         </MessageContainer>
+        {message.message_type === 'attachment' && (
+          <MessageContainer key={`attachment-${message.timeAdded}`} {...message}>
+            <AttachmentMessage
+              message={message}
+              submitHandler={submitHandler}
+            />
+          </MessageContainer>
+        )}
       </div>
     </li>
   );
@@ -48,7 +57,9 @@ MessageListItem.propTypes = {
     layout: PropTypes.string,
     type: PropTypes.string,
     userId: PropTypes.string,
-    pages: PropTypes.array
+    pages: PropTypes.array,
+    message_type: PropTypes.string,
+    timeAdded: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
   }).isRequired,
   prevMessageOrigin: PropTypes.bool,
   submitHandler: PropTypes.func.isRequired,

@@ -58,9 +58,7 @@ const MessageList = ({ theme }) => {
             key={message.timeAdded}
             {...{
               message,
-              prevMessageOrigin: messages[i - 1]
-                ? messages[i - 1].origin !== 'remote'
-                : true,
+              prevMessageOrigin: i === 0 || messages[i - 1].origin === 'local',
               submitHandler,
               theme,
               ...(messages.length - 1 === i && {
