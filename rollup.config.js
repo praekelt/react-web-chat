@@ -15,6 +15,9 @@ const extensions = ['.js', '.jsx'];
 // Get NODE_ENV from environment or default to production
 const NODE_ENV = process.env.NODE_ENV || 'production';
 
+// Enable sourcemaps only in development
+const generateSourceMaps = NODE_ENV === 'development';
+
 // External dependencies - only React and ReactDOM
 const external = [
   'react',
@@ -77,7 +80,7 @@ export default [
     output: {
       file: 'es/index.js',
       format: 'esm',
-      sourcemap: true,
+      sourcemap: generateSourceMaps,
       exports: 'named'
     },
     external,
@@ -89,7 +92,7 @@ export default [
     output: {
       file: 'lib/index.js',
       format: 'cjs',
-      sourcemap: true,
+      sourcemap: generateSourceMaps,
       exports: 'named'
     },
     external,
@@ -107,7 +110,7 @@ export default [
         react: 'React',
         'react-dom': 'ReactDOM'
       },
-      sourcemap: true
+      sourcemap: generateSourceMaps
     },
     external,
     plugins: [

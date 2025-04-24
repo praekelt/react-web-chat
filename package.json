@@ -19,7 +19,7 @@
     ],
     "scripts": {
         "clean": "rm -rf dist es lib umd src/themes/default/styles.css",
-        "build:css": "mkdir -p umd && sass --style=compressed src/themes/default/styles.scss umd/main.css && cp umd/main.css src/themes/default/styles.css",
+        "build:css": "mkdir -p umd && sass --style=compressed --no-source-map src/themes/default/styles.scss umd/main.css && cp umd/main.css src/themes/default/styles.css",
         "build": "yarn build:css && NODE_ENV=production rollup -c",
         "build:dev": "yarn build:css && NODE_ENV=development rollup -c",
         "build:staging": "yarn build:css && NODE_ENV=staging rollup -c",
