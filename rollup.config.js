@@ -2,7 +2,6 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import babel from '@rollup/plugin-babel';
 import terser from '@rollup/plugin-terser';
-import scss from 'rollup-plugin-scss';
 import { createRequire } from 'module';
 import replace from '@rollup/plugin-replace';
 import fs from 'fs';
@@ -16,74 +15,91 @@ const extensions = ['.js', '.jsx'];
 // Get NODE_ENV from environment or default to production
 const NODE_ENV = process.env.NODE_ENV || 'production';
 
-// External dependencies - ONLY React and ReactDOM for UMD
-// All other dependencies will be bundled in
+// External dependencies - only React and ReactDOM
 const external = [
   'react',
   'react-dom'
 ];
 
-// ESM build can have more externals
-const esmExternal = [
-  'react',
-  'react-dom',
-  'react-redux',
-  'redux',
-  'redux-thunk',
-  'redux-logger',
-  'classnames',
-  'emoji-mart',
-  'prop-types'
+// Plugin to handle .scss imports (makes them no-ops)
+const ignoreScssImports = {
+  name: 'ignore-scss-imports',
+  resolveId(source) {
+    if (source.endsWith('.scss')) {
+      return source;
+    }
+    return null;
+  },
+  load(id) {
+    if (id.endsWith('.scss')) {
+      return '';
+    }
+    return null;
+  }
+};
+
+// Shared plugins for all builds
+const basePlugins = [
+  ignoreScssImports,
+  replace({
+    preventAssignment: true,
+    'process.env.NODE_ENV': JSON.stringify(NODE_ENV)
+  }),
+  resolve({ 
+    extensions,
+    browser: true,
+    mainFields: ['browser', 'module', 'main']
+  }),
+  commonjs({
+    include: /node_modules/,
+    transformMixedEsModules: true
+  }),
+  babel({
+    babelHelpers: 'bundled',
+    exclude: 'node_modules/**',
+    extensions,
+    presets: [
+      ['@babel/preset-env', { targets: '> 0.25%, not dead' }],
+      ['@babel/preset-react', { runtime: 'automatic' }]
+    ]
+  })
 ];
+
+// Create directory structure
+fs.mkdirSync('es', { recursive: true });
+fs.mkdirSync('lib', { recursive: true });
+fs.mkdirSync('umd', { recursive: true });
 
 export default [
   // ESM build
   {
     input,
     output: {
-      file: pkg.module,
+      file: 'es/index.js',
       format: 'esm',
       sourcemap: true,
       exports: 'named'
     },
-    external: esmExternal,
-    plugins: [
-      replace({
-        preventAssignment: true,
-        'process.env.NODE_ENV': JSON.stringify(NODE_ENV)
-      }),
-      resolve({ 
-        extensions,
-        browser: true,
-        mainFields: ['browser', 'module', 'main']
-      }),
-      commonjs({
-        include: /node_modules/,
-        transformMixedEsModules: true
-      }),
-      babel({
-        babelHelpers: 'bundled',
-        exclude: 'node_modules/**',
-        extensions,
-        presets: [
-          ['@babel/preset-env', { targets: '> 0.25%, not dead' }],
-          ['@babel/preset-react', { runtime: 'automatic' }]
-        ]
-      }),
-      scss({
-        output: function(styles) {
-          fs.writeFileSync('dist/style.css', styles);
-        },
-        outputStyle: 'compressed',
-        watch: 'src'
-      })
-    ]
+    external,
+    plugins: basePlugins
+  },
+  // CommonJS build
+  {
+    input,
+    output: {
+      file: 'lib/index.js',
+      format: 'cjs',
+      sourcemap: true,
+      exports: 'named'
+    },
+    external,
+    plugins: basePlugins
   },
   // UMD build
   {
     input,
     output: {
-      file: pkg.main,
+      file: 'umd/react-web-chat.min.js',
       format: 'umd',
       name: 'ReactWebChat',
       exports: 'named',
@@ -95,37 +111,8 @@ export default [
     },
     external,
     plugins: [
-      replace({
-        preventAssignment: true,
-        'process.env.NODE_ENV': JSON.stringify(NODE_ENV)
-      }),
-      resolve({ 
-        extensions,
-        browser: true,
-        preferBuiltins: false,
-        mainFields: ['browser', 'module', 'main']
-      }),
-      commonjs({
-        include: /node_modules/,
-        transformMixedEsModules: true
-      }),
-      babel({
-        babelHelpers: 'bundled',
-        exclude: 'node_modules/**',
-        extensions,
-        presets: [
-          ['@babel/preset-env', { targets: '> 0.25%, not dead' }],
-          ['@babel/preset-react', { runtime: 'automatic' }]
-        ]
-      }),
-      terser(),
-      scss({
-        output: function(styles) {
-          fs.writeFileSync('dist/style.css', styles);
-        },
-        outputStyle: 'compressed',
-        watch: 'src'
-      })
+      ...basePlugins,
+      terser()
     ]
   }
 ]; 

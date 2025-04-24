@@ -3,23 +3,26 @@
     "version": "2.0.0",
     "description": "react-web-chat React component",
     "type": "module",
-    "main": "./dist/react-web-chat.min.js",
-    "module": "./dist/react-web-chat.es.js",
+    "main": "lib/index.js",
+    "module": "es/index.js",
     "exports": {
         ".": {
-            "import": "./dist/react-web-chat.es.js",
-            "require": "./dist/react-web-chat.min.js"
+            "import": "./es/index.js",
+            "require": "./lib/index.js"
         },
-        "./dist/style.css": "./dist/style.css"
+        "./umd/main.css": "./umd/main.css"
     },
     "files": [
-        "dist"
+        "es",
+        "lib",
+        "umd"
     ],
     "scripts": {
-        "clean": "rm -rf dist",
-        "build": "mkdir -p dist && NODE_ENV=production rollup -c",
-        "build:dev": "mkdir -p dist && NODE_ENV=development rollup -c",
-        "build:staging": "mkdir -p dist && NODE_ENV=staging rollup -c",
+        "clean": "rm -rf dist es lib umd src/themes/default/styles.css",
+        "build:css": "mkdir -p umd && sass --style=compressed src/themes/default/styles.scss umd/main.css && cp umd/main.css src/themes/default/styles.css",
+        "build": "yarn build:css && NODE_ENV=production rollup -c",
+        "build:dev": "yarn build:css && NODE_ENV=development rollup -c",
+        "build:staging": "yarn build:css && NODE_ENV=staging rollup -c",
         "test-umd": "node serve.js",
         "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0"
     },
