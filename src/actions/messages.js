@@ -29,61 +29,81 @@ let waitingForMessage = false;
  */
 export function messageReceive(message) {
     return (dispatch, getState) => {
-        let { messages, messageQueue } = getState().messages;
-        let {
-            active,
-            baseDelay,
-            variance,
-            letterDelay,
-            minDelay,
-            maxDelay
-        } = getState().config.typingStatus;
-        let queueDelay = 0;
+        try {
+            let { messages, messageQueue } = getState().messages;
+            let {
+                active,
+                baseDelay,
+                variance,
+                letterDelay,
+                minDelay,
+                maxDelay
+            } = getState().config.typingStatus;
+            let queueDelay = 0;
 
-        if (active) {
-            // Base delay plus the variance.
-            queueDelay = Math.round(
-                baseDelay + variance * Math.round(1.5 + Math.random() * -3)
-            );
-            // Add Delay per letter in the message.
-            let textSize = 0;
-            message.pages.map(page => {
-                textSize +=
-                    (page.title ? page.title.length : 0) +
-                    (page.text ? page.text.length : 0);
-            });
-            queueDelay += textSize * 40;
-            // Clamp to min and max delay size.
-            queueDelay = Math.max(Math.min(queueDelay, maxDelay), minDelay);
-        }
+            // Ensure the message has a pages array
+            const safeMessage = {
+                ...message,
+                pages: Array.isArray(message.pages) ? message.pages : [{
+                    text: message.text || '',
+                    title: message.title || '',
+                    buttons: message.buttons || []
+                }]
+            };
 
-        // Catch following messages or add first message.
-        if (
-            messageQueue.length === 0 &&
-            (!waitingForMessage ||
-                (messages.length &&
-                    Date.now() - messages[messages.length - 1].timeAdded >
-                        queueDelay))
-        ) {
-            dispatch(messageAdd(message));
-        } else {
-            waitingForMessage = false;
-            dispatch({
-                type: MESSAGE_QUEUE,
-                payload: {
-                    message: message,
-                    delay: queueDelay
-                }
-            });
-            if (!popping) {
-                popping = true;
-                dispatch(popMessages());
+            if (active) {
+                // Base delay plus the variance.
+                queueDelay = Math.round(
+                    baseDelay + variance * Math.round(1.5 + Math.random() * -3)
+                );
+                // Add Delay per letter in the message.
+                let textSize = 0;
+                safeMessage.pages.forEach(page => {
+                    textSize +=
+                        (page.title ? page.title.length : 0) +
+                        (page.text ? page.text.length : 0);
+                });
+                queueDelay += textSize * 40;
+                // Clamp to min and max delay size.
+                queueDelay = Math.max(Math.min(queueDelay, maxDelay), minDelay);
             }
+
+            // Catch following messages or add first message.
+            if (
+                messageQueue.length === 0 &&
+                (!waitingForMessage ||
+                    (messages.length &&
+                        Date.now() - messages[messages.length - 1].timeAdded >
+                            queueDelay))
+            ) {
+                dispatch(messageAdd(safeMessage));
+            } else {
+                waitingForMessage = false;
+                try {
+                    dispatch({
+                        type: MESSAGE_QUEUE,
+                        payload: {
+                            message: safeMessage,
+                            delay: queueDelay
+                        }
+                    });
+                    if (!popping) {
+                        popping = true;
+                        dispatch(popMessages());
+                    }
+                } catch (error) {
+                    console.error("Error dispatching to message queue:", error);
+                    // Fallback to direct message add if queue fails
+                    dispatch(messageAdd(safeMessage));
+                }
+            }
+            dispatch({
+                type: MESSAGE_RECEIVE,
+                payload: safeMessage
+            });
+        } catch (error) {
+            console.error('Error processing message:', error, message);
         }
-        dispatch({
-            type: MESSAGE_RECEIVE,
-            payload: message
-        });
     };
 }
 
@@ -116,11 +136,18 @@ export function popMessages() {
  * @return {function()} dispatches {@link messageAdd} action creator and `MESSAGE_SEND` action type
  */
 export function messageSend({ postback, text, type, showMessage = true }) {
+    // Create a properly structured message with the pages array
     let message = {
         type: type || 'text',
         origin: 'local',
         postback,
-        text
+        text,
+        // Ensure message has the pages array structure for consistency
+        pages: [{
+            text: text || '',
+            buttons: [],
+            ...(postback && { postback })
+        }]
     };
 
     return dispatch => {

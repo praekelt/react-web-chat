@@ -1,3 +1,6 @@
+// Check the environment
+const isDevelopment = process.env.NODE_ENV !== 'production';
+
 export default {
     typingStatus: {
         active: true,
@@ -11,5 +14,6 @@ export default {
         retransmissionTimeout: 500,
         retransmissionAttempts: 10,
         eventNamespace: 'rwc'
-    }
+    },
+    debug: isDevelopment
 };

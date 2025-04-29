@@ -1,11 +1,27 @@
-/coverage
-/demo/dist
-/es
-/lib
-/node_modules
-/umd
-npm-debug.log*
+# Dependency directories
+node_modules/
+
+# Build outputs
+dist/
+es/
+lib/
+umd/
+
+# IDE and editor files
 .idea/
-package-lock.json
+.vscode/
+*.swp
+*.swo
+
+# OS files
 .DS_Store
-src/themes/default/styles.css
+Thumbs.db
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Testing
+coverage/
